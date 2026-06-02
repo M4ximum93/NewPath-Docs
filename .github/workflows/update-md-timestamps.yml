@@ -1,82 +1,83 @@
-name: Markdown-Zeitstempel aktualisieren
+name: Update Markdown timestamps
 
 on:
   push:
     branches:
       - main
     paths:
-      - "**.md"
-      - ".github/workflows/update-md-timestamps.yml"
+      - "**/*.md"
 
 permissions:
   contents: write
 
 jobs:
-  update-timestamps:
+  update-md-timestamps:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
 
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
-      - name: Zeitstempel nur in geänderten Markdown-Dateien aktualisieren
-        run: |
-          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD -- '*.md')
-
-          if [ -z "$CHANGED_FILES" ]; then
-            echo "Keine geänderten Markdown-Dateien gefunden."
-            exit 0
-          fi
-
-          python3 << 'PY'
-          import subprocess
-          from pathlib import Path
-          from datetime import datetime
-          from zoneinfo import ZoneInfo
-
-          changed_files = subprocess.check_output(
-              ["git", "diff", "--name-only", "HEAD~1", "HEAD", "--", "*.md"],
-              text=True
-          ).splitlines()
-
-          now = datetime.now(ZoneInfo("Europe/Berlin")).strftime("%d.%m.%Y, %H:%M Uhr")
-
-          start = "<!-- AUTO_UPDATED_START -->"
-          end = "<!-- AUTO_UPDATED_END -->"
-
-          new_block = f"""{start}
-          > **Zuletzt aktualisiert:** {now}
-          {end}"""
-
-          for file_name in changed_files:
-              file = Path(file_name)
-
-              if not file.exists():
-                  continue
-
-              text = file.read_text(encoding="utf-8")
-
-              if start in text and end in text:
-                  before = text.split(start)[0]
-                  after = text.split(end, 1)[1]
-                  updated = before + new_block + after
-              else:
-                  updated = new_block + "\n\n" + text
-
-              file.write_text(updated, encoding="utf-8")
-          PY
-
-      - name: Änderungen committen und pushen
+      - name: Git konfigurieren
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Geänderte Markdown-Dateien ermitteln
+        id: changed-files
+        shell: bash
+        run: |
+          CHANGED_FILES=$(git diff --name-only --diff-filter=ACMRT "${{ github.event.before }}" "${{ github.sha }}" -- "*.md" || true)
+
+          echo "Geänderte Markdown-Dateien:"
+          echo "$CHANGED_FILES"
+
+          {
+            echo "files<<EOF"
+            echo "$CHANGED_FILES"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Zeitstempel nur in geänderten Markdown-Dateien aktualisieren
+        if: steps.changed-files.outputs.files != ''
+        shell: bash
+        run: |
+          TIMESTAMP=$(TZ="Europe/Berlin" date +"%d.%m.%Y %H:%M Uhr")
+
+          echo "${{ steps.changed-files.outputs.files }}" | while IFS= read -r file; do
+            if [ -z "$file" ]; then
+              continue
+            fi
+
+            if [ ! -f "$file" ]; then
+              continue
+            fi
+
+            echo "Aktualisiere Zeitstempel in: $file"
+
+            if grep -q "Zuletzt aktualisiert:" "$file"; then
+              sed -i "s|> \*\*Zuletzt aktualisiert:\*\*.*|> **Zuletzt aktualisiert:** $TIMESTAMP|g" "$file"
+            else
+              {
+                echo ""
+                echo "---"
+                echo ""
+                echo "> **Zuletzt aktualisiert:** $TIMESTAMP"
+              } >> "$file"
+            fi
+          done
+
+      - name: Änderungen committen
+        shell: bash
+        run: |
           if git diff --quiet; then
-            echo "Keine Änderungen am Zeitstempel notwendig."
-          else
-            git add .
-            git commit -m "Docs: Markdown-Zeitstempel aktualisiert"
-            git push
+            echo "Keine Zeitstempel-Änderungen vorhanden."
+            exit 0
           fi
+
+          git add .
+          git commit -m "Doku: Zeitstempel aktualisiert"
+          git push
