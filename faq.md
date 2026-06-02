@@ -29,3 +29,4 @@ NewPath wird über CurseForge bereitgestellt.
 ### Wie komme ich auf den Server?
 
 Der Zugang zum Server erfolgt über das im Discord erklärte Whitelist-Verfahren.
+<!-- Zeitstempel-Test -->
