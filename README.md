@@ -1,2 +1,34 @@
-# NewPath-Docs
-Öffentliche Dokumentation, Regelwerk und Philosophie für das NewPath-Projekt.
+# NewPath Docs
+
+Dieses Repository enthält öffentliche Dokumente für das Minecraft-Projekt **NewPath**.
+
+Hier werden zentrale Informationen gepflegt, die für Community, Team und Spieler relevant sind.
+
+---
+
+## Inhalte
+
+- [Regelwerk](regelwerk.md)
+- [Philosophie](philosophie.md)
+- [FAQ](faq.md)
+- [Serverinfos](serverinfos.md)
+
+---
+
+## Zweck
+
+Dieses Repository dient dazu, wichtige NewPath-Dokumente übersichtlich und nachvollziehbar zu verwalten.
+
+Dazu gehören vor allem:
+
+- Regeln
+- Projektphilosophie
+- häufige Fragen
+- Serverinformationen
+- öffentliche Hinweise für Spieler
+
+---
+
+## Hinweis
+
+Die Inhalte können sich während der Entwicklung von NewPath 8.0 noch ändern.
