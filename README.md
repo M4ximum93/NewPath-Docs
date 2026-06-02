@@ -1,5 +1,5 @@
 <!-- AUTO_UPDATED_START -->
-> **Zuletzt aktualisiert:** 02.06.2026, 20:37 Uhr
+> **Zuletzt aktualisiert:** 02.06.2026, 20:33 Uhr
 <!-- AUTO_UPDATED_END -->
 
 # NewPath Docs
@@ -36,4 +36,3 @@ Dazu gehören vor allem:
 ## Hinweis
 
 Die Inhalte können sich während der Entwicklung von NewPath 8.0 noch ändern.
-<!-- Test für automatischen Zeitstempel -->
