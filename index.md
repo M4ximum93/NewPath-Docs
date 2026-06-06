@@ -13,12 +13,11 @@ permalink: /
 
 Willkommen in der offiziellen Dokumentation von **NewPath – Echoes of the Wild**.
 
-Hier findest du alle wichtigen Informationen rund um unser Minecraft-Modpack, den Server, unsere Philosophie, Regeln und häufige Fragen.
+Diese Seite bündelt alle wichtigen Informationen rund um unser Minecraft-Modpack, den Server, unsere Regeln, unsere Philosophie und häufig gestellte Fragen.
 
 {: .highlight-box }
-**NewPath – Echoes of the Wild** steht für Immersion, Erkundung, Gemeinschaft und entschleunigten Fortschritt.  
-Kein klassisches „Everything-Pack“, sondern eine stimmige Welt mit Natur, Technik, Abenteuer und Community.
-
+**NewPath – Echoes of the Wild** steht für eine atmosphärische Minecraft-Erfahrung mit Fokus auf Immersion, Erkundung, Gemeinschaft und entschleunigten Fortschritt.  
+Unser Ziel ist kein klassisches „Everything-Pack“, sondern eine stimmige Welt, in der Natur, Technik, Abenteuer und Community sinnvoll zusammenkommen.
 ---
 
 ## Schnellzugriff
