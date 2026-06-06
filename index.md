@@ -21,25 +21,25 @@ Kein klassisches „Everything-Pack“, sondern eine stimmige Welt mit Natur, Te
 
 <div class="np-card-grid">
 
-<a class="np-card" href="{{ site.baseurl }}/regelwerk/">
-  <span class="np-card-title">Regelwerk</span>
-  <span class="np-card-text">Alle wichtigen Regeln für Server, Community, Verhalten und Gameplay.</span>
-</a>
+<div class="np-card">
+  <a class="np-card-title" href="{{ site.baseurl }}/regelwerk/">Regelwerk</a>
+  <p class="np-card-text">Alle wichtigen Regeln für Server, Community, Verhalten und Gameplay.</p>
+</div>
 
-<a class="np-card" href="{{ site.baseurl }}/philosophie/">
-  <span class="np-card-title">Philosophie</span>
-  <span class="np-card-text">Wofür NewPath steht und welche Richtung Echoes of the Wild verfolgt.</span>
-</a>
+<div class="np-card">
+  <a class="np-card-title" href="{{ site.baseurl }}/philosophie/">Philosophie</a>
+  <p class="np-card-text">Wofür NewPath steht und welche Richtung Echoes of the Wild verfolgt.</p>
+</div>
 
-<a class="np-card" href="{{ site.baseurl }}/faq/">
-  <span class="np-card-title">FAQ</span>
-  <span class="np-card-text">Häufige Fragen rund um Installation, Zugang, Technik und Server.</span>
-</a>
+<div class="np-card">
+  <a class="np-card-title" href="{{ site.baseurl }}/faq/">FAQ</a>
+  <p class="np-card-text">Häufige Fragen rund um Installation, Zugang, Technik und Server.</p>
+</div>
 
-<a class="np-card" href="{{ site.baseurl }}/serverinfos/">
-  <span class="np-card-title">Serverinfos</span>
-  <span class="np-card-text">Wichtige technische Infos, Verbindungen und Hinweise zum Server.</span>
-</a>
+<div class="np-card">
+  <a class="np-card-title" href="{{ site.baseurl }}/serverinfos/">Serverinfos</a>
+  <p class="np-card-text">Wichtige technische Infos, Verbindungen und Hinweise zum Server.</p>
+</div>
 
 </div>
 
