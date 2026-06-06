@@ -1,3 +1,7 @@
+<!-- AUTO_UPDATED_START -->
+> **Zuletzt aktualisiert:** 06.06.2026 23:39 Uhr
+<!-- AUTO_UPDATED_END -->
+
 # FAQ – Häufig gestellte Fragen
 
 Hier findest du die wichtigsten Fragen und Antworten rund um **NewPath** auf einen Blick.
