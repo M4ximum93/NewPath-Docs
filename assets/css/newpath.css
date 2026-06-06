@@ -345,11 +345,11 @@ body {
 .np-hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 120px;
+  grid-template-columns: minmax(0, 1fr) 180px;
   gap: 2rem;
   align-items: center;
   margin: 0 0 2.25rem;
-  padding: 2rem;
+  padding: 2.25rem;
   border: 1px solid var(--np-border-soft);
   border-radius: 1.1rem;
   background:
@@ -397,8 +397,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 112px;
-  height: 112px;
+  width: 160px;
+  height: 160px;
   justify-self: end;
   opacity: 0.96;
   transition: transform 0.16s ease, opacity 0.16s ease, filter 0.16s ease;
