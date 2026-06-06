@@ -1,10 +1,8 @@
-# NewPath Philosophie
-
 <!-- AUTO_UPDATED_START -->
-
-> **Zuletzt aktualisiert:** 03.06.2026 14:29 Uhr
-
+> **Zuletzt aktualisiert:** 06.06.2026 22:43 Uhr
 <!-- AUTO_UPDATED_END -->
+
+# NewPath Philosophie
 
 Dieses Dokument beschreibt die Grundidee und Ausrichtung des Minecraft-Projekts **NewPath – Beyond Lands**.
 

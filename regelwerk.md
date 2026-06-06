@@ -1,10 +1,8 @@
-# NewPath Regelwerk
-
 <!-- AUTO_UPDATED_START -->
-
-> **Zuletzt aktualisiert:** 03.06.2026 14:26 Uhr
-
+> **Zuletzt aktualisiert:** 06.06.2026 22:43 Uhr
 <!-- AUTO_UPDATED_END -->
+
+# NewPath Regelwerk
 
 Dieses Dokument enthält das öffentliche Regelwerk für das Minecraft-Projekt **NewPath – Beyond Lands**.
 
