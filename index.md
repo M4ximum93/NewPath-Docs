@@ -5,7 +5,7 @@ nav_order: 1
 permalink: /
 ---
 
-<a class="np-corner-logo" href="https://github.com/NewPathMC" target="_blank" rel="noopener">
+<a class="np-corner-logo" href="https://discord.gg/R4HwKRbZ5e" target="_blank" rel="noopener">
   <img src="{{ site.baseurl }}/assets/images/logo.png" alt="NewPath Logo">
 </a>
 
