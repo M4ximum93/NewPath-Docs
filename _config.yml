@@ -13,7 +13,7 @@ aux_links:
   "NewPath auf GitHub":
     - "https://github.com/NewPathMC/NewPath-Docs"
 
-color_scheme: dark
+color_scheme: newpath
 
 enable_copy_code_button: true
 
