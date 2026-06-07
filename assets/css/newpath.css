@@ -1216,3 +1216,47 @@ body {
     border-radius: 0 0 0 1rem !important;
   }
 }
+
+/* =========================================================
+   Fix: Header-Elemente sollen nicht sticky über den Content scrollen
+   ========================================================= */
+
+.site-header,
+.main-header,
+.main-header.nav-open {
+  position: relative !important;
+  top: auto !important;
+  z-index: 1 !important;
+}
+
+.site-header,
+.main-header {
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.main-header::before,
+.main-header::after,
+.site-header::before,
+.site-header::after {
+  display: none !important;
+  content: none !important;
+}
+
+.search,
+.search-input-wrap,
+.aux-nav,
+.aux-nav-list {
+  position: relative !important;
+  top: auto !important;
+  z-index: 2 !important;
+}
+
+/* =========================================================
+   Just-the-Docs-Hinweis entfernen
+   ========================================================= */
+
+.site-footer {
+  display: none !important;
+}
