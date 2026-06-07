@@ -5,7 +5,7 @@ nav_order: 1
 permalink: /
 ---
 <!-- AUTO_UPDATED_START -->
-> **Zuletzt aktualisiert:** 07.06.2026 13:07 Uhr
+> **Zuletzt aktualisiert:** 07.06.2026 16:50 Uhr
 <!-- AUTO_UPDATED_END -->
 
 <section class="np-hero">
@@ -95,4 +95,4 @@ permalink: /
 Unser Ziel ist kein klassisches „Everything-Pack“, sondern eine stimmige Welt, in der Technik, Natur, Abenteuer und Community sinnvoll zusammenkommen.
 ---
 
-> **Zuletzt aktualisiert:** 07.06.2026 14:16 Uhr
+> **Zuletzt aktualisiert:** 07.06.2026 16:50 Uhr
