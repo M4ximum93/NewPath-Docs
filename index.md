@@ -4,6 +4,9 @@ title: Startseite
 nav_order: 1
 permalink: /
 ---
+<!-- AUTO_UPDATED_START -->
+> **Zuletzt aktualisiert:** 07.06.2026 13:07 Uhr
+<!-- AUTO_UPDATED_END -->
 
 <section class="np-hero">
 
