@@ -952,3 +952,127 @@ body:not(.home) .main-content > :not(.np-home),
     grid-template-columns: minmax(620px, 1.45fr) minmax(260px, 0.58fr) minmax(260px, 0.58fr);
   }
 }
+
+/* =========================================================
+   Schritt 19: Landingpage breiter über die Fläche verteilen
+   - Inhalt nicht mehr in der Mitte bündeln
+   - Hero, Status, Dashboard und About linksbreiter ausrichten
+   - Dashboard-Spalten deutlich verbreitern
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  :root {
+    --np-content-width: 2260px;
+    --np-stage-left: clamp(7rem, 10vw, 15rem);
+    --np-stage-right: clamp(2rem, 4vw, 5rem);
+  }
+
+  .np-last-updated,
+  .np-hero,
+  .np-status-bar,
+  .np-dashboard-grid,
+  .np-about-grid {
+    width: calc(100vw - var(--np-stage-left) - var(--np-stage-right)) !important;
+    max-width: var(--np-content-width) !important;
+    margin-left: var(--np-stage-left) !important;
+    margin-right: var(--np-stage-right) !important;
+  }
+
+  .np-last-updated {
+    margin-top: 2rem !important;
+    margin-bottom: -1.1rem !important;
+  }
+
+  .np-hero {
+    min-height: clamp(470px, 37vw, 650px) !important;
+    grid-template-columns: minmax(620px, 780px) minmax(340px, 470px) minmax(0, 1fr) !important;
+    gap: clamp(3.5rem, 5vw, 7rem) !important;
+    align-items: center !important;
+    padding-top: clamp(3.2rem, 5.2vw, 6.2rem) !important;
+    padding-bottom: clamp(2.4rem, 4.2vw, 4.8rem) !important;
+  }
+
+  .np-hero-content {
+    max-width: 780px !important;
+  }
+
+  .np-hero h1 {
+    font-size: clamp(5.3rem, 5.8vw, 8.1rem) !important;
+    line-height: 0.88 !important;
+  }
+
+  .np-hero-text {
+    max-width: 700px !important;
+    font-size: clamp(1.02rem, 1.03vw, 1.18rem) !important;
+  }
+
+  .np-hero-highlight {
+    max-width: 720px !important;
+  }
+
+  .np-hero-logo {
+    width: clamp(330px, 20vw, 460px) !important;
+    height: clamp(330px, 20vw, 460px) !important;
+    justify-self: center !important;
+  }
+
+  .np-status-bar {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    max-width: 1340px !important;
+    margin-top: 0 !important;
+    margin-bottom: 1.55rem !important;
+  }
+
+  .np-status-item {
+    min-height: 4.35rem !important;
+    padding: 0.8rem 1.05rem !important;
+  }
+
+  .np-dashboard-grid {
+    grid-template-columns: minmax(900px, 1.62fr) minmax(350px, 0.68fr) minmax(350px, 0.68fr) !important;
+    gap: 1.25rem !important;
+    align-items: stretch !important;
+  }
+
+  .np-card-grid {
+    grid-template-columns: repeat(4, minmax(190px, 1fr)) !important;
+    gap: 1rem !important;
+  }
+
+  .np-card {
+    min-height: 12.8rem !important;
+    padding: 1.1rem 1rem 1rem !important;
+  }
+
+  .np-news-panel,
+  .np-roadmap-panel,
+  .np-panel-large {
+    min-width: 0 !important;
+  }
+
+  .np-about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 420px) !important;
+    gap: 1.25rem !important;
+    margin-top: 1.25rem !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1700px) {
+  :root {
+    --np-stage-left: clamp(4.5rem, 8vw, 8rem);
+    --np-stage-right: clamp(1.5rem, 3vw, 3.5rem);
+  }
+
+  .np-hero {
+    grid-template-columns: minmax(500px, 650px) minmax(280px, 380px) minmax(0, 1fr) !important;
+    gap: clamp(2.4rem, 4vw, 4.5rem) !important;
+  }
+
+  .np-dashboard-grid {
+    grid-template-columns: minmax(680px, 1.45fr) minmax(290px, 0.62fr) minmax(290px, 0.62fr) !important;
+  }
+
+  .np-card-grid {
+    grid-template-columns: repeat(4, minmax(145px, 1fr)) !important;
+  }
+}
