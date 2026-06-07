@@ -8,6 +8,23 @@ nav_order: 5
 > **Zuletzt aktualisiert:** 07.06.2026 01:19 Uhr
 <!-- AUTO_UPDATED_END -->
 
+<section class="echo-page-box echo-page-box-server">
+
+  <div class="echo-page-image">
+    <img src="{{ site.baseurl }}/assets/images/echo/echo-server.png" alt="ECHO hilft bei den Serverinfos">
+  </div>
+
+  <div class="echo-page-content">
+    <p class="echo-page-kicker">ECHO hilft beim Serverzugang</p>
+    <h2>Alle wichtigen technischen Infos auf einen Blick.</h2>
+    <p>
+      Hier findest du die wichtigsten Informationen zu Versionen, Verbindung,
+      Serverzugang und technischen Hinweisen rund um NewPath.
+    </p>
+  </div>
+
+</section>
+
 # NewPath Serverinfos
 
 Dieses Dokument enthält öffentliche Informationen zum NewPath-Server.

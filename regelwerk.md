@@ -8,6 +8,22 @@ nav_order: 2
 > **Zuletzt aktualisiert:** 07.06.2026 00:08 Uhr
 <!-- AUTO_UPDATED_END -->
 
+<section class="echo-page-box echo-page-box-rules">
+
+  <div class="echo-page-image">
+    <img src="{{ site.baseurl }}/assets/images/echo/echo-rules.png" alt="ECHO erklärt das Regelwerk">
+  </div>
+
+  <div class="echo-page-content">
+    <p class="echo-page-kicker">ECHO-Hinweis zum Regelwerk</p>
+    <h2>Fairness, Rücksicht und ein stimmiges Miteinander.</h2>
+    <p>
+      Hier findest du die wichtigsten Regeln für NewPath. Sie helfen dabei,
+      dass unser Server fair, übersichtlich und angenehm für alle bleibt.
+    </p>
+  </div>
+
+</section>
 # NewPath Regelwerk
 
 Dieses Dokument enthält das öffentliche Regelwerk für das Minecraft-Projekt **NewPath – Beyond Lands**.

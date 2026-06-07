@@ -539,7 +539,7 @@ body {
   background: transparent;
 }
 
-/* ECHO – Wegbegleiter-Box */
+/* ECHO – Wegbegleiter-Box Startseite */
 
 .echo-guide-box {
   position: relative;
@@ -637,6 +637,135 @@ body {
   color: var(--np-text-muted);
   font-size: 0.94rem;
   line-height: 1.5;
+}
+
+/* ECHO – Themenboxen auf Unterseiten */
+
+.echo-page-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: 154px minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: center;
+  margin: 0 0 2rem;
+  padding: 1.15rem 1.45rem;
+  min-height: 154px;
+  border: 1px solid rgba(53, 101, 125, 0.58);
+  border-left: 4px solid var(--np-cyan);
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 8% 50%, rgba(0, 230, 246, 0.1), transparent 13rem),
+    radial-gradient(circle at 96% 18%, rgba(53, 101, 125, 0.16), transparent 18rem),
+    linear-gradient(135deg, rgba(17, 46, 64, 0.88), rgba(7, 19, 27, 0.86));
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.24),
+    inset 0 0 0 1px rgba(0, 230, 246, 0.03);
+  overflow: hidden;
+}
+
+.echo-page-box::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--np-cyan), rgba(236, 183, 110, 0.38), transparent);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.echo-page-box::after {
+  content: "";
+  position: absolute;
+  right: -5rem;
+  bottom: -5rem;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(0, 230, 246, 0.075), transparent 65%);
+  pointer-events: none;
+}
+
+.echo-page-image {
+  position: relative;
+  z-index: 1;
+  height: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.echo-page-image img {
+  width: 128px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 14px rgba(0, 230, 246, 0.22))
+    drop-shadow(0 14px 24px rgba(0, 0, 0, 0.36));
+}
+
+.echo-page-content {
+  position: relative;
+  z-index: 1;
+}
+
+.echo-page-kicker {
+  margin: 0 0 0.25rem;
+  color: var(--np-cyan);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.echo-page-content h2 {
+  margin: 0 0 0.4rem;
+  padding: 0;
+  border: 0;
+  color: var(--np-gold);
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.echo-page-content p {
+  max-width: 840px;
+  margin: 0;
+  color: var(--np-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* Thematische Akzentfarben für Unterseiten */
+
+.echo-page-box-rules {
+  border-left-color: var(--np-gold);
+}
+
+.echo-page-box-rules::before {
+  background: linear-gradient(90deg, var(--np-gold), rgba(0, 230, 246, 0.35), transparent);
+}
+
+.echo-page-box-philosophy {
+  border-left-color: var(--np-moss);
+}
+
+.echo-page-box-philosophy::before {
+  background: linear-gradient(90deg, var(--np-moss), rgba(236, 183, 110, 0.42), rgba(0, 230, 246, 0.22), transparent);
+}
+
+.echo-page-box-faq {
+  border-left-color: var(--np-cyan);
+}
+
+.echo-page-box-server {
+  border-left-color: var(--np-petrol-light);
+}
+
+.echo-page-box-server::before {
+  background: linear-gradient(90deg, var(--np-petrol-light), rgba(0, 230, 246, 0.45), transparent);
 }
 
 /* Alte Corner-Logo-Variante ausblenden */
@@ -884,6 +1013,29 @@ body {
 
   .echo-guide-image img {
     width: 108px;
+  }
+
+  .echo-page-box {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 0.9rem;
+    padding: 0.95rem 1rem;
+    min-height: 128px;
+  }
+
+  .echo-page-image {
+    height: 104px;
+  }
+
+  .echo-page-image img {
+    width: 96px;
+  }
+
+  .echo-page-content h2 {
+    font-size: 1.15rem;
+  }
+
+  .echo-page-content p {
+    font-size: 0.88rem;
   }
 
   .echo-guide-content h2 {

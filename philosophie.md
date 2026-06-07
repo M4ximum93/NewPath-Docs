@@ -8,6 +8,23 @@ nav_order: 3
 > **Zuletzt aktualisiert:** 07.06.2026 01:19 Uhr
 <!-- AUTO_UPDATED_END -->
 
+<section class="echo-page-box echo-page-box-philosophy">
+
+  <div class="echo-page-image">
+    <img src="{{ site.baseurl }}/assets/images/echo/echo-philosophy.png" alt="ECHO erklärt die Philosophie">
+  </div>
+
+  <div class="echo-page-content">
+    <p class="echo-page-kicker">ECHO erklärt die Philosophie</p>
+    <h2>NewPath ist bewusst kein klassisches Everything-Pack.</h2>
+    <p>
+      Hier erfährst du, wofür NewPath steht, welche Richtung Echoes of the Wild verfolgt
+      und warum Immersion, Gemeinschaft und entschleunigter Fortschritt im Mittelpunkt stehen.
+    </p>
+  </div>
+
+</section>
+
 # NewPath Philosophie
 
 Dieses Dokument beschreibt die Grundidee und Ausrichtung des Minecraft-Projekts **NewPath – Beyond Lands**.

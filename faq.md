@@ -8,6 +8,23 @@ nav_order: 4
 > **Zuletzt aktualisiert:** 07.06.2026 01:19 Uhr
 <!-- AUTO_UPDATED_END -->
 
+<section class="echo-page-box echo-page-box-faq">
+
+  <div class="echo-page-image">
+    <img src="{{ site.baseurl }}/assets/images/echo/echo-faq.png" alt="ECHO beantwortet häufige Fragen">
+  </div>
+
+  <div class="echo-page-content">
+    <p class="echo-page-kicker">ECHO beantwortet häufige Fragen</p>
+    <h2>Schnelle Antworten für deinen Einstieg.</h2>
+    <p>
+      Hier findest du Antworten zu Installation, Zugang, Technik, Serververbindung
+      und den wichtigsten Grundlagen rund um NewPath.
+    </p>
+  </div>
+
+</section>
+
 # FAQ – Häufig gestellte Fragen
 
 Hier findest du die wichtigsten Fragen und Antworten rund um **NewPath** auf einen Blick.
