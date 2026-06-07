@@ -31,7 +31,7 @@ jobs:
           for file in $FILES; do
             if [ -f "$file" ]; then
               if grep -q "<!-- AUTO_UPDATED_START -->" "$file"; then
-                sed -i "/<!-- AUTO_UPDATED_START -->/,/<!-- AUTO_UPDATED_END -->/c\\<!-- AUTO_UPDATED_START -->\n> **Zuletzt aktualisiert:** $DATE\n<!-- AUTO_UPDATED_END -->" "$file"
+                sed -i "/<!-- AUTO_UPDATED_START -->/,/<!-- AUTO_UPDATED_END -->/c\\<!-- AUTO_UPDATED_START -->\n<p class=\"np-last-updated\">Zuletzt aktualisiert: $DATE</p>\n<!-- AUTO_UPDATED_END -->" "$file"
               fi
             fi
           done
