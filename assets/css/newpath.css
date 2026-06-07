@@ -1,14 +1,5 @@
 /* NewPath – Echoes of the Wild Custom Styling */
 
-/* Ziel:
-   Moderner NewPath/EOTW-Look
-   #112e40 und #35657d als sichtbare Hauptflächen
-   #ecb76e als warme Marken-Schriftfarbe
-   Helle Leseschrift für bessere Lesbarkeit
-   Cyan für Tech-Glow / Links
-   Moosgrün sehr dezent als Natur-/Wild-Akzent
-*/
-
 :root {
   --np-bg-main: #07131b;
   --np-bg-deep: #050b10;
@@ -47,27 +38,31 @@
 body {
   background:
     radial-gradient(circle at 72% 18%, rgba(53, 101, 125, 0.22), transparent 34rem),
-    radial-gradient(circle at 82% 78%, rgba(17, 46, 64, 0.28), transparent 32rem),
-    linear-gradient(180deg, #07131b 0%, #081923 45%, #050b10 100%);
+    radial-gradient(circle at 82% 78%, rgba(17, 46, 64, 0.30), transparent 34rem),
+    linear-gradient(180deg, #07131b 0%, #0b1f2a 42%, #081923 100%);
+  background-attachment: fixed;
   color: var(--np-text);
 }
 
 /* Hauptbereich */
 
 .main {
+  min-height: 100vh;
   background:
     radial-gradient(circle at 88% 10%, rgba(0, 230, 246, 0.055), transparent 26rem),
     radial-gradient(circle at 100% 45%, rgba(53, 101, 125, 0.22), transparent 34rem),
     radial-gradient(circle at 18% 18%, rgba(53, 101, 125, 0.24), transparent 30rem),
     radial-gradient(circle at 8% 70%, rgba(95, 122, 66, 0.08), transparent 24rem),
-    linear-gradient(180deg, rgba(7, 19, 27, 0.98) 0%, rgba(17, 46, 64, 0.92) 48%, rgba(5, 11, 16, 0.96) 100%);
+    linear-gradient(180deg, rgba(7, 19, 27, 0.98) 0%, rgba(17, 46, 64, 0.90) 48%, rgba(8, 25, 35, 0.94) 100%);
 }
 
 .main-content-wrap {
   max-width: 1120px;
+  min-height: calc(100vh - 4.45rem);
   background:
     radial-gradient(circle at 100% 12%, rgba(53, 101, 125, 0.16), transparent 24rem),
-    linear-gradient(180deg, rgba(17, 46, 64, 0.78), rgba(7, 19, 27, 0.88) 72%, rgba(5, 11, 16, 0.78));
+    radial-gradient(circle at 50% 100%, rgba(53, 101, 125, 0.10), transparent 34rem),
+    linear-gradient(180deg, rgba(17, 46, 64, 0.78), rgba(8, 25, 35, 0.88) 72%, rgba(8, 25, 35, 0.86));
   border-left: 1px solid rgba(53, 101, 125, 0.28);
   border-right: 1px solid rgba(53, 101, 125, 0.18);
   box-shadow:
@@ -229,7 +224,7 @@ body {
   pointer-events: none;
 }
 
-/* Suchbereich mittig ausrichten */
+/* Suche */
 
 .search {
   flex: 1 1 auto;
@@ -550,24 +545,23 @@ body {
   gap: 0.95rem;
   align-items: center;
   margin: 0 0 1.75rem;
-  padding: 0.95rem 1.35rem;
+  padding: 0.95rem 1.35rem 0.95rem 1.55rem;
   min-height: 152px;
   border: 1px solid rgba(53, 101, 125, 0.56);
   border-radius: 0.95rem;
   background:
+    linear-gradient(var(--echo-accent), var(--echo-accent)) left 0.95rem top 0.95rem / 4px calc(100% - 1.9rem) no-repeat,
     radial-gradient(circle at 8% 50%, rgba(0, 230, 246, 0.11), transparent 12rem),
     radial-gradient(circle at 100% 50%, rgba(95, 122, 66, 0.08), transparent 16rem),
     linear-gradient(135deg, rgba(17, 46, 64, 0.84), rgba(7, 19, 27, 0.86));
-  box-shadow:
-    inset 4px 0 0 var(--echo-accent),
-    0 14px 30px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
   overflow: hidden;
 }
 
 .echo-guide-box::before {
   content: "";
   position: absolute;
-  left: 1.35rem;
+  left: 1.55rem;
   right: 1.35rem;
   top: 0;
   height: 1px;
@@ -653,16 +647,16 @@ body {
   gap: 1.15rem;
   align-items: center;
   margin: 0 0 2rem;
-  padding: 1.15rem 1.45rem;
+  padding: 1.15rem 1.45rem 1.15rem 1.65rem;
   min-height: 154px;
   border: 1px solid rgba(53, 101, 125, 0.58);
   border-radius: 1rem;
   background:
+    linear-gradient(var(--echo-accent), var(--echo-accent)) left 1rem top 1rem / 4px calc(100% - 2rem) no-repeat,
     radial-gradient(circle at 8% 50%, rgba(0, 230, 246, 0.1), transparent 13rem),
     radial-gradient(circle at 96% 18%, rgba(53, 101, 125, 0.16), transparent 18rem),
     linear-gradient(135deg, rgba(17, 46, 64, 0.88), rgba(7, 19, 27, 0.86));
   box-shadow:
-    inset 4px 0 0 var(--echo-accent),
     0 16px 34px rgba(0, 0, 0, 0.24),
     inset 0 0 0 1px rgba(0, 230, 246, 0.03);
   overflow: hidden;
@@ -671,7 +665,7 @@ body {
 .echo-page-box::before {
   content: "";
   position: absolute;
-  left: 1.45rem;
+  left: 1.65rem;
   right: 1.45rem;
   top: 0;
   height: 2px;
@@ -996,8 +990,13 @@ body {
   .echo-guide-box {
     grid-template-columns: 112px minmax(0, 1fr);
     gap: 0.85rem;
-    padding: 0.9rem 1rem;
+    padding: 0.9rem 1rem 0.9rem 1.2rem;
     min-height: 132px;
+    background:
+      linear-gradient(var(--echo-accent), var(--echo-accent)) left 0.8rem top 0.8rem / 4px calc(100% - 1.6rem) no-repeat,
+      radial-gradient(circle at 8% 50%, rgba(0, 230, 246, 0.11), transparent 12rem),
+      radial-gradient(circle at 100% 50%, rgba(95, 122, 66, 0.08), transparent 16rem),
+      linear-gradient(135deg, rgba(17, 46, 64, 0.84), rgba(7, 19, 27, 0.86));
   }
 
   .echo-guide-image {
@@ -1011,8 +1010,13 @@ body {
   .echo-page-box {
     grid-template-columns: 104px minmax(0, 1fr);
     gap: 0.9rem;
-    padding: 0.95rem 1rem;
+    padding: 0.95rem 1rem 0.95rem 1.2rem;
     min-height: 128px;
+    background:
+      linear-gradient(var(--echo-accent), var(--echo-accent)) left 0.85rem top 0.85rem / 4px calc(100% - 1.7rem) no-repeat,
+      radial-gradient(circle at 8% 50%, rgba(0, 230, 246, 0.1), transparent 13rem),
+      radial-gradient(circle at 96% 18%, rgba(53, 101, 125, 0.16), transparent 18rem),
+      linear-gradient(135deg, rgba(17, 46, 64, 0.88), rgba(7, 19, 27, 0.86));
   }
 
   .echo-page-image {
