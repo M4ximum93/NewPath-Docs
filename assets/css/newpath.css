@@ -21,7 +21,7 @@
   --np-petrol-light: #35657d;
   --np-green: #6f824b;
   --np-shadow: 0 22px 46px rgba(0, 0, 0, 0.34);
-  --np-content-width: 1500px;
+  --np-content-width: 2080px;
   --np-content-pad: clamp(1.35rem, 3.4vw, 3.8rem);
 }
 
@@ -299,7 +299,7 @@ body::selection {
 
 .np-last-updated {
   width: min(var(--np-content-width), calc(100% - (var(--np-content-pad) * 2)));
-  margin: 2.1rem auto 0 auto;
+  margin: 2rem auto -1rem auto;
   color: rgba(245, 234, 220, 0.54);
   font-size: 0.72rem;
   text-align: right;
@@ -308,12 +308,12 @@ body::selection {
 .np-hero {
   width: min(var(--np-content-width), calc(100% - (var(--np-content-pad) * 2)));
   margin: 0 auto;
-  min-height: clamp(360px, 36vw, 505px);
+  min-height: clamp(460px, 39vw, 610px);
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 420px) minmax(120px, 0.35fr);
+  grid-template-columns: minmax(520px, 720px) minmax(300px, 470px) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(1.8rem, 4vw, 4.5rem);
-  padding: clamp(2.4rem, 5vw, 5.2rem) 0 clamp(2rem, 4.5vw, 4.4rem);
+  gap: clamp(2.2rem, 4.5vw, 5.6rem);
+  padding: clamp(3rem, 5.4vw, 6rem) 0 clamp(2.1rem, 4vw, 4rem);
   position: relative;
 }
 
@@ -329,10 +329,10 @@ body::selection {
 }
 
 .np-hero-content {
-  max-width: 650px;
+  max-width: 720px;
   position: relative;
   z-index: 2;
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.62);
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.72);
 }
 
 .np-kicker,
@@ -350,13 +350,13 @@ body::selection {
   margin: 0 0 1rem;
   border: 0 !important;
   color: var(--np-gold-soft);
-  font-size: clamp(4.2rem, 6.2vw, 7.2rem);
+  font-size: clamp(5.1rem, 5.4vw, 7.6rem);
   font-weight: 900;
   line-height: 0.88;
   letter-spacing: -0.055em;
   text-shadow:
-    0 4px 22px rgba(0, 0, 0, 0.56),
-    0 0 26px rgba(236, 183, 110, 0.12);
+    0 4px 24px rgba(0, 0, 0, 0.68),
+    0 0 28px rgba(236, 183, 110, 0.16);
 }
 
 .np-hero-title-main,
@@ -365,28 +365,28 @@ body::selection {
 }
 
 .np-hero-title-sub {
-  margin-top: 0.16rem;
-  font-size: 0.55em;
+  margin-top: 0.14rem;
+  font-size: 0.56em;
   letter-spacing: -0.045em;
 }
 
 .np-hero-text {
-  max-width: 600px;
+  max-width: 660px;
   margin: 0 0 1.15rem;
-  color: rgba(245, 234, 220, 0.96);
-  font-size: clamp(0.98rem, 1.05vw, 1.1rem);
+  color: rgba(245, 234, 220, 0.98);
+  font-size: clamp(1rem, 1vw, 1.14rem);
   line-height: 1.62;
 }
 
 .np-hero-highlight {
-  max-width: 640px;
-  padding: 0.92rem 1.05rem;
-  color: rgba(245, 234, 220, 0.95);
-  border-left: 3px solid rgba(236, 183, 110, 0.9);
-  border-radius: 0.35rem;
-  background: rgba(0, 9, 15, 0.42);
-  box-shadow: inset 0 0 0 1px rgba(72, 122, 146, 0.28);
-  backdrop-filter: blur(4px);
+  max-width: 680px;
+  padding: 0.95rem 1.1rem;
+  color: rgba(245, 234, 220, 0.96);
+  border-left: 3px solid rgba(236, 183, 110, 0.92);
+  border-radius: 0.32rem;
+  background: rgba(0, 9, 15, 0.34);
+  box-shadow: inset 0 0 0 1px rgba(72, 122, 146, 0.24);
+  backdrop-filter: blur(3px);
 }
 
 .np-hero-highlight strong {
@@ -395,8 +395,8 @@ body::selection {
 
 .np-hero-logo {
   grid-column: 2;
-  width: clamp(250px, 21vw, 390px);
-  height: clamp(250px, 21vw, 390px);
+  width: clamp(300px, 20vw, 430px);
+  height: clamp(300px, 20vw, 430px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -405,8 +405,8 @@ body::selection {
   z-index: 2;
   text-decoration: none !important;
   filter:
-    drop-shadow(0 24px 28px rgba(0, 0, 0, 0.40))
-    drop-shadow(0 0 24px rgba(0, 230, 246, 0.22));
+    drop-shadow(0 24px 30px rgba(0, 0, 0, 0.46))
+    drop-shadow(0 0 26px rgba(0, 230, 246, 0.22));
 }
 
 .np-hero-logo img {
@@ -418,8 +418,8 @@ body::selection {
 /* Statusleiste */
 
 .np-status-bar {
-  width: min(var(--np-content-width), calc(100% - (var(--np-content-pad) * 2)));
-  margin: 0 auto 1.65rem;
+  width: min(1260px, calc(100% - (var(--np-content-pad) * 2)));
+  margin: 0 0 1.65rem max(var(--np-content-pad), calc((100vw - var(--np-content-width)) / 2));
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   border: 1px solid rgba(0, 230, 246, 0.22);
@@ -486,7 +486,7 @@ body::selection {
 }
 
 .np-dashboard-grid {
-  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.72fr) minmax(260px, 0.72fr);
+  grid-template-columns: minmax(760px, 1.58fr) minmax(300px, 0.58fr) minmax(300px, 0.58fr);
   align-items: stretch;
 }
 
@@ -524,7 +524,7 @@ body::selection {
 }
 
 .np-card {
-  min-height: 12.2rem;
+  min-height: 13.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -913,5 +913,42 @@ body:not(.home) .main-content > :not(.np-home),
   .echo-guide-box,
   .np-echo-panel {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* Feinschliff Schritt 18: Landingpage stärker wie Vorlage skalieren */
+@media (min-width: 66.5rem) {
+  .np-home {
+    min-height: calc(100vh - 4.45rem);
+  }
+
+  .np-dashboard-grid,
+  .np-about-grid {
+    max-width: 2080px;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1500px) {
+  :root {
+    --np-content-pad: clamp(1.2rem, 2.5vw, 2.6rem);
+  }
+
+  .np-hero {
+    grid-template-columns: minmax(420px, 620px) minmax(260px, 360px) minmax(0, 1fr);
+    min-height: 430px;
+  }
+
+  .np-hero h1 {
+    font-size: clamp(4.4rem, 5.1vw, 6.4rem);
+  }
+
+  .np-hero-logo {
+    width: clamp(260px, 20vw, 350px);
+    height: clamp(260px, 20vw, 350px);
+  }
+
+  .np-dashboard-grid {
+    grid-template-columns: minmax(620px, 1.45fr) minmax(260px, 0.58fr) minmax(260px, 0.58fr);
   }
 }
