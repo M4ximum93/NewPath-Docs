@@ -542,6 +542,8 @@ body {
 /* ECHO – Wegbegleiter-Box Startseite */
 
 .echo-guide-box {
+  --echo-accent: var(--np-cyan);
+
   position: relative;
   display: grid;
   grid-template-columns: 166px minmax(0, 1fr);
@@ -551,21 +553,22 @@ body {
   padding: 0.95rem 1.35rem;
   min-height: 152px;
   border: 1px solid rgba(53, 101, 125, 0.56);
-  border-left: 4px solid var(--np-cyan);
   border-radius: 0.95rem;
   background:
     radial-gradient(circle at 8% 50%, rgba(0, 230, 246, 0.11), transparent 12rem),
     radial-gradient(circle at 100% 50%, rgba(95, 122, 66, 0.08), transparent 16rem),
     linear-gradient(135deg, rgba(17, 46, 64, 0.84), rgba(7, 19, 27, 0.86));
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  box-shadow:
+    inset 4px 0 0 var(--echo-accent),
+    0 14px 30px rgba(0, 0, 0, 0.22);
   overflow: hidden;
 }
 
 .echo-guide-box::before {
   content: "";
   position: absolute;
-  left: 1rem;
-  right: 1rem;
+  left: 1.35rem;
+  right: 1.35rem;
   top: 0;
   height: 1px;
   background: linear-gradient(90deg, rgba(0, 230, 246, 0.55), rgba(236, 183, 110, 0.18), transparent);
@@ -642,6 +645,8 @@ body {
 /* ECHO – Themenboxen auf Unterseiten */
 
 .echo-page-box {
+  --echo-accent: var(--np-cyan);
+
   position: relative;
   display: grid;
   grid-template-columns: 154px minmax(0, 1fr);
@@ -651,13 +656,13 @@ body {
   padding: 1.15rem 1.45rem;
   min-height: 154px;
   border: 1px solid rgba(53, 101, 125, 0.58);
-  border-left: 4px solid var(--np-cyan);
   border-radius: 1rem;
   background:
     radial-gradient(circle at 8% 50%, rgba(0, 230, 246, 0.1), transparent 13rem),
     radial-gradient(circle at 96% 18%, rgba(53, 101, 125, 0.16), transparent 18rem),
     linear-gradient(135deg, rgba(17, 46, 64, 0.88), rgba(7, 19, 27, 0.86));
   box-shadow:
+    inset 4px 0 0 var(--echo-accent),
     0 16px 34px rgba(0, 0, 0, 0.24),
     inset 0 0 0 1px rgba(0, 230, 246, 0.03);
   overflow: hidden;
@@ -666,12 +671,12 @@ body {
 .echo-page-box::before {
   content: "";
   position: absolute;
-  left: 1rem;
-  right: 1rem;
+  left: 1.45rem;
+  right: 1.45rem;
   top: 0;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--np-cyan), rgba(236, 183, 110, 0.38), transparent);
+  background: linear-gradient(90deg, var(--echo-accent), rgba(236, 183, 110, 0.38), transparent);
   opacity: 0.75;
   pointer-events: none;
 }
@@ -741,31 +746,19 @@ body {
 /* Thematische Akzentfarben für Unterseiten */
 
 .echo-page-box-rules {
-  border-left-color: var(--np-gold);
-}
-
-.echo-page-box-rules::before {
-  background: linear-gradient(90deg, var(--np-gold), rgba(0, 230, 246, 0.35), transparent);
+  --echo-accent: var(--np-gold);
 }
 
 .echo-page-box-philosophy {
-  border-left-color: var(--np-moss);
-}
-
-.echo-page-box-philosophy::before {
-  background: linear-gradient(90deg, var(--np-moss), rgba(236, 183, 110, 0.42), rgba(0, 230, 246, 0.22), transparent);
+  --echo-accent: var(--np-moss);
 }
 
 .echo-page-box-faq {
-  border-left-color: var(--np-cyan);
+  --echo-accent: var(--np-cyan);
 }
 
 .echo-page-box-server {
-  border-left-color: var(--np-petrol-light);
-}
-
-.echo-page-box-server::before {
-  background: linear-gradient(90deg, var(--np-petrol-light), rgba(0, 230, 246, 0.45), transparent);
+  --echo-accent: var(--np-petrol-light);
 }
 
 /* Alte Corner-Logo-Variante ausblenden */
