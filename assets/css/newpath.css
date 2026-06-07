@@ -544,8 +544,8 @@ body {
 .echo-guide-box {
   position: relative;
   display: grid;
-  grid-template-columns: 126px minmax(0, 1fr);
-  gap: 1.15rem;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 1rem;
   align-items: center;
   margin: 0 0 1.75rem;
   padding: 0.95rem 1.35rem;
@@ -595,7 +595,7 @@ body {
 }
 
 .echo-guide-image img {
-  width: 108px;
+  width: 116px;
   max-width: 100%;
   height: auto;
   object-fit: contain;
