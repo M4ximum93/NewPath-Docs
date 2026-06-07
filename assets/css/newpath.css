@@ -79,6 +79,7 @@ body {
 .main-content {
   position: relative;
   padding-top: 2.25rem;
+  padding-bottom: 4rem;
   line-height: 1.65;
   color: var(--np-text);
 }
@@ -107,8 +108,10 @@ body {
 
 .side-bar {
   background:
-    linear-gradient(180deg, #06131c 0%, #112e40 100%);
+    radial-gradient(circle at 20% 10%, rgba(53, 101, 125, 0.16), transparent 18rem),
+    linear-gradient(180deg, #06131c 0%, #112e40 58%, #07131b 100%);
   border-right: 1px solid rgba(53, 101, 125, 0.38);
+  box-shadow: inset -18px 0 34px rgba(0, 0, 0, 0.18);
 }
 
 .site-title {
@@ -122,11 +125,29 @@ body {
   background: transparent;
 }
 
+.site-header {
+  border-bottom: 1px solid rgba(53, 101, 125, 0.42);
+  background:
+    linear-gradient(90deg, rgba(17, 46, 64, 0.82), rgba(7, 19, 27, 0.92));
+}
+
+.site-nav {
+  padding-top: 1.25rem;
+}
+
 /* Navigation */
+
+.nav-list .nav-list-item {
+  margin: 0.1rem 0;
+}
 
 .nav-list .nav-list-item .nav-list-link {
   color: var(--np-text-muted);
-  border-radius: 0.4rem;
+  border-radius: 0.45rem;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .nav-list .nav-list-item .nav-list-link:hover {
@@ -140,9 +161,16 @@ body {
     linear-gradient(90deg, rgba(95, 122, 66, 0.16), rgba(17, 46, 64, 0.28));
   font-weight: 700;
   border-left: 3px solid var(--np-moss);
+  box-shadow: inset 0 0 0 1px rgba(53, 101, 125, 0.18);
 }
 
 /* Suche / Kopfbereich */
+
+.main-header {
+  background:
+    linear-gradient(90deg, rgba(7, 19, 27, 0.96), rgba(17, 46, 64, 0.82));
+  border-bottom: 1px solid rgba(53, 101, 125, 0.42);
+}
 
 .search-input {
   background: #07131b;
@@ -460,6 +488,33 @@ body {
 .main-content td {
   background: rgba(20, 54, 74, 0.72);
   color: var(--np-text);
+}
+
+/* Footer / Unterkante */
+
+.site-footer {
+  color: rgba(242, 234, 220, 0.58);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  border-top: 1px solid rgba(53, 101, 125, 0.18);
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+.site-footer a {
+  color: rgba(0, 230, 246, 0.82);
+}
+
+.site-footer a:hover {
+  color: #7ff8ff;
+}
+
+.main-content::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 2.5rem;
+  background: linear-gradient(90deg, transparent, rgba(53, 101, 125, 0.45), transparent);
 }
 
 /* Mobile */
