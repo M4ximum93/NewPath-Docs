@@ -430,7 +430,7 @@ body {
 .np-hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 190px;
+  grid-template-columns: minmax(0, 1fr) 210px;
   gap: 1.75rem;
   align-items: center;
   margin: 0 0 1.4rem;
@@ -518,8 +518,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 158px;
-  height: 158px;
+  width: 176px;
+  height: 176px;
   justify-self: center;
   opacity: 0.98;
   transition: transform 0.16s ease, opacity 0.16s ease, filter 0.16s ease;
@@ -544,12 +544,12 @@ body {
 .echo-guide-box {
   position: relative;
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 1rem;
+  grid-template-columns: 166px minmax(0, 1fr);
+  gap: 0.95rem;
   align-items: center;
   margin: 0 0 1.75rem;
   padding: 0.95rem 1.35rem;
-  min-height: 142px;
+  min-height: 152px;
   border: 1px solid rgba(53, 101, 125, 0.56);
   border-left: 4px solid var(--np-cyan);
   border-radius: 0.95rem;
@@ -588,14 +588,14 @@ body {
 .echo-guide-image {
   position: relative;
   z-index: 1;
-  height: 124px;
+  height: 136px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .echo-guide-image img {
-  width: 124px;
+  width: 138px;
   max-width: 100%;
   height: auto;
   object-fit: contain;
@@ -727,7 +727,6 @@ body {
 }
 
 .np-card-title::before {
-  content: "";
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -735,12 +734,16 @@ body {
   height: 1.1rem;
   flex: 0 0 auto;
   color: var(--np-cyan);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.02rem;
+  font-weight: 900;
+  line-height: 1;
   text-shadow: 0 0 10px rgba(0, 230, 246, 0.28);
   filter: drop-shadow(0 0 5px rgba(0, 230, 246, 0.22));
 }
 
 .np-card:nth-child(1) .np-card-title::before {
-  content: "⚖";
+  content: "§";
 }
 
 .np-card:nth-child(2) .np-card-title::before {
@@ -749,7 +752,6 @@ body {
 
 .np-card:nth-child(3) .np-card-title::before {
   content: "?";
-  font-weight: 900;
 }
 
 .np-card:nth-child(4) .np-card-title::before {
@@ -861,8 +863,8 @@ body {
 
   .np-hero-logo {
     justify-self: start;
-    width: 120px;
-    height: 120px;
+    width: 132px;
+    height: 132px;
   }
 
   .np-hero h1 {
@@ -870,18 +872,18 @@ body {
   }
 
   .echo-guide-box {
-    grid-template-columns: 104px minmax(0, 1fr);
+    grid-template-columns: 112px minmax(0, 1fr);
     gap: 0.85rem;
     padding: 0.9rem 1rem;
-    min-height: 122px;
+    min-height: 132px;
   }
 
   .echo-guide-image {
-    height: 102px;
+    height: 112px;
   }
 
   .echo-guide-image img {
-    width: 98px;
+    width: 108px;
   }
 
   .echo-guide-content h2 {
