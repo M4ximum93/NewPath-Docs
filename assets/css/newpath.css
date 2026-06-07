@@ -54,7 +54,7 @@ body {
   background-size: cover, auto, auto, cover, auto;
   background-position: center top, center, center, center top, center;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   color: var(--np-text);
 }
 
@@ -77,11 +77,9 @@ body {
   border-left: 1px solid rgba(72, 122, 146, 0.12);
   border-right: 1px solid rgba(72, 122, 146, 0.14);
   box-shadow:
-    44px 0 90px rgba(5, 11, 14, 0.34),
-    -44px 0 90px rgba(5, 11, 14, 0.32),
-    0 36px 70px rgba(0, 0, 0, 0.20),
-    inset 22px 0 36px rgba(53, 101, 125, 0.035),
-    inset -22px 0 36px rgba(53, 101, 125, 0.025);
+    24px 0 46px rgba(5, 11, 14, 0.24),
+    -24px 0 46px rgba(5, 11, 14, 0.22),
+    0 22px 42px rgba(0, 0, 0, 0.16);
 }
 
 .main-content {
@@ -529,7 +527,7 @@ body {
   height: 205px;
   justify-self: center;
   opacity: 0.98;
-  transition: transform 0.18s ease, opacity 0.18s ease, filter 0.18s ease;
+  transition: transform 0.16s ease, opacity 0.16s ease;
 }
 
 .np-hero-logo:hover {
@@ -610,7 +608,7 @@ body {
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  transition: transform 0.18s ease, filter 0.18s ease, opacity 0.18s ease;
+  transition: transform 0.16s ease, opacity 0.16s ease;
   filter:
     drop-shadow(0 0 14px rgba(0, 230, 246, 0.22))
     drop-shadow(0 13px 22px rgba(0, 0, 0, 0.36));
@@ -724,7 +722,7 @@ body {
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  transition: transform 0.18s ease, filter 0.18s ease, opacity 0.18s ease;
+  transition: transform 0.16s ease, opacity 0.16s ease;
   filter:
     drop-shadow(0 0 14px rgba(0, 230, 246, 0.22))
     drop-shadow(0 14px 24px rgba(0, 0, 0, 0.36));
@@ -833,7 +831,7 @@ body {
     linear-gradient(180deg, #1b3038, #14282f);
   text-decoration: none;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.19);
-  backdrop-filter: blur(4px);
+  backdrop-filter: none;
   transition:
     transform 0.16s ease,
     border-color 0.16s ease,
@@ -1276,4 +1274,85 @@ body {
 
 .site-footer {
   display: none !important;
+}
+
+
+/* =========================================================
+   Performance-Optimierung
+   - kein fixed background beim Scrollen
+   - keine Blur-/Glass-Effekte
+   - reduzierte Schatten/Filter auf großen Elementen
+   ========================================================= */
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background-attachment: scroll !important;
+}
+
+.main,
+.main-content-wrap,
+.main-content,
+.side-bar,
+.site-nav,
+.site-header,
+.main-header,
+.np-hero,
+.echo-guide,
+.echo-page-box,
+.np-card,
+.np-callout,
+.np-update-box,
+.search-input-wrap,
+.btn-discord,
+.discord-button,
+.aux-nav .btn,
+.aux-nav a {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.main-content-wrap {
+  box-shadow:
+    24px 0 46px rgba(5, 11, 14, 0.24),
+    -24px 0 46px rgba(5, 11, 14, 0.22),
+    0 22px 42px rgba(0, 0, 0, 0.16) !important;
+}
+
+.np-hero,
+.echo-guide,
+.echo-page-box,
+.np-card,
+.np-callout,
+.np-update-box {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18) !important;
+}
+
+.np-hero-logo,
+.echo-guide-image img,
+.echo-page-image img {
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.28)) !important;
+}
+
+.np-hero-logo:hover,
+.echo-guide-image img:hover,
+.echo-page-image img:hover {
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.28)) !important;
+}
+
+.np-card:hover {
+  transform: translateY(-1px) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
