@@ -5,7 +5,7 @@ nav_order: 1
 permalink: /
 ---
 
-<section class="np-hero np-hero-with-echo">
+<section class="np-hero">
 
   <div class="np-hero-content">
 
@@ -29,14 +29,28 @@ permalink: /
 
   </div>
 
-  <div class="np-hero-side">
+  <a class="np-hero-logo" href="https://discord.gg/R4HwKRbZ5e" target="_blank" rel="noopener" aria-label="NewPath Discord beitreten">
+    <img src="{{ site.baseurl }}/assets/images/logo.png" alt="NewPath – Echoes of the Wild Logo">
+  </a>
 
-    <a class="np-hero-logo" href="https://discord.gg/R4HwKRbZ5e" target="_blank" rel="noopener" aria-label="NewPath Discord beitreten">
-      <img src="{{ site.baseurl }}/assets/images/logo.png" alt="NewPath – Echoes of the Wild Logo">
-    </a>
+</section>
 
-    <img class="np-hero-echo" src="{{ site.baseurl }}/assets/images/echo/echo-guide.png" alt="ECHO – Der Wegbegleiter">
+<section class="echo-guide-box">
 
+  <div class="echo-guide-image">
+    <img src="{{ site.baseurl }}/assets/images/echo/echo-guide.png" alt="ECHO – Der Wegbegleiter">
+  </div>
+
+  <div class="echo-guide-content">
+    <p class="echo-guide-kicker">ECHO – Der Wegbegleiter</p>
+
+    <h2>Ich begleite dich durch NewPath.</h2>
+
+    <p>
+      ECHO hilft dir dabei, die wichtigsten Informationen schnell zu finden:
+      Regeln, häufige Fragen, Serverinfos und alles, was du für den Einstieg in
+      <strong>NewPath – Echoes of the Wild</strong> brauchst.
+    </p>
   </div>
 
 </section>
@@ -76,9 +90,3 @@ permalink: /
 **NewPath – Echoes of the Wild** ist ein atmosphärisches Minecraft-Modpack mit Fokus auf Immersion, Erkundung, Gemeinschaft und entschleunigtem Fortschritt.
 
 Unser Ziel ist kein klassisches „Everything-Pack“, sondern eine stimmige Welt, in der Technik, Natur, Abenteuer und Community sinnvoll zusammenkommen.
----
-
-
----
-
-> **Zuletzt aktualisiert:** 07.06.2026 12:12 Uhr
