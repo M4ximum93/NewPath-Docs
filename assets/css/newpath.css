@@ -1182,10 +1182,11 @@ body {
   border-radius: 0.8rem;
 }
 
-/* Anpassung: Sidebar links kantig + Titelbereich entfernt */
+/* Anpassung: Sidebar-Titel entfernt + rechte Anschlusskante kantig */
 @media (min-width: 66.5rem) {
   .side-bar {
-    border-radius: 0 1rem 1rem 0 !important;
+    /* Rechte Seite bleibt kantig, damit sie sauber an den mittleren Bereich anschließt. */
+    border-radius: 1rem 0 0 1rem !important;
   }
 
   .side-bar .site-header {
@@ -1209,6 +1210,6 @@ body {
   }
 
   .site-footer {
-    border-radius: 0 0 1rem 0 !important;
+    border-radius: 0 0 0 1rem !important;
   }
 }
