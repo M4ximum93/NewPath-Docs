@@ -41,10 +41,10 @@
 
 body {
   background:
-    radial-gradient(circle at 18% 16%, rgba(72, 122, 146, 0.12), transparent 34rem),
-    radial-gradient(circle at 84% 22%, rgba(72, 122, 146, 0.10), transparent 36rem),
-    radial-gradient(circle at 50% 95%, rgba(111, 130, 75, 0.055), transparent 42rem),
-    linear-gradient(180deg, #1a1f22 0%, #15191c 46%, #101417 100%);
+    radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.035), transparent 34rem),
+    radial-gradient(circle at 84% 22%, rgba(255, 255, 255, 0.025), transparent 36rem),
+    radial-gradient(circle at 50% 95%, rgba(111, 130, 75, 0.035), transparent 42rem),
+    linear-gradient(180deg, #181b1d 0%, #121516 48%, #0b0d0e 100%);
   background-attachment: fixed;
   color: var(--np-text);
 }
@@ -54,26 +54,26 @@ body {
 .main {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 88% 10%, rgba(0, 230, 246, 0.055), transparent 26rem),
-    radial-gradient(circle at 100% 45%, rgba(72, 122, 146, 0.18), transparent 34rem),
-    radial-gradient(circle at 18% 18%, rgba(72, 122, 146, 0.22), transparent 30rem),
-    radial-gradient(circle at 8% 70%, rgba(111, 130, 75, 0.09), transparent 24rem),
-    linear-gradient(180deg, rgba(17, 30, 36, 0.98) 0%, rgba(21, 56, 74, 0.86) 46%, rgba(14, 31, 39, 0.94) 100%);
+    radial-gradient(circle at 88% 10%, rgba(0, 230, 246, 0.04), transparent 26rem),
+    radial-gradient(circle at 100% 45%, rgba(53, 101, 125, 0.12), transparent 34rem),
+    radial-gradient(circle at 18% 18%, rgba(53, 101, 125, 0.15), transparent 30rem),
+    radial-gradient(circle at 8% 70%, rgba(111, 130, 75, 0.07), transparent 24rem),
+    linear-gradient(180deg, rgba(17, 46, 64, 0.92) 0%, rgba(15, 42, 56, 0.86) 48%, rgba(10, 26, 34, 0.94) 100%);
 }
 
 .main-content-wrap {
   max-width: 1120px;
   min-height: calc(100vh - 4.45rem);
   background:
-    radial-gradient(circle at 100% 12%, rgba(72, 122, 146, 0.19), transparent 24rem),
-    radial-gradient(circle at 50% 100%, rgba(72, 122, 146, 0.13), transparent 34rem),
-    linear-gradient(180deg, rgba(24, 63, 83, 0.88), rgba(15, 38, 49, 0.91) 68%, rgba(14, 35, 45, 0.90));
-  border-left: 1px solid rgba(72, 122, 146, 0.34);
-  border-right: 1px solid rgba(72, 122, 146, 0.24);
+    radial-gradient(circle at 100% 12%, rgba(53, 101, 125, 0.12), transparent 24rem),
+    radial-gradient(circle at 50% 100%, rgba(53, 101, 125, 0.08), transparent 34rem),
+    linear-gradient(180deg, rgba(20, 52, 67, 0.90), rgba(14, 34, 43, 0.92) 68%, rgba(12, 28, 35, 0.92));
+  border-left: 1px solid rgba(72, 122, 146, 0.30);
+  border-right: 1px solid rgba(72, 122, 146, 0.22);
   box-shadow:
-    34px 0 70px rgba(0, 0, 0, 0.22),
-    -28px 0 58px rgba(0, 0, 0, 0.20),
-    0 36px 70px rgba(0, 0, 0, 0.22);
+    34px 0 76px rgba(0, 0, 0, 0.30),
+    -28px 0 64px rgba(0, 0, 0, 0.28),
+    0 36px 70px rgba(0, 0, 0, 0.24);
 }
 
 .main-content {
@@ -115,13 +115,13 @@ body {
 
 .side-bar {
   background:
-    radial-gradient(circle at 20% 10%, rgba(72, 122, 146, 0.14), transparent 18rem),
-    radial-gradient(circle at 80% 55%, rgba(0, 230, 246, 0.03), transparent 16rem),
-    linear-gradient(180deg, #192126 0%, #172b34 54%, #121719 100%);
-  border-right: 1px solid rgba(72, 122, 146, 0.32);
+    radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.035), transparent 18rem),
+    radial-gradient(circle at 80% 55%, rgba(0, 230, 246, 0.018), transparent 16rem),
+    linear-gradient(180deg, #1a2023 0%, #14191b 54%, #0d1011 100%);
+  border-right: 1px solid rgba(72, 122, 146, 0.24);
   box-shadow:
-    inset -18px 0 34px rgba(0, 0, 0, 0.18),
-    14px 0 32px rgba(0, 0, 0, 0.14);
+    inset -18px 0 34px rgba(0, 0, 0, 0.24),
+    14px 0 32px rgba(0, 0, 0, 0.18);
 }
 
 .site-header {
@@ -817,14 +817,15 @@ body {
   display: block;
   min-height: 124px;
   padding: 1rem 1.1rem;
-  border: 1px solid rgba(72, 122, 146, 0.78);
+  border: 1px solid rgba(72, 122, 146, 0.58);
+  border-top-color: rgba(236, 183, 110, 0.20);
   border-radius: 0.9rem;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.045), transparent 35%),
-    linear-gradient(145deg, rgba(111, 130, 75, 0.08), transparent 52%),
-    linear-gradient(180deg, #1a465b, #15384a);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.035), transparent 35%),
+    linear-gradient(145deg, rgba(111, 130, 75, 0.075), transparent 52%),
+    linear-gradient(180deg, #1b3038, #14282f);
   text-decoration: none;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.19);
   backdrop-filter: blur(4px);
   transition:
     transform 0.16s ease,
@@ -847,12 +848,12 @@ body {
 
 .np-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(0, 230, 246, 0.76);
+  border-color: rgba(0, 230, 246, 0.62);
   background:
-    linear-gradient(135deg, rgba(0, 230, 246, 0.085), transparent 38%),
+    linear-gradient(135deg, rgba(0, 230, 246, 0.06), transparent 38%),
     linear-gradient(145deg, rgba(111, 130, 75, 0.12), transparent 52%),
-    linear-gradient(180deg, #225a72, #184154);
-  box-shadow: 0 0 22px var(--np-cyan-soft), 0 12px 28px rgba(0, 0, 0, 0.22);
+    linear-gradient(180deg, #213b45, #182f38);
+  box-shadow: 0 0 18px rgba(0, 230, 246, 0.12), 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
 .np-card-title {
