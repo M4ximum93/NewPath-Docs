@@ -264,28 +264,45 @@ body::selection {
   }
 
   .main-header .aux-nav a {
-    min-height: 2.36rem !important;
-    height: 2.36rem !important;
+    min-height: 2.26rem !important;
+    height: 2.26rem !important;
     display: inline-flex !important;
     align-items: center !important;
     gap: 0.46rem !important;
     padding: 0 1rem !important;
-    border-radius: 999px !important;
-    color: #061014 !important;
-    background: linear-gradient(135deg, rgba(1, 241, 246, 0.95), rgba(0, 168, 190, 0.92)) !important;
-    border: 1px solid rgba(0, 230, 246, 0.62) !important;
-    box-shadow: 0 0 20px rgba(0, 230, 246, 0.16), inset 0 0 16px rgba(255, 255, 255, 0.14) !important;
+    border-radius: 0.42rem !important;
+    color: var(--np-cyan) !important;
+    background:
+      linear-gradient(135deg, rgba(0, 230, 246, 0.10), rgba(0, 18, 33, 0.76)) !important;
+    border: 1px solid rgba(0, 230, 246, 0.55) !important;
+    box-shadow:
+      inset 0 0 14px rgba(0, 230, 246, 0.06),
+      0 0 16px rgba(0, 230, 246, 0.08) !important;
     font-size: 0.79rem !important;
     font-weight: 900 !important;
     line-height: 1 !important;
     text-decoration: none !important;
+    text-shadow: 0 0 8px rgba(0, 230, 246, 0.24) !important;
+    transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  }
+
+  .main-header .aux-nav a:hover {
+    color: #f5eadc !important;
+    background:
+      linear-gradient(135deg, rgba(0, 230, 246, 0.18), rgba(0, 18, 33, 0.84)) !important;
+    border-color: rgba(0, 230, 246, 0.78) !important;
+    box-shadow:
+      inset 0 0 16px rgba(0, 230, 246, 0.09),
+      0 0 20px rgba(0, 230, 246, 0.15) !important;
+    transform: translateY(-1px);
   }
 
   .main-header .aux-nav a::before {
     content: "☁";
-    color: #061014;
+    color: var(--np-cyan);
     font-size: 0.78rem;
     line-height: 1;
+    text-shadow: 0 0 8px rgba(0, 230, 246, 0.35);
   }
 }
 
