@@ -78,7 +78,7 @@ body {
 
 .main-content {
   position: relative;
-  padding-top: 2.25rem;
+  padding-top: 1.85rem;
   padding-bottom: 4rem;
   line-height: 1.65;
   color: var(--np-text);
@@ -122,6 +122,7 @@ body {
 }
 
 .site-header {
+  min-height: 4.2rem;
   border-bottom: 1px solid rgba(53, 101, 125, 0.42);
   background:
     radial-gradient(circle at top right, rgba(0, 230, 246, 0.08), transparent 12rem),
@@ -176,8 +177,8 @@ body {
 /* Moderner Kopfbereich / Suche */
 
 .main-header {
-  min-height: 4.2rem;
-  padding: 0 1.2rem;
+  min-height: 4.45rem;
+  padding: 0.45rem 1.2rem 0.55rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -213,8 +214,8 @@ body {
 }
 
 .search-input-wrap {
-  width: min(520px, 100%);
-  max-width: 520px;
+  width: min(540px, 100%);
+  max-width: 540px;
   min-height: 2.45rem;
   padding: 0 0.85rem;
   display: flex;
@@ -304,7 +305,7 @@ body {
   color: var(--np-cyan);
   border: 1px solid rgba(0, 230, 246, 0.22);
   border-radius: 999px;
-  padding: 0.38rem 0.8rem;
+  padding: 0.42rem 0.85rem;
   background: rgba(7, 19, 27, 0.35);
   transition:
     background 0.15s ease,
