@@ -1181,3 +1181,34 @@ body {
 .nav-list .nav-list-item .nav-list-link.active {
   border-radius: 0.8rem;
 }
+
+/* Anpassung: Sidebar links kantig + Titelbereich entfernt */
+@media (min-width: 66.5rem) {
+  .side-bar {
+    border-radius: 0 1rem 1rem 0 !important;
+  }
+
+  .side-bar .site-header {
+    display: none !important;
+    min-height: 0 !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .site-title {
+    display: none !important;
+  }
+
+  .site-nav {
+    padding-top: 0.65rem !important;
+  }
+
+  .site-footer {
+    border-radius: 0 0 1rem 0 !important;
+  }
+}
