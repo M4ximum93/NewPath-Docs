@@ -63,8 +63,21 @@ body {
 .main {
   min-height: 100vh;
   position: relative;
-  background: transparent;
-  box-shadow: none;
+  background:
+    linear-gradient(180deg,
+      transparent 0,
+      transparent 4.25rem,
+      rgba(11, 26, 34, 0.86) 4.25rem,
+      rgba(15, 42, 56, 0.80) 48%,
+      rgba(10, 26, 34, 0.88) 100%
+    ),
+    radial-gradient(circle at 88% 11rem, rgba(0, 230, 246, 0.030), transparent 26rem),
+    radial-gradient(circle at 100% 45%, rgba(53, 101, 125, 0.09), transparent 34rem),
+    radial-gradient(circle at 18% 18%, rgba(53, 101, 125, 0.10), transparent 30rem),
+    radial-gradient(circle at 8% 70%, rgba(111, 130, 75, 0.055), transparent 24rem);
+  box-shadow:
+    -34px 0 76px rgba(7, 17, 22, 0.42),
+    34px 0 76px rgba(7, 17, 22, 0.42);
 }
 
 .main-content-wrap {
@@ -138,8 +151,8 @@ body {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 18% 12%, rgba(53, 101, 125, 0.16), transparent 18rem),
-    radial-gradient(circle at 92% 42%, rgba(0, 230, 246, 0.050), transparent 17rem),
+    radial-gradient(circle at 18% 12%, rgba(53, 101, 125, 0.15), transparent 18rem),
+    radial-gradient(circle at 92% 42%, rgba(0, 230, 246, 0.045), transparent 17rem),
     linear-gradient(180deg, rgba(19, 41, 50, 0.86) 0%, rgba(17, 35, 43, 0.88) 54%, rgba(12, 27, 34, 0.91) 100%);
   border-right: 1px solid rgba(72, 122, 146, 0.10);
   box-shadow:
@@ -167,7 +180,7 @@ body {
   align-items: center;
   overflow: visible;
   border-bottom: none;
-  background: transparent !important;
+  background: transparent;
   box-shadow: none;
 }
 
@@ -181,9 +194,7 @@ body {
   font-weight: 800;
   letter-spacing: 0.01em;
   white-space: nowrap;
-  text-shadow:
-    0 2px 7px rgba(0, 0, 0, 0.72),
-    0 0 16px rgba(236, 183, 110, 0.18);
+  text-shadow: 0 0 16px rgba(236, 183, 110, 0.14);
 }
 
 .site-title:hover {
@@ -242,7 +253,7 @@ body {
   align-items: center;
   gap: 1rem;
   overflow: visible;
-  background: transparent !important;
+  background: transparent;
   border-bottom: none;
   box-shadow: none;
 }
