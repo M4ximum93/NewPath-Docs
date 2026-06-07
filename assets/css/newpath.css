@@ -1090,3 +1090,121 @@ body:not(.home) .main-content > :not(.np-home),
     grid-template-columns: 1fr !important;
   }
 }
+
+/* =========================================================
+   Schritt 24: Hero + Statusleiste Feintuning
+   - Layout bleibt linksbündig
+   - Titel etwas eleganter/kleiner
+   - Logo etwas weiter rechts, ohne Überlauf
+   - Statusleiste flacher und ruhiger
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  body .main-content .np-home .np-hero {
+    min-height: clamp(390px, 31vw, 540px) !important;
+    padding-top: clamp(2.7rem, 4.1vw, 4.9rem) !important;
+    padding-bottom: clamp(1.75rem, 2.7vw, 3.05rem) !important;
+    grid-template-columns: minmax(400px, 585px) minmax(285px, 430px) minmax(0, 1fr) !important;
+    gap: clamp(2.25rem, 4.6vw, 6.25rem) !important;
+  }
+
+  body .main-content .np-home .np-hero-content {
+    max-width: 585px !important;
+  }
+
+  body .main-content .np-home .np-kicker {
+    margin-bottom: 0.55rem !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.095em !important;
+  }
+
+  body .main-content .np-home .np-hero h1 {
+    max-width: 585px !important;
+    margin-bottom: 0.8rem !important;
+    font-size: clamp(3.25rem, 4.35vw, 5.35rem) !important;
+    line-height: 0.91 !important;
+    letter-spacing: -0.048em !important;
+    text-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.72),
+      0 0 22px rgba(236, 183, 110, 0.14) !important;
+  }
+
+  body .main-content .np-home .np-hero-title-sub {
+    margin-top: 0.16rem !important;
+    font-size: 0.60em !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  body .main-content .np-home .np-hero-text {
+    max-width: 560px !important;
+    margin-bottom: 0.9rem !important;
+    font-size: 0.98rem !important;
+    line-height: 1.55 !important;
+  }
+
+  body .main-content .np-home .np-hero-highlight {
+    max-width: 575px !important;
+    padding: 0.82rem 0.98rem !important;
+    background: rgba(0, 9, 15, 0.34) !important;
+    backdrop-filter: blur(3px) !important;
+  }
+
+  body .main-content .np-home .np-hero-logo {
+    width: clamp(265px, 19vw, 390px) !important;
+    height: clamp(265px, 19vw, 390px) !important;
+    justify-self: start !important;
+    transform: translateX(clamp(0.45rem, 2.4vw, 3.25rem)) !important;
+    filter:
+      drop-shadow(0 24px 30px rgba(0, 0, 0, 0.44))
+      drop-shadow(0 0 24px rgba(0, 230, 246, 0.20)) !important;
+  }
+
+  body .main-content .np-home .np-status-bar {
+    max-width: min(1180px, calc(100vw - var(--np-page-left) - var(--np-page-right))) !important;
+    min-height: 3.35rem !important;
+    border-radius: 0.52rem !important;
+    background: rgba(3, 18, 25, 0.54) !important;
+    box-shadow:
+      0 14px 28px rgba(0, 0, 0, 0.24),
+      inset 0 0 24px rgba(0, 230, 246, 0.025) !important;
+  }
+
+  body .main-content .np-home .np-status-item {
+    min-height: 3.35rem !important;
+    padding: 0.54rem 0.78rem !important;
+    gap: 0.62rem !important;
+  }
+
+  body .main-content .np-home .np-status-icon {
+    width: 1.82rem !important;
+    height: 1.82rem !important;
+    flex-basis: 1.82rem !important;
+    border-radius: 0.45rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  body .main-content .np-home .np-status-item small {
+    font-size: 0.66rem !important;
+  }
+
+  body .main-content .np-home .np-status-item strong {
+    font-size: 0.76rem !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1500px) {
+  body .main-content .np-home .np-hero {
+    grid-template-columns: minmax(360px, 520px) minmax(235px, 325px) minmax(0, 1fr) !important;
+    gap: clamp(1.75rem, 3.5vw, 4.2rem) !important;
+  }
+
+  body .main-content .np-home .np-hero h1 {
+    font-size: clamp(3rem, 4.75vw, 4.85rem) !important;
+  }
+
+  body .main-content .np-home .np-hero-logo {
+    width: clamp(220px, 18vw, 310px) !important;
+    height: clamp(220px, 18vw, 310px) !important;
+    transform: translateX(clamp(0.2rem, 1.7vw, 1.8rem)) !important;
+  }
+}
