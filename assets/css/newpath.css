@@ -1474,3 +1474,71 @@ body {
   }
 }
 
+
+/* =========================================================
+   Layout-Feinschliff: Gesamtbereich leicht nach links
+   + Inhalt im Mittelblock gleichmäßig zentrieren
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  :root {
+    --np-layout-shift-left: 2.75rem;
+    --np-layout-page-width: 1440px;
+    --np-sidebar-width: 264px;
+    --np-outer-gap: 1.5rem;
+  }
+
+  .side-bar {
+    width: var(--np-sidebar-width) !important;
+    left: max(
+      var(--np-outer-gap),
+      calc((100vw - var(--np-layout-page-width)) / 2 - var(--np-layout-shift-left))
+    ) !important;
+  }
+
+  .main {
+    max-width: 1176px !important;
+    margin-left: calc(
+      max(
+        var(--np-outer-gap),
+        calc((100vw - var(--np-layout-page-width)) / 2 - var(--np-layout-shift-left))
+      ) + var(--np-sidebar-width)
+    ) !important;
+  }
+
+  .main-header,
+  .main-header.nav-open {
+    max-width: 1176px !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .main-content-wrap {
+    max-width: 1176px !important;
+    width: 100% !important;
+  }
+
+  .main-content {
+    max-width: none !important;
+    width: auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .np-hero,
+  .echo-guide,
+  .np-section,
+  .np-card-grid,
+  .main-content > h2,
+  .main-content > p,
+  .main-content > blockquote,
+  .main-content > hr,
+  .main-content > table,
+  .main-content > .np-update-box {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
