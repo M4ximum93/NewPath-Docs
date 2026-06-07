@@ -63,15 +63,8 @@ body {
 .main {
   min-height: 100vh;
   position: relative;
-  background:
-    radial-gradient(circle at 88% 10%, rgba(0, 230, 246, 0.035), transparent 26rem),
-    radial-gradient(circle at 100% 45%, rgba(53, 101, 125, 0.10), transparent 34rem),
-    radial-gradient(circle at 18% 18%, rgba(53, 101, 125, 0.12), transparent 30rem),
-    radial-gradient(circle at 8% 70%, rgba(111, 130, 75, 0.06), transparent 24rem),
-    linear-gradient(180deg, rgba(11, 26, 34, 0.94) 0%, rgba(15, 42, 56, 0.84) 48%, rgba(10, 26, 34, 0.92) 100%);
-  box-shadow:
-    -34px 0 76px rgba(7, 17, 22, 0.48),
-    34px 0 76px rgba(7, 17, 22, 0.48);
+  background: transparent;
+  box-shadow: none;
 }
 
 .main-content-wrap {
@@ -129,16 +122,38 @@ body {
 /* Sidebar */
 
 .side-bar {
+  position: relative;
+  background: transparent;
+  border-right: none;
+  box-shadow: none;
+}
+
+.side-bar::before {
+  content: "";
+  position: absolute;
+  top: 4.25rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
   background:
     radial-gradient(circle at 18% 12%, rgba(53, 101, 125, 0.16), transparent 18rem),
     radial-gradient(circle at 92% 42%, rgba(0, 230, 246, 0.050), transparent 17rem),
-    linear-gradient(180deg, rgba(19, 41, 50, 0.92) 0%, rgba(17, 35, 43, 0.91) 54%, rgba(12, 27, 34, 0.93) 100%);
-  border-right: 1px solid rgba(72, 122, 146, 0.13);
+    linear-gradient(180deg, rgba(19, 41, 50, 0.86) 0%, rgba(17, 35, 43, 0.88) 54%, rgba(12, 27, 34, 0.91) 100%);
+  border-right: 1px solid rgba(72, 122, 146, 0.10);
   box-shadow:
-    inset -24px 0 42px rgba(53, 101, 125, 0.045),
-    inset 18px 0 34px rgba(255, 255, 255, 0.012),
-    22px 0 50px rgba(5, 16, 21, 0.24),
-    -26px 0 54px rgba(5, 8, 9, 0.30);
+    inset -24px 0 42px rgba(53, 101, 125, 0.040),
+    inset 18px 0 34px rgba(255, 255, 255, 0.010),
+    22px 0 50px rgba(5, 16, 21, 0.20),
+    -26px 0 54px rgba(5, 8, 9, 0.24);
+}
+
+.side-bar .site-header,
+.side-bar .site-nav,
+.side-bar .site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .site-header {
@@ -152,7 +167,7 @@ body {
   align-items: center;
   overflow: visible;
   border-bottom: none;
-  background: transparent;
+  background: transparent !important;
   box-shadow: none;
 }
 
@@ -166,7 +181,9 @@ body {
   font-weight: 800;
   letter-spacing: 0.01em;
   white-space: nowrap;
-  text-shadow: 0 0 16px rgba(236, 183, 110, 0.14);
+  text-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.72),
+    0 0 16px rgba(236, 183, 110, 0.18);
 }
 
 .site-title:hover {
@@ -225,7 +242,7 @@ body {
   align-items: center;
   gap: 1rem;
   overflow: visible;
-  background: transparent;
+  background: transparent !important;
   border-bottom: none;
   box-shadow: none;
 }
