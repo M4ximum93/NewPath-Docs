@@ -71,4 +71,3 @@ permalink: /
 Unser Ziel ist kein klassisches „Everything-Pack“, sondern eine stimmige Welt, in der Technik, Natur, Abenteuer und Community sinnvoll zusammenkommen.
 ---
 
-> **Zuletzt aktualisiert:** 07.06.2026 01:36 Uhr
