@@ -15,8 +15,8 @@ permalink: /
     <p class="np-kicker">Offizielles Modpack</p>
 
     <h1>
-      NewPath<br>
-      Echoes of the Wild
+      <span class="np-hero-title-main">NewPath</span>
+      <span class="np-hero-title-sub">Echoes of the Wild</span>
     </h1>
 
     <p class="np-hero-text">
