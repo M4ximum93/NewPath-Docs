@@ -81,4 +81,4 @@ Unser Ziel ist kein klassisches „Everything-Pack“, sondern eine stimmige Wel
 
 ---
 
-> **Zuletzt aktualisiert:** 07.06.2026 11:56 Uhr
+> **Zuletzt aktualisiert:** 07.06.2026 12:12 Uhr
