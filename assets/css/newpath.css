@@ -41,10 +41,19 @@
 
 body {
   background:
-    radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.035), transparent 34rem),
-    radial-gradient(circle at 84% 22%, rgba(255, 255, 255, 0.025), transparent 36rem),
-    radial-gradient(circle at 50% 95%, rgba(111, 130, 75, 0.035), transparent 42rem),
+    linear-gradient(
+      180deg,
+      rgba(10, 12, 13, 0.62) 0%,
+      rgba(10, 12, 13, 0.74) 46%,
+      rgba(7, 8, 9, 0.86) 100%
+    ),
+    radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.025), transparent 34rem),
+    radial-gradient(circle at 84% 22%, rgba(0, 230, 246, 0.030), transparent 36rem),
+    url("../images/background-site.png"),
     linear-gradient(180deg, #181b1d 0%, #121516 48%, #0b0d0e 100%);
+  background-size: cover, auto, auto, cover, auto;
+  background-position: center top, center, center, center top, center;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
   background-attachment: fixed;
   color: var(--np-text);
 }
