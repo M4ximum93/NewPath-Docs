@@ -12,22 +12,21 @@ permalink: /
 
   <div class="np-hero-content">
 
-    <p class="np-kicker">Offizielle Dokumentation</p>
+    <p class="np-kicker">Offizielles Modpack</p>
 
     <h1>NewPath – Echoes of the Wild</h1>
 
     <p class="np-hero-text">
-      Willkommen in der offiziellen Dokumentation von <strong>NewPath – Echoes of the Wild</strong>.
-      Diese Seite bündelt alle wichtigen Informationen rund um unser Minecraft-Modpack, den Server,
-      unsere Regeln, unsere Philosophie und häufig gestellte Fragen.
+      Ein atmosphärisches Minecraft-Modpack mit Fokus auf Immersion, Erkundung,
+      Gemeinschaft und entschleunigten Fortschritt.
     </p>
 
     <div class="np-hero-highlight">
-      <strong>NewPath – Echoes of the Wild</strong> steht für eine atmosphärische Minecraft-Erfahrung mit Fokus auf
-      Immersion, Erkundung, Gemeinschaft und entschleunigten Fortschritt.
+      <strong>NewPath – Echoes of the Wild</strong> verbindet Natur, Technik,
+      Abenteuer und Community zu einer stimmigen Minecraft-Erfahrung.
       <br>
-      Unser Ziel ist kein klassisches „Everything-Pack“, sondern eine stimmige Welt, in der Natur, Technik,
-      Abenteuer und Community sinnvoll zusammenkommen.
+      Kein klassisches „Everything-Pack“, sondern eine lebendige Welt mit klarer
+      Richtung, Atmosphäre und gemeinschaftlichem Fortschritt.
     </div>
 
   </div>
