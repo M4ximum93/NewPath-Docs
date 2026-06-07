@@ -94,26 +94,157 @@ body {
 
 @media (min-width: 66.5rem) {
   .side-bar {
-    width: 264px !important;
-    left: max(1.5rem, calc((100vw - 1440px) / 2)) !important;
+    display: none !important;
   }
 
   .main {
-    max-width: 1176px !important;
-    margin-left: calc(max(1.5rem, calc((100vw - 1440px) / 2)) + 264px) !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    background: transparent !important;
   }
 
   .main-header {
-    max-width: 1176px !important;
-    left: calc(max(1.5rem, calc((100vw - 1440px) / 2)) + 264px) !important;
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 50 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 5rem !important;
+    height: 5rem !important;
+    max-height: 5rem !important;
+    padding: 0 2.4rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    overflow: visible !important;
+    background:
+      linear-gradient(180deg, rgba(0, 9, 15, 0.96), rgba(0, 18, 33, 0.91)) !important;
+    border-bottom: 1px solid rgba(0, 230, 246, 0.16) !important;
+    border-radius: 0 !important;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34) !important;
   }
 
   .main-content-wrap {
-    max-width: 1176px !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: calc(100vh - 5rem);
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0 !important;
+    box-shadow: none;
   }
 
   .main-content {
-    max-width: 1060px !important;
+    width: min(1400px, calc(100% - 5.2rem)) !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-radius: 0 !important;
+  }
+}
+
+/* Desktop-Topbar Navigation */
+
+.np-topbar-brand,
+.np-top-nav {
+  display: none;
+}
+
+@media (min-width: 66.5rem) {
+  .np-topbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex: 0 0 auto;
+    color: var(--np-gold);
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .np-topbar-brand:hover {
+    color: var(--np-gold-soft);
+    text-decoration: none;
+    background: transparent;
+  }
+
+  .np-topbar-logo {
+    width: 2.65rem;
+    height: 2.65rem;
+    object-fit: contain;
+    filter:
+      drop-shadow(0 0 10px rgba(0, 230, 246, 0.18))
+      drop-shadow(0 8px 14px rgba(0, 0, 0, 0.24));
+  }
+
+  .np-topbar-title {
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1.05;
+  }
+
+  .np-topbar-title span:first-child {
+    font-size: 0.95rem;
+  }
+
+  .np-topbar-title span:last-child {
+    margin-top: 0.12rem;
+    color: rgba(0, 230, 246, 0.78);
+    font-size: 0.64rem;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .np-top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .np-top-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.3rem;
+    padding: 0.45rem 0.72rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    color: var(--np-text-muted);
+    font-size: 0.86rem;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease,
+      background 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  .np-top-nav a:hover {
+    color: var(--np-cyan);
+    border-color: rgba(0, 230, 246, 0.25);
+    background: rgba(0, 230, 246, 0.065);
+    text-decoration: none;
+  }
+
+  .np-top-nav a.active {
+    color: var(--np-gold);
+    border-color: rgba(236, 183, 110, 0.30);
+    background:
+      radial-gradient(circle at top left, rgba(236, 183, 110, 0.10), transparent 58%),
+      linear-gradient(180deg, rgba(21, 56, 74, 0.70), rgba(11, 24, 30, 0.62));
+    box-shadow: 0 0 16px rgba(236, 183, 110, 0.08);
   }
 }
 
@@ -1109,173 +1240,57 @@ body {
   }
 }
 
-/* Feinschliff: weichere Kanten + kompakte linke Navigation */
+
+/* Desktop-Anordnung für Suche und Discord-Button */
+
 @media (min-width: 66.5rem) {
-  .side-bar {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: calc(100vh - 5.6rem) !important;
-    bottom: auto !important;
-    top: 4.85rem !important;
-    overflow: hidden !important;
-    border-radius: 0 0 1rem 1rem;
-    background:
-      radial-gradient(circle at 18% 18%, rgba(53, 101, 125, 0.16), transparent 18rem),
-      radial-gradient(circle at 92% 46%, rgba(0, 230, 246, 0.045), transparent 17rem),
-      linear-gradient(180deg, rgba(20, 52, 67, 0.78), rgba(14, 34, 43, 0.82));
-    border: 1px solid rgba(72, 122, 146, 0.16);
-    box-shadow:
-      18px 0 44px rgba(5, 16, 21, 0.16),
-      -18px 0 44px rgba(5, 8, 9, 0.18),
-      inset 0 0 28px rgba(0, 230, 246, 0.025);
+  .main-header .search {
+    flex: 0 1 330px !important;
+    order: 3;
+    margin-left: 0;
   }
 
-  .side-bar .site-header {
-    border-radius: 0.9rem 0.9rem 0 0;
+  .main-header .aux-nav {
+    order: 4;
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-right: 0;
   }
 
-  .site-footer {
-    border-radius: 0 0 1rem 1rem;
-  }
-}
-
-.main-content-wrap {
-  border-radius: 1.05rem;
-  overflow: hidden;
-}
-
-.main-header {
-  border-radius: 1.05rem 1.05rem 0 0;
-}
-
-.main-content {
-  border-radius: 0 0 1.05rem 1.05rem;
-}
-
-.np-hero,
-.echo-callout,
-.echo-page-box,
-.echo-guide-card,
-.np-card,
-.search-input-wrap,
-.aux-nav-list-item a,
-.nav-list .nav-list-item .nav-list-link,
-.main-content blockquote,
-.main-content table,
-.main-content code {
-  border-radius: 0.85rem;
-}
-
-.search-input-wrap,
-.aux-nav-list-item a,
-.np-card,
-.np-hero,
-.echo-callout,
-.echo-page-box,
-.echo-guide-card {
-  overflow: hidden;
-}
-
-.nav-list .nav-list-item .nav-list-link.active {
-  border-radius: 0.8rem;
-}
-
-/* Anpassung: Sidebar-Titel entfernt + rechte Anschlusskante kantig + Sidebar am Mittelbereich ausgerichtet */
-@media (min-width: 66.5rem) {
-  .side-bar {
-    /* Gliederung startet auf Höhe des mittleren Inhaltsbereichs. */
-    top: 4.85rem !important;
-    max-height: calc(100vh - 5.6rem) !important;
-    /* Rechte Seite bleibt kantig, damit sie sauber an den mittleren Bereich anschließt. */
-    border-radius: 1rem 0 0 1rem !important;
-  }
-
-  .side-bar .site-header {
-    display: none !important;
-    min-height: 0 !important;
-    height: 0 !important;
-    max-height: 0 !important;
-    padding: 0 !important;
+  .main-header .aux-nav-list {
+    display: flex !important;
+    align-items: center !important;
     margin: 0 !important;
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
   }
 
-  .site-title {
+  .site-nav,
+  .site-header,
+  .site-footer {
     display: none !important;
   }
 
-  .site-nav {
-    padding-top: 0.65rem !important;
-  }
-
-  .site-footer {
-    border-radius: 0 0 0 1rem !important;
+  .search-input-wrap {
+    width: 100%;
+    max-width: 330px;
   }
 }
 
-/* =========================================================
-   Fix: Header-Elemente normal mitscrollen lassen,
-   ohne Layout/Position nach rechts zu verschieben
-   ========================================================= */
+@media (min-width: 66.5rem) and (max-width: 1180px) {
+  .np-topbar-title {
+    display: none;
+  }
 
-.main-header,
-.main-header.nav-open {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  z-index: 5 !important;
-  width: auto !important;
-  max-width: 1176px !important;
-  background: transparent !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
+  .np-top-nav a {
+    padding-left: 0.58rem;
+    padding-right: 0.58rem;
+    font-size: 0.8rem;
+  }
+
+  .main-header .search {
+    flex-basis: 260px !important;
+  }
 }
-
-.main-header::before,
-.main-header::after {
-  display: none !important;
-  content: none !important;
-}
-
-.search,
-.search-input-wrap,
-.aux-nav,
-.aux-nav-list,
-.aux-nav-list-item {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-}
-
-.search {
-  flex: 1 1 auto !important;
-  justify-content: center !important;
-}
-
-.aux-nav {
-  flex: 0 0 auto !important;
-  display: flex !important;
-  align-items: center !important;
-}
-
-.aux-nav-list {
-  display: flex !important;
-  align-items: center !important;
-  margin: 0 !important;
-}
-
-/* =========================================================
-   Just-the-Docs-Hinweis in der Sidebar entfernen
-   ========================================================= */
-
-.side-bar .site-footer {
-  display: none !important;
-}
-
 
 /* =========================================================
    Performance-Optimierung
@@ -1855,4 +1870,132 @@ body {
   box-shadow: none !important;
   border-radius: 0 !important;
   letter-spacing: 0.01em;
+}
+/* =========================================================
+   Schritt 1 FINAL: Desktop-Topbar statt linker Sidebar
+   Diese Regeln stehen bewusst am Dateiende, damit ältere
+   Layout-Feinschliffe zuverlässig überschrieben werden.
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  .side-bar,
+  .site-header,
+  .site-nav,
+  .side-bar .site-footer {
+    display: none !important;
+  }
+
+  .main {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    background: transparent !important;
+  }
+
+  .main-header,
+  .main-header.nav-open {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 50 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 5rem !important;
+    height: 5rem !important;
+    max-height: 5rem !important;
+    margin: 0 !important;
+    padding: 0 2.4rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    overflow: visible !important;
+    background:
+      linear-gradient(180deg, rgba(0, 9, 15, 0.96), rgba(0, 18, 33, 0.91)) !important;
+    border-bottom: 1px solid rgba(0, 230, 246, 0.16) !important;
+    border-radius: 0 !important;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34) !important;
+  }
+
+  .main-header::before,
+  .main-header::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .np-topbar-brand {
+    display: inline-flex !important;
+    order: 1;
+  }
+
+  .np-top-nav {
+    display: flex !important;
+    order: 2;
+  }
+
+  .main-header .search {
+    order: 3;
+    flex: 0 1 330px !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  .main-header .search-input-wrap {
+    width: 100% !important;
+    max-width: 330px !important;
+  }
+
+  .main-header .aux-nav {
+    order: 4;
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-right: 0 !important;
+  }
+
+  .main-header .aux-nav-list {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+  }
+
+  .main-content-wrap {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: calc(100vh - 5rem) !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .main-content {
+    width: min(1400px, calc(100% - 5.2rem)) !important;
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-radius: 0 !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1180px) {
+  .np-topbar-title {
+    display: none !important;
+  }
+
+  .np-top-nav a {
+    padding-left: 0.56rem !important;
+    padding-right: 0.56rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .main-header .search {
+    flex-basis: 260px !important;
+  }
 }
