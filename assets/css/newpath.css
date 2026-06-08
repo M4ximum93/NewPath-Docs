@@ -2894,4 +2894,59 @@ body.np-page-sub .main-content > h3,
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+/* =========================================================
+   Step 84: Inhaltsbreite auf Desktop erweitern
+   - reduziert links/rechts die freie Fläche auf allen Seiten
+   - Kacheln behalten ihre Größe
+   - Header/Footer bleiben unangetastet
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  :root {
+    --np-page-left: clamp(2.2rem, 3vw, 4rem);
+    --np-page-right: clamp(2.2rem, 3vw, 4rem);
+    --np-content-width: calc(100vw - var(--np-page-left) - var(--np-page-right));
+  }
+
+  body.np-page-sub .main-content {
+    width: min(1400px, var(--np-content-width)) !important;
+    max-width: min(1400px, var(--np-content-width)) !important;
+  }
+
+  .np-page-section,
+  .np-content-box,
+  .echo-page-box,
+  .echo-page-box-team,
+  .echo-page-box-philosophy,
+  .echo-page-box-faq,
+  .echo-page-box-rules,
+  .echo-page-box-streamer,
+  .echo-page-box-help {
+    max-width: 100% !important;
+  }
+
+  .np-card-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  .np-card-grid-5,
+  .np-philosophy-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1320px) {
+  .np-card-grid-5,
+  .np-philosophy-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1080px) {
+  .np-card-grid-4,
+  .np-card-grid-5,
+  .np-philosophy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
 
