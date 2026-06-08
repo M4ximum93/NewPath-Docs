@@ -4449,3 +4449,91 @@ body {
     gap: 0.55rem !important;
   }
 }
+
+/* =========================================================
+   Step 44: Footer außen ausrichten + verlorenen Back-to-top-Link ausblenden
+   ========================================================= */
+
+:root {
+  --np-fixed-footer-height: 4.45rem;
+}
+
+body {
+  padding-bottom: calc(var(--np-fixed-footer-height) + 0.75rem) !important;
+}
+
+.np-site-footer {
+  min-height: var(--np-fixed-footer-height) !important;
+  padding: 0.58rem 0 !important;
+}
+
+.np-site-footer-inner {
+  width: calc(100vw - 3.4rem) !important;
+  max-width: none !important;
+  min-height: 3rem !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: minmax(260px, auto) 1fr minmax(360px, auto) !important;
+  align-items: center !important;
+  gap: 1.4rem !important;
+}
+
+.np-site-footer-brand {
+  grid-column: 1 !important;
+  justify-self: start !important;
+  text-align: left !important;
+}
+
+.np-site-footer-links {
+  grid-column: 3 !important;
+  justify-self: end !important;
+  justify-content: flex-end !important;
+  text-align: right !important;
+  gap: 0.9rem !important;
+}
+
+.np-site-footer-brand strong {
+  font-size: 0.84rem !important;
+}
+
+.np-site-footer-brand span {
+  font-size: 0.68rem !important;
+}
+
+.np-site-footer-links a,
+.np-site-footer-links span {
+  font-size: 0.69rem !important;
+}
+
+/* Der Theme-Link wirkt auf der Landingpage verloren; Footer übernimmt diese Funktion. */
+a[href="#top"],
+a[href="#main-content"],
+.back-to-top,
+.site-button[href="#top"] {
+  display: none !important;
+}
+
+@media (max-width: 66.49rem) {
+  :root {
+    --np-fixed-footer-height: 6.4rem;
+  }
+
+  .np-site-footer-inner {
+    width: calc(100vw - 2rem) !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.55rem !important;
+  }
+
+  .np-site-footer-brand,
+  .np-site-footer-links {
+    grid-column: 1 !important;
+    justify-self: start !important;
+    text-align: left !important;
+  }
+
+  .np-site-footer-links {
+    justify-content: flex-start !important;
+    gap: 0.55rem !important;
+  }
+}
