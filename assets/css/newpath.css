@@ -1,5 +1,5 @@
 /* NewPath – Echoes of the Wild
-   Konsolidierte CSS-Version v6
+   Konsolidierte CSS-Version v8
    Aufbau:
    1. Variablen & Grundlayout
    2. Just-the-Docs Reset
@@ -12,6 +12,7 @@
    7. Fixierter Footer
    8. Responsive
    9. Einheitliches Schriftarten-, Farb- und Komponentensystem
+   10. Globale Inhaltsbreite & automatisches Spacing
 */
 
 :root {
@@ -34,9 +35,18 @@
   --np-radius: 0.78rem;
   --np-header-height: 4.55rem;
   --np-footer-height: 3.1rem;
-  --np-page-left: clamp(4.2rem, 5vw, 6.8rem);
-  --np-page-right: clamp(4.2rem, 5vw, 6.8rem);
+  --np-page-left: clamp(2.2rem, 3vw, 4rem);
+  --np-page-right: clamp(2.2rem, 3vw, 4rem);
   --np-content-width: calc(100vw - var(--np-page-left) - var(--np-page-right));
+
+  --np-space-xs: clamp(0.35rem, 0.45vw, 0.55rem);
+  --np-space-sm: clamp(0.55rem, 0.70vw, 0.80rem);
+  --np-space-md: clamp(0.75rem, 0.95vw, 1.05rem);
+  --np-space-lg: clamp(0.95rem, 1.25vw, 1.35rem);
+  --np-section-gap: var(--np-space-md);
+  --np-box-padding-y: var(--np-space-lg);
+  --np-box-padding-x: clamp(1rem, 1.55vw, 1.65rem);
+  --np-grid-gap: var(--np-space-md);
 
   --np-font-hero: Georgia, serif;
   --np-font-heading: "Segoe UI", sans-serif;
@@ -2894,12 +2904,10 @@ body.np-page-sub .main-content > h3,
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-/* =========================================================
-   Step 84: Inhaltsbreite auf Desktop erweitern
-   - reduziert links/rechts die freie Fläche auf allen Seiten
-   - Kacheln behalten ihre Größe
-   - Header/Footer bleiben unangetastet
-   ========================================================= */
+
+/* 10. Globale Inhaltsbreite & automatisches Spacing
+   Zentrale Steuerung für Desktop-Breite und vertikale Abstände.
+   Keine einzelnen Step-Hotfix-Blöcke mehr. */
 
 @media (min-width: 66.5rem) {
   :root {
@@ -2908,9 +2916,38 @@ body.np-page-sub .main-content > h3,
     --np-content-width: calc(100vw - var(--np-page-left) - var(--np-page-right));
   }
 
+  .main-content {
+    min-height: auto !important;
+  }
+
   body.np-page-sub .main-content {
     width: min(1400px, var(--np-content-width)) !important;
     max-width: min(1400px, var(--np-content-width)) !important;
+    min-height: auto !important;
+    height: auto !important;
+    margin-top: var(--np-section-gap) !important;
+    margin-bottom: var(--np-section-gap) !important;
+    padding-top: var(--np-box-padding-y) !important;
+    padding-bottom: var(--np-box-padding-y) !important;
+    padding-left: var(--np-box-padding-x) !important;
+    padding-right: var(--np-box-padding-x) !important;
+  }
+
+  .np-home-v2 {
+    --np-content-width: min(1440px, calc(100vw - var(--np-page-left) - var(--np-page-right))) !important;
+  }
+
+  .np-home-v2 .np-hero,
+  .np-home-v2 .np-status-bar,
+  .np-home-v2 .np-status-bar-v2,
+  .np-home-v2 .np-page-meta,
+  .np-home-v2 .np-pathfinder,
+  .np-home-v2 .np-about-panel,
+  .np-home-v2 .np-about-panel-v2,
+  .np-home-v2 .np-server-brief,
+  .np-home-v2 .np-server-brief-v2 {
+    width: min(1440px, var(--np-content-width)) !important;
+    max-width: min(1440px, var(--np-content-width)) !important;
   }
 
   .np-page-section,
@@ -2932,255 +2969,6 @@ body.np-page-sub .main-content > h3,
   .np-card-grid-5,
   .np-philosophy-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-  }
-}
-
-@media (min-width: 66.5rem) and (max-width: 1320px) {
-  .np-card-grid-5,
-  .np-philosophy-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  }
-}
-
-@media (min-width: 66.5rem) and (max-width: 1080px) {
-  .np-card-grid-4,
-  .np-card-grid-5,
-  .np-philosophy-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
-/* =========================================================
-   Step 85: Startseitenbreite + kompaktere vertikale Abstände
-   - übernimmt den schmaleren Seitenabstand auch auf der Startseite
-   - reduziert vertikale Abstände zwischen Boxen/Sections
-   - verhindert unnötiges Scrollen bei Seiten mit wenig Inhalt
-   - Header/Footer bleiben unangetastet
-   ========================================================= */
-
-@media (min-width: 66.5rem) {
-  :root {
-    --np-page-left: clamp(2.2rem, 3vw, 4rem);
-    --np-page-right: clamp(2.2rem, 3vw, 4rem);
-    --np-content-width: calc(100vw - var(--np-page-left) - var(--np-page-right));
-  }
-
-  /* Startseite ebenfalls breiter ziehen */
-  .np-home-v2 {
-    --np-content-width: min(1440px, calc(100vw - var(--np-page-left) - var(--np-page-right))) !important;
-  }
-
-  .np-home-v2 .np-hero,
-  .np-home-v2 .np-status-bar,
-  .np-home-v2 .np-status-bar-v2,
-  .np-home-v2 .np-page-meta,
-  .np-home-v2 .np-pathfinder,
-  .np-home-v2 .np-about-panel,
-  .np-home-v2 .np-about-panel-v2,
-  .np-home-v2 .np-server-brief,
-  .np-home-v2 .np-server-brief-v2 {
-    width: min(1440px, var(--np-content-width)) !important;
-    max-width: min(1440px, var(--np-content-width)) !important;
-  }
-
-  /* Startseite vertikal kompakter */
-  .np-home-v2 .np-hero {
-    min-height: clamp(250px, 20vw, 350px) !important;
-    padding-top: clamp(0.35rem, 0.9vw, 0.9rem) !important;
-    padding-bottom: 0.25rem !important;
-  }
-
-  .np-home-v2 .np-status-bar-v2 {
-    margin-top: 0.05rem !important;
-    margin-bottom: 0.35rem !important;
-  }
-
-  .np-home-v2 .np-page-meta .np-last-updated {
-    margin-bottom: 0.28rem !important;
-  }
-
-  .np-home-v2 .np-pathfinder {
-    margin-bottom: 0.55rem !important;
-    padding: clamp(0.8rem, 1.15vw, 1.15rem) !important;
-  }
-
-  .np-home-v2 .np-about-panel-v2,
-  .np-home-v2 .np-server-brief-v2 {
-    margin-top: 0.55rem !important;
-    margin-bottom: 0.55rem !important;
-    padding: 0.78rem 0.9rem !important;
-  }
-
-  .np-home-v2 .np-server-brief-v2 {
-    margin-bottom: 0.8rem !important;
-  }
-
-  /* Unterseiten: Boxen/Sections kompakter */
-  body.np-page-sub .main-content {
-    margin-top: 1rem !important;
-    margin-bottom: calc(var(--np-footer-height) + 1rem) !important;
-    padding-top: 1rem !important;
-    padding-bottom: 1.15rem !important;
-  }
-
-  body.np-page-sub .np-last-updated {
-    margin-bottom: 0.45rem !important;
-  }
-
-  .echo-page-box,
-  .echo-page-box-team,
-  .echo-page-box-philosophy,
-  .echo-page-box-faq,
-  .echo-page-box-rules,
-  .echo-page-box-streamer,
-  .echo-page-box-help {
-    margin-bottom: 0.85rem !important;
-    padding-top: clamp(1rem, 1.45vw, 1.45rem) !important;
-    padding-bottom: clamp(1rem, 1.45vw, 1.45rem) !important;
-  }
-
-  .np-page-section,
-  .np-content-box,
-  .np-story-section,
-  .np-origin-section,
-  .np-faq-section,
-  .np-team-section,
-  .np-streamer-section {
-    margin-top: 0.85rem !important;
-    margin-bottom: 0.85rem !important;
-    padding-top: clamp(1rem, 1.5vw, 1.45rem) !important;
-    padding-bottom: clamp(1rem, 1.5vw, 1.45rem) !important;
-  }
-
-  .np-section-header {
-    margin-bottom: 0.9rem !important;
-  }
-
-  .np-card-grid,
-  .np-help-grid,
-  .np-community-grid,
-  .np-team-grid,
-  .np-streamer-grid,
-  .np-asset-grid,
-  .np-origin-timeline,
-  .np-philosophy-grid {
-    margin-top: 0.85rem !important;
-    margin-bottom: 0.85rem !important;
-    gap: 0.75rem !important;
-  }
-
-  .np-info-card,
-  .np-team-member-card,
-  .np-streamer-card,
-  .np-help-tile,
-  .np-community-card,
-  .np-asset-card {
-    padding-top: 0.85rem !important;
-    padding-bottom: 0.85rem !important;
-  }
-
-  .np-help-note,
-  .np-note,
-  .np-rules-note {
-    margin-top: 0.75rem !important;
-    margin-bottom: 0.75rem !important;
-    padding-top: 0.72rem !important;
-    padding-bottom: 0.72rem !important;
-  }
-
-  .np-help-details,
-  .np-faq-details,
-  .np-accordion {
-    margin-top: 0.55rem !important;
-    margin-bottom: 0.55rem !important;
-  }
-}
-
-/* Auf sehr flachen Bildschirmen zusätzlich etwas kompakter,
-   damit kurze Seiten nicht unnötig scrollen. */
-@media (min-width: 66.5rem) and (max-height: 860px) {
-  body.np-page-sub .main-content {
-    margin-top: 0.75rem !important;
-    margin-bottom: calc(var(--np-footer-height) + 0.75rem) !important;
-    padding-top: 0.85rem !important;
-    padding-bottom: 0.95rem !important;
-  }
-
-  .echo-page-box,
-  .echo-page-box-team,
-  .echo-page-box-philosophy,
-  .echo-page-box-faq,
-  .echo-page-box-rules,
-  .echo-page-box-streamer,
-  .echo-page-box-help {
-    margin-bottom: 0.65rem !important;
-    padding-top: 0.95rem !important;
-    padding-bottom: 0.95rem !important;
-  }
-
-  .np-page-section,
-  .np-content-box,
-  .np-story-section,
-  .np-origin-section,
-  .np-faq-section,
-  .np-team-section,
-  .np-streamer-section {
-    margin-top: 0.65rem !important;
-    margin-bottom: 0.65rem !important;
-    padding-top: 0.95rem !important;
-    padding-bottom: 0.95rem !important;
-  }
-
-  .np-section-header {
-    margin-bottom: 0.65rem !important;
-  }
-
-  .np-card-grid,
-  .np-help-grid,
-  .np-community-grid,
-  .np-team-grid,
-  .np-streamer-grid,
-  .np-asset-grid,
-  .np-origin-timeline,
-  .np-philosophy-grid {
-    margin-top: 0.65rem !important;
-    margin-bottom: 0.65rem !important;
-  }
-}
-/* =========================================================
-   Step 86: Automatisches vertikales Spacing-System
-   - zentrale Grundwerte statt seitenweiser Einzelabstände
-   - entfernt künstliche Mindesthöhe, die unnötiges Scrollen erzeugen kann
-   - Header/Footer bleiben unangetastet
-   ========================================================= */
-
-:root {
-  --np-space-xs: clamp(0.35rem, 0.45vw, 0.55rem);
-  --np-space-sm: clamp(0.55rem, 0.70vw, 0.80rem);
-  --np-space-md: clamp(0.75rem, 0.95vw, 1.05rem);
-  --np-space-lg: clamp(0.95rem, 1.25vw, 1.35rem);
-  --np-section-gap: var(--np-space-md);
-  --np-box-padding-y: var(--np-space-lg);
-  --np-box-padding-x: clamp(1rem, 1.55vw, 1.65rem);
-  --np-grid-gap: var(--np-space-md);
-}
-
-/* Wichtig:
-   Keine künstliche Mindesthöhe für den Content erzwingen.
-   Sonst entsteht Scrollen, obwohl der echte Inhalt eigentlich passen würde. */
-@media (min-width: 66.5rem) {
-  .main-content {
-    min-height: auto !important;
-  }
-
-  body.np-page-sub .main-content {
-    min-height: auto !important;
-    height: auto !important;
-    margin-top: var(--np-section-gap) !important;
-    margin-bottom: var(--np-section-gap) !important;
-    padding-top: var(--np-box-padding-y) !important;
-    padding-bottom: var(--np-box-padding-y) !important;
-    padding-left: var(--np-box-padding-x) !important;
-    padding-right: var(--np-box-padding-x) !important;
   }
 
   .echo-page-box,
@@ -3272,7 +3060,6 @@ body.np-page-sub .main-content > h3,
     margin-bottom: 0 !important;
   }
 
-  /* Startseite: ebenfalls zentral über Variablen steuern */
   .np-home-v2 .np-hero {
     min-height: auto !important;
     padding-top: var(--np-space-md) !important;
@@ -3302,8 +3089,21 @@ body.np-page-sub .main-content > h3,
   }
 }
 
-/* Bei niedriger Fensterhöhe wird alles automatisch enger,
-   ohne pro Seite eigene Werte zu brauchen. */
+@media (min-width: 66.5rem) and (max-width: 1320px) {
+  .np-card-grid-5,
+  .np-philosophy-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1080px) {
+  .np-card-grid-4,
+  .np-card-grid-5,
+  .np-philosophy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
 @media (min-width: 66.5rem) and (max-height: 860px) {
   :root {
     --np-space-xs: 0.28rem;
