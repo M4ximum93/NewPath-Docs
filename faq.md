@@ -11,7 +11,7 @@ permalink: /faq.html
 <section class="echo-page-box echo-page-box-faq">
   <div class="echo-page-image">
     <img
-      src="{{ site.baseurl }}/assets/images/echo/echo-guide.png"
+      src="{{ site.baseurl }}/assets/images/echo/echo-faq.png"
       alt="ECHO beantwortet häufige Fragen zu NewPath"
       width="512"
       height="512"
