@@ -4491,7 +4491,8 @@ img {
 
 /* echte Founder-Karten etwas wertiger */
 .np-team-section .np-team-grid .np-team-card:nth-child(1),
-.np-team-section .np-team-grid .np-team-card:nth-child(2) {
+.np-team-section .np-team-grid .np-team-card:nth-child(2),
+.np-team-section .np-team-grid .np-team-card:nth-child(3) {
   border-color: rgba(236, 183, 110, 0.34) !important;
   background:
     radial-gradient(circle at 50% 0%, rgba(236, 183, 110, 0.085), transparent 13rem),
@@ -4500,7 +4501,8 @@ img {
 }
 
 .np-team-section .np-team-grid .np-team-card:nth-child(1)::after,
-.np-team-section .np-team-grid .np-team-card:nth-child(2)::after {
+.np-team-section .np-team-grid .np-team-card:nth-child(2)::after,
+.np-team-section .np-team-grid .np-team-card:nth-child(3)::after {
   content: "FOUNDER";
   position: absolute;
   right: 1rem;
