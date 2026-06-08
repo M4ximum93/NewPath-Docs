@@ -3908,3 +3908,110 @@ img {
     animation-iteration-count: 1 !important;
   }
 }
+/* =========================================================
+   UI: Einheitlicher Hover-/Fokus-Effekt für klickbare Elemente
+   - macht Buttons, Kartenlinks, Nav-Links und Akkordeons klar erkennbar
+   - betrifft nur Elemente mit Funktion/Klickverhalten
+   ========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+  .np-top-nav a,
+  .main-header .aux-nav a,
+  .np-site-footer-links a,
+  .np-route-card,
+  .np-card-link,
+  .np-route-link,
+  .np-help-tile,
+  .np-community-card,
+  .np-streamer-card a,
+  .np-asset-card a,
+  .main-content a,
+  .np-faq-details summary,
+  .np-help-details summary,
+  .np-accordion summary,
+  .np-back-to-top,
+  button {
+    transition:
+      transform 160ms ease,
+      border-color 160ms ease,
+      background 160ms ease,
+      color 160ms ease,
+      box-shadow 160ms ease,
+      opacity 160ms ease;
+  }
+
+  .np-route-card:hover,
+  .np-help-tile:hover,
+  .np-community-card:hover {
+    transform: translateY(-0.18rem);
+    border-color: rgba(0, 230, 246, 0.62) !important;
+    box-shadow:
+      0 18px 34px rgba(0, 0, 0, 0.34),
+      0 0 22px rgba(0, 230, 246, 0.10),
+      inset 0 0 26px rgba(0, 230, 246, 0.035) !important;
+  }
+
+  .np-card-link:hover,
+  .np-route-link:hover,
+  .np-streamer-card a:hover,
+  .np-asset-card a:hover,
+  .main-content a:hover {
+    color: var(--np-gold-soft) !important;
+    text-shadow: 0 0 12px rgba(236, 183, 110, 0.18);
+  }
+
+  .np-faq-details summary:hover,
+  .np-help-details summary:hover,
+  .np-accordion summary:hover {
+    color: var(--np-gold-soft) !important;
+    background:
+      linear-gradient(90deg, rgba(0, 230, 246, 0.075), rgba(236, 183, 110, 0.045), transparent) !important;
+    box-shadow: inset 3px 0 0 rgba(0, 230, 246, 0.50);
+  }
+
+  .np-top-nav a:hover,
+  .main-header .aux-nav a:hover,
+  .np-site-footer-links a:hover,
+  .np-back-to-top:hover,
+  button:hover {
+    transform: translateY(-0.08rem);
+  }
+
+  .np-route-card:active,
+  .np-help-tile:active,
+  .np-community-card:active,
+  .np-top-nav a:active,
+  .main-header .aux-nav a:active,
+  .np-back-to-top:active,
+  button:active {
+    transform: translateY(0);
+  }
+}
+
+/* Tastatur-Navigation: sichtbarer, aber passender Fokus */
+.np-top-nav a:focus-visible,
+.main-header .aux-nav a:focus-visible,
+.np-site-footer-links a:focus-visible,
+.np-route-card:focus-visible,
+.np-card-link:focus-visible,
+.np-route-link:focus-visible,
+.np-help-tile:focus-visible,
+.np-community-card:focus-visible,
+.main-content a:focus-visible,
+.np-faq-details summary:focus-visible,
+.np-help-details summary:focus-visible,
+.np-accordion summary:focus-visible,
+.np-back-to-top:focus-visible,
+button:focus-visible {
+  outline: none !important;
+  box-shadow:
+    0 0 0 2px rgba(0, 230, 246, 0.42),
+    0 0 22px rgba(0, 230, 246, 0.14) !important;
+}
+
+/* Nicht-funktionale Karten bleiben ruhig */
+.np-info-card:not(a):hover,
+.np-rule-block:hover,
+.np-team-card:hover {
+  transform: none;
+}
