@@ -4613,3 +4613,216 @@ a[href="#main-content"],
     background: linear-gradient(90deg, transparent, rgba(0, 230, 246, 0.28), transparent) !important;
   }
 }
+
+/* =========================================================
+   Step 46: Inhaltsabstände, ECHO-Präsenz und ruhige Effekte
+   - Trennlinien mit mehr Luft davor/danach
+   - Logo/ECHO ohne Glow-/Hover-/Lichteffekte
+   - ECHO sichtbarer und größer
+   - Einstiegskarten wieder etwas größer/lesbarer
+   - zusätzlich: Unterseiten-/Hilfekomponenten etwas stabiler vorbereitet
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  /* Gemeinsame Bereichsabstände: Linie soll nicht mehr gequetscht wirken */
+  .np-main-grid-echo-first,
+  .np-about-panel {
+    margin-bottom: 1.95rem !important;
+  }
+
+  .np-main-grid-echo-first::after,
+  .np-about-panel::after {
+    bottom: -1.05rem !important;
+    opacity: 0.82 !important;
+  }
+
+  .np-about-panel,
+  .np-server-brief {
+    margin-top: 0.25rem !important;
+  }
+
+  .np-server-brief {
+    margin-bottom: 1.75rem !important;
+  }
+
+  /* Hero-Logo komplett ruhig: kein Glow, keine Bewegung, kein Lichtfilter */
+  .np-hero-logo,
+  .np-hero-logo img,
+  .np-hero-logo:hover,
+  .np-hero-logo:hover img {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+
+  /* ECHO ruhiger, aber präsenter: kein Licht-Overlay/Glow, dafür größerer Inhalt */
+  .np-echo-feature,
+  .np-echo-feature:hover,
+  .np-echo-feature:focus-within {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  .np-echo-feature::before,
+  .np-echo-feature::after,
+  .np-echo-feature:hover::before,
+  .np-echo-feature:hover::after {
+    opacity: 0 !important;
+    display: none !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .np-main-grid-echo-first {
+    grid-template-columns: minmax(420px, 0.45fr) minmax(0, 0.55fr) !important;
+    gap: 0.95rem !important;
+    align-items: stretch !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature,
+  .np-quick-panel {
+    min-height: 185px !important;
+    overflow: visible !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature {
+    grid-template-columns: 132px minmax(0, 1fr) !important;
+    gap: 1.15rem !important;
+    padding: 1.1rem 1.35rem !important;
+    background:
+      linear-gradient(135deg, rgba(0, 230, 246, 0.075), transparent 42%),
+      linear-gradient(90deg, rgba(3, 22, 30, 0.91), rgba(0, 12, 20, 0.84)) !important;
+  }
+
+  .np-echo-image-wrap,
+  .np-echo-image-wrap img,
+  .np-echo-feature:hover .np-echo-image-wrap,
+  .np-echo-feature:hover .np-echo-image-wrap img {
+    width: 108px !important;
+    height: 108px !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .np-echo-content h2 {
+    max-width: 520px !important;
+    font-size: 1.46rem !important;
+    line-height: 1.08 !important;
+    margin-bottom: 0.42rem !important;
+  }
+
+  .np-echo-content p {
+    max-width: 620px !important;
+    font-size: 0.84rem !important;
+    line-height: 1.46 !important;
+  }
+
+  .np-echo-steps {
+    margin-top: 0.62rem !important;
+    gap: 0.42rem !important;
+  }
+
+  .np-echo-steps span,
+  .np-echo-steps a {
+    padding: 0.27rem 0.58rem !important;
+    font-size: 0.66rem !important;
+  }
+
+  /* Einstieg rechts: 4 nebeneinander, aber nicht winzig */
+  .np-quick-panel {
+    padding: 1.1rem 1.08rem 1.15rem !important;
+  }
+
+  .np-quick-panel h2 {
+    margin-bottom: 0.95rem !important;
+    font-size: 1.26rem !important;
+  }
+
+  .np-card-grid-guides {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0.74rem !important;
+    align-items: stretch !important;
+  }
+
+  .np-card-grid-guides .np-card,
+  .np-card-grid-guides .np-card:hover,
+  .np-card-grid-guides .np-card:focus-within {
+    min-height: 124px !important;
+    max-height: none !important;
+    padding: 0.72rem 0.58rem !important;
+    overflow: hidden !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  .np-card-grid-guides .np-card-icon {
+    width: 2.05rem !important;
+    height: 2.05rem !important;
+    font-size: 0.86rem !important;
+    margin-bottom: 0.42rem !important;
+  }
+
+  .np-card-grid-guides .np-card-title {
+    font-size: 0.82rem !important;
+    line-height: 1.08 !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .np-card-grid-guides .np-card-text {
+    min-height: 1.7rem !important;
+    font-size: 0.62rem !important;
+    line-height: 1.27 !important;
+  }
+
+  .np-card-grid-guides .np-card-link {
+    margin-top: 0.3rem !important;
+    font-size: 0.66rem !important;
+  }
+
+  /* Geplanter Zusatz: Zeitstempel als Meta-Pill unauffälliger und lesbarer */
+  .np-page-meta {
+    margin-top: -0.12rem !important;
+    margin-bottom: 0.78rem !important;
+  }
+
+  .np-last-updated {
+    color: rgba(235, 226, 205, 0.72) !important;
+    background: rgba(0, 9, 15, 0.42) !important;
+    border-color: rgba(236, 189, 119, 0.20) !important;
+  }
+}
+
+/* Unterseiten/Modpack-Hilfe: geplante Komponenten robuster vorbereiten */
+body:not(.home) .echo-page-box,
+body:not(.home) .np-help-details,
+body:not(.home) .np-help-tile {
+  box-shadow: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+body:not(.home) .np-help-details summary:hover,
+body:not(.home) .np-help-details summary:focus-visible {
+  color: #f4cf7f !important;
+  background: rgba(0, 230, 246, 0.045) !important;
+}
+
+body:not(.home) .np-help-details > div img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 0.65rem !important;
+  border: 1px solid rgba(0, 230, 246, 0.18) !important;
+  background: rgba(0, 9, 15, 0.55) !important;
+}
