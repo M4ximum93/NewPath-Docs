@@ -10,6 +10,8 @@ on:
       - "philosophie.md"
       - "faq.md"
       - "modpack-hilfe.md"
+      - "team.md"
+      - "streamer.md"
 
 permissions:
   contents: write
@@ -39,7 +41,9 @@ jobs:
             regelwerk.md \
             philosophie.md \
             faq.md \
-            modpack-hilfe.md || true)
+            modpack-hilfe.md \
+            team.md \
+            streamer.md || true)
 
           echo "Geänderte Website-Dateien:"
           echo "$CHANGED_FILES"
@@ -83,6 +87,6 @@ jobs:
             exit 0
           fi
 
-          git add index.md regelwerk.md philosophie.md faq.md modpack-hilfe.md
+          git add index.md regelwerk.md philosophie.md faq.md modpack-hilfe.md team.md streamer.md
           git commit -m "Doku: Zeitstempel aktualisiert"
           git push

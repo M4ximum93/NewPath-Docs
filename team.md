@@ -1,0 +1,85 @@
+---
+layout: default
+title: Team
+nav_order: 6
+permalink: /team.html
+---
+<!-- AUTO_UPDATED_START -->
+<p class="np-last-updated">Zuletzt aktualisiert: 08.06.2026 13:00 Uhr</p>
+<!-- AUTO_UPDATED_END -->
+
+<section class="echo-page-box echo-page-box-team">
+
+  <div class="echo-page-image">
+    <img
+      src="{{ site.baseurl }}/assets/images/echo/echo-guide.png"
+      alt="ECHO stellt das NewPath-Team vor"
+      width="512"
+      height="512"
+      loading="lazy"
+      decoding="async">
+  </div>
+
+  <div class="echo-page-content">
+    <p class="echo-page-kicker">ECHO kennt die Wegbereiter</p>
+    <h2>Das Team hinter NewPath.</h2>
+    <p>
+      Hier entsteht die Teamübersicht von NewPath. Später findest du hier Rollen,
+      Ansprechpartner und kurze Vorstellungen der Personen, die das Projekt betreuen.
+    </p>
+  </div>
+
+</section>
+
+# Team
+
+NewPath lebt von Menschen, die planen, bauen, testen, moderieren, erklären und die Community begleiten.
+Diese Seite soll später zeigen, wer für welche Bereiche zuständig ist und an wen du dich wenden kannst.
+
+<div class="np-help-note">
+  <strong>Hinweis:</strong> Die konkrete Teamliste wird später ergänzt. Die Struktur ist bereits vorbereitet,
+  damit Teammitglieder einfach als Karten eingetragen werden können.
+</div>
+
+## Bereiche
+
+<div class="np-community-grid">
+  <article class="np-community-card">
+    <span class="np-community-icon">★</span>
+    <h3>Projektleitung</h3>
+    <p>Organisation, Entscheidungen, Planung und Gesamtverantwortung für NewPath.</p>
+  </article>
+
+  <article class="np-community-card">
+    <span class="np-community-icon">⚙</span>
+    <h3>Technik & Modpack</h3>
+    <p>Modpack-Pflege, Updates, Tests, Fehleranalyse und technische Dokumentation.</p>
+  </article>
+
+  <article class="np-community-card">
+    <span class="np-community-icon">✦</span>
+    <h3>Community & Support</h3>
+    <p>Hilfe im Discord, Tickets, Whitelist, Fragen und Begleitung neuer Spieler.</p>
+  </article>
+
+  <article class="np-community-card">
+    <span class="np-community-icon">◆</span>
+    <h3>Design & Inhalte</h3>
+    <p>Website, Regelwerk, Hilfeseiten, Bilder, Texte und NewPath-Branding.</p>
+  </article>
+</div>
+
+## Teammitglieder
+
+<div class="np-team-list">
+  <article class="np-team-card">
+    <h3>Name / Discord-Name</h3>
+    <p class="np-team-role">Rolle im Team</p>
+    <p>Kurze Beschreibung, Aufgabenbereich und Ansprechpartner-Hinweis.</p>
+  </article>
+
+  <article class="np-team-card np-team-card-placeholder">
+    <h3>Weitere Teammitglieder</h3>
+    <p>Hier können nach und nach weitere Personen ergänzt werden.</p>
+  </article>
+</div>

@@ -5837,3 +5837,374 @@ body:not(.home) .np-help-details[open] summary {
     background: rgba(0, 9, 15, 0.86) !important;
   }
 }
+
+/* ==========================================================
+   Step 51: Community-Unterseiten, Team & Streamer
+   ========================================================== */
+
+/* Header darf bei mehr Navigationspunkten nicht gequetscht wirken. */
+.np-top-nav {
+  gap: clamp(0.35rem, 0.55vw, 0.85rem);
+}
+
+.np-top-nav a {
+  white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+  .np-top-nav {
+    gap: 0.28rem;
+  }
+
+  .np-top-nav a {
+    font-size: 0.68rem;
+    padding-inline: 0.5rem;
+  }
+}
+
+/* Allgemeine Community-Karten für Team/Streamer. */
+.np-community-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.35rem 0 1.75rem;
+}
+
+.np-community-card,
+.np-team-card,
+.np-streamer-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 230, 246, 0.22);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(17, 46, 64, 0.88), rgba(0, 9, 21, 0.9)),
+    rgba(0, 9, 21, 0.82);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+  padding: 1.15rem;
+}
+
+.np-community-card::before,
+.np-team-card::before,
+.np-streamer-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top left, rgba(0, 230, 246, 0.12), transparent 34%);
+  opacity: 0.75;
+}
+
+.np-community-card > *,
+.np-team-card > *,
+.np-streamer-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.np-community-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(0, 230, 246, 0.32);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0, 230, 246, 0.2), rgba(234, 188, 104, 0.14));
+  color: #f4cf7f;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.np-community-card h3,
+.np-team-card h3,
+.np-streamer-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.45rem;
+  color: #f4cf7f;
+}
+
+.np-community-card p,
+.np-team-card p,
+.np-streamer-card p {
+  color: rgba(244, 248, 250, 0.86);
+}
+
+.np-team-list,
+.np-streamer-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.np-team-role {
+  margin: 0 0 0.65rem;
+  color: #00e6f6 !important;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.np-team-card-placeholder {
+  border-style: dashed;
+  opacity: 0.92;
+}
+
+.echo-page-box-team,
+.echo-page-box-streamer {
+  margin-bottom: 1.5rem;
+}
+
+.echo-page-box-team .echo-page-kicker,
+.echo-page-box-streamer .echo-page-kicker {
+  color: #00e6f6;
+}
+
+@media (max-width: 980px) {
+  .np-community-grid,
+  .np-team-list,
+  .np-streamer-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   Schritt 52: Mittelbereich stabilisieren + Community-Struktur sichern
+   - ECHO/Einstieg wieder sauber auf einer Achse
+   - keine abgeschnittenen Einstiegskarten
+   - Header/Footer bleiben mit Team + Streamer kompatibel
+   - Hover/Glow bleibt deaktiviert
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  :root {
+    --np-fixed-header-height: 4.55rem !important;
+    --np-fixed-footer-height: 3.65rem !important;
+    --np-page-gutter: clamp(4.8rem, 7.1vw, 8rem) !important;
+    --np-content-width: min(1220px, calc(100vw - (var(--np-page-gutter) * 2))) !important;
+  }
+
+  .np-hero,
+  .np-status-bar,
+  .np-meta-row,
+  .np-main-grid-echo-first,
+  .np-about-panel,
+  .np-server-brief,
+  .np-section-divider {
+    width: var(--np-content-width) !important;
+    max-width: var(--np-content-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .np-hero {
+    padding-top: clamp(2.2rem, 3.1vh, 3.2rem) !important;
+    margin-bottom: 0.92rem !important;
+    grid-template-columns: minmax(420px, 0.52fr) minmax(285px, 0.48fr) !important;
+    column-gap: clamp(2.2rem, 4vw, 4.4rem) !important;
+    align-items: center !important;
+  }
+
+  .np-hero-highlight {
+    max-width: 520px !important;
+    padding: 0.8rem 1rem !important;
+  }
+
+  .np-status-bar {
+    margin-top: 0.55rem !important;
+    margin-bottom: 0 !important;
+    min-height: 3.3rem !important;
+    padding: 0.55rem 0.75rem !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+
+  .np-meta-row {
+    margin-top: 0.28rem !important;
+    margin-bottom: 0.92rem !important;
+  }
+
+  .np-main-grid-echo-first {
+    display: grid !important;
+    grid-template-columns: minmax(420px, 0.43fr) minmax(620px, 0.57fr) !important;
+    gap: 1rem !important;
+    align-items: stretch !important;
+    margin-top: 0 !important;
+    margin-bottom: 2.35rem !important;
+    overflow: visible !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature,
+  .np-main-grid-echo-first .np-quick-panel {
+    min-height: 205px !important;
+    height: 205px !important;
+    max-height: 205px !important;
+    overflow: hidden !important;
+  }
+
+  .np-echo-feature,
+  .np-echo-feature:hover,
+  .np-echo-feature:focus-within {
+    display: grid !important;
+    grid-template-columns: 145px minmax(0, 1fr) !important;
+    gap: 1.05rem !important;
+    align-items: center !important;
+    padding: 1.05rem 1.25rem !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .np-echo-feature::before,
+  .np-echo-feature::after,
+  .np-echo-feature:hover::before,
+  .np-echo-feature:hover::after,
+  .np-hero-logo::before,
+  .np-hero-logo::after,
+  .np-hero-logo:hover::before,
+  .np-hero-logo:hover::after {
+    display: none !important;
+    content: none !important;
+    opacity: 0 !important;
+  }
+
+  .np-echo-image-wrap {
+    width: 138px !important;
+    height: 168px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .np-echo-image-wrap img,
+  .np-echo-feature:hover .np-echo-image-wrap img,
+  .np-echo-feature:focus-within .np-echo-image-wrap img {
+    width: 8.45rem !important;
+    height: 8.45rem !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .np-echo-content h2 {
+    font-size: clamp(1.26rem, 1.35vw, 1.5rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 0.42rem !important;
+  }
+
+  .np-echo-content p {
+    font-size: 0.75rem !important;
+    line-height: 1.42 !important;
+    max-width: 30rem !important;
+  }
+
+  .np-echo-steps {
+    margin-top: 0.52rem !important;
+    gap: 0.36rem !important;
+  }
+
+  .np-quick-panel {
+    padding: 1.05rem 1.15rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .np-quick-panel .np-eyebrow,
+  .np-quick-panel h2 {
+    flex: 0 0 auto !important;
+  }
+
+  .np-quick-panel h2 {
+    margin-bottom: 0.78rem !important;
+  }
+
+  .np-card-grid-guides {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0.62rem !important;
+    align-items: stretch !important;
+  }
+
+  .np-card-grid-guides .np-card,
+  .np-card-grid-guides .np-card:hover,
+  .np-card-grid-guides .np-card:focus-within {
+    min-width: 0 !important;
+    min-height: 108px !important;
+    height: 108px !important;
+    max-height: 108px !important;
+    padding: 0.66rem 0.46rem 0.56rem !important;
+    overflow: hidden !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .np-card-grid-guides .np-card-icon {
+    width: 1.85rem !important;
+    height: 1.85rem !important;
+    margin-bottom: 0.34rem !important;
+  }
+
+  .np-card-grid-guides .np-card-title {
+    font-size: 0.78rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .np-card-grid-guides .np-card-text {
+    display: none !important;
+  }
+
+  .np-card-grid-guides .np-card-link {
+    margin-top: 0.3rem !important;
+    font-size: 0.65rem !important;
+  }
+
+  .np-about-panel {
+    margin-top: 0 !important;
+    margin-bottom: 2.35rem !important;
+  }
+
+  .np-about-panel::after {
+    bottom: -1.26rem !important;
+  }
+
+  .np-server-brief {
+    margin-top: 0 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .np-site-footer-inner {
+    width: calc(100vw - 2.6rem) !important;
+    max-width: none !important;
+    padding-inline: 0.35rem !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1320px) {
+  :root {
+    --np-page-gutter: clamp(2.2rem, 4vw, 4.2rem) !important;
+    --np-content-width: calc(100vw - (var(--np-page-gutter) * 2)) !important;
+  }
+
+  .np-main-grid-echo-first {
+    grid-template-columns: minmax(390px, 0.42fr) minmax(560px, 0.58fr) !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature,
+  .np-main-grid-echo-first .np-quick-panel {
+    min-height: 212px !important;
+    height: 212px !important;
+    max-height: 212px !important;
+  }
+
+  .np-echo-feature {
+    grid-template-columns: 128px minmax(0, 1fr) !important;
+  }
+
+  .np-echo-image-wrap img {
+    width: 7.6rem !important;
+    height: 7.6rem !important;
+  }
+}
