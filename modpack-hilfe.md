@@ -25,7 +25,7 @@ permalink: /modpack-hilfe.html
     <h2>Hier findest du Hilfen rund um NewPath.</h2>
     <p>
       Diese Seite sammelt Installationshilfen, technische Hinweise und Anleitungen zu einzelnen
-      Modpack-Funktionen. Die Bereiche sind bewusst aufklappbar, damit du schnell genau das findest,
+      Modpack-Funktionen. Die Bereiche sind aufklappbar, damit du schnell genau das findest,
       was du gerade brauchst.
     </p>
   </div>
@@ -34,9 +34,9 @@ permalink: /modpack-hilfe.html
 
 # Modpack Hilfe
 
-Hier entsteht die zentrale Hilfebibliothek für **NewPath – Echoes of the Wild**.
-Sie ersetzt nicht das Regelwerk, sondern hilft bei Installation, Einstellungen,
-Mod-Funktionen und typischen technischen Fragen.
+Die **Modpack Hilfe** ist die zentrale Hilfebibliothek für **NewPath – Echoes of the Wild**.
+Hier landen nicht nur technische Hinweise, sondern auch Anleitungen zu einzelnen Mods,
+Serverfunktionen und typischen Fragen aus dem Discord.
 
 ---
 
@@ -58,9 +58,9 @@ Mod-Funktionen und typischen technischen Fragen.
     <span>Grundlagen, Einstellungen und Gruppen</span>
   </a>
 
-  <a class="np-help-tile" href="#probleme">
-    <strong>Probleme</strong>
-    <span>Startprobleme, Verbindung und Support</span>
+  <a class="np-help-tile" href="#mod-guides">
+    <strong>Mod-Anleitungen</strong>
+    <span>Hilfen zu einzelnen Mods und Funktionen</span>
   </a>
 </div>
 
@@ -76,8 +76,8 @@ Mod-Funktionen und typischen technischen Fragen.
       <strong>NewPath</strong> und installiere die passende Modpack-Version.
     </p>
     <p>
-      Hier können später die bestehenden Discord-Anleitungsbilder eingebunden werden, zum Beispiel
-      eine Schritt-für-Schritt-Grafik zur Installation.
+      Später können hier die vorhandenen Discord-Anleitungsbilder direkt eingebunden werden,
+      zum Beispiel die Schritt-für-Schritt-Grafik zur Installation über CurseForge.
     </p>
   </div>
 </details>
@@ -87,12 +87,12 @@ Mod-Funktionen und typischen technischen Fragen.
   <div>
     <p>
       Nach der Installation solltest du prüfen, wie viel Arbeitsspeicher dem Modpack zugewiesen ist.
-      Für große Modpacks empfehlen wir mindestens <strong>8 GB RAM</strong>, je nach System und Version
+      Für große Modpacks empfehlen wir mindestens <strong>8 GB RAM</strong>. Je nach System und Version
       können auch mehr sinnvoll sein.
     </p>
     <p>
       Zu wenig RAM kann dazu führen, dass das Spiel langsam startet, ruckelt oder instabil läuft.
-      Eine bebilderte Anleitung kann hier später direkt ergänzt werden.
+      Die vorhandene RAM-Anleitung aus dem Discord kann hier später als Bild ergänzt werden.
     </p>
   </div>
 </details>
@@ -141,12 +141,16 @@ Mod-Funktionen und typischen technischen Fragen.
 
 ## Mod-Anleitungen
 
-<details class="np-help-details">
+<details id="mod-guides" class="np-help-details" open>
   <summary>Einzelne Mods kurz erklärt</summary>
   <div>
     <p>
       Dieser Bereich ist für kleine Anleitungen zu einzelnen Mods gedacht. Beispiele:
       Menüs, wichtige Tastenkürzel, typische Anfängerfragen oder besondere Funktionen.
+    </p>
+    <p>
+      Solche Anleitungen können ähnlich wie die Discord-Beispiele aufgebaut werden:
+      kurzer Erklärungstext, klare Schritte und optional ein Bild darunter.
     </p>
   </div>
 </details>

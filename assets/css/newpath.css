@@ -3929,3 +3929,523 @@ blockquote {
     display: block !important;
   }
 }
+
+/* =========================================================
+   Step 42: stabiles Desktop-Raster + Unterseiten-Vorbereitung
+   - breiter, aber mit gleichen Seitenabständen
+   - ECHO/Einstieg lesbarer
+   - Footer vollbreit, Inhalt im Raster
+   - Zurück-nach-oben-Link ausgeblendet
+   - Modpack-Hilfe/Unterseiten-Komponenten vorbereitet
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  :root {
+    --np-shell-width: min(1320px, calc(100vw - 12rem));
+    --np-shell-gap: 1rem;
+  }
+
+  html,
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .np-home {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-top: 1.1rem !important;
+    overflow-x: clip !important;
+  }
+
+  .np-hero,
+  .np-status-bar,
+  .np-page-meta,
+  .np-main-grid,
+  .np-about-panel,
+  .np-server-brief {
+    width: var(--np-shell-width) !important;
+    max-width: var(--np-shell-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .np-hero {
+    display: grid !important;
+    grid-template-columns: minmax(0, 560px) minmax(260px, 340px) !important;
+    justify-content: start !important;
+    align-items: center !important;
+    gap: clamp(3rem, 7vw, 8rem) !important;
+    min-height: 300px !important;
+    padding: 1.9rem 0 1.15rem 0 !important;
+  }
+
+  .np-hero-content {
+    max-width: 560px !important;
+  }
+
+  .np-hero h1 {
+    font-size: clamp(3.15rem, 4.7vw, 4.65rem) !important;
+    line-height: 0.88 !important;
+    margin-bottom: 0.72rem !important;
+  }
+
+  .np-hero-text {
+    max-width: 500px !important;
+    font-size: 0.98rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .np-hero-highlight {
+    max-width: 520px !important;
+    padding: 0.82rem 1rem !important;
+  }
+
+  .np-hero-logo,
+  .np-hero-logo img {
+    width: 315px !important;
+    height: 315px !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .np-hero-logo:hover,
+  .np-hero-logo:hover img {
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .np-status-bar {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    margin-top: 0.35rem !important;
+    margin-bottom: 0.45rem !important;
+    padding: 0.52rem 0.7rem !important;
+  }
+
+  .np-status-item {
+    min-height: 2.9rem !important;
+    padding: 0.42rem 0.72rem !important;
+  }
+
+  .np-page-meta {
+    justify-content: flex-end !important;
+    margin-top: -0.22rem !important;
+    margin-bottom: 0.62rem !important;
+  }
+
+  .np-last-updated {
+    padding: 0.22rem 0.62rem !important;
+    border: 1px solid rgba(236, 189, 119, 0.18) !important;
+    border-radius: 999px !important;
+    background: rgba(0, 9, 15, 0.32) !important;
+    color: rgba(235, 226, 205, 0.64) !important;
+  }
+
+  .np-main-grid-echo-first {
+    display: grid !important;
+    grid-template-columns: minmax(390px, 0.42fr) minmax(0, 0.58fr) !important;
+    align-items: stretch !important;
+    gap: var(--np-shell-gap) !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.85rem !important;
+  }
+
+  .np-panel {
+    border-radius: 0.62rem !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature,
+  .np-quick-panel {
+    min-height: 160px !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature {
+    display: grid !important;
+    grid-template-columns: 116px minmax(0, 1fr) !important;
+    gap: 1rem !important;
+    align-items: center !important;
+    padding: 1rem 1.35rem !important;
+    transition: none !important;
+  }
+
+  .np-echo-feature::before,
+  .np-echo-feature:hover::before {
+    opacity: 0.78 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .np-echo-feature:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .np-echo-image-wrap,
+  .np-echo-image-wrap img,
+  .np-echo-feature:hover .np-echo-image-wrap,
+  .np-echo-feature:hover .np-echo-image-wrap img {
+    width: 86px !important;
+    height: 86px !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .np-echo-content h2 {
+    max-width: 460px !important;
+    font-size: 1.28rem !important;
+    line-height: 1.08 !important;
+    margin-bottom: 0.38rem !important;
+  }
+
+  .np-echo-content p {
+    max-width: 560px !important;
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .np-echo-steps {
+    gap: 0.35rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .np-echo-steps span,
+  .np-echo-steps a {
+    padding: 0.22rem 0.48rem !important;
+    font-size: 0.62rem !important;
+  }
+
+  .np-quick-panel {
+    padding: 1rem 1rem 1.05rem !important;
+  }
+
+  .np-quick-panel h2 {
+    margin-bottom: 0.78rem !important;
+    font-size: 1.22rem !important;
+  }
+
+  .np-card-grid-guides {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0.68rem !important;
+  }
+
+  .np-card-grid-guides .np-card {
+    min-height: 104px !important;
+    max-height: 118px !important;
+    padding: 0.58rem 0.48rem !important;
+    border-radius: 0.55rem !important;
+    overflow: hidden !important;
+    transition: none !important;
+  }
+
+  .np-card-grid-guides .np-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .np-card-grid-guides .np-card-icon {
+    width: 1.8rem !important;
+    height: 1.8rem !important;
+    font-size: 0.78rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .np-card-grid-guides .np-card-title {
+    font-size: 0.76rem !important;
+    line-height: 1.05 !important;
+    margin-bottom: 0.18rem !important;
+  }
+
+  .np-card-grid-guides .np-card-text {
+    min-height: 1.35rem !important;
+    font-size: 0.58rem !important;
+    line-height: 1.22 !important;
+  }
+
+  .np-card-grid-guides .np-card-link {
+    margin-top: 0.22rem !important;
+    font-size: 0.62rem !important;
+  }
+
+  .np-about-panel {
+    display: grid !important;
+    grid-template-columns: minmax(260px, 330px) minmax(0, 1fr) !important;
+    gap: 2rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0.85rem !important;
+    padding: 1rem 1.1rem !important;
+  }
+
+  .np-about-panel h2,
+  .np-server-brief h2 {
+    font-size: 1.38rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .np-about-text {
+    font-size: 0.88rem !important;
+  }
+
+  .np-server-brief {
+    display: grid !important;
+    grid-template-columns: minmax(280px, 380px) minmax(0, 1fr) !important;
+    gap: 1.5rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 1.25rem !important;
+    padding: 1rem 1.1rem !important;
+  }
+
+  .np-server-brief-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0.72rem !important;
+  }
+
+  .np-server-brief-grid div {
+    min-height: 3.6rem !important;
+    padding: 0.7rem 0.85rem !important;
+  }
+
+  .back-to-top,
+  .back-to-top a,
+  .back-to-top-nav,
+  .main-content .fs-2,
+  a[href="#top"] {
+    display: none !important;
+  }
+
+  .np-site-footer {
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    margin-top: 1.8rem !important;
+    border-top: 1px solid rgba(0, 230, 246, 0.18) !important;
+    background:
+      linear-gradient(180deg, rgba(0, 18, 33, 0.96), rgba(0, 9, 15, 0.98)) !important;
+    box-shadow: 0 -16px 42px rgba(0, 0, 0, 0.28) !important;
+  }
+
+  .np-site-footer-inner {
+    width: var(--np-shell-width) !important;
+    max-width: var(--np-shell-width) !important;
+    margin: 0 auto !important;
+    min-height: 4.2rem !important;
+    padding: 0.95rem 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+  }
+
+  .np-site-footer-brand strong {
+    color: #ecbd77 !important;
+  }
+
+  .np-site-footer-links {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-wrap: wrap !important;
+    gap: 0.55rem 0.8rem !important;
+  }
+}
+
+/* Unterseiten: ECHO, Hilfe-Kacheln und aufklappbare Hilfebereiche vorbereiten */
+body:not(.home) .echo-page-box {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: center;
+  margin: 1rem 0 1.4rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(0, 230, 246, 0.22);
+  border-left: 4px solid rgba(0, 230, 246, 0.75);
+  border-radius: 0.72rem;
+  background:
+    radial-gradient(circle at 8% 50%, rgba(0, 230, 246, 0.14), transparent 13rem),
+    linear-gradient(135deg, rgba(5, 24, 32, 0.88), rgba(1, 11, 18, 0.82));
+}
+
+body:not(.home) .echo-page-image img {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+}
+
+body:not(.home) .echo-page-kicker,
+body:not(.home) .np-section-kicker {
+  color: #00e6f6;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+body:not(.home) .echo-page-content h2 {
+  margin: 0.15rem 0 0.35rem;
+  color: #ecbd77;
+}
+
+body:not(.home) .np-help-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 1.4rem;
+}
+
+body:not(.home) .np-help-tile {
+  display: block;
+  padding: 0.95rem;
+  border: 1px solid rgba(0, 230, 246, 0.18);
+  border-radius: 0.62rem;
+  background: rgba(4, 22, 31, 0.76);
+  text-decoration: none;
+}
+
+body:not(.home) .np-help-tile strong {
+  display: block;
+  color: #ecbd77;
+  margin-bottom: 0.25rem;
+}
+
+body:not(.home) .np-help-tile span {
+  color: rgba(235, 226, 205, 0.8);
+  font-size: 0.86rem;
+}
+
+body:not(.home) .np-help-details {
+  margin: 0.75rem 0;
+  border: 1px solid rgba(53, 101, 125, 0.58);
+  border-radius: 0.62rem;
+  background: rgba(0, 14, 22, 0.72);
+  overflow: hidden;
+}
+
+body:not(.home) .np-help-details summary {
+  cursor: pointer;
+  padding: 0.9rem 1rem;
+  color: #ecbd77;
+  font-weight: 800;
+  list-style-position: inside;
+}
+
+body:not(.home) .np-help-details > div {
+  padding: 0 1rem 1rem;
+  color: rgba(235, 226, 205, 0.86);
+}
+
+@media (max-width: 66.49rem) {
+  body:not(.home) .echo-page-box,
+  body:not(.home) .np-help-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   Step 43: Footer wie Kopfzeile am unteren Fensterrand fixieren
+   ========================================================= */
+
+:root {
+  --np-fixed-footer-height: 4.25rem;
+}
+
+body {
+  padding-bottom: var(--np-fixed-footer-height) !important;
+}
+
+.np-site-footer {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 900 !important;
+  width: 100% !important;
+  min-height: var(--np-fixed-footer-height) !important;
+  margin: 0 !important;
+  padding: 0.55rem 0 !important;
+  border-top: 1px solid rgba(0, 230, 246, 0.20) !important;
+  background:
+    linear-gradient(180deg, rgba(0, 18, 33, 0.94), rgba(0, 9, 15, 0.98)) !important;
+  box-shadow: 0 -14px 36px rgba(0, 0, 0, 0.34) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.np-site-footer-inner {
+  width: min(1420px, calc(100vw - 9rem)) !important;
+  max-width: 1420px !important;
+  min-height: 2.75rem !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1.4rem !important;
+}
+
+.np-site-footer-brand {
+  min-width: 0 !important;
+}
+
+.np-site-footer-brand strong {
+  display: block !important;
+  color: #ecbd77 !important;
+  font-size: 0.82rem !important;
+  line-height: 1.1 !important;
+}
+
+.np-site-footer-brand span {
+  display: block !important;
+  margin-top: 0.12rem !important;
+  color: rgba(235, 226, 205, 0.68) !important;
+  font-size: 0.68rem !important;
+  line-height: 1.1 !important;
+}
+
+.np-site-footer-links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+.np-site-footer-links a,
+.np-site-footer-links span {
+  color: rgba(235, 226, 205, 0.82) !important;
+  font-size: 0.68rem !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.np-site-footer-links a:hover,
+.np-site-footer-links a:focus-visible {
+  color: #00e6f6 !important;
+}
+
+@media (max-width: 66.49rem) {
+  :root {
+    --np-fixed-footer-height: 6.2rem;
+  }
+
+  .np-site-footer-inner {
+    width: min(100% - 2rem, 720px) !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.55rem !important;
+  }
+
+  .np-site-footer-links {
+    justify-content: flex-start !important;
+    gap: 0.55rem !important;
+  }
+}
