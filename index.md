@@ -82,7 +82,7 @@ permalink: /
 
 <div class="np-page-meta">
 <!-- AUTO_UPDATED_START -->
-<p class="np-last-updated">Zuletzt aktualisiert: 07.06.2026 23:46 Uhr</p>
+<p class="np-last-updated">Zuletzt aktualisiert: 08.06.2026 12:57 Uhr</p>
 <!-- AUTO_UPDATED_END -->
 </div>
 
