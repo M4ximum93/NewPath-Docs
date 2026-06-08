@@ -5,7 +5,7 @@ nav_order: 5
 permalink: /modpack-hilfe.html
 ---
 <!-- AUTO_UPDATED_START -->
-<p class="np-last-updated">Zuletzt aktualisiert: 08.06.2026 13:40 Uhr</p>
+<p class="np-last-updated">Zuletzt aktualisiert: 08.06.2026 15:50 Uhr</p>
 <!-- AUTO_UPDATED_END -->
 
 <section class="echo-page-box echo-page-box-help">
@@ -22,11 +22,10 @@ permalink: /modpack-hilfe.html
 
   <div class="echo-page-content">
     <p class="echo-page-kicker">ECHO hilft bei Setup, Technik und Mods</p>
-    <h2>Hier findest du Hilfen rund um NewPath.</h2>
+    <h2>Modpack-Hilfe für Einstieg, Technik und einzelne Mods.</h2>
     <p>
-      Diese Seite sammelt Installationshilfen, technische Hinweise und Anleitungen zu einzelnen
-      Modpack-Funktionen. Die Bereiche sind aufklappbar, damit du schnell genau das findest,
-      was du gerade brauchst.
+      Hier sammelt ECHO alle wichtigen Hilfen rund um NewPath: Installation, RAM-Zuweisung,
+      Voice Chat, typische Startprobleme und später auch kurze Guides zu einzelnen Mods.
     </p>
   </div>
 
@@ -35,16 +34,13 @@ permalink: /modpack-hilfe.html
 # Modpack Hilfe
 
 Die **Modpack Hilfe** ist die zentrale Hilfebibliothek für **NewPath – Echoes of the Wild**.
-Hier landen nicht nur technische Hinweise, sondern auch Anleitungen zu einzelnen Mods,
-Serverfunktionen und typischen Fragen aus dem Discord.
+Sie ersetzt keine Support-Tickets, soll aber die häufigsten Fragen so erklären, dass neue Spieler
+schnell selbst weiterkommen.
 
 <div class="np-help-note">
-  <strong>Hinweis:</strong> Viele Inhalte stammen aus Hilfebeiträgen im Discord und werden hier nach und nach sauber gesammelt. Bilder und Schritt-für-Schritt-Grafiken können später direkt in die passenden Bereiche eingebunden werden.
+  <strong>Hinweis:</strong> Die Bereiche sind bewusst aufklappbar. So bleibt die Seite übersichtlich,
+  auch wenn später Bilder, Schritt-für-Schritt-Grafiken und einzelne Mod-Guides ergänzt werden.
 </div>
-
----
-
-## Schnellstart
 
 <div class="np-help-grid" id="mitspielen">
   <a class="np-help-tile" href="#installation">
@@ -59,13 +55,40 @@ Serverfunktionen und typischen Fragen aus dem Discord.
 
   <a class="np-help-tile" href="#voice-chat">
     <strong>Voice Chat</strong>
-    <span>Grundlagen, Einstellungen und Gruppen</span>
+    <span>Mikrofon, Lautstärke und Gruppen</span>
   </a>
 
-  <a class="np-help-tile" href="#mod-guides">
-    <strong>Mod-Anleitungen</strong>
-    <span>Hilfen zu einzelnen Mods und Funktionen</span>
+  <a class="np-help-tile" href="#probleme">
+    <strong>Probleme & Support</strong>
+    <span>Startprobleme und typische Fehler</span>
   </a>
+</div>
+
+---
+
+## Schnellstart: Empfohlene Reihenfolge
+
+<div class="np-help-flow">
+  <div>
+    <span>1</span>
+    <strong>Installieren</strong>
+    <p>Modpack über CurseForge suchen und installieren.</p>
+  </div>
+  <div>
+    <span>2</span>
+    <strong>RAM prüfen</strong>
+    <p>Dem Modpack genug Arbeitsspeicher zuweisen.</p>
+  </div>
+  <div>
+    <span>3</span>
+    <strong>Voice Chat testen</strong>
+    <p>Mikrofon, Ausgabe und Lautstärke einstellen.</p>
+  </div>
+  <div>
+    <span>4</span>
+    <strong>Whitelist klären</strong>
+    <p>Discord und Zugangsinformationen prüfen.</p>
+  </div>
 </div>
 
 ---
@@ -77,12 +100,20 @@ Serverfunktionen und typischen Fragen aus dem Discord.
   <div>
     <p>
       NewPath wird ausschließlich über CurseForge veröffentlicht. Suche im CurseForge Launcher nach
-      <strong>NewPath</strong> und installiere die passende Modpack-Version.
+      <strong>NewPath</strong> und installiere die aktuell empfohlene Version.
     </p>
-    <p>
-      Später können hier die vorhandenen Discord-Anleitungsbilder direkt eingebunden werden,
-      zum Beispiel die Schritt-für-Schritt-Grafik zur Installation über CurseForge.
-    </p>
+
+    <ol class="np-help-checklist">
+      <li>CurseForge Launcher öffnen.</li>
+      <li>Nach <strong>NewPath</strong> suchen.</li>
+      <li>Das richtige NewPath-Projekt auswählen.</li>
+      <li>Auf <strong>Installieren</strong> klicken.</li>
+      <li>Nach der Installation RAM-Zuweisung prüfen.</li>
+    </ol>
+
+    <div class="np-help-image-placeholder">
+      Bildplatzhalter: CurseForge-Installationsgrafik später hier einfügen.
+    </div>
   </div>
 </details>
 
@@ -91,13 +122,25 @@ Serverfunktionen und typischen Fragen aus dem Discord.
   <div>
     <p>
       Nach der Installation solltest du prüfen, wie viel Arbeitsspeicher dem Modpack zugewiesen ist.
-      Für große Modpacks empfehlen wir mindestens <strong>8 GB RAM</strong>. Je nach System und Version
-      können auch mehr sinnvoll sein.
+      Für NewPath empfehlen wir mindestens <strong>8 GB RAM</strong>. Je nach System, Shadern,
+      Ressourcenauslastung und Version können auch mehr sinnvoll sein.
     </p>
-    <p>
-      Zu wenig RAM kann dazu führen, dass das Spiel langsam startet, ruckelt oder instabil läuft.
-      Die vorhandene RAM-Anleitung aus dem Discord kann hier später als Bild ergänzt werden.
-    </p>
+
+    <ol class="np-help-checklist">
+      <li>CurseForge Launcher öffnen.</li>
+      <li>Links unten auf die Einstellungen gehen.</li>
+      <li>Unter Minecraft die Java-/Speichereinstellungen öffnen.</li>
+      <li>Den Regler für zugewiesenen Speicher prüfen.</li>
+      <li>Mindestens <strong>8000 MB</strong> einstellen.</li>
+    </ol>
+
+    <div class="np-help-warning">
+      Zu wenig RAM kann dazu führen, dass das Spiel langsam startet, stark ruckelt oder beim Laden abstürzt.
+    </div>
+
+    <div class="np-help-image-placeholder">
+      Bildplatzhalter: RAM-Zuweisungsgrafik später hier einfügen.
+    </div>
   </div>
 </details>
 
@@ -105,9 +148,53 @@ Serverfunktionen und typischen Fragen aus dem Discord.
   <summary>Richtige Modpack-Version finden</summary>
   <div>
     <p>
-      Achte darauf, dass du die aktuell empfohlene NewPath-Version nutzt. Hinweise zur aktiven Version
-      stehen auf der Startseite und im Discord.
+      Achte darauf, dass du die aktuell empfohlene Version nutzt. Die aktive Version steht auf der Startseite
+      und wird zusätzlich im Discord angekündigt.
     </p>
+    <p>
+      Wenn du unsicher bist, ob du die richtige Version installiert hast, vergleiche die Versionsnummer im
+      CurseForge Launcher mit der Angabe auf der Startseite.
+    </p>
+  </div>
+</details>
+
+---
+
+## Voice Chat & Kommunikation
+
+<details id="voice-chat" class="np-help-details">
+  <summary>Voice Chat einrichten</summary>
+  <div>
+    <p>
+      NewPath nutzt eine Voice-Chat-Mod. Damit du andere Spieler hören kannst und selbst gehört wirst,
+      solltest du die Grundeinstellungen einmal prüfen.
+    </p>
+
+    <ul class="np-help-checklist">
+      <li>Mikrofon und Ausgabegerät auswählen.</li>
+      <li>Lautstärke einzelner Spieler prüfen.</li>
+      <li>Push-to-Talk oder Sprachaktivierung einstellen.</li>
+      <li>Gruppen erstellen oder bestehenden Gruppen beitreten.</li>
+      <li>Testen, ob dein Mikrofon im Spiel korrekt erkannt wird.</li>
+    </ul>
+
+    <div class="np-help-image-placeholder">
+      Bildplatzhalter: Voice-Chat-Grafik später hier einfügen.
+    </div>
+  </div>
+</details>
+
+<details class="np-help-details">
+  <summary>Voice Chat funktioniert nicht</summary>
+  <div>
+    <p>Wenn der Voice Chat nicht funktioniert, prüfe zuerst diese Punkte:</p>
+    <ul class="np-help-checklist">
+      <li>Ist das richtige Mikrofon ausgewählt?</li>
+      <li>Ist das richtige Ausgabegerät ausgewählt?</li>
+      <li>Ist die Mikrofonlautstärke nicht auf 0?</li>
+      <li>Blockiert Windows oder ein anderes Programm das Mikrofon?</li>
+      <li>Ist Push-to-Talk aktiviert und die Taste korrekt belegt?</li>
+    </ul>
   </div>
 </details>
 
@@ -115,19 +202,13 @@ Serverfunktionen und typischen Fragen aus dem Discord.
 
 ## Wichtige Serverfunktionen
 
-<details id="voice-chat" class="np-help-details">
-  <summary>Voice Chat einrichten</summary>
+<details class="np-help-details">
+  <summary>Whitelist und Zugang</summary>
   <div>
     <p>
-      NewPath nutzt eine Voice-Chat-Mod. Hier können später die vorhandenen Discord-Anleitungen zu
-      Mikrofon, Lautstärke, Gruppen und Grundeinstellungen eingebunden werden.
+      Der Zugang zum Server läuft über Discord und die Whitelist. Hinweise zum Ablauf findest du im Discord
+      und auf der Startseite in den Server-Kurzinfos.
     </p>
-    <ul>
-      <li>Mikrofon und Ausgabegerät prüfen</li>
-      <li>Lautstärke einzelner Spieler anpassen</li>
-      <li>Voice-Gruppen erstellen oder beitreten</li>
-      <li>Push-to-Talk oder Sprachaktivierung einstellen</li>
-    </ul>
   </div>
 </details>
 
@@ -135,8 +216,8 @@ Serverfunktionen und typischen Fragen aus dem Discord.
   <summary>Claims, Grundstücke und Reisen</summary>
   <div>
     <p>
-      Hier können später Hilfen zu Claims, Grundstücken, Wegsteinen oder anderen wichtigen
-      Serverfunktionen ergänzt werden.
+      Dieser Bereich ist für spätere Hilfen zu Claims, Grundstücken, Wegsteinen und Reisewegen gedacht.
+      Die Inhalte werden ergänzt, sobald die finalen Serverregeln und Funktionen feststehen.
     </p>
   </div>
 </details>
@@ -145,16 +226,23 @@ Serverfunktionen und typischen Fragen aus dem Discord.
 
 ## Mod-Anleitungen
 
-<details id="mod-guides" class="np-help-details">
+<div class="np-help-topic-list" id="mod-guides">
+  <div>
+    <strong>Geplante Themen</strong>
+    <span>Kurze Guides zu Mods und Funktionen, die häufig Fragen auslösen.</span>
+  </div>
+  <div>
+    <strong>Format</strong>
+    <span>Kurzer Erklärungstext, klare Schritte, optional Bild oder Beispiel.</span>
+  </div>
+</div>
+
+<details class="np-help-details">
   <summary>Einzelne Mods kurz erklärt</summary>
   <div>
     <p>
-      Dieser Bereich ist für kleine Anleitungen zu einzelnen Mods gedacht. Beispiele:
-      Menüs, wichtige Tastenkürzel, typische Anfängerfragen oder besondere Funktionen.
-    </p>
-    <p>
-      Solche Anleitungen können ähnlich wie die Discord-Beispiele aufgebaut werden:
-      kurzer Erklärungstext, klare Schritte und optional ein Bild darunter.
+      Dieser Bereich ist für kleine Anleitungen zu einzelnen Mods gedacht. Beispiele können später sein:
+      wichtige Menüs, Tastenkürzel, Anfängerfragen oder besondere Funktionen.
     </p>
   </div>
 </details>
@@ -163,7 +251,8 @@ Serverfunktionen und typischen Fragen aus dem Discord.
   <summary>Wichtige Tastenkürzel und Menüs</summary>
   <div>
     <p>
-      Hier können später häufig benötigte Tastenbelegungen und Menüfunktionen gesammelt werden.
+      Hier können häufig benötigte Tastenbelegungen und Menüfunktionen gesammelt werden.
+      Besonders hilfreich ist das für Mods, die neue Oberflächen oder Spezialfunktionen hinzufügen.
     </p>
   </div>
 </details>
@@ -175,22 +264,26 @@ Serverfunktionen und typischen Fragen aus dem Discord.
 <details id="probleme" class="np-help-details">
   <summary>Spiel startet nicht oder stürzt ab</summary>
   <div>
+    <p>Wenn NewPath nicht startet, prüfe zuerst:</p>
+    <ul class="np-help-checklist">
+      <li>Ist genug RAM zugewiesen?</li>
+      <li>Ist die richtige Modpack-Version installiert?</li>
+      <li>Wurde der Download vollständig abgeschlossen?</li>
+      <li>Wurde das Modpack manuell verändert?</li>
+      <li>Gibt es eine konkrete Fehlermeldung oder einen Crash-Report?</li>
+    </ul>
     <p>
-      Wenn NewPath nicht startet, prüfe zuerst RAM-Zuweisung, Modpack-Version und ob der Launcher
-      vollständig fertig heruntergeladen hat.
-    </p>
-    <p>
-      Für Support im Discord sind Fehlermeldungen, Logs oder Screenshots hilfreich.
+      Für Support im Discord helfen Screenshots, Fehlermeldungen und Logs enorm.
     </p>
   </div>
 </details>
 
 <details class="np-help-details">
-  <summary>Voice Chat funktioniert nicht</summary>
+  <summary>Wann sollte ich ein Support-Ticket öffnen?</summary>
   <div>
     <p>
-      Prüfe Mikrofon, Ausgabegerät, Lautstärke, Berechtigungen und ob die Voice-Chat-Einstellungen
-      korrekt gesetzt sind.
+      Öffne ein Ticket, wenn du trotz Anleitung nicht weiterkommst, wenn ein Fehler mehrfach auftritt
+      oder wenn du nicht sicher bist, ob ein Problem an deinem Client, am Modpack oder am Server liegt.
     </p>
   </div>
 </details>

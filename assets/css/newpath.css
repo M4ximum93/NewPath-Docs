@@ -1711,3 +1711,124 @@ blockquote {
     justify-content: flex-start;
   }
 }
+/* =========================================================
+   Schritt 65: Modpack-Hilfe weiter ausbauen
+   Nur Unterseiten-/Hilfeseiten-Styling. Header/Footer bleiben unangetastet.
+   ========================================================= */
+
+.np-help-flow {
+  width: min(1180px, calc(100% - 3rem));
+  max-width: 1180px;
+  margin: 1.15rem auto 1.65rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.np-help-flow > div {
+  min-height: 7rem;
+  padding: 1rem;
+  border-radius: 0.68rem;
+  background: linear-gradient(180deg, rgba(18, 55, 66, 0.7), rgba(7, 24, 31, 0.82));
+  border: 1px solid rgba(72, 122, 146, 0.34);
+  box-shadow: inset 0 0 24px rgba(0, 230, 246, 0.025);
+}
+
+.np-help-flow span {
+  width: 2rem;
+  height: 2rem;
+  display: inline-grid;
+  place-items: center;
+  margin-bottom: 0.58rem;
+  border-radius: 999px;
+  color: #061014;
+  background: var(--np-cyan);
+  font-size: 0.9rem;
+  font-weight: 900;
+  box-shadow: 0 0 16px rgba(0, 230, 246, 0.18);
+}
+
+.np-help-flow strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--np-gold-soft);
+  font-size: 1rem;
+}
+
+.np-help-flow p {
+  margin: 0;
+  color: rgba(245, 234, 220, 0.78);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.np-help-checklist {
+  padding-left: 1.25rem;
+}
+
+.np-help-checklist li {
+  margin: 0.35rem 0;
+}
+
+.np-help-warning,
+.np-help-image-placeholder {
+  margin-top: 0.9rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 0.55rem;
+}
+
+.np-help-warning {
+  color: rgba(245, 234, 220, 0.94);
+  background: rgba(236, 183, 110, 0.12);
+  border: 1px solid rgba(236, 183, 110, 0.34);
+}
+
+.np-help-image-placeholder {
+  display: grid;
+  min-height: 7.5rem;
+  place-items: center;
+  color: rgba(245, 234, 220, 0.62);
+  text-align: center;
+  border: 1px dashed rgba(0, 230, 246, 0.34);
+  background: rgba(0, 230, 246, 0.055);
+}
+
+.np-help-topic-list {
+  width: min(1180px, calc(100% - 3rem));
+  max-width: 1180px;
+  margin: 1rem auto 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.np-help-topic-list > div {
+  padding: 0.95rem 1rem;
+  border-radius: 0.62rem;
+  background: rgba(17, 46, 64, 0.64);
+  border: 1px solid rgba(72, 122, 146, 0.3);
+}
+
+.np-help-topic-list strong,
+.np-help-topic-list span {
+  display: block;
+}
+
+.np-help-topic-list strong {
+  margin-bottom: 0.3rem;
+  color: var(--np-gold-soft);
+}
+
+.np-help-topic-list span {
+  color: rgba(245, 234, 220, 0.78);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 66.499rem) {
+  .np-help-flow,
+  .np-help-topic-list {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
