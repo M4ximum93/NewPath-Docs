@@ -20,46 +20,61 @@
 
 <script>
   (function () {
-    function moveNewPathFooter() {
-      var footers = Array.prototype.slice.call(document.querySelectorAll('.np-site-footer, #np-global-footer'));
-      if (!footers.length) return;
+    function fixNewPathFooter() {
+      var footer = document.getElementById('np-global-footer');
+      var allFooters = Array.prototype.slice.call(document.querySelectorAll('.np-site-footer'));
 
-      var footer = document.getElementById('np-global-footer') || footers[0];
-      footer.id = 'np-global-footer';
+      if (!footer && allFooters.length) {
+        footer = allFooters[0];
+        footer.id = 'np-global-footer';
+      }
+
+      if (!footer) return;
+
+      allFooters.forEach(function (item) {
+        if (item !== footer && item.parentNode) item.parentNode.removeChild(item);
+      });
+
       footer.classList.add('np-site-footer');
       footer.setAttribute('data-np-footer', 'global');
 
-      footers.forEach(function (item) {
-        if (item !== footer && item.parentNode) {
-          item.parentNode.removeChild(item);
-        }
-      });
-
-      if (footer.parentNode !== document.body) {
+      if (footer.parentElement !== document.body) {
         document.body.appendChild(footer);
       }
 
-      footer.style.position = 'fixed';
-      footer.style.left = '0';
-      footer.style.right = '0';
-      footer.style.bottom = '0';
-      footer.style.width = '100vw';
-      footer.style.zIndex = '2147483000';
+      Object.assign(footer.style, {
+        position: 'fixed',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        top: 'auto',
+        width: '100vw',
+        maxWidth: '100vw',
+        margin: '0',
+        zIndex: '2147481000'
+      });
     }
 
-    function scheduleFooterMove() {
-      moveNewPathFooter();
-      window.setTimeout(moveNewPathFooter, 50);
-      window.setTimeout(moveNewPathFooter, 250);
-      window.setTimeout(moveNewPathFooter, 1000);
+    function runFooterFix() {
+      fixNewPathFooter();
+      setTimeout(fixNewPathFooter, 50);
+      setTimeout(fixNewPathFooter, 250);
+      setTimeout(fixNewPathFooter, 1000);
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', scheduleFooterMove);
+      document.addEventListener('DOMContentLoaded', runFooterFix);
     } else {
-      scheduleFooterMove();
+      runFooterFix();
     }
 
-    window.addEventListener('load', scheduleFooterMove);
+    window.addEventListener('load', runFooterFix);
+
+    if ('MutationObserver' in window) {
+      var observer = new MutationObserver(function () {
+        fixNewPathFooter();
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+    }
   })();
 </script>
