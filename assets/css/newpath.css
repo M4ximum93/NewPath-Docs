@@ -1,5 +1,5 @@
 /* NewPath – Echoes of the Wild
-   Konsolidierte CSS-Version v16
+   Konsolidierte CSS-Version v17
    Aufbau:
    1. Variablen & Grundlayout
    2. Just-the-Docs Reset
@@ -14,6 +14,11 @@
    9. Einheitliches Schriftarten-, Farb- und Komponentensystem
    10. Globale Inhaltsbreite & automatisches Spacing
    11. Dynamischer Zurück-nach-oben-Button
+   12. Startseite / Team / FAQ / Statusleiste
+   13. Regelwerk
+   14. Suche
+   15. Interaktionen & globale UI-Details
+   16. Konsolidierung / Performance / Robustheit
 */
 
 :root {
@@ -4015,14 +4020,112 @@ button:focus-visible {
 .np-team-card:hover {
   transform: none;
 }
-/* =========================================================
-   Design-Feinschliff: Akkordeons, Section-Header, Hinweisboxen
-   - subtile globale Verschönerungen für alle Seiten
-   - keine neuen Bilder, keine JS-Änderung
-   - bewusst leichtgewichtig gehalten
-   ========================================================= */
 
-/* 1. Section-Header: kleine EOTW-Trenner unter Überschriften */
+/* 15. Interaktionen & globale UI-Details
+   Einheitliche Hover-/Fokuszustände, Akkordeons, Section-Header,
+   Hinweisboxen und kleine Badges. Keine rechten Kreis/Kreuz-Ornamente. */
+
+@media (hover: hover) and (pointer: fine) {
+  .np-top-nav a,
+  .main-header .aux-nav a,
+  .np-site-footer-links a,
+  .np-route-card,
+  .np-card-link,
+  .np-route-link,
+  .np-help-tile,
+  .np-community-card,
+  .np-streamer-card a,
+  .np-asset-card a,
+  .main-content a,
+  .np-faq-details summary,
+  .np-help-details summary,
+  .np-accordion summary,
+  .np-back-to-top,
+  button {
+    transition:
+      transform 160ms ease,
+      border-color 160ms ease,
+      background 160ms ease,
+      color 160ms ease,
+      box-shadow 160ms ease,
+      opacity 160ms ease;
+  }
+
+  .np-route-card:hover,
+  .np-help-tile:hover,
+  .np-community-card:hover {
+    transform: translateY(-0.18rem);
+    border-color: rgba(0, 230, 246, 0.62) !important;
+    box-shadow:
+      0 18px 34px rgba(0, 0, 0, 0.34),
+      0 0 22px rgba(0, 230, 246, 0.10),
+      inset 0 0 26px rgba(0, 230, 246, 0.035) !important;
+  }
+
+  .np-card-link:hover,
+  .np-route-link:hover,
+  .np-streamer-card a:hover,
+  .np-asset-card a:hover,
+  .main-content a:hover {
+    color: var(--np-gold-soft) !important;
+    text-shadow: 0 0 12px rgba(236, 183, 110, 0.18);
+  }
+
+  .np-faq-details summary:hover,
+  .np-help-details summary:hover,
+  .np-accordion summary:hover {
+    color: var(--np-gold-soft) !important;
+    background:
+      linear-gradient(90deg, rgba(0, 230, 246, 0.075), rgba(236, 183, 110, 0.045), transparent) !important;
+    box-shadow: inset 3px 0 0 rgba(0, 230, 246, 0.50);
+  }
+
+  .np-top-nav a:hover,
+  .main-header .aux-nav a:hover,
+  .np-site-footer-links a:hover,
+  .np-back-to-top:hover,
+  button:hover {
+    transform: translateY(-0.08rem);
+  }
+
+  .np-route-card:active,
+  .np-help-tile:active,
+  .np-community-card:active,
+  .np-top-nav a:active,
+  .main-header .aux-nav a:active,
+  .np-back-to-top:active,
+  button:active {
+    transform: translateY(0);
+  }
+}
+
+.np-top-nav a:focus-visible,
+.main-header .aux-nav a:focus-visible,
+.np-site-footer-links a:focus-visible,
+.np-route-card:focus-visible,
+.np-card-link:focus-visible,
+.np-route-link:focus-visible,
+.np-help-tile:focus-visible,
+.np-community-card:focus-visible,
+.main-content a:focus-visible,
+.np-faq-details summary:focus-visible,
+.np-help-details summary:focus-visible,
+.np-accordion summary:focus-visible,
+.np-back-to-top:focus-visible,
+button:focus-visible {
+  outline: none !important;
+  box-shadow:
+    0 0 0 2px rgba(0, 230, 246, 0.42),
+    0 0 22px rgba(0, 230, 246, 0.14) !important;
+}
+
+.np-info-card:not(a):hover,
+.np-rule-block:hover,
+.np-team-card:hover {
+  transform: none;
+}
+
+/* Section-Header: subtile EOTW-Trenner */
 .np-section-header {
   position: relative;
 }
@@ -4035,25 +4138,26 @@ button:focus-visible {
   margin-top: 0.85rem;
   background: linear-gradient(
     90deg,
-    rgba(0, 230, 246, 0.00),
+    rgba(0, 230, 246, 0),
     rgba(0, 230, 246, 0.40),
     rgba(236, 183, 110, 0.36),
-    rgba(0, 230, 246, 0.00)
+    rgba(0, 230, 246, 0)
   );
   box-shadow: 0 0 16px rgba(0, 230, 246, 0.08);
 }
 
 .np-section-header .np-title {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
 }
 
 .np-section-header .np-title::before {
   content: "";
-  display: inline-block;
+  flex: 0 0 0.42rem;
   width: 0.42rem;
   height: 0.42rem;
-  margin-right: 0.55rem;
-  vertical-align: 0.12em;
+  margin: 0 !important;
   border-radius: 999px;
   background: var(--np-cyan);
   box-shadow:
@@ -4061,7 +4165,7 @@ button:focus-visible {
     0 0 14px rgba(0, 230, 246, 0.20);
 }
 
-/* 2. Akkordeons: hochwertigerer Öffnungszustand */
+/* Akkordeons: besserer Öffnungszustand */
 .np-faq-details,
 .np-help-details,
 .np-accordion {
@@ -4087,6 +4191,7 @@ button:focus-visible {
   flex: 0 0 1.25rem;
   display: inline-grid;
   place-items: center;
+  margin-right: 0 !important;
   border-radius: 999px;
   color: #001221;
   background: var(--np-cyan);
@@ -4124,20 +4229,20 @@ button:focus-visible {
   color: #1a1208;
 }
 
-/* vorhandene alte Dreieck-Icons neutralisieren, falls noch vorhanden */
 .np-help-details summary::after,
 .np-faq-details summary::after,
 .np-accordion summary::after {
   content: none !important;
 }
 
-/* 3. Einheitliche Hinweisboxen */
+/* Einheitliche Hinweisboxen mit sauber ausgerichtetem Punkt */
 .np-note,
 .np-help-note,
 .np-rules-note,
 .np-help-warning {
   position: relative;
   overflow: hidden;
+  padding-left: 1.8rem !important;
   border: 1px solid rgba(72, 122, 146, 0.34) !important;
   border-left: 3px solid rgba(236, 183, 110, 0.78) !important;
   border-radius: 0.72rem;
@@ -4155,20 +4260,14 @@ button:focus-visible {
 .np-help-warning::before {
   content: "";
   position: absolute;
-  left: 0.8rem;
-  top: 0.9rem;
+  left: 0.85rem !important;
+  top: 1.05rem !important;
   width: 0.42rem;
   height: 0.42rem;
   border-radius: 999px;
   background: var(--np-gold-soft);
   box-shadow: 0 0 14px rgba(236, 183, 110, 0.24);
-}
-
-.np-note,
-.np-help-note,
-.np-rules-note,
-.np-help-warning {
-  padding-left: 1.65rem !important;
+  transform: translateY(0.05rem);
 }
 
 .np-note strong,
@@ -4176,34 +4275,18 @@ button:focus-visible {
 .np-rules-note strong,
 .np-help-warning strong {
   color: var(--np-gold-soft) !important;
+  line-height: 1.45;
 }
 
-/* 4. Dezente Box-Ornamente, ohne zusätzliche Bilder */
+/* Rechte Kreis/Kreuz-Ornamente bewusst deaktiviert */
 .echo-page-box::after,
 .np-page-section::after,
 .np-history-panel::after {
-  content: "";
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  width: 5.5rem;
-  height: 5.5rem;
-  pointer-events: none;
-  opacity: 0.08;
-  background:
-    linear-gradient(90deg, transparent 48%, rgba(0, 230, 246, 0.9) 49%, rgba(0, 230, 246, 0.9) 51%, transparent 52%),
-    linear-gradient(0deg, transparent 48%, rgba(0, 230, 246, 0.9) 49%, rgba(0, 230, 246, 0.9) 51%, transparent 52%);
-  border: 1px solid rgba(0, 230, 246, 0.55);
-  border-radius: 999px;
+  content: none !important;
+  display: none !important;
 }
 
-.echo-page-box,
-.np-page-section,
-.np-history-panel {
-  position: relative;
-}
-
-/* 5. Kleine Status-Badges für spätere Inhalte */
+/* Kleine Status-Badges für spätere Inhalte */
 .np-badge,
 .np-badge-optional,
 .np-badge-required,
@@ -4247,16 +4330,9 @@ button:focus-visible {
   border: 1px solid rgba(125, 223, 115, 0.26);
 }
 
-/* 6. Mobile/Reduced Motion sauber halten */
 @media (max-width: 66.499rem) {
   .np-section-header::after {
     width: 100%;
-  }
-
-  .echo-page-box::after,
-  .np-page-section::after,
-  .np-history-panel::after {
-    display: none;
   }
 }
 
@@ -4267,64 +4343,41 @@ button:focus-visible {
     transition: none !important;
   }
 }
-/* =========================================================
-   Fix: Globale Deko-Ornamente und Punkt-Ausrichtung
-   - entfernt das Kreis/Kreuz-Ornament rechts in Boxen
-   - richtet kleine Punkte in Überschriften/Hinweisboxen sauber aus
-   ========================================================= */
 
-/* Kreis/Kreuz-Deko rechts entfernen */
-.echo-page-box::after,
-.np-page-section::after,
-.np-history-panel::after {
-  content: none !important;
-  display: none !important;
+
+/* 16. Konsolidierung / Performance / Robustheit
+   Zentrale Nachschärfung ohne neue Seiten-Sonderlogik. */
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Section-Titel-Punkt sauber mittig zur Überschrift ausrichten */
-.np-section-header .np-title {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
+.np-topbar-logo,
+.np-hero-logo img,
+.echo-page-image img,
+.np-pathfinder-image img,
+.np-team-image img {
+  content-visibility: auto;
 }
 
-.np-section-header .np-title::before {
-  content: "";
-  flex: 0 0 0.42rem;
-  width: 0.42rem;
-  height: 0.42rem;
-  margin: 0 !important;
-  border-radius: 999px;
-  background: var(--np-cyan);
-  box-shadow:
-    0 0 0 0.22rem rgba(0, 230, 246, 0.08),
-    0 0 14px rgba(0, 230, 246, 0.20);
+.np-panel,
+.np-page-section,
+.echo-page-box,
+.np-rule-block,
+.np-info-card,
+.np-route-card {
+  contain: layout paint;
 }
 
-/* Hinweisbox-Punkt sauber mittig zur ersten Textzeile ausrichten */
-.np-note,
-.np-help-note,
-.np-rules-note,
-.np-help-warning {
-  position: relative;
-  padding-left: 1.8rem !important;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
-.np-note::before,
-.np-help-note::before,
-.np-rules-note::before,
-.np-help-warning::before {
-  left: 0.85rem !important;
-  top: 1.05rem !important;
-  width: 0.42rem;
-  height: 0.42rem;
-  transform: translateY(0.05rem);
-}
-
-/* Falls Hinweisboxen sehr kompakt sind, bleibt der Punkt trotzdem sauber */
-.np-note strong,
-.np-help-note strong,
-.np-rules-note strong,
-.np-help-warning strong {
-  line-height: 1.45;
-}
