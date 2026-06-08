@@ -4267,3 +4267,64 @@ button:focus-visible {
     transition: none !important;
   }
 }
+/* =========================================================
+   Fix: Globale Deko-Ornamente und Punkt-Ausrichtung
+   - entfernt das Kreis/Kreuz-Ornament rechts in Boxen
+   - richtet kleine Punkte in Überschriften/Hinweisboxen sauber aus
+   ========================================================= */
+
+/* Kreis/Kreuz-Deko rechts entfernen */
+.echo-page-box::after,
+.np-page-section::after,
+.np-history-panel::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Section-Titel-Punkt sauber mittig zur Überschrift ausrichten */
+.np-section-header .np-title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.np-section-header .np-title::before {
+  content: "";
+  flex: 0 0 0.42rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  margin: 0 !important;
+  border-radius: 999px;
+  background: var(--np-cyan);
+  box-shadow:
+    0 0 0 0.22rem rgba(0, 230, 246, 0.08),
+    0 0 14px rgba(0, 230, 246, 0.20);
+}
+
+/* Hinweisbox-Punkt sauber mittig zur ersten Textzeile ausrichten */
+.np-note,
+.np-help-note,
+.np-rules-note,
+.np-help-warning {
+  position: relative;
+  padding-left: 1.8rem !important;
+}
+
+.np-note::before,
+.np-help-note::before,
+.np-rules-note::before,
+.np-help-warning::before {
+  left: 0.85rem !important;
+  top: 1.05rem !important;
+  width: 0.42rem;
+  height: 0.42rem;
+  transform: translateY(0.05rem);
+}
+
+/* Falls Hinweisboxen sehr kompakt sind, bleibt der Punkt trotzdem sauber */
+.np-note strong,
+.np-help-note strong,
+.np-rules-note strong,
+.np-help-warning strong {
+  line-height: 1.45;
+}
