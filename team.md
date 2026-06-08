@@ -70,7 +70,7 @@ permalink: /team.html
           loading="lazy"
           decoding="async">
       </div>
-      <p class="np-card-kicker np-team-role">Founder - Projektleitung- Entwicklung/ Technik</p>
+      <p class="np-card-kicker np-team-role">Founder - Projektleitung - Entwicklung/ Technik</p>
       <h2 class="np-card-title">M4ximum_</h2>
       <p class="np-card-text">
         Kurze Beschreibung zur Rolle, zu Support-Aufgaben, Community-Betreuung oder

@@ -4444,4 +4444,113 @@ img {
     padding-bottom: 0.82rem !important;
   }
 }
+/* =========================================================
+   Teamseite: Karten-Typografie und NewPath-Farbakzente
+   - Rollenlabel, Name und Beschreibung stärker im NewPath-Stil
+   - dezente Trennung zwischen Bild und Text
+   - keine Strukturänderung
+   ========================================================= */
+
+.np-team-member-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.np-team-member-card::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: calc(1rem + min(100%, 16rem));
+  height: 1px;
+  opacity: 0.38;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 230, 246, 0),
+    rgba(0, 230, 246, 0.48),
+    rgba(236, 183, 110, 0.32),
+    rgba(0, 230, 246, 0)
+  );
+  pointer-events: none;
+}
+
+.np-team-role,
+.np-team-member-card .np-card-kicker,
+.np-team-member-card .np-team-role {
+  color: var(--np-cyan) !important;
+  font-family: var(--np-font-label);
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.075em !important;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(0, 230, 246, 0.12);
+}
+
+.np-team-member-card h2,
+.np-team-member-card h3,
+.np-team-member-card .np-card-title {
+  margin-top: 0.28rem !important;
+  margin-bottom: 0.55rem !important;
+  color: var(--np-gold-soft) !important;
+  font-family: var(--np-font-heading);
+  font-size: clamp(1.08rem, 1vw, 1.28rem) !important;
+  font-weight: 950 !important;
+  line-height: 1.12 !important;
+  text-shadow: 0 0 14px rgba(236, 183, 110, 0.10);
+}
+
+.np-team-member-card p:not(.np-card-kicker):not(.np-team-role),
+.np-team-member-card .np-card-text {
+  color: rgba(247, 236, 220, 0.84) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.58 !important;
+}
+
+.np-team-member-card strong {
+  color: var(--np-gold-soft);
+}
+
+.np-team-member-card .np-team-image,
+.np-team-member-card .np-team-image-placeholder {
+  margin-bottom: 1.05rem !important;
+  border-color: rgba(0, 230, 246, 0.34) !important;
+  box-shadow:
+    inset 0 0 22px rgba(0, 230, 246, 0.035),
+    0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Karten ohne echtes Bild etwas klarer als Platzhalter markieren */
+.np-team-image-placeholder span {
+  color: var(--np-cyan);
+  background: rgba(0, 230, 246, 0.10);
+  border: 1px solid rgba(0, 230, 246, 0.28);
+  box-shadow: 0 0 18px rgba(0, 230, 246, 0.08);
+}
+
+/* Dezenter individueller Akzent: erste zwei echten Teamkarten etwas wertiger */
+.np-team-grid .np-team-member-card:nth-child(1),
+.np-team-grid .np-team-member-card:nth-child(2) {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(236, 183, 110, 0.07), transparent 14rem),
+    radial-gradient(circle at 0% 0%, rgba(0, 230, 246, 0.065), transparent 16rem),
+    linear-gradient(180deg, rgba(8, 29, 38, 0.86), rgba(4, 16, 22, 0.90)) !important;
+}
+
+.np-team-grid .np-team-member-card:nth-child(1)::after,
+.np-team-grid .np-team-member-card:nth-child(2)::after {
+  content: "FOUNDER";
+  position: absolute;
+  right: 0.85rem;
+  top: 0.85rem;
+  padding: 0.16rem 0.48rem;
+  border-radius: 999px;
+  color: var(--np-gold-soft);
+  background: rgba(236, 183, 110, 0.10);
+  border: 1px solid rgba(236, 183, 110, 0.28);
+  font-family: var(--np-font-label);
+  font-size: 0.58rem;
+  font-weight: 950;
+  letter-spacing: 0.07em;
+  opacity: 0.92;
+}
 
