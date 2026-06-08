@@ -7108,3 +7108,245 @@ html body .np-help-details:not([open]) > :not(summary) {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
+
+/* =========================================================
+   Step 57 – Einstieg lesbarer + Footer wirklich viewport-fixed
+   WICHTIG: Kein Header-/Head-Fix. Nur CSS.
+   ========================================================= */
+
+:root {
+  --np-fixed-footer-height: 54px !important;
+}
+
+/* Keine Hover-/Focus-Verschiebungen im ECHO-Bereich */
+html body .np-echo-feature,
+html body .np-echo-feature *,
+html body .np-echo-feature:hover,
+html body .np-echo-feature:focus,
+html body .np-echo-feature:focus-within,
+html body .np-echo-feature *:hover,
+html body .np-echo-feature *:focus,
+html body .np-echo-feature *:focus-visible {
+  transform: none !important;
+  translate: none !important;
+  scale: 1 !important;
+  transition: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+
+/* ECHO bleibt im aktuellen guten Zustand, aber stabil */
+html body.home .np-main-grid-echo-first .np-echo-feature,
+html body .np-home .np-main-grid-echo-first .np-echo-feature {
+  height: 210px !important;
+  min-height: 210px !important;
+  max-height: 210px !important;
+  display: grid !important;
+  grid-template-columns: 142px minmax(0, 1fr) !important;
+  gap: 1.05rem !important;
+  align-items: center !important;
+  padding: 1rem 1.18rem !important;
+  overflow: hidden !important;
+}
+
+html body .np-echo-image-wrap {
+  width: 136px !important;
+  min-width: 136px !important;
+  height: 180px !important;
+}
+
+html body .np-echo-image-wrap img {
+  width: 132px !important;
+  height: 172px !important;
+  max-width: 132px !important;
+  max-height: 172px !important;
+  object-fit: contain !important;
+}
+
+/* Einstieg: nicht zu klein, keine Textquetschung, 4 Karten sauber nebeneinander */
+html body.home .np-main-grid-echo-first .np-quick-panel,
+html body .np-home .np-main-grid-echo-first .np-quick-panel {
+  height: 210px !important;
+  min-height: 210px !important;
+  max-height: 210px !important;
+  padding: 1rem 1.05rem 1.05rem !important;
+  overflow: hidden !important;
+}
+
+html body .np-quick-panel h2 {
+  font-size: clamp(1.02rem, 0.92vw, 1.18rem) !important;
+  line-height: 1.1 !important;
+  margin: 0 0 0.88rem !important;
+}
+
+html body .np-card-grid-guides {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0.7rem !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+html body .np-card-grid-guides .np-card,
+html body .np-card-grid-guides .np-card:hover,
+html body .np-card-grid-guides .np-card:focus,
+html body .np-card-grid-guides .np-card:focus-within {
+  height: 118px !important;
+  min-height: 118px !important;
+  max-height: 118px !important;
+  padding: 0.78rem 0.55rem 0.62rem !important;
+  overflow: hidden !important;
+  transform: none !important;
+  transition: none !important;
+  filter: none !important;
+}
+
+html body .np-card-grid-guides .np-card-icon {
+  width: 2rem !important;
+  height: 2rem !important;
+  margin-bottom: 0.4rem !important;
+}
+
+html body .np-card-grid-guides .np-card-title {
+  font-size: 0.72rem !important;
+  line-height: 1.08 !important;
+  margin-bottom: 0.28rem !important;
+  max-width: 100% !important;
+}
+
+html body .np-card-grid-guides .np-card-text {
+  display: none !important;
+}
+
+html body .np-card-grid-guides .np-card-link {
+  font-size: 0.64rem !important;
+  line-height: 1.08 !important;
+  white-space: nowrap !important;
+}
+
+/* Bei kleineren Desktopbreiten nicht kaputt brechen */
+@media (max-width: 1180px) {
+  html body .np-card-grid-guides {
+    gap: 0.55rem !important;
+  }
+
+  html body .np-card-grid-guides .np-card {
+    padding-left: 0.42rem !important;
+    padding-right: 0.42rem !important;
+  }
+
+  html body .np-card-grid-guides .np-card-title {
+    font-size: 0.66rem !important;
+  }
+
+  html body .np-card-grid-guides .np-card-link {
+    font-size: 0.58rem !important;
+  }
+}
+
+/* Unterseiten: Fixierte Elemente dürfen nicht durch Layout-Container eingefangen werden */
+html body,
+html body * {
+  transform-style: flat !important;
+}
+
+html body:not(.home),
+html body:not(.home) .main,
+html body:not(.home) .main-content-wrap,
+html body:not(.home) .main-content,
+html body:not(.home) .page-content,
+html body:not(.home) .page,
+html body:not(.home) .page-wrap,
+html body:not(.home) .np-page,
+html body:not(.home) .np-page-shell,
+html body:not(.home) .np-content-shell,
+html body:not(.home) .echo-page-box,
+html body:not(.home) .np-content-box {
+  transform: none !important;
+  translate: none !important;
+  scale: 1 !important;
+  perspective: none !important;
+  filter: none !important;
+  contain: none !important;
+  will-change: auto !important;
+}
+
+/* Footer: 1:1 wie auf der Startseite, am Viewport unten, nicht am Inhaltskasten */
+html body .np-site-footer,
+html body:not(.home) .np-site-footer,
+html body .main-content .np-site-footer,
+html body:not(.home) .main-content .np-site-footer,
+html body .page-content .np-site-footer,
+html body:not(.home) .page-content .np-site-footer,
+html body .echo-page-box .np-site-footer,
+html body:not(.home) .echo-page-box .np-site-footer,
+html body .np-content-box .np-site-footer,
+html body:not(.home) .np-content-box .np-site-footer {
+  position: fixed !important;
+  top: auto !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-width: 100vw !important;
+  height: var(--np-fixed-footer-height) !important;
+  min-height: var(--np-fixed-footer-height) !important;
+  max-height: var(--np-fixed-footer-height) !important;
+  margin: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  z-index: 999999 !important;
+  transform: none !important;
+  translate: none !important;
+  contain: none !important;
+  overflow: hidden !important;
+}
+
+html body .np-site-footer-inner,
+html body:not(.home) .np-site-footer-inner,
+html body .main-content .np-site-footer-inner,
+html body:not(.home) .main-content .np-site-footer-inner,
+html body .echo-page-box .np-site-footer-inner,
+html body:not(.home) .echo-page-box .np-site-footer-inner {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-width: 100vw !important;
+  height: var(--np-fixed-footer-height) !important;
+  min-height: var(--np-fixed-footer-height) !important;
+  max-height: var(--np-fixed-footer-height) !important;
+  margin: 0 !important;
+  padding-left: clamp(1rem, 2vw, 2.25rem) !important;
+  padding-right: clamp(1rem, 2vw, 2.25rem) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  transform: none !important;
+}
+
+/* Content-Abstand, damit der fixed Footer nichts verdeckt */
+html body {
+  padding-bottom: calc(var(--np-fixed-footer-height) + 1.25rem) !important;
+}
+
+html body:not(.home) .main-content,
+html body:not(.home) .page-content,
+html body:not(.home) .echo-page-box,
+html body:not(.home) .np-content-box {
+  margin-bottom: calc(var(--np-fixed-footer-height) + 1.5rem) !important;
+}
+
+/* Falls der Footer innerhalb einer Unterseitenbox gerendert wird: optische Box-Regeln dort überschreiben */
+html body:not(.home) .echo-page-box > .np-site-footer,
+html body:not(.home) .np-content-box > .np-site-footer,
+html body:not(.home) .main-content > .np-site-footer {
+  background: linear-gradient(180deg, rgba(0, 14, 22, 0.98), rgba(0, 9, 15, 0.98)) !important;
+  box-shadow: 0 -12px 28px rgba(0, 0, 0, 0.4) !important;
+}
