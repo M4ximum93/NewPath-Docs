@@ -1958,3 +1958,195 @@ blockquote {
     min-height: 18.3rem !important;
   }
 }
+
+/* =========================================================
+   Schritt 35: Seitenabstände + kompakte 4er-Einstiegskarten
+   - links/rechts mehr Abstand zum Fensterrand
+   - Mittelteil vertikal niedriger
+   - Einstiegskarten wieder 4 nebeneinander, ohne Überlauf
+   - Status-/Infoleiste zwischen Hero und Mittelteil etwas größer
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  :root {
+    --np-page-left: clamp(5.6rem, 7vw, 9.4rem);
+    --np-page-right: clamp(5.6rem, 7vw, 9.4rem);
+    --np-content-width: calc(100vw - var(--np-page-left) - var(--np-page-right));
+  }
+
+  .np-hero,
+  .np-status-bar,
+  .np-main-grid,
+  .np-main-grid-echo-first,
+  .np-wide-panel {
+    margin-left: var(--np-page-left) !important;
+    margin-right: var(--np-page-right) !important;
+    width: var(--np-content-width) !important;
+    max-width: var(--np-content-width) !important;
+  }
+
+  .np-status-bar {
+    min-height: 3.15rem !important;
+    height: auto !important;
+    padding: 0.48rem 0.62rem !important;
+    margin-top: -0.05rem !important;
+    margin-bottom: 0.52rem !important;
+    align-items: center !important;
+  }
+
+  .np-status-item {
+    min-height: 2.18rem !important;
+    padding: 0.32rem 0.72rem !important;
+    gap: 0.52rem !important;
+  }
+
+  .np-status-icon {
+    width: 1.36rem !important;
+    height: 1.36rem !important;
+    font-size: 0.76rem !important;
+  }
+
+  .np-status-item small {
+    font-size: 0.62rem !important;
+  }
+
+  .np-status-item strong {
+    font-size: 0.72rem !important;
+  }
+
+  .np-main-grid-echo-first {
+    grid-template-columns: minmax(390px, 0.78fr) minmax(640px, 1.22fr) !important;
+    gap: 0.85rem !important;
+    align-items: stretch !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature,
+  .np-main-grid-echo-first .np-quick-panel {
+    min-height: 13.55rem !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  .np-echo-feature {
+    grid-template-columns: 105px minmax(0, 1fr) !important;
+    gap: 0.82rem !important;
+    padding: 0.95rem 1rem !important;
+    align-items: center !important;
+  }
+
+  .np-echo-orb {
+    width: 8.25rem !important;
+    height: 8.25rem !important;
+    left: -2.9rem !important;
+  }
+
+  .np-echo-image-wrap img {
+    width: 6.55rem !important;
+    height: 6.55rem !important;
+  }
+
+  .np-echo-content h2 {
+    max-width: 28rem !important;
+    margin-bottom: 0.34rem !important;
+    font-size: clamp(1.05rem, 1.08vw, 1.28rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .np-echo-content p {
+    max-width: 38rem !important;
+    font-size: 0.74rem !important;
+    line-height: 1.38 !important;
+  }
+
+  .np-echo-steps {
+    margin-top: 0.48rem !important;
+    gap: 0.32rem !important;
+  }
+
+  .np-echo-steps span {
+    min-height: 1.34rem !important;
+    padding: 0.18rem 0.42rem !important;
+    font-size: 0.58rem !important;
+  }
+
+  .np-quick-panel {
+    padding: 0.86rem 0.92rem !important;
+  }
+
+  .np-quick-panel h2 {
+    margin-bottom: 0.58rem !important;
+    font-size: clamp(1.02rem, 1.04vw, 1.24rem) !important;
+  }
+
+  .np-card-grid-guides {
+    flex: 1 1 auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0.56rem !important;
+    align-items: stretch !important;
+  }
+
+  .np-card-grid-guides .np-card {
+    min-height: 8.55rem !important;
+    height: auto !important;
+    padding: 0.64rem 0.52rem 0.58rem !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  .np-card-grid-guides .np-card-icon {
+    width: 2rem !important;
+    height: 2rem !important;
+    margin-bottom: 0.34rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .np-card-grid-guides .np-card-title {
+    margin-bottom: 0.22rem !important;
+    font-size: 0.74rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .np-card-grid-guides .np-card-text {
+    max-width: 100% !important;
+    font-size: 0.56rem !important;
+    line-height: 1.22 !important;
+  }
+
+  .np-card-grid-guides .np-card-link {
+    margin-top: 0.3rem !important;
+    font-size: 0.58rem !important;
+    line-height: 1.05 !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1500px) {
+  :root {
+    --np-page-left: clamp(4.3rem, 5.4vw, 6rem);
+    --np-page-right: clamp(4.3rem, 5.4vw, 6rem);
+    --np-content-width: calc(100vw - var(--np-page-left) - var(--np-page-right));
+  }
+
+  .np-main-grid-echo-first {
+    grid-template-columns: minmax(360px, 0.82fr) minmax(560px, 1.18fr) !important;
+  }
+
+  .np-card-grid-guides {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  .np-card-grid-guides .np-card-text {
+    font-size: 0.52rem !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1180px) {
+  .np-main-grid-echo-first {
+    grid-template-columns: 1fr !important;
+  }
+
+  .np-card-grid-guides {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
