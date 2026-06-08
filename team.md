@@ -52,8 +52,8 @@ permalink: /team.html
           loading="lazy"
           decoding="async">
       </div>
-      <p class="np-card-kicker np-team-role">Projektleitung</p>
-      <h2 class="np-card-title">Sarah</h2>
+      <p class="np-card-kicker np-team-role">Founder - Projektleitung</p>
+      <h2 class="np-card-title">SarahdasFaultier</h2>
       <p class="np-card-text">
         Kurze Beschreibung zur Rolle, zu Aufgaben im Projekt und dazu, wofür diese Person
         in der Community Ansprechpartner ist.
@@ -70,8 +70,8 @@ permalink: /team.html
           loading="lazy"
           decoding="async">
       </div>
-      <p class="np-card-kicker np-team-role">Community & Support</p>
-      <h2 class="np-card-title">Bemmy</h2>
+      <p class="np-card-kicker np-team-role">Founder - Projektleitung- Entwicklung/ Technik</p>
+      <h2 class="np-card-title">M4ximum_</h2>
       <p class="np-card-text">
         Kurze Beschreibung zur Rolle, zu Support-Aufgaben, Community-Betreuung oder
         organisatorischen Themen.
