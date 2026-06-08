@@ -1199,3 +1199,154 @@ blockquote {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================================
+   Schritt 2 nach Strukturumbau: ECHO + Einstieg harmonisieren
+   - ECHO niedriger/kompakter
+   - Einstiegskarten und ECHO auf gleiche optische Höhe
+   - weniger Leerraum, stärkere Wegbegleiter-Rolle
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  .np-main-grid-echo-first {
+    width: min(1680px, var(--np-content-width)) !important;
+    max-width: min(1680px, var(--np-content-width)) !important;
+    grid-template-columns: minmax(520px, 0.9fr) minmax(700px, 1.1fr) !important;
+    gap: 1rem !important;
+    align-items: stretch !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature,
+  .np-main-grid-echo-first .np-quick-panel {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .np-echo-feature {
+    display: grid !important;
+    grid-template-columns: minmax(112px, 150px) minmax(0, 1fr) !important;
+    gap: 1.15rem !important;
+    align-items: center !important;
+    padding: clamp(1rem, 1.45vw, 1.45rem) !important;
+    background:
+      radial-gradient(circle at 16% 55%, rgba(0, 230, 246, 0.18), transparent 11.5rem),
+      radial-gradient(circle at 92% 8%, rgba(236, 183, 110, 0.08), transparent 13rem),
+      linear-gradient(135deg, rgba(3, 20, 30, 0.88), rgba(7, 32, 40, 0.76)) !important;
+  }
+
+  .np-echo-feature::before {
+    border-left-width: 3px !important;
+    border-left-color: rgba(0, 230, 246, 0.78) !important;
+  }
+
+  .np-echo-orb {
+    width: 10.5rem !important;
+    height: 10.5rem !important;
+    left: -3.6rem !important;
+    opacity: 0.82 !important;
+  }
+
+  .np-echo-image-wrap {
+    align-self: center !important;
+    justify-self: center !important;
+  }
+
+  .np-echo-image-wrap img {
+    width: clamp(7.4rem, 8vw, 9.6rem) !important;
+    height: clamp(7.4rem, 8vw, 9.6rem) !important;
+  }
+
+  .np-echo-content h2 {
+    max-width: 32rem !important;
+    margin: 0 0 0.45rem !important;
+    font-size: clamp(1.28rem, 1.38vw, 1.65rem) !important;
+    line-height: 1.18 !important;
+  }
+
+  .np-echo-content p {
+    max-width: 39rem !important;
+    font-size: 0.86rem !important;
+    line-height: 1.52 !important;
+  }
+
+  .np-echo-steps {
+    margin-top: 0.78rem !important;
+    gap: 0.42rem !important;
+  }
+
+  .np-echo-steps span {
+    min-height: 1.65rem !important;
+    padding: 0.24rem 0.54rem !important;
+    font-size: 0.68rem !important;
+    border-radius: 999px !important;
+  }
+
+  .np-quick-panel {
+    padding: clamp(1rem, 1.35vw, 1.32rem) !important;
+  }
+
+  .np-quick-panel h2 {
+    margin-bottom: 0.78rem !important;
+    font-size: clamp(1.25rem, 1.32vw, 1.58rem) !important;
+  }
+
+  .np-card-grid-guides {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.78rem !important;
+  }
+
+  .np-card-grid-guides .np-card {
+    min-height: 9.05rem !important;
+    padding: 0.92rem 0.88rem 0.84rem !important;
+    justify-content: center !important;
+  }
+
+  .np-card-grid-guides .np-card-icon {
+    width: 2.62rem !important;
+    height: 2.62rem !important;
+    margin-bottom: 0.55rem !important;
+    font-size: 1.04rem !important;
+  }
+
+  .np-card-grid-guides .np-card-title {
+    margin-bottom: 0.34rem !important;
+    font-size: 0.98rem !important;
+  }
+
+  .np-card-grid-guides .np-card-text {
+    font-size: 0.76rem !important;
+    line-height: 1.42 !important;
+  }
+
+  .np-card-grid-guides .np-card-link {
+    margin-top: 0.54rem !important;
+    font-size: 0.72rem !important;
+  }
+
+  .np-status-bar {
+    margin-bottom: 0.78rem !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1500px) {
+  .np-main-grid-echo-first {
+    grid-template-columns: minmax(440px, 0.92fr) minmax(560px, 1.08fr) !important;
+  }
+
+  .np-echo-feature {
+    grid-template-columns: 120px minmax(0, 1fr) !important;
+  }
+
+  .np-echo-image-wrap img {
+    width: 7.6rem !important;
+    height: 7.6rem !important;
+  }
+
+  .np-echo-content h2 {
+    font-size: 1.28rem !important;
+  }
+
+  .np-echo-content p {
+    font-size: 0.8rem !important;
+  }
+}
