@@ -2247,5 +2247,108 @@ body:not(.home) .main-content th {
     max-width: 100%;
   }
 }
+/* =========================================================
+   Step 74: ECHO-Boxen auf allen Unterseiten vereinheitlichen
+   - Modpack Hilfe und Streamer nutzen jetzt dieselbe ECHO-Größe
+   - ersetzt die kleineren Basiswerte aus .echo-page-box
+   - Header/Footer bleiben unangetastet
+   ========================================================= */
 
+.echo-page-box,
+.echo-page-box-team,
+.echo-page-box-philosophy,
+.echo-page-box-faq,
+.echo-page-box-rules,
+.echo-page-box-streamer,
+.echo-page-box-help {
+  display: grid !important;
+  grid-template-columns: minmax(150px, 220px) minmax(0, 1fr) !important;
+  gap: clamp(1.4rem, 2.2vw, 2.4rem) !important;
+  align-items: center !important;
+  padding: clamp(1.25rem, 2vw, 2rem) !important;
+  margin-bottom: 1.35rem !important;
+  border-left: 3px solid rgba(0, 230, 246, 0.64) !important;
+}
 
+.echo-page-box .echo-page-image,
+.echo-page-box-team .echo-page-image,
+.echo-page-box-philosophy .echo-page-image,
+.echo-page-box-faq .echo-page-image,
+.echo-page-box-rules .echo-page-image,
+.echo-page-box-streamer .echo-page-image,
+.echo-page-box-help .echo-page-image {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.echo-page-box .echo-page-image img,
+.echo-page-box-team .echo-page-image img,
+.echo-page-box-philosophy .echo-page-image img,
+.echo-page-box-faq .echo-page-image img,
+.echo-page-box-rules .echo-page-image img,
+.echo-page-box-streamer .echo-page-image img,
+.echo-page-box-help .echo-page-image img {
+  width: clamp(7.5rem, 10vw, 12rem) !important;
+  height: clamp(7.5rem, 10vw, 12rem) !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 16px 20px rgba(0, 0, 0, 0.34)) !important;
+}
+
+.echo-page-box .echo-page-content,
+.echo-page-box-team .echo-page-content,
+.echo-page-box-philosophy .echo-page-content,
+.echo-page-box-faq .echo-page-content,
+.echo-page-box-rules .echo-page-content,
+.echo-page-box-streamer .echo-page-content,
+.echo-page-box-help .echo-page-content {
+  max-width: 54rem !important;
+}
+
+.echo-page-box h2,
+.echo-page-box-team h2,
+.echo-page-box-philosophy h2,
+.echo-page-box-faq h2,
+.echo-page-box-rules h2,
+.echo-page-box-streamer h2,
+.echo-page-box-help h2 {
+  margin: 0 0 0.65rem !important;
+  color: var(--np-gold-soft) !important;
+  font-size: clamp(1.75rem, 2vw, 2.35rem) !important;
+  line-height: 1.12 !important;
+}
+
+.echo-page-box p:not(.echo-page-kicker),
+.echo-page-box-team p:not(.echo-page-kicker),
+.echo-page-box-philosophy p:not(.echo-page-kicker),
+.echo-page-box-faq p:not(.echo-page-kicker),
+.echo-page-box-rules p:not(.echo-page-kicker),
+.echo-page-box-streamer p:not(.echo-page-kicker),
+.echo-page-box-help p:not(.echo-page-kicker) {
+  margin: 0 !important;
+  color: rgba(245, 234, 220, 0.9) !important;
+  font-size: 0.98rem !important;
+  line-height: 1.65 !important;
+}
+
+@media (max-width: 66.499rem) {
+  .echo-page-box,
+  .echo-page-box-team,
+  .echo-page-box-philosophy,
+  .echo-page-box-faq,
+  .echo-page-box-rules,
+  .echo-page-box-streamer,
+  .echo-page-box-help {
+    grid-template-columns: 1fr !important;
+  }
+
+  .echo-page-box .echo-page-image,
+  .echo-page-box-team .echo-page-image,
+  .echo-page-box-philosophy .echo-page-image,
+  .echo-page-box-faq .echo-page-image,
+  .echo-page-box-rules .echo-page-image,
+  .echo-page-box-streamer .echo-page-image,
+  .echo-page-box-help .echo-page-image {
+    justify-content: flex-start !important;
+  }
+}
