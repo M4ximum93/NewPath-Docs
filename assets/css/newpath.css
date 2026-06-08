@@ -1,5 +1,5 @@
 /* NewPath – Echoes of the Wild
-   Konsolidierte CSS-Version v11
+   Konsolidierte CSS-Version v12
    Aufbau:
    1. Variablen & Grundlayout
    2. Just-the-Docs Reset
@@ -3431,6 +3431,140 @@ a[href="#main-content"],
   }
 
   .np-faq-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 13. Statusleiste, Hero-Abstand und Unterseitenbreite
+   - Startseiten-Statusleiste stärker wie Referenzbild
+   - Hero näher an Header
+   - Unterseiten-Sections auf ECHO-Breite ausrichten */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 .np-hero {
+    padding-top: 0.25rem !important;
+    min-height: auto !important;
+  }
+
+  .np-status-bar-showcase,
+  .np-home-v2 .np-status-bar-showcase {
+    width: min(1440px, var(--np-content-width)) !important;
+    max-width: min(1440px, var(--np-content-width)) !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    min-height: 4.2rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    border: 1px solid rgba(0, 230, 246, 0.22) !important;
+    border-radius: 0.62rem !important;
+    background:
+      radial-gradient(circle at 0% 50%, rgba(0, 230, 246, 0.10), transparent 22rem),
+      linear-gradient(90deg, rgba(5, 18, 24, 0.72), rgba(17, 46, 64, 0.52), rgba(5, 18, 24, 0.72)) !important;
+    box-shadow:
+      0 16px 34px rgba(0, 0, 0, 0.28),
+      inset 0 0 28px rgba(0, 230, 246, 0.028) !important;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+  }
+
+  .np-status-bar-showcase .np-status-item {
+    min-height: 4.2rem !important;
+    padding: 0.72rem 1rem !important;
+    gap: 0.8rem !important;
+    border-right: 1px solid rgba(72, 122, 146, 0.24) !important;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.018), transparent) !important;
+  }
+
+  .np-status-bar-showcase .np-status-item:last-child {
+    border-right: 0 !important;
+  }
+
+  .np-status-bar-showcase .np-status-icon {
+    width: 2.55rem !important;
+    height: 2.55rem !important;
+    flex: 0 0 2.55rem !important;
+    border-radius: 999px !important;
+    color: var(--np-cyan) !important;
+    background: rgba(0, 230, 246, 0.065) !important;
+    border: 1px solid rgba(0, 230, 246, 0.32) !important;
+    box-shadow:
+      inset 0 0 18px rgba(0, 230, 246, 0.055),
+      0 0 18px rgba(0, 230, 246, 0.045) !important;
+  }
+
+  .np-status-bar-showcase .np-status-icon::before {
+    transform: scale(1.25);
+  }
+
+  .np-status-bar-showcase .np-status-item small {
+    margin-bottom: 0.16rem !important;
+    color: var(--np-cyan) !important;
+    font-size: 0.74rem !important;
+    line-height: 1 !important;
+    text-transform: none !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  .np-status-bar-showcase .np-status-item strong {
+    color: var(--np-gold-soft) !important;
+    font-size: 0.78rem !important;
+    line-height: 1.1 !important;
+    font-weight: 900 !important;
+  }
+
+  .np-status-icon-survival::before {
+    content: "";
+    width: 1.05rem;
+    height: 1.05rem;
+    background: currentColor;
+    clip-path: polygon(50% 0%, 62% 33%, 98% 35%, 69% 57%, 79% 91%, 50% 70%, 21% 91%, 31% 57%, 2% 35%, 38% 33%);
+  }
+
+  .np-status-icon-platform::before {
+    content: "";
+    width: 1.12rem;
+    height: 1.12rem;
+    background: currentColor;
+    clip-path: polygon(10% 18%, 90% 18%, 90% 68%, 58% 68%, 58% 80%, 76% 80%, 76% 88%, 24% 88%, 24% 80%, 42% 80%, 42% 68%, 10% 68%);
+  }
+
+  body.np-page-sub .main-content {
+    width: min(1400px, var(--np-content-width)) !important;
+    max-width: min(1400px, var(--np-content-width)) !important;
+  }
+
+  body.np-page-sub .echo-page-box,
+  body.np-page-sub .echo-page-box-team,
+  body.np-page-sub .echo-page-box-philosophy,
+  body.np-page-sub .echo-page-box-faq,
+  body.np-page-sub .echo-page-box-rules,
+  body.np-page-sub .echo-page-box-streamer,
+  body.np-page-sub .echo-page-box-help,
+  body.np-page-sub .np-page-section,
+  body.np-page-sub .np-content-box,
+  body.np-page-sub .np-story-section,
+  body.np-page-sub .np-origin-section,
+  body.np-page-sub .np-faq-section,
+  body.np-page-sub .np-team-section,
+  body.np-page-sub .np-streamer-section,
+  body.np-page-sub .np-help-section {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1180px) {
+  .np-status-bar-showcase,
+  .np-home-v2 .np-status-bar-showcase {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .np-status-bar-showcase .np-status-item {
+    border-bottom: 1px solid rgba(72, 122, 146, 0.18) !important;
+  }
+}
+
+@media (max-width: 66.499rem) {
+  .np-status-bar-showcase {
     grid-template-columns: 1fr !important;
   }
 }

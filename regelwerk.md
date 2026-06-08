@@ -29,7 +29,3 @@ nav_order: 2
   </div>
 </section>
 
-<div class="np-rules-note">
-  <strong>Hinweis:</strong> Das Regelwerk bildet die Grundlage für das gemeinsame Spielen
-  auf NewPath. Bei Unsicherheiten hilft dir das Team über Discord weiter.
-</div>

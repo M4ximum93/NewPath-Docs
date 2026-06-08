@@ -40,7 +40,7 @@ permalink: /
   </div>
 </section>
 
-<section class="np-status-bar np-status-bar-v2" aria-label="NewPath Kurzinfos">
+<section class="np-status-bar np-status-bar-v2 np-status-bar-showcase" aria-label="NewPath Kurzinfos">
   <div class="np-status-item">
     <span class="np-status-icon np-status-icon-block" aria-hidden="true"></span>
     <span>
@@ -66,10 +66,18 @@ permalink: /
   </div>
 
   <div class="np-status-item">
-    <span class="np-status-icon np-status-icon-check" aria-hidden="true"></span>
+    <span class="np-status-icon np-status-icon-survival" aria-hidden="true"></span>
     <span>
-      <small>Whitelist</small>
-      <strong>Aktiv</strong>
+      <small>Spielmodus</small>
+      <strong>Survival</strong>
+    </span>
+  </div>
+
+  <div class="np-status-item">
+    <span class="np-status-icon np-status-icon-platform" aria-hidden="true"></span>
+    <span>
+      <small>Plattform</small>
+      <strong>PC / Java</strong>
     </span>
   </div>
 </section>
