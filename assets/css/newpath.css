@@ -4015,3 +4015,255 @@ button:focus-visible {
 .np-team-card:hover {
   transform: none;
 }
+/* =========================================================
+   Design-Feinschliff: Akkordeons, Section-Header, Hinweisboxen
+   - subtile globale Verschönerungen für alle Seiten
+   - keine neuen Bilder, keine JS-Änderung
+   - bewusst leichtgewichtig gehalten
+   ========================================================= */
+
+/* 1. Section-Header: kleine EOTW-Trenner unter Überschriften */
+.np-section-header {
+  position: relative;
+}
+
+.np-section-header::after {
+  content: "";
+  display: block;
+  width: min(14rem, 46%);
+  height: 1px;
+  margin-top: 0.85rem;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 230, 246, 0.00),
+    rgba(0, 230, 246, 0.40),
+    rgba(236, 183, 110, 0.36),
+    rgba(0, 230, 246, 0.00)
+  );
+  box-shadow: 0 0 16px rgba(0, 230, 246, 0.08);
+}
+
+.np-section-header .np-title {
+  position: relative;
+}
+
+.np-section-header .np-title::before {
+  content: "";
+  display: inline-block;
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-right: 0.55rem;
+  vertical-align: 0.12em;
+  border-radius: 999px;
+  background: var(--np-cyan);
+  box-shadow:
+    0 0 0 0.22rem rgba(0, 230, 246, 0.08),
+    0 0 14px rgba(0, 230, 246, 0.20);
+}
+
+/* 2. Akkordeons: hochwertigerer Öffnungszustand */
+.np-faq-details,
+.np-help-details,
+.np-accordion {
+  position: relative;
+  overflow: hidden;
+}
+
+.np-faq-details summary,
+.np-help-details summary,
+.np-accordion summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.np-faq-details summary::before,
+.np-help-details summary::before,
+.np-accordion summary::before {
+  content: "+";
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 1.25rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #001221;
+  background: var(--np-cyan);
+  font-size: 0.9rem;
+  font-weight: 950;
+  line-height: 1;
+  box-shadow:
+    inset 0 -0.18rem 0 rgba(0, 0, 0, 0.18),
+    0 0 14px rgba(0, 230, 246, 0.12);
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.np-faq-details[open],
+.np-help-details[open],
+.np-accordion[open] {
+  border-color: rgba(0, 230, 246, 0.46) !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(0, 230, 246, 0.075), transparent 16rem),
+    linear-gradient(180deg, rgba(9, 32, 40, 0.82), rgba(4, 16, 22, 0.90)) !important;
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.24),
+    inset 3px 0 0 rgba(0, 230, 246, 0.48),
+    inset 0 0 28px rgba(0, 230, 246, 0.025) !important;
+}
+
+.np-faq-details[open] summary::before,
+.np-help-details[open] summary::before,
+.np-accordion[open] summary::before {
+  content: "–";
+  transform: rotate(180deg);
+  background: var(--np-gold-soft);
+  color: #1a1208;
+}
+
+/* vorhandene alte Dreieck-Icons neutralisieren, falls noch vorhanden */
+.np-help-details summary::after,
+.np-faq-details summary::after,
+.np-accordion summary::after {
+  content: none !important;
+}
+
+/* 3. Einheitliche Hinweisboxen */
+.np-note,
+.np-help-note,
+.np-rules-note,
+.np-help-warning {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(72, 122, 146, 0.34) !important;
+  border-left: 3px solid rgba(236, 183, 110, 0.78) !important;
+  border-radius: 0.72rem;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(236, 183, 110, 0.075), transparent 14rem),
+    linear-gradient(180deg, rgba(18, 34, 36, 0.82), rgba(5, 20, 27, 0.88)) !important;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.20),
+    inset 0 0 24px rgba(236, 183, 110, 0.018);
+}
+
+.np-note::before,
+.np-help-note::before,
+.np-rules-note::before,
+.np-help-warning::before {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  top: 0.9rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: var(--np-gold-soft);
+  box-shadow: 0 0 14px rgba(236, 183, 110, 0.24);
+}
+
+.np-note,
+.np-help-note,
+.np-rules-note,
+.np-help-warning {
+  padding-left: 1.65rem !important;
+}
+
+.np-note strong,
+.np-help-note strong,
+.np-rules-note strong,
+.np-help-warning strong {
+  color: var(--np-gold-soft) !important;
+}
+
+/* 4. Dezente Box-Ornamente, ohne zusätzliche Bilder */
+.echo-page-box::after,
+.np-page-section::after,
+.np-history-panel::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  pointer-events: none;
+  opacity: 0.08;
+  background:
+    linear-gradient(90deg, transparent 48%, rgba(0, 230, 246, 0.9) 49%, rgba(0, 230, 246, 0.9) 51%, transparent 52%),
+    linear-gradient(0deg, transparent 48%, rgba(0, 230, 246, 0.9) 49%, rgba(0, 230, 246, 0.9) 51%, transparent 52%);
+  border: 1px solid rgba(0, 230, 246, 0.55);
+  border-radius: 999px;
+}
+
+.echo-page-box,
+.np-page-section,
+.np-history-panel {
+  position: relative;
+}
+
+/* 5. Kleine Status-Badges für spätere Inhalte */
+.np-badge,
+.np-badge-optional,
+.np-badge-required,
+.np-badge-soon,
+.np-badge-recommended {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.35rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  font-family: var(--np-font-label);
+  font-size: 0.68rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.np-badge,
+.np-badge-optional {
+  color: var(--np-cyan);
+  background: rgba(0, 230, 246, 0.08);
+  border: 1px solid rgba(0, 230, 246, 0.26);
+}
+
+.np-badge-required {
+  color: var(--np-gold-soft);
+  background: rgba(236, 183, 110, 0.10);
+  border: 1px solid rgba(236, 183, 110, 0.30);
+}
+
+.np-badge-soon {
+  color: rgba(247, 236, 220, 0.78);
+  background: rgba(247, 236, 220, 0.07);
+  border: 1px solid rgba(247, 236, 220, 0.18);
+}
+
+.np-badge-recommended {
+  color: #7ddf73;
+  background: rgba(125, 223, 115, 0.08);
+  border: 1px solid rgba(125, 223, 115, 0.26);
+}
+
+/* 6. Mobile/Reduced Motion sauber halten */
+@media (max-width: 66.499rem) {
+  .np-section-header::after {
+    width: 100%;
+  }
+
+  .echo-page-box::after,
+  .np-page-section::after,
+  .np-history-panel::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .np-faq-details summary::before,
+  .np-help-details summary::before,
+  .np-accordion summary::before {
+    transition: none !important;
+  }
+}
