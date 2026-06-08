@@ -1,5 +1,5 @@
 /* NewPath – Echoes of the Wild
-   Konsolidierte CSS-Version v14
+   Konsolidierte CSS-Version v15
    Aufbau:
    1. Variablen & Grundlayout
    2. Just-the-Docs Reset
@@ -3818,5 +3818,57 @@ a[href="#main-content"],
     margin-left: 0.65rem !important;
     padding-left: 0.75rem !important;
   }
+}
+
+/* 16. Suche: Fokusrahmen und Sprungziel
+   Searchbar sitzt im Header. Die Logik wird deshalb über head_custom.html geladen.
+   - weißer Browser-/Theme-Fokusrahmen weg
+   - NewPath-Fokus bleibt sichtbar
+   - Treffer nach Suchklick wird angesprungen und markiert */
+
+.search-input,
+#search-input,
+.search-input input,
+input[type="search"] {
+  outline: none !important;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-input:focus,
+.search-input:focus-visible,
+#search-input:focus,
+#search-input:focus-visible,
+.search-input input:focus,
+.search-input input:focus-visible,
+input[type="search"]:focus,
+input[type="search"]:focus-visible {
+  outline: none !important;
+  border-color: rgba(0, 230, 246, 0.72) !important;
+  box-shadow:
+    0 0 0 1px rgba(0, 230, 246, 0.28),
+    0 0 22px rgba(0, 230, 246, 0.10),
+    inset 0 0 18px rgba(0, 230, 246, 0.035) !important;
+}
+
+.search-input-wrap,
+.search,
+.search-input-wrap:focus-within,
+.search:focus-within {
+  outline: none !important;
+}
+
+.np-search-jump-target {
+  scroll-margin-top: 8rem;
+}
+
+.np-search-jump-highlight {
+  padding: 0.05em 0.18em;
+  border-radius: 0.22rem;
+  color: #001221;
+  background: linear-gradient(180deg, rgba(244, 207, 127, 0.96), rgba(236, 183, 110, 0.88));
+  box-shadow:
+    0 0 0 1px rgba(236, 183, 110, 0.28),
+    0 0 18px rgba(236, 183, 110, 0.18);
 }
 
