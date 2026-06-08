@@ -1,4 +1,4 @@
-<footer id="np-global-footer" class="np-site-footer" data-np-footer="global" aria-label="NewPath Fußzeile">
+<footer id="np-global-window-footer" class="np-site-footer" aria-label="NewPath Fußzeile">
   <div class="np-site-footer-inner">
     <div class="np-site-footer-brand">
       <strong>NewPath – Echoes of the Wild</strong>
@@ -17,64 +17,3 @@
     </nav>
   </div>
 </footer>
-
-<script>
-  (function () {
-    function fixNewPathFooter() {
-      var footer = document.getElementById('np-global-footer');
-      var allFooters = Array.prototype.slice.call(document.querySelectorAll('.np-site-footer'));
-
-      if (!footer && allFooters.length) {
-        footer = allFooters[0];
-        footer.id = 'np-global-footer';
-      }
-
-      if (!footer) return;
-
-      allFooters.forEach(function (item) {
-        if (item !== footer && item.parentNode) item.parentNode.removeChild(item);
-      });
-
-      footer.classList.add('np-site-footer');
-      footer.setAttribute('data-np-footer', 'global');
-
-      if (footer.parentElement !== document.body) {
-        document.body.appendChild(footer);
-      }
-
-      Object.assign(footer.style, {
-        position: 'fixed',
-        left: '0',
-        right: '0',
-        bottom: '0',
-        top: 'auto',
-        width: '100vw',
-        maxWidth: '100vw',
-        margin: '0',
-        zIndex: '2147481000'
-      });
-    }
-
-    function runFooterFix() {
-      fixNewPathFooter();
-      setTimeout(fixNewPathFooter, 50);
-      setTimeout(fixNewPathFooter, 250);
-      setTimeout(fixNewPathFooter, 1000);
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', runFooterFix);
-    } else {
-      runFooterFix();
-    }
-
-    window.addEventListener('load', runFooterFix);
-
-    if ('MutationObserver' in window) {
-      var observer = new MutationObserver(function () {
-        fixNewPathFooter();
-      });
-      observer.observe(document.documentElement, { childList: true, subtree: true });
-    }
-  })();
-</script>
