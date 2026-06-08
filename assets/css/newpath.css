@@ -3909,11 +3909,47 @@ img {
   }
 }
 /* =========================================================
-   Performance-Test 2: Fixed Background deaktivieren
-   Nur zum Testen – prüft, ob background-attachment: fixed
-   das ruckelige Scrollen verursacht.
+   Performance-Test 3: Schwere Effekte global reduzieren
+   Nur zum Testen – prüft Schatten, Filter, Glow und Transitions.
    ========================================================= */
 
-body {
-  background-attachment: scroll !important;
+@media (min-width: 66.5rem) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .np-panel,
+  .np-page-section,
+  .np-content-box,
+  .echo-page-box,
+  .echo-page-box-team,
+  .echo-page-box-philosophy,
+  .echo-page-box-faq,
+  .echo-page-box-rules,
+  .echo-page-box-streamer,
+  .echo-page-box-help,
+  .np-status-bar,
+  .np-status-bar-v2,
+  .np-status-bar-showcase,
+  .np-history-panel,
+  .np-rule-block,
+  .np-info-card,
+  .np-route-card,
+  .np-help-details,
+  .np-faq-details,
+  .np-accordion,
+  .np-card-icon,
+  .np-rules-badge,
+  .np-topbar-logo,
+  .np-hero-logo,
+  .echo-page-image img,
+  .np-pathfinder-image img,
+  .np-team-image img {
+    box-shadow: none !important;
+    filter: none !important;
+    text-shadow: none !important;
+  }
 }
