@@ -194,3 +194,11 @@ Serverfunktionen und typischen Fragen aus dem Discord.
     </p>
   </div>
 </details>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('details.np-help-details[open]').forEach(function (details) {
+      details.removeAttribute('open');
+    });
+  });
+</script>
