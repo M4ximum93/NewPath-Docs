@@ -1,5 +1,5 @@
 /* NewPath – Echoes of the Wild
-   Konsolidierte CSS-Version v15
+   Konsolidierte CSS-Version v16
    Aufbau:
    1. Variablen & Grundlayout
    2. Just-the-Docs Reset
@@ -50,9 +50,9 @@
   --np-grid-gap: var(--np-space-md);
 
   --np-font-hero: Georgia, serif;
-  --np-font-heading: "Segoe UI", sans-serif;
-  --np-font-body: "Segoe UI", sans-serif;
-  --np-font-label: "Segoe UI", sans-serif;
+  --np-font-heading: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --np-font-body: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --np-font-label: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 * {
@@ -3870,5 +3870,42 @@ input[type="search"]:focus-visible {
   box-shadow:
     0 0 0 1px rgba(236, 183, 110, 0.28),
     0 0 18px rgba(236, 183, 110, 0.18);
+}
+
+
+/* 17. Konsolidierung, Performance und Robustheit
+   Zentrale Nachschärfung ohne neue Seiten-Sonderlogik. */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.np-topbar-logo,
+.np-hero-logo img,
+.echo-page-image img,
+.np-pathfinder-image img,
+.np-team-image img {
+  content-visibility: auto;
+}
+
+.np-panel,
+.np-page-section,
+.echo-page-box,
+.np-rule-block,
+.np-info-card,
+.np-route-card {
+  contain: layout paint;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
