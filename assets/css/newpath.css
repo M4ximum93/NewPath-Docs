@@ -1428,3 +1428,286 @@ blockquote {
     font-size: 0.68rem !important;
   }
 }
+
+
+/* =========================================================
+   Schritt 64: Startseite als ECHO-Pfadfinder neu gewichten
+   - Header/Footer bleiben unverändert
+   - weniger Dashboard-Gefühl, mehr klare Führung durch ECHO
+   - Einstieg nicht mehr als gequetschte Zweitbox, sondern als gemeinsamer Wegweiser
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 {
+    --np-content-width: min(1320px, calc(100vw - (var(--np-page-left, 5rem) + var(--np-page-right, 5rem))));
+  }
+
+  .np-home-v2 .np-hero {
+    min-height: clamp(300px, 24vw, 405px) !important;
+    padding-top: clamp(0.7rem, 1.35vw, 1.35rem) !important;
+    padding-bottom: 0.55rem !important;
+    grid-template-columns: minmax(410px, 545px) minmax(255px, 335px) minmax(0, 1fr) !important;
+    gap: clamp(2.2rem, 5vw, 5.4rem) !important;
+  }
+
+  .np-home-v2 .np-hero h1 {
+    font-size: clamp(2.75rem, 3.55vw, 4.35rem) !important;
+  }
+
+  .np-home-v2 .np-hero-highlight {
+    max-width: 570px !important;
+    background: linear-gradient(90deg, rgba(0, 9, 15, 0.62), rgba(5, 18, 25, 0.42)) !important;
+  }
+
+  .np-home-v2 .np-hero-logo {
+    width: clamp(245px, 16.5vw, 325px) !important;
+    height: clamp(245px, 16.5vw, 325px) !important;
+  }
+
+  .np-status-bar-v2 {
+    width: min(1180px, var(--np-content-width)) !important;
+    max-width: min(1180px, var(--np-content-width)) !important;
+    min-height: 3.15rem !important;
+    margin-top: 0.15rem !important;
+    margin-bottom: 0.52rem !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    background: linear-gradient(90deg, rgba(5, 18, 24, 0.46), rgba(17, 46, 64, 0.28), rgba(5, 18, 24, 0.46)) !important;
+    border-color: rgba(0, 230, 246, 0.16) !important;
+  }
+
+  .np-status-bar-v2 .np-status-item {
+    min-height: 3.05rem !important;
+    padding: 0.44rem 0.82rem !important;
+  }
+
+  .np-status-bar-v2 .np-status-icon {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    flex-basis: 1.75rem !important;
+  }
+
+  .np-page-meta {
+    width: min(1180px, var(--np-content-width));
+    max-width: min(1180px, var(--np-content-width));
+    margin: 0 auto !important;
+  }
+
+  .np-page-meta .np-last-updated {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 0 0.42rem auto !important;
+    padding: 0.18rem 0.52rem;
+    display: table;
+    border-radius: 999px;
+    background: rgba(0, 9, 15, 0.38) !important;
+    color: rgba(245, 234, 220, 0.58) !important;
+    font-size: 0.68rem !important;
+  }
+
+  .np-pathfinder {
+    width: min(1320px, var(--np-content-width));
+    max-width: min(1320px, var(--np-content-width));
+    margin: 0 auto 1rem;
+    padding: clamp(1rem, 1.45vw, 1.45rem);
+    display: grid;
+    grid-template-columns: minmax(390px, 0.46fr) minmax(620px, 0.54fr);
+    gap: clamp(1rem, 1.7vw, 1.45rem);
+    align-items: stretch;
+    border-color: rgba(0, 230, 246, 0.34);
+    background:
+      radial-gradient(circle at 12% 58%, rgba(0, 230, 246, 0.13), transparent 16rem),
+      radial-gradient(circle at 88% 8%, rgba(236, 183, 110, 0.10), transparent 18rem),
+      linear-gradient(135deg, rgba(4, 18, 25, 0.82), rgba(7, 28, 36, 0.74));
+  }
+
+  .np-pathfinder-echo {
+    position: relative;
+    display: grid;
+    grid-template-columns: clamp(8.5rem, 10vw, 11.25rem) minmax(0, 1fr);
+    gap: 1.15rem;
+    align-items: center;
+    min-height: 12.5rem;
+  }
+
+  .np-pathfinder-echo::before {
+    content: "";
+    position: absolute;
+    inset: -0.15rem auto -0.15rem -0.28rem;
+    width: 3px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(0, 230, 246, 0.85), rgba(0, 230, 246, 0.12));
+  }
+
+  .np-pathfinder-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .np-pathfinder-image img {
+    width: clamp(8.5rem, 9.8vw, 11rem);
+    height: clamp(8.5rem, 9.8vw, 11rem);
+    object-fit: contain;
+    filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.38));
+  }
+
+  .np-pathfinder-copy h2 {
+    margin: 0 0 0.48rem;
+    color: var(--np-gold-soft);
+    font-size: clamp(1.55rem, 1.65vw, 2rem);
+    line-height: 1.08;
+  }
+
+  .np-pathfinder-copy p:last-child {
+    margin: 0;
+    max-width: 34rem;
+    color: rgba(245, 234, 220, 0.88);
+    font-size: 0.92rem;
+    line-height: 1.52;
+  }
+
+  .np-pathfinder-routes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.72rem;
+    align-items: stretch;
+  }
+
+  .np-route-card {
+    min-height: 10.6rem;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    justify-items: center;
+    align-content: start;
+    gap: 0.34rem;
+    padding: 0.95rem 0.72rem 0.82rem;
+    border-radius: 0.62rem;
+    color: var(--np-text) !important;
+    text-align: center;
+    text-decoration: none !important;
+    background: linear-gradient(180deg, rgba(17, 55, 67, 0.76), rgba(6, 24, 31, 0.84));
+    border: 1px solid rgba(72, 122, 146, 0.34);
+    box-shadow: inset 0 0 24px rgba(0, 230, 246, 0.025);
+  }
+
+  .np-route-card:hover {
+    border-color: rgba(0, 230, 246, 0.52);
+    background: linear-gradient(180deg, rgba(21, 66, 79, 0.82), rgba(7, 30, 39, 0.88));
+  }
+
+  .np-route-card .np-card-icon {
+    width: 2.45rem;
+    height: 2.45rem;
+    margin: 0 0 0.18rem;
+    font-size: 1rem;
+  }
+
+  .np-route-title {
+    color: #fff;
+    font-size: 0.92rem;
+    font-weight: 900;
+    line-height: 1.12;
+  }
+
+  .np-route-text {
+    color: rgba(245, 234, 220, 0.76);
+    font-size: 0.72rem;
+    line-height: 1.32;
+  }
+
+  .np-route-link {
+    margin-top: 0.2rem;
+    color: var(--np-cyan);
+    font-size: 0.72rem;
+    font-weight: 900;
+  }
+
+  .np-main-grid-echo-first {
+    display: none !important;
+  }
+
+  .np-about-panel-v2 {
+    width: min(1320px, var(--np-content-width));
+    max-width: min(1320px, var(--np-content-width));
+    grid-template-columns: minmax(280px, 0.3fr) minmax(420px, 0.46fr) minmax(260px, 0.24fr) !important;
+    gap: 1.15rem !important;
+    align-items: stretch;
+  }
+
+  .np-origin-teaser {
+    padding-left: 1rem;
+    border-left: 1px solid rgba(0, 230, 246, 0.22);
+  }
+
+  .np-origin-teaser p:last-child {
+    margin: 0;
+    color: rgba(245, 234, 220, 0.82);
+    font-size: 0.84rem;
+    line-height: 1.48;
+  }
+
+  .np-server-brief-v2 {
+    width: min(1320px, var(--np-content-width));
+    max-width: min(1320px, var(--np-content-width));
+    margin-bottom: 1.2rem;
+  }
+
+  /* Back-to-top/Trennlinie auf Startseite komplett ausblenden */
+  .np-home-v2 ~ hr,
+  .np-home-v2 ~ p,
+  .main-content > p:has(a[href="#top"]),
+  .main-content > p:has(a[href="#"]),
+  .main-content > hr:last-of-type {
+    display: none !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1380px) {
+  .np-pathfinder {
+    grid-template-columns: minmax(360px, 0.43fr) minmax(560px, 0.57fr);
+  }
+
+  .np-route-card {
+    min-height: 9.7rem;
+    padding-left: 0.54rem;
+    padding-right: 0.54rem;
+  }
+
+  .np-route-text {
+    display: none;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1120px) {
+  .np-pathfinder,
+  .np-about-panel-v2,
+  .np-server-brief-v2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .np-pathfinder-routes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 66.499rem) {
+  .np-pathfinder,
+  .np-pathfinder-echo,
+  .np-about-panel-v2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .np-pathfinder-routes {
+    grid-template-columns: 1fr;
+  }
+
+  .np-pathfinder {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  .np-pathfinder-image {
+    justify-content: flex-start;
+  }
+}

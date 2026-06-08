@@ -4,9 +4,9 @@ title: Startseite
 nav_order: 1
 permalink: /
 ---
-<div class="np-home">
+<div class="np-home np-home-v2">
 
-<section class="np-hero">
+<section class="np-hero np-hero-v2">
   <div class="np-hero-content">
     <p class="np-kicker">Offizielles Modpack</p>
 
@@ -38,7 +38,7 @@ permalink: /
   </div>
 </section>
 
-<section class="np-status-bar" aria-label="NewPath Kurzinfos">
+<section class="np-status-bar np-status-bar-v2" aria-label="NewPath Kurzinfos">
   <div class="np-status-item">
     <span class="np-status-icon np-status-icon-block" aria-hidden="true"></span>
     <span>
@@ -74,15 +74,13 @@ permalink: /
 
 <div class="np-page-meta">
 <!-- AUTO_UPDATED_START -->
-<p class="np-last-updated">Zuletzt aktualisiert: 08.06.2026 15:50 Uhr</p>
+<p class="np-last-updated">Zuletzt aktualisiert: 08.06.2026 12:57 Uhr</p>
 <!-- AUTO_UPDATED_END -->
 </div>
 
-<section class="np-main-grid np-main-grid-echo-first">
-  <aside class="np-panel np-echo-feature" aria-label="ECHO – Der Wegbegleiter">
-    <div class="np-echo-orb"></div>
-
-    <div class="np-echo-image-wrap">
+<section class="np-panel np-pathfinder" aria-label="ECHO – Wegbegleiter und Einstieg">
+  <div class="np-pathfinder-echo">
+    <div class="np-pathfinder-image">
       <img
         src="{{ site.baseurl }}/assets/images/echo/echo-guide.png"
         alt="ECHO – Der Wegbegleiter"
@@ -92,60 +90,48 @@ permalink: /
         decoding="async">
     </div>
 
-    <div class="np-echo-content">
+    <div class="np-pathfinder-copy">
       <p class="np-section-kicker">ECHO – Der Wegbegleiter</p>
-      <h2>Ich helfe dir, den richtigen Pfad zu finden.</h2>
+      <h2>Wähle deinen Pfad.</h2>
       <p>
-        Statt dieselben Links mehrfach zu wiederholen, führt ECHO dich nach Situation:
-        neu einsteigen, mitspielen, technische Hilfe finden oder NewPath besser verstehen.
+        ECHO führt dich direkt zu dem Bereich, der gerade zu deiner Situation passt:
+        Einstieg, Mitspielen, technische Hilfe oder die Idee hinter NewPath.
       </p>
-
-      <div class="np-echo-steps" aria-label="ECHO Orientierungspfade">
-        <span>Neu hier?</span>
-        <span>Mitspielen</span>
-        <span>Technische Hilfe</span>
-        <span>NewPath verstehen</span>
-      </div>
     </div>
-  </aside>
+  </div>
 
-  <div class="np-panel np-quick-panel">
-    <p class="np-section-kicker">Einstieg</p>
-    <h2>Was möchtest du tun?</h2>
+  <div class="np-pathfinder-routes">
+    <a class="np-route-card" href="{{ site.baseurl }}/faq.html">
+      <span class="np-card-icon np-card-icon-blue">?</span>
+      <span class="np-route-title">Neu hier</span>
+      <span class="np-route-text">Kurze Antworten und Grundlagen.</span>
+      <span class="np-route-link">Zum FAQ →</span>
+    </a>
 
-    <div class="np-card-grid np-card-grid-guides">
-      <a class="np-card" href="{{ site.baseurl }}/faq.html">
-        <span class="np-card-icon np-card-icon-blue">?</span>
-        <span class="np-card-title">Ich bin neu hier</span>
-        <span class="np-card-text">Kurze Antworten zu Einstieg, Community und den wichtigsten Grundlagen.</span>
-        <span class="np-card-link">Zum FAQ →</span>
-      </a>
+    <a class="np-route-card" href="{{ site.baseurl }}/modpack-hilfe.html#mitspielen">
+      <span class="np-card-icon np-card-icon-green">◆</span>
+      <span class="np-route-title">Mitspielen</span>
+      <span class="np-route-text">Installation, Zugang und Start.</span>
+      <span class="np-route-link">Zur Hilfe →</span>
+    </a>
 
-      <a class="np-card" href="{{ site.baseurl }}/modpack-hilfe.html#mitspielen">
-        <span class="np-card-icon np-card-icon-green">◆</span>
-        <span class="np-card-title">Ich will mitspielen</span>
-        <span class="np-card-text">Installation, CurseForge, RAM, Zugang und die ersten Schritte.</span>
-        <span class="np-card-link">Zur Hilfe →</span>
-      </a>
+    <a class="np-route-card" href="{{ site.baseurl }}/modpack-hilfe.html">
+      <span class="np-card-icon np-card-icon-gold">⚙</span>
+      <span class="np-route-title">Technische Hilfe</span>
+      <span class="np-route-text">RAM, Voice Chat, Fehler und Mods.</span>
+      <span class="np-route-link">Zur Modpack Hilfe →</span>
+    </a>
 
-      <a class="np-card" href="{{ site.baseurl }}/modpack-hilfe.html">
-        <span class="np-card-icon np-card-icon-gold">⚙</span>
-        <span class="np-card-title">Technische Hilfe</span>
-        <span class="np-card-text">Hilfe zu Modpack, Voice Chat, Fehlern, Einstellungen und Mods.</span>
-        <span class="np-card-link">Zur Modpack Hilfe →</span>
-      </a>
-
-      <a class="np-card" href="{{ site.baseurl }}/philosophie.html">
-        <span class="np-card-icon np-card-icon-purple">✦</span>
-        <span class="np-card-title">NewPath verstehen</span>
-        <span class="np-card-text">Warum NewPath entschleunigt, gemeinschaftlich und atmosphärisch gedacht ist.</span>
-        <span class="np-card-link">Zur Philosophie →</span>
-      </a>
-    </div>
+    <a class="np-route-card" href="{{ site.baseurl }}/philosophie.html">
+      <span class="np-card-icon np-card-icon-purple">✦</span>
+      <span class="np-route-title">NewPath verstehen</span>
+      <span class="np-route-text">Philosophie, Richtung und Atmosphäre.</span>
+      <span class="np-route-link">Zur Philosophie →</span>
+    </a>
   </div>
 </section>
 
-<section class="np-panel np-about-panel">
+<section class="np-panel np-about-panel np-about-panel-v2">
   <div>
     <p class="np-section-kicker">Über NewPath</p>
     <h2>Eine Welt mit Richtung statt ein weiteres Everything-Pack.</h2>
@@ -161,9 +147,17 @@ permalink: /
       sinnvoll zusammenkommen und Fortschritt nicht nur schneller, sondern bewusster erlebt wird.
     </p>
   </div>
+
+  <div class="np-origin-teaser">
+    <p class="np-section-kicker">Ursprung & Idee</p>
+    <p>
+      NewPath ist aus dem Wunsch entstanden, Minecraft wieder gemeinschaftlicher,
+      atmosphärischer und weniger beliebig zu erleben.
+    </p>
+  </div>
 </section>
 
-<section class="np-panel np-server-brief" id="server-kurzinfos">
+<section class="np-panel np-server-brief np-server-brief-v2" id="server-kurzinfos">
   <div>
     <p class="np-section-kicker">Server-Kurzinfos</p>
     <h2>Alles Wichtige für den Einstieg bleibt auf der Startseite.</h2>
