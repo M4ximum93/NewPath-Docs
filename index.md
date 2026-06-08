@@ -4,10 +4,6 @@ title: Startseite
 nav_order: 1
 permalink: /
 ---
-<!-- AUTO_UPDATED_START -->
-<p class="np-last-updated">Zuletzt aktualisiert: 07.06.2026 23:46 Uhr</p>
-<!-- AUTO_UPDATED_END -->
-
 <div class="np-home">
 
 <section class="np-hero">
@@ -84,6 +80,12 @@ permalink: /
     </span>
   </div>
 </section>
+
+<div class="np-page-meta">
+<!-- AUTO_UPDATED_START -->
+<p class="np-last-updated">Zuletzt aktualisiert: 07.06.2026 23:46 Uhr</p>
+<!-- AUTO_UPDATED_END -->
+</div>
 
 <section class="np-main-grid np-main-grid-echo-first">
   <aside class="np-panel np-echo-feature" aria-label="ECHO – Der Wegbegleiter">
