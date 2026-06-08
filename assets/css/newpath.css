@@ -5327,3 +5327,513 @@ body:not(.home) .np-help-note {
     height: 112px !important;
   }
 }
+
+/* =========================================================
+   Schritt 49: Gesamtwirkung stabilisieren + geplante Punkte mitnehmen
+   - Content-Raster etwas breiter/ruhiger, aber nicht überdehnt
+   - ECHO/Einstieg stärker und lesbarer
+   - Footer bleibt fixiert, ohne harte Trennlinie
+   - Unterseiten-/Hilfekomponenten weiter vereinheitlicht
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  :root {
+    --np-page-gutter: clamp(5.6rem, 7.2vw, 8.4rem) !important;
+    --np-page-left: var(--np-page-gutter) !important;
+    --np-page-right: var(--np-page-gutter) !important;
+    --np-content-width: min(1320px, calc(100vw - (var(--np-page-gutter) * 2))) !important;
+    --np-fixed-footer-height: 4.45rem !important;
+  }
+
+  body {
+    padding-bottom: calc(var(--np-fixed-footer-height) + 1.2rem) !important;
+  }
+
+  /* Alle Hauptbereiche nutzen dieselbe saubere Kante */
+  .np-home,
+  .np-hero,
+  .np-status-bar,
+  .np-meta-row,
+  .np-main-grid-echo-first,
+  .np-about-panel,
+  .np-server-brief {
+    width: var(--np-content-width) !important;
+    max-width: var(--np-content-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Hero etwas ruhiger und nicht zu hoch/zentriert */
+  .np-home {
+    padding-top: clamp(3.35rem, 5.3vw, 5.8rem) !important;
+  }
+
+  .np-hero {
+    grid-template-columns: minmax(430px, 0.92fr) minmax(285px, 0.72fr) !important;
+    gap: clamp(2rem, 4.4vw, 4rem) !important;
+    min-height: clamp(250px, 28vw, 365px) !important;
+    align-items: center !important;
+  }
+
+  .np-hero h1 {
+    font-size: clamp(3.15rem, 4.4vw, 4.85rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.042em !important;
+  }
+
+  .np-hero-highlight {
+    max-width: 560px !important;
+    padding: 0.78rem 0.95rem !important;
+    line-height: 1.45 !important;
+    background: rgba(0, 9, 15, 0.52) !important;
+    border-left: 3px solid rgba(236, 189, 119, 0.86) !important;
+    box-shadow: none !important;
+  }
+
+  .np-hero-logo,
+  .np-hero-logo:hover,
+  .np-hero-logo:focus-visible {
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  .np-hero-logo img,
+  .np-hero-logo:hover img,
+  .np-hero-logo:focus-visible img {
+    width: clamp(240px, 16vw, 318px) !important;
+    height: clamp(240px, 16vw, 318px) !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  /* Statusleiste und Zeitstempel als zusammengehöriger Block */
+  .np-status-bar {
+    margin-top: 0.58rem !important;
+    min-height: 3.15rem !important;
+    padding: 0.52rem 0.72rem !important;
+  }
+
+  .np-meta-row {
+    justify-content: flex-end !important;
+    margin-top: 0.22rem !important;
+    margin-bottom: 0.7rem !important;
+  }
+
+  .np-home .np-last-updated,
+  .np-last-updated {
+    font-size: 0.68rem !important;
+    padding: 0.25rem 0.5rem !important;
+    background: rgba(0, 9, 15, 0.42) !important;
+    border: 1px solid rgba(236, 189, 119, 0.15) !important;
+  }
+
+  /* ECHO + Einstieg: größer und lesbarer, aber ohne extreme Höhe */
+  .np-main-grid-echo-first {
+    grid-template-columns: minmax(455px, 0.47fr) minmax(620px, 0.53fr) !important;
+    gap: 0.95rem !important;
+    margin-top: 0.7rem !important;
+    margin-bottom: 2.05rem !important;
+  }
+
+  .np-main-grid-echo-first::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: -1.18rem !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, rgba(0, 230, 246, 0.28), rgba(236, 189, 119, 0.16), transparent) !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature,
+  .np-main-grid-echo-first .np-quick-panel {
+    min-height: 178px !important;
+    height: 178px !important;
+    max-height: 178px !important;
+    overflow: hidden !important;
+  }
+
+  .np-echo-feature,
+  .np-echo-feature:hover,
+  .np-echo-feature:focus-within {
+    grid-template-columns: 128px minmax(0, 1fr) !important;
+    align-items: center !important;
+    padding: 1rem 1.15rem !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: inset 0 0 22px rgba(0, 230, 246, 0.025) !important;
+    transition: none !important;
+  }
+
+  .np-echo-feature::before,
+  .np-echo-feature::after {
+    display: none !important;
+    content: none !important;
+    opacity: 0 !important;
+  }
+
+  .np-echo-image-wrap {
+    width: 112px !important;
+    height: 138px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .np-echo-image-wrap img,
+  .np-echo-feature:hover .np-echo-image-wrap img,
+  .np-echo-feature:focus-within .np-echo-image-wrap img {
+    width: 7.1rem !important;
+    height: 7.1rem !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  .np-echo-content h2 {
+    font-size: clamp(1.28rem, 1.45vw, 1.62rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 0.36rem !important;
+  }
+
+  .np-echo-content p {
+    font-size: 0.76rem !important;
+    line-height: 1.42 !important;
+    max-width: 28rem !important;
+  }
+
+  .np-echo-steps {
+    margin-top: 0.46rem !important;
+    gap: 0.38rem !important;
+  }
+
+  .np-echo-steps span {
+    font-size: 0.58rem !important;
+    padding: 0.22rem 0.46rem !important;
+  }
+
+  .np-quick-panel {
+    padding: 1rem 1.1rem !important;
+  }
+
+  .np-quick-panel h2 {
+    margin-bottom: 0.72rem !important;
+    font-size: clamp(1rem, 1.2vw, 1.25rem) !important;
+  }
+
+  .np-card-grid-guides {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0.62rem !important;
+  }
+
+  .np-card-grid-guides .np-card,
+  .np-card-grid-guides .np-card:hover,
+  .np-card-grid-guides .np-card:focus-within {
+    min-height: 103px !important;
+    height: 103px !important;
+    padding: 0.64rem 0.5rem 0.56rem !important;
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  .np-card-grid-guides .np-card-icon {
+    width: 1.78rem !important;
+    height: 1.78rem !important;
+    margin-bottom: 0.32rem !important;
+  }
+
+  .np-card-grid-guides .np-card-title {
+    font-size: 0.78rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .np-card-grid-guides .np-card-text {
+    display: none !important;
+  }
+
+  .np-card-grid-guides .np-card-link {
+    margin-top: 0.28rem !important;
+    font-size: 0.64rem !important;
+  }
+
+  /* Abschnittslinien mit mehr Luft, keine Linie direkt über dem Footer */
+  .np-about-panel {
+    margin-top: 0.75rem !important;
+    margin-bottom: 2.25rem !important;
+    padding: 1rem 1.1rem !important;
+  }
+
+  .np-about-panel::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: -1.22rem !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, rgba(0, 230, 246, 0.24), rgba(236, 189, 119, 0.13), transparent) !important;
+  }
+
+  .np-server-brief {
+    margin-top: 0.75rem !important;
+    margin-bottom: 1.55rem !important;
+    padding: 1rem 1.1rem !important;
+    border-bottom: 0 !important;
+  }
+
+  .np-server-brief::after,
+  .np-site-footer::before,
+  .np-site-footer::after {
+    display: none !important;
+    content: none !important;
+    opacity: 0 !important;
+  }
+
+  /* Fixierter Footer: voller Balken, Inhalt nach außen, keine Extra-Trennlinie */
+  .np-site-footer {
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 75 !important;
+    width: 100vw !important;
+    max-width: none !important;
+    min-height: var(--np-fixed-footer-height) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-top: 1px solid rgba(0, 230, 246, 0.16) !important;
+    background: linear-gradient(180deg, rgba(0, 9, 15, 0.93), rgba(0, 18, 33, 0.96)) !important;
+    box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.30) !important;
+  }
+
+  .np-site-footer-inner {
+    width: calc(100vw - 2.4rem) !important;
+    max-width: none !important;
+    min-height: var(--np-fixed-footer-height) !important;
+    margin: 0 auto !important;
+    padding: 0 0.25rem !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .np-footer-brand strong,
+  .np-footer-links a,
+  .np-footer-copy {
+    font-size: 0.74rem !important;
+  }
+
+  .np-footer-brand span {
+    font-size: 0.63rem !important;
+  }
+
+  .back-to-top,
+  .back-to-top a,
+  .back-to-top-nav,
+  a[href="#top"],
+  a[href="#top"].back-to-top {
+    display: none !important;
+  }
+}
+
+/* Geplanter Unterseiten-Schritt: bessere Hilfe-/Accordion-Bilder und kompaktere Meta-Zeile */
+body:not(.home) .np-help-details img,
+body:not(.home) .np-help-image,
+body:not(.home) .np-help-screenshot {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0.9rem auto 0 !important;
+  border-radius: 0.85rem !important;
+  border: 1px solid rgba(0, 230, 246, 0.22) !important;
+  background: rgba(0, 9, 15, 0.45) !important;
+}
+
+body:not(.home) .np-help-details summary::marker {
+  color: #f4cf7f !important;
+}
+
+body:not(.home) .np-help-details[open] summary {
+  border-bottom: 1px solid rgba(0, 230, 246, 0.14) !important;
+}
+
+@media (min-width: 66.5rem) and (max-width: 1250px) {
+  :root {
+    --np-page-gutter: 2rem !important;
+    --np-content-width: calc(100vw - 4rem) !important;
+  }
+
+  .np-main-grid-echo-first {
+    grid-template-columns: 1fr !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature,
+  .np-main-grid-echo-first .np-quick-panel {
+    height: auto !important;
+    max-height: none !important;
+  }
+}
+
+/* =========================================================
+   Schritt 50: Unterseiten-Lesbarkeit
+   - Unterseiten bekommen eine klare Hintergrundbox
+   - lange Texte heben sich besser vom Bildhintergrund ab
+   - Modpack-Hilfe/Details/Tabellen/Bilder werden einheitlicher
+   ========================================================= */
+
+@supports selector(:has(*)) {
+  body:not(.home) .main-content:not(:has(.np-home)) {
+    width: min(1120px, calc(100vw - 7.5rem)) !important;
+    max-width: 1120px !important;
+    margin: calc(var(--np-fixed-header-height, 4.45rem) + 2.35rem) auto calc(var(--np-fixed-footer-height, 3.9rem) + 2.4rem) !important;
+    padding: clamp(1.35rem, 2.3vw, 2rem) clamp(1.25rem, 2.5vw, 2.35rem) !important;
+    border: 1px solid rgba(0, 230, 246, 0.22) !important;
+    border-left: 3px solid rgba(0, 230, 246, 0.46) !important;
+    border-radius: 1rem !important;
+    background:
+      radial-gradient(circle at 12% 0%, rgba(0, 230, 246, 0.08), transparent 22rem),
+      linear-gradient(135deg, rgba(6, 27, 39, 0.88), rgba(0, 9, 15, 0.92) 58%, rgba(0, 18, 33, 0.86)) !important;
+    box-shadow:
+      0 22px 58px rgba(0, 0, 0, 0.36),
+      inset 0 1px 0 rgba(255, 255, 255, 0.055) !important;
+    backdrop-filter: blur(12px) saturate(1.06) !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) h1,
+  body:not(.home) .main-content:not(:has(.np-home)) h2,
+  body:not(.home) .main-content:not(:has(.np-home)) h3 {
+    color: #f4cf7f !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.42) !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) h1 {
+    margin-top: 0 !important;
+    padding-bottom: 0.75rem !important;
+    border-bottom: 1px solid rgba(0, 230, 246, 0.18) !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) p,
+  body:not(.home) .main-content:not(:has(.np-home)) li,
+  body:not(.home) .main-content:not(:has(.np-home)) td,
+  body:not(.home) .main-content:not(:has(.np-home)) th {
+    color: rgba(244, 249, 251, 0.92) !important;
+    line-height: 1.72 !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) a {
+    color: #01f1f6 !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 0.18em !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) strong {
+    color: #f4cf7f !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) blockquote,
+  body:not(.home) .main-content:not(:has(.np-home)) .np-info-box,
+  body:not(.home) .main-content:not(:has(.np-home)) .np-note,
+  body:not(.home) .main-content:not(:has(.np-home)) .np-warning {
+    margin: 1rem 0 !important;
+    padding: 0.95rem 1.05rem !important;
+    border-radius: 0.8rem !important;
+    border: 1px solid rgba(236, 189, 119, 0.22) !important;
+    border-left: 3px solid rgba(236, 189, 119, 0.72) !important;
+    background: rgba(0, 9, 15, 0.38) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) table {
+    display: table !important;
+    width: 100% !important;
+    margin: 1.2rem 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    overflow: hidden !important;
+    border-radius: 0.8rem !important;
+    background: rgba(0, 9, 15, 0.34) !important;
+    border: 1px solid rgba(0, 230, 246, 0.16) !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) th,
+  body:not(.home) .main-content:not(:has(.np-home)) td {
+    border-color: rgba(0, 230, 246, 0.13) !important;
+    padding: 0.72rem 0.85rem !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) th {
+    color: #00e6f6 !important;
+    background: rgba(0, 230, 246, 0.07) !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) code {
+    color: #f4cf7f !important;
+    background: rgba(0, 9, 15, 0.55) !important;
+    border: 1px solid rgba(236, 189, 119, 0.16) !important;
+    border-radius: 0.35rem !important;
+    padding: 0.1rem 0.28rem !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) pre {
+    border-radius: 0.8rem !important;
+    border: 1px solid rgba(0, 230, 246, 0.16) !important;
+    background: rgba(0, 9, 15, 0.62) !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) .np-last-updated {
+    display: inline-flex !important;
+    width: auto !important;
+    margin: 0 0 1.15rem 0 !important;
+    padding: 0.38rem 0.68rem !important;
+    border: 1px solid rgba(0, 230, 246, 0.18) !important;
+    border-radius: 999px !important;
+    background: rgba(0, 9, 15, 0.36) !important;
+    color: rgba(244, 249, 251, 0.70) !important;
+    font-size: 0.78rem !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) .np-help-details,
+  body:not(.home) .main-content:not(:has(.np-home)) details {
+    margin: 0.9rem 0 !important;
+    border: 1px solid rgba(0, 230, 246, 0.18) !important;
+    border-radius: 0.8rem !important;
+    background: rgba(0, 18, 33, 0.42) !important;
+    overflow: hidden !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) .np-help-details summary,
+  body:not(.home) .main-content:not(:has(.np-home)) details summary {
+    cursor: pointer !important;
+    padding: 0.82rem 1rem !important;
+    color: #f4cf7f !important;
+    font-weight: 800 !important;
+    background: rgba(0, 230, 246, 0.055) !important;
+  }
+
+  body:not(.home) .main-content:not(:has(.np-home)) .np-help-details > *:not(summary),
+  body:not(.home) .main-content:not(:has(.np-home)) details > *:not(summary) {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+
+@media (max-width: 66.49rem) {
+  body:not(.home) .main-content {
+    width: calc(100vw - 2rem) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 1.1rem !important;
+    border-radius: 0.85rem !important;
+    background: rgba(0, 9, 15, 0.86) !important;
+  }
+}
