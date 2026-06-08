@@ -2450,3 +2450,266 @@ blockquote {
     min-height: 6.2rem !important;
   }
 }
+
+/* =========================================================
+   Schritt 37: feste Kopfzeile, gleiche Seitenabstände,
+   Hovereffekte reduziert und Footer vorbereitet
+   ========================================================= */
+
+@media (min-width: 66.5rem) {
+  :root {
+    --np-header-height: 4.65rem;
+    --np-page-gutter: clamp(7.8rem, 8.6vw, 11rem);
+    --np-page-left: var(--np-page-gutter);
+    --np-page-right: var(--np-page-gutter);
+    --np-content-width: calc(100vw - (var(--np-page-gutter) * 2));
+  }
+
+  .main-header {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 2000 !important;
+    min-height: var(--np-header-height) !important;
+    height: var(--np-header-height) !important;
+    padding: 0 1.55rem !important;
+  }
+
+  .main-content-wrap {
+    padding-top: var(--np-header-height) !important;
+  }
+
+  .np-last-updated,
+  .np-hero,
+  .np-status-bar,
+  .np-main-grid,
+  .np-main-grid-echo-first,
+  .np-wide-panel {
+    width: var(--np-content-width) !important;
+    max-width: var(--np-content-width) !important;
+    margin-left: var(--np-page-gutter) !important;
+    margin-right: var(--np-page-gutter) !important;
+  }
+
+  .np-home {
+    padding-bottom: 0 !important;
+  }
+
+  /* Header-CTA: sauberes Discord-Symbol, weniger grell */
+  .main-header .aux-nav a {
+    min-height: 2.42rem !important;
+    height: 2.42rem !important;
+    padding: 0 1.05rem !important;
+    gap: 0.52rem !important;
+    border-radius: 0.48rem !important;
+    color: rgba(245, 234, 220, 0.96) !important;
+    background: linear-gradient(135deg, rgba(0, 230, 246, 0.08), rgba(0, 18, 33, 0.82)) !important;
+    border: 1px solid rgba(0, 230, 246, 0.46) !important;
+    box-shadow: inset 0 0 14px rgba(0, 230, 246, 0.045) !important;
+    text-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .main-header .aux-nav a::before {
+    content: "" !important;
+    flex: 0 0 auto !important;
+    width: 1.06rem !important;
+    height: 0.82rem !important;
+    display: inline-block !important;
+    background-color: var(--np-cyan) !important;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 127.14 96.36'%3E%3Cpath d='M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21A105.73 105.73 0 0 0 32.71 96.36a77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.35 2.66-2.05a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2.05a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.14ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z'/%3E%3C/svg%3E") center / contain no-repeat !important;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 127.14 96.36'%3E%3Cpath d='M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21A105.73 105.73 0 0 0 32.71 96.36a77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.35 2.66-2.05a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2.05a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.14ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z'/%3E%3C/svg%3E") center / contain no-repeat !important;
+  }
+
+  .main-header .aux-nav a:hover,
+  .main-header .aux-nav a:focus-visible {
+    color: rgba(245, 234, 220, 0.96) !important;
+    background: linear-gradient(135deg, rgba(0, 230, 246, 0.10), rgba(0, 18, 33, 0.88)) !important;
+    border-color: rgba(0, 230, 246, 0.58) !important;
+    box-shadow: inset 0 0 14px rgba(0, 230, 246, 0.055) !important;
+    transform: none !important;
+  }
+
+  /* Performance: keine Transform-/Glow-Hovereffekte auf großen Flächen */
+  .np-topbar-brand,
+  .np-hero-logo,
+  .np-hero-logo img,
+  .np-echo-feature,
+  .np-echo-image-wrap img,
+  .np-card,
+  .np-help-tile,
+  .np-panel {
+    transition: none !important;
+  }
+
+  .np-topbar-brand:hover,
+  .np-topbar-brand:focus-within,
+  .np-hero-logo:hover,
+  .np-hero-logo:hover img,
+  .np-echo-feature:hover,
+  .np-echo-feature:hover .np-echo-image-wrap img,
+  .np-card:hover,
+  .np-help-tile:hover {
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* Mittelteil bleibt kompakt, aber nicht abgeschnitten */
+  .np-main-grid-echo-first {
+    grid-template-columns: minmax(360px, 0.82fr) minmax(640px, 1.18fr) !important;
+    gap: 0.8rem !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature,
+  .np-main-grid-echo-first .np-quick-panel {
+    min-height: 9.75rem !important;
+    max-height: 9.75rem !important;
+    overflow: hidden !important;
+  }
+
+  .np-card-grid-guides {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0.46rem !important;
+  }
+
+  .np-card-grid-guides .np-card {
+    min-height: 4.45rem !important;
+    height: 4.45rem !important;
+    padding: 0.38rem 0.38rem 0.34rem !important;
+  }
+
+  .np-card-grid-guides .np-card-text {
+    display: none !important;
+  }
+
+  .np-card-grid-guides .np-card-icon {
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    margin-bottom: 0.18rem !important;
+  }
+
+  .np-card-grid-guides .np-card-title {
+    font-size: 0.64rem !important;
+  }
+
+  .np-card-grid-guides .np-card-link {
+    margin-top: 0.18rem !important;
+    font-size: 0.51rem !important;
+  }
+
+  .np-echo-feature {
+    grid-template-columns: 74px minmax(0, 1fr) !important;
+    padding: 0.68rem 0.78rem !important;
+  }
+
+  .np-echo-image-wrap img {
+    width: 4.75rem !important;
+    height: 4.75rem !important;
+  }
+
+  .np-echo-content h2 {
+    font-size: clamp(0.98rem, 1.02vw, 1.14rem) !important;
+    line-height: 1.14 !important;
+  }
+
+  .np-echo-content p {
+    font-size: 0.62rem !important;
+    line-height: 1.32 !important;
+  }
+
+  /* Footer im Stil der Kopfzeile */
+  .np-site-footer {
+    width: var(--np-content-width) !important;
+    margin: 1.15rem var(--np-page-gutter) 0 !important;
+    padding: 1rem 0 1.25rem !important;
+    border-top: 1px solid rgba(0, 230, 246, 0.20) !important;
+    color: rgba(245, 234, 220, 0.72) !important;
+  }
+
+  .np-site-footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3.2rem;
+    padding: 0.78rem 1rem;
+    border: 1px solid rgba(0, 230, 246, 0.16);
+    border-radius: 0.7rem;
+    background: linear-gradient(180deg, rgba(0, 9, 15, 0.78), rgba(0, 18, 33, 0.72));
+    box-shadow: inset 0 0 20px rgba(0, 230, 246, 0.035);
+    backdrop-filter: blur(10px);
+  }
+
+  .np-site-footer-brand {
+    display: grid;
+    gap: 0.14rem;
+  }
+
+  .np-site-footer-brand strong {
+    color: var(--np-gold-soft);
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  .np-site-footer-brand span {
+    color: rgba(245, 234, 220, 0.62);
+    font-size: 0.68rem;
+  }
+
+  .np-site-footer-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .np-site-footer-links a,
+  .np-site-footer-links span {
+    color: rgba(245, 234, 220, 0.72) !important;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-decoration: none !important;
+  }
+
+  .np-site-footer-links a:hover,
+  .np-site-footer-links a:focus-visible {
+    color: var(--np-gold-soft) !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1500px) {
+  :root {
+    --np-page-gutter: clamp(6.2rem, 7.2vw, 8.2rem);
+    --np-page-left: var(--np-page-gutter);
+    --np-page-right: var(--np-page-gutter);
+    --np-content-width: calc(100vw - (var(--np-page-gutter) * 2));
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1180px) {
+  :root {
+    --np-page-gutter: 2rem;
+    --np-content-width: calc(100vw - 4rem);
+  }
+
+  .np-main-grid-echo-first {
+    grid-template-columns: 1fr !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature,
+  .np-main-grid-echo-first .np-quick-panel {
+    min-height: auto !important;
+    max-height: none !important;
+  }
+
+  .np-card-grid-guides {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .np-card-grid-guides .np-card-text {
+    display: block !important;
+  }
+}
