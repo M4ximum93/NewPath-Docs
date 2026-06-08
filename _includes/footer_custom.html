@@ -1,4 +1,4 @@
-<footer class="np-site-footer" aria-label="NewPath Fußzeile">
+<footer id="np-global-footer" class="np-site-footer" aria-label="NewPath Fußzeile">
   <div class="np-site-footer-inner">
     <div class="np-site-footer-brand">
       <strong>NewPath – Echoes of the Wild</strong>
@@ -17,3 +17,29 @@
     </nav>
   </div>
 </footer>
+
+<script>
+  (function () {
+    function placeNewPathFooter() {
+      var footers = Array.prototype.slice.call(document.querySelectorAll('.np-site-footer'));
+      if (!footers.length) return;
+
+      var footer = document.getElementById('np-global-footer') || footers[0];
+      footer.id = 'np-global-footer';
+
+      footers.forEach(function (item) {
+        if (item !== footer) item.remove();
+      });
+
+      if (footer.parentElement !== document.body) {
+        document.body.appendChild(footer);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', placeNewPathFooter);
+    } else {
+      placeNewPathFooter();
+    }
+  })();
+</script>
