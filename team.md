@@ -41,45 +41,34 @@ Diese Seite soll später zeigen, wer für welche Bereiche zuständig ist und an 
   damit Teammitglieder einfach als Karten eingetragen werden können.
 </div>
 
-## Bereiche
-
-<div class="np-community-grid">
-  <article class="np-community-card">
-    <span class="np-community-icon">★</span>
-    <h3>Projektleitung</h3>
-    <p>Organisation, Entscheidungen, Planung und Gesamtverantwortung für NewPath.</p>
-  </article>
-
-  <article class="np-community-card">
-    <span class="np-community-icon">⚙</span>
-    <h3>Technik & Modpack</h3>
-    <p>Modpack-Pflege, Updates, Tests, Fehleranalyse und technische Dokumentation.</p>
-  </article>
-
-  <article class="np-community-card">
-    <span class="np-community-icon">✦</span>
-    <h3>Community & Support</h3>
-    <p>Hilfe im Discord, Tickets, Whitelist, Fragen und Begleitung neuer Spieler.</p>
-  </article>
-
-  <article class="np-community-card">
-    <span class="np-community-icon">◆</span>
-    <h3>Design & Inhalte</h3>
-    <p>Website, Regelwerk, Hilfeseiten, Bilder, Texte und NewPath-Branding.</p>
-  </article>
-</div>
-
 ## Teammitglieder
 
-<div class="np-team-list">
-  <article class="np-team-card">
-    <h3>Name / Discord-Name</h3>
-    <p class="np-team-role">Rolle im Team</p>
-    <p>Kurze Beschreibung, Aufgabenbereich und Ansprechpartner-Hinweis.</p>
+<div class="np-team-grid">
+  <article class="np-team-member-card">
+    <div class="np-team-avatar-placeholder">Bild</div>
+    <h3>Teammitglied 1</h3>
+    <p class="np-team-role">Rolle / Bereich</p>
+    <p>Kurze Beschreibung der Aufgaben, Zuständigkeit und Ansprechpartner-Funktion.</p>
   </article>
 
-  <article class="np-team-card np-team-card-placeholder">
-    <h3>Weitere Teammitglieder</h3>
-    <p>Hier können nach und nach weitere Personen ergänzt werden.</p>
+  <article class="np-team-member-card">
+    <div class="np-team-avatar-placeholder">Bild</div>
+    <h3>Teammitglied 2</h3>
+    <p class="np-team-role">Rolle / Bereich</p>
+    <p>Kurze Beschreibung der Aufgaben, Zuständigkeit und Ansprechpartner-Funktion.</p>
+  </article>
+
+  <article class="np-team-member-card">
+    <div class="np-team-avatar-placeholder">Bild</div>
+    <h3>Teammitglied 3</h3>
+    <p class="np-team-role">Rolle / Bereich</p>
+    <p>Kurze Beschreibung der Aufgaben, Zuständigkeit und Ansprechpartner-Funktion.</p>
+  </article>
+
+  <article class="np-team-member-card">
+    <div class="np-team-avatar-placeholder">Bild</div>
+    <h3>Teammitglied 4</h3>
+    <p class="np-team-role">Rolle / Bereich</p>
+    <p>Kurze Beschreibung der Aufgaben, Zuständigkeit und Ansprechpartner-Funktion.</p>
   </article>
 </div>

@@ -6208,3 +6208,303 @@ body:not(.home) .np-help-details[open] summary {
     height: 7.6rem !important;
   }
 }
+
+/* =========================================================
+   Schritt 53: ECHO/Einstieg stabilisieren, Footer global fixieren,
+   Unterseiten/Team/Details finaler vorbereiten
+   ========================================================= */
+
+/* Fixierter Footer wirklich global – auch auf Unterseiten innerhalb des Theme-Containers */
+:root {
+  --np-fixed-footer-height: 54px !important;
+}
+
+html,
+body {
+  min-height: 100% !important;
+}
+
+body {
+  padding-bottom: calc(var(--np-fixed-footer-height) + 1.15rem) !important;
+}
+
+body .np-site-footer,
+body:not(.home) .np-site-footer,
+body .main-content .np-site-footer,
+body:not(.home) .main-content .np-site-footer {
+  position: fixed !important;
+  inset: auto 0 0 0 !important;
+  width: 100vw !important;
+  max-width: none !important;
+  min-height: var(--np-fixed-footer-height) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 10000 !important;
+  border-top: 1px solid rgba(0, 230, 246, 0.16) !important;
+  border-radius: 0 !important;
+  background: linear-gradient(180deg, rgba(0, 9, 15, 0.95), rgba(0, 18, 33, 0.98)) !important;
+  box-shadow: 0 -14px 32px rgba(0, 0, 0, 0.36) !important;
+  transform: none !important;
+}
+
+body .np-site-footer-inner,
+body:not(.home) .np-site-footer-inner {
+  width: calc(100vw - 2.2rem) !important;
+  max-width: none !important;
+  min-height: var(--np-fixed-footer-height) !important;
+  margin: 0 auto !important;
+  padding: 0 0.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1.4rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body .np-site-footer-brand,
+body .np-site-footer-links {
+  min-width: 0 !important;
+}
+
+body .np-site-footer-brand strong {
+  display: block !important;
+  color: #f4cf7f !important;
+  font-size: 0.74rem !important;
+  line-height: 1.1 !important;
+}
+
+body .np-site-footer-brand span {
+  display: block !important;
+  margin-top: 0.14rem !important;
+  color: rgba(232, 240, 239, 0.72) !important;
+  font-size: 0.61rem !important;
+  white-space: nowrap !important;
+}
+
+body .np-site-footer-links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.82rem !important;
+  flex-wrap: nowrap !important;
+  color: rgba(232, 240, 239, 0.78) !important;
+  font-size: 0.66rem !important;
+  white-space: nowrap !important;
+}
+
+body .np-site-footer-links a,
+body .np-site-footer-links span {
+  color: rgba(232, 240, 239, 0.82) !important;
+  text-decoration: none !important;
+  font-size: 0.66rem !important;
+  font-weight: 800 !important;
+}
+
+/* Unterseiten: Inhalt darf nicht hinter dem fixierten Footer verschwinden */
+body:not(.home) .main-content,
+body:not(.home) .main {
+  padding-bottom: calc(var(--np-fixed-footer-height) + 2.25rem) !important;
+}
+
+/* ECHO + Einstieg: gleiche Achse, gleiche Höhe, keine Verschiebung */
+@media (min-width: 66.5rem) {
+  .np-main-grid-echo-first {
+    display: grid !important;
+    grid-template-columns: minmax(430px, 0.46fr) minmax(540px, 0.54fr) !important;
+    gap: 1rem !important;
+    align-items: stretch !important;
+    width: var(--np-content-width) !important;
+    max-width: var(--np-content-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0.8rem !important;
+    margin-bottom: 2.45rem !important;
+    overflow: visible !important;
+  }
+
+  .np-main-grid-echo-first .np-echo-feature,
+  .np-main-grid-echo-first .np-quick-panel {
+    min-height: 226px !important;
+    height: 226px !important;
+    max-height: 226px !important;
+    overflow: hidden !important;
+    align-self: stretch !important;
+  }
+
+  .np-echo-feature,
+  .np-echo-feature:hover,
+  .np-echo-feature:focus-within {
+    display: grid !important;
+    grid-template-columns: 165px minmax(0, 1fr) !important;
+    gap: 1.05rem !important;
+    align-items: center !important;
+    padding: 1.05rem 1.3rem !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .np-echo-image-wrap {
+    width: 156px !important;
+    height: 190px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .np-echo-image-wrap img,
+  .np-echo-feature:hover .np-echo-image-wrap img,
+  .np-echo-feature:focus-within .np-echo-image-wrap img {
+    width: 9.6rem !important;
+    height: 9.6rem !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .np-echo-content h2 {
+    font-size: clamp(1.34rem, 1.45vw, 1.62rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 0.42rem !important;
+  }
+
+  .np-echo-content p {
+    font-size: 0.76rem !important;
+    line-height: 1.44 !important;
+    max-width: 31rem !important;
+  }
+
+  .np-echo-steps {
+    margin-top: 0.58rem !important;
+    gap: 0.38rem !important;
+  }
+
+  .np-quick-panel {
+    padding: 1.05rem 1.15rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .np-quick-panel h2 {
+    margin-bottom: 0.82rem !important;
+  }
+
+  .np-card-grid-guides {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0.7rem !important;
+    align-items: stretch !important;
+  }
+
+  .np-card-grid-guides .np-card,
+  .np-card-grid-guides .np-card:hover,
+  .np-card-grid-guides .np-card:focus-within {
+    min-width: 0 !important;
+    min-height: 124px !important;
+    height: 124px !important;
+    max-height: 124px !important;
+    padding: 0.72rem 0.56rem 0.62rem !important;
+    overflow: hidden !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .np-card-grid-guides .np-card-icon {
+    width: 2rem !important;
+    height: 2rem !important;
+    margin-bottom: 0.36rem !important;
+  }
+
+  .np-card-grid-guides .np-card-title {
+    font-size: 0.8rem !important;
+    line-height: 1.08 !important;
+  }
+
+  .np-card-grid-guides .np-card-link {
+    margin-top: 0.32rem !important;
+    font-size: 0.66rem !important;
+  }
+}
+
+/* Details auf Modpack-Hilfe bleiben standardmäßig geschlossen, geöffnet nur per Nutzerklick */
+.np-help-details:not([open]) > :not(summary) {
+  display: none !important;
+}
+
+.np-help-details summary {
+  cursor: pointer !important;
+}
+
+/* Team-Platzhalter: vier klare Karten mit Bildfläche */
+.np-team-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  margin-top: 1.15rem !important;
+}
+
+.np-team-member-card {
+  min-width: 0 !important;
+  padding: 1rem !important;
+  border: 1px solid rgba(0, 230, 246, 0.18) !important;
+  border-radius: 1rem !important;
+  background: linear-gradient(180deg, rgba(17, 46, 64, 0.78), rgba(0, 9, 15, 0.68)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.055), 0 16px 34px rgba(0,0,0,0.22) !important;
+}
+
+.np-team-avatar-placeholder {
+  aspect-ratio: 1 / 1 !important;
+  width: 100% !important;
+  max-width: 170px !important;
+  margin: 0 auto 0.85rem !important;
+  border-radius: 0.9rem !important;
+  border: 1px dashed rgba(236, 189, 119, 0.38) !important;
+  background: radial-gradient(circle at 50% 35%, rgba(0, 230, 246, 0.12), rgba(17, 46, 64, 0.54) 42%, rgba(0, 9, 15, 0.7)) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: rgba(244, 207, 127, 0.78) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  font-size: 0.72rem !important;
+}
+
+.np-team-member-card h3 {
+  margin: 0 0 0.2rem !important;
+  color: #f4cf7f !important;
+  font-size: 1rem !important;
+}
+
+.np-team-member-card .np-team-role {
+  margin: 0 0 0.55rem !important;
+  color: #00e6f6 !important;
+  font-weight: 900 !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.np-team-member-card p {
+  font-size: 0.78rem !important;
+  line-height: 1.45 !important;
+}
+
+@media (max-width: 1100px) {
+  .np-team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .np-team-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

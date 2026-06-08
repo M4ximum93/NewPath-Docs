@@ -5,7 +5,7 @@ nav_order: 5
 permalink: /modpack-hilfe.html
 ---
 <!-- AUTO_UPDATED_START -->
-<p class="np-last-updated">Zuletzt aktualisiert: 08.06.2026 13:03 Uhr</p>
+<p class="np-last-updated">Zuletzt aktualisiert: 07.06.2026 23:46 Uhr</p>
 <!-- AUTO_UPDATED_END -->
 
 <section class="echo-page-box echo-page-box-help">
@@ -72,7 +72,7 @@ Serverfunktionen und typischen Fragen aus dem Discord.
 
 ## Installation & Setup
 
-<details id="installation" class="np-help-details" open>
+<details id="installation" class="np-help-details">
   <summary>NewPath über CurseForge installieren</summary>
   <div>
     <p>
@@ -115,7 +115,7 @@ Serverfunktionen und typischen Fragen aus dem Discord.
 
 ## Wichtige Serverfunktionen
 
-<details id="voice-chat" class="np-help-details" open>
+<details id="voice-chat" class="np-help-details">
   <summary>Voice Chat einrichten</summary>
   <div>
     <p>
@@ -145,7 +145,7 @@ Serverfunktionen und typischen Fragen aus dem Discord.
 
 ## Mod-Anleitungen
 
-<details id="mod-guides" class="np-help-details" open>
+<details id="mod-guides" class="np-help-details">
   <summary>Einzelne Mods kurz erklärt</summary>
   <div>
     <p>
