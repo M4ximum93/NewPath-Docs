@@ -78,8 +78,8 @@ permalink: /team.html
 
     <article class="np-info-card np-team-card">
       <div class="np-card-media np-team-image-placeholder"><span>Bild</span></div>
-      <p class="np-card-kicker np-team-role">Technik & Modpack</p>
-      <h2 class="np-card-title">Teammitglied 3</h2>
+      <p class="np-card-kicker np-team-role">Founder</p>
+      <h2 class="np-card-title">OutTerror 3</h2>
       <p class="np-card-text">
         Hallo hier könnte eine wichtige Beschreibung stehen.
       </p>
@@ -87,8 +87,8 @@ permalink: /team.html
 
     <article class="np-info-card np-team-card">
       <div class="np-card-media np-team-image-placeholder"><span>Bild</span></div>
-      <p class="np-card-kicker np-team-role">Event & Community</p>
-      <h2 class="np-card-title">Teammitglied 4</h2>
+      <p class="np-card-kicker np-team-role">Premiumsupport</p>
+      <h2 class="np-card-title">Pumpe_XD 4</h2>
       <p class="np-card-text">
         Hallo hier könnte eine wichtige Beschreibung stehen.
       </p>
