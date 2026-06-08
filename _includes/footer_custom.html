@@ -1,4 +1,4 @@
-<footer id="np-global-footer" class="np-site-footer" aria-label="NewPath Fußzeile">
+<footer id="np-global-footer" class="np-site-footer" data-np-footer="global" aria-label="NewPath Fußzeile">
   <div class="np-site-footer-inner">
     <div class="np-site-footer-brand">
       <strong>NewPath – Echoes of the Wild</strong>
@@ -20,26 +20,46 @@
 
 <script>
   (function () {
-    function placeNewPathFooter() {
-      var footers = Array.prototype.slice.call(document.querySelectorAll('.np-site-footer'));
+    function moveNewPathFooter() {
+      var footers = Array.prototype.slice.call(document.querySelectorAll('.np-site-footer, #np-global-footer'));
       if (!footers.length) return;
 
       var footer = document.getElementById('np-global-footer') || footers[0];
       footer.id = 'np-global-footer';
+      footer.classList.add('np-site-footer');
+      footer.setAttribute('data-np-footer', 'global');
 
       footers.forEach(function (item) {
-        if (item !== footer) item.remove();
+        if (item !== footer && item.parentNode) {
+          item.parentNode.removeChild(item);
+        }
       });
 
-      if (footer.parentElement !== document.body) {
+      if (footer.parentNode !== document.body) {
         document.body.appendChild(footer);
       }
+
+      footer.style.position = 'fixed';
+      footer.style.left = '0';
+      footer.style.right = '0';
+      footer.style.bottom = '0';
+      footer.style.width = '100vw';
+      footer.style.zIndex = '2147483000';
+    }
+
+    function scheduleFooterMove() {
+      moveNewPathFooter();
+      window.setTimeout(moveNewPathFooter, 50);
+      window.setTimeout(moveNewPathFooter, 250);
+      window.setTimeout(moveNewPathFooter, 1000);
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', placeNewPathFooter);
+      document.addEventListener('DOMContentLoaded', scheduleFooterMove);
     } else {
-      placeNewPathFooter();
+      scheduleFooterMove();
     }
+
+    window.addEventListener('load', scheduleFooterMove);
   })();
 </script>
