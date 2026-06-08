@@ -1,5 +1,5 @@
 /* NewPath – Echoes of the Wild
-   Konsolidierte CSS-Version v17
+   Konsolidierte CSS-Version v18
    Aufbau:
    1. Variablen & Grundlayout
    2. Just-the-Docs Reset
@@ -4444,113 +4444,204 @@ img {
     padding-bottom: 0.82rem !important;
   }
 }
+
 /* =========================================================
-   Teamseite: Karten-Typografie und NewPath-Farbakzente
-   - Rollenlabel, Name und Beschreibung stärker im NewPath-Stil
-   - dezente Trennung zwischen Bild und Text
-   - keine Strukturänderung
+   17. Teamseite: Karten-Typografie und NewPath-Farbakzente
+   Wichtig: team.md nutzt .np-team-card, nicht .np-team-member-card.
+   Deshalb greifen die Regeln direkt auf .np-team-card und die
+   vorhandenen .np-card-* Klassen.
    ========================================================= */
 
-.np-team-member-card {
-  position: relative;
-  overflow: hidden;
+.np-team-section .np-team-grid {
+  align-items: stretch;
 }
 
-.np-team-member-card::before {
+.np-team-section .np-team-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.05rem !important;
+  border-color: rgba(72, 122, 146, 0.42) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0, 230, 246, 0.065), transparent 13rem),
+    linear-gradient(180deg, rgba(10, 36, 47, 0.86), rgba(4, 16, 22, 0.92)) !important;
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.24),
+    inset 0 0 28px rgba(0, 230, 246, 0.025) !important;
+}
+
+.np-team-section .np-team-card::before {
   content: "";
   position: absolute;
-  left: 1rem;
-  right: 1rem;
-  top: calc(1rem + min(100%, 16rem));
+  left: 1.05rem;
+  right: 1.05rem;
+  top: calc(1.05rem + min(15.8rem, 100vw));
   height: 1px;
-  opacity: 0.38;
+  opacity: 0.48;
   background: linear-gradient(
     90deg,
     rgba(0, 230, 246, 0),
-    rgba(0, 230, 246, 0.48),
-    rgba(236, 183, 110, 0.32),
+    rgba(0, 230, 246, 0.50),
+    rgba(236, 183, 110, 0.36),
     rgba(0, 230, 246, 0)
   );
   pointer-events: none;
 }
 
-.np-team-role,
-.np-team-member-card .np-card-kicker,
-.np-team-member-card .np-team-role {
-  color: var(--np-cyan) !important;
-  font-family: var(--np-font-label);
-  font-size: 0.72rem !important;
-  font-weight: 950 !important;
-  letter-spacing: 0.075em !important;
-  text-transform: uppercase;
-  text-shadow: 0 0 12px rgba(0, 230, 246, 0.12);
-}
-
-.np-team-member-card h2,
-.np-team-member-card h3,
-.np-team-member-card .np-card-title {
-  margin-top: 0.28rem !important;
-  margin-bottom: 0.55rem !important;
-  color: var(--np-gold-soft) !important;
-  font-family: var(--np-font-heading);
-  font-size: clamp(1.08rem, 1vw, 1.28rem) !important;
-  font-weight: 950 !important;
-  line-height: 1.12 !important;
-  text-shadow: 0 0 14px rgba(236, 183, 110, 0.10);
-}
-
-.np-team-member-card p:not(.np-card-kicker):not(.np-team-role),
-.np-team-member-card .np-card-text {
-  color: rgba(247, 236, 220, 0.84) !important;
-  font-size: 0.9rem !important;
-  line-height: 1.58 !important;
-}
-
-.np-team-member-card strong {
-  color: var(--np-gold-soft);
-}
-
-.np-team-member-card .np-team-image,
-.np-team-member-card .np-team-image-placeholder {
-  margin-bottom: 1.05rem !important;
-  border-color: rgba(0, 230, 246, 0.34) !important;
-  box-shadow:
-    inset 0 0 22px rgba(0, 230, 246, 0.035),
-    0 12px 24px rgba(0, 0, 0, 0.18);
-}
-
-/* Karten ohne echtes Bild etwas klarer als Platzhalter markieren */
-.np-team-image-placeholder span {
-  color: var(--np-cyan);
-  background: rgba(0, 230, 246, 0.10);
-  border: 1px solid rgba(0, 230, 246, 0.28);
-  box-shadow: 0 0 18px rgba(0, 230, 246, 0.08);
-}
-
-/* Dezenter individueller Akzent: erste zwei echten Teamkarten etwas wertiger */
-.np-team-grid .np-team-member-card:nth-child(1),
-.np-team-grid .np-team-member-card:nth-child(2) {
+/* echte Founder-Karten etwas wertiger */
+.np-team-section .np-team-grid .np-team-card:nth-child(1),
+.np-team-section .np-team-grid .np-team-card:nth-child(2) {
+  border-color: rgba(236, 183, 110, 0.34) !important;
   background:
-    radial-gradient(circle at 50% 0%, rgba(236, 183, 110, 0.07), transparent 14rem),
-    radial-gradient(circle at 0% 0%, rgba(0, 230, 246, 0.065), transparent 16rem),
-    linear-gradient(180deg, rgba(8, 29, 38, 0.86), rgba(4, 16, 22, 0.90)) !important;
+    radial-gradient(circle at 50% 0%, rgba(236, 183, 110, 0.085), transparent 13rem),
+    radial-gradient(circle at 0% 0%, rgba(0, 230, 246, 0.07), transparent 15rem),
+    linear-gradient(180deg, rgba(12, 38, 48, 0.88), rgba(4, 16, 22, 0.92)) !important;
 }
 
-.np-team-grid .np-team-member-card:nth-child(1)::after,
-.np-team-grid .np-team-member-card:nth-child(2)::after {
+.np-team-section .np-team-grid .np-team-card:nth-child(1)::after,
+.np-team-section .np-team-grid .np-team-card:nth-child(2)::after {
   content: "FOUNDER";
   position: absolute;
-  right: 0.85rem;
-  top: 0.85rem;
-  padding: 0.16rem 0.48rem;
+  right: 1rem;
+  top: 1rem;
+  z-index: 2;
+  padding: 0.18rem 0.52rem;
   border-radius: 999px;
   color: var(--np-gold-soft);
-  background: rgba(236, 183, 110, 0.10);
-  border: 1px solid rgba(236, 183, 110, 0.28);
+  background: rgba(5, 20, 27, 0.78);
+  border: 1px solid rgba(236, 183, 110, 0.36);
+  box-shadow:
+    0 0 16px rgba(236, 183, 110, 0.10),
+    inset 0 0 12px rgba(236, 183, 110, 0.035);
   font-family: var(--np-font-label);
   font-size: 0.58rem;
   font-weight: 950;
-  letter-spacing: 0.07em;
-  opacity: 0.92;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+/* Bildbereich */
+.np-team-section .np-team-card .np-card-media,
+.np-team-section .np-team-card .np-team-image,
+.np-team-section .np-team-card .np-team-image-placeholder {
+  margin-bottom: 1.15rem !important;
+  border-color: rgba(0, 230, 246, 0.36) !important;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(0, 230, 246, 0.10), transparent 11rem),
+    rgba(0, 230, 246, 0.055) !important;
+  box-shadow:
+    inset 0 0 24px rgba(0, 230, 246, 0.045),
+    0 12px 24px rgba(0, 0, 0, 0.22) !important;
+}
+
+.np-team-section .np-team-card .np-team-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Rollenlabel: cyan, aber hochwertiger und klarer */
+.np-team-section .np-team-card .np-team-role,
+.np-team-section .np-team-card .np-card-kicker {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 0.45rem !important;
+  padding: 0.2rem 0.52rem 0.22rem;
+  border-radius: 999px;
+  color: var(--np-cyan) !important;
+  background: rgba(0, 230, 246, 0.07);
+  border: 1px solid rgba(0, 230, 246, 0.22);
+  font-family: var(--np-font-label);
+  font-size: 0.67rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.055em !important;
+  line-height: 1.18 !important;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(0, 230, 246, 0.14);
+}
+
+/* Name: deutlich goldener und prominenter */
+.np-team-section .np-team-card .np-card-title,
+.np-team-section .np-team-card h2,
+.np-team-section .np-team-card h3 {
+  margin: 0 0 0.55rem !important;
+  color: var(--np-gold-soft) !important;
+  font-family: var(--np-font-heading);
+  font-size: clamp(1.15rem, 1.08vw, 1.36rem) !important;
+  font-weight: 950 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.01em;
+  text-shadow:
+    0 0 14px rgba(236, 183, 110, 0.14),
+    0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Beschreibung: heller, ruhiger und mit dezenter Goldkante */
+.np-team-section .np-team-card .np-card-text,
+.np-team-section .np-team-card p:not(.np-card-kicker):not(.np-team-role) {
+  position: relative;
+  margin: 0 !important;
+  padding-left: 0.78rem;
+  color: rgba(247, 236, 220, 0.88) !important;
+  font-size: 0.91rem !important;
+  line-height: 1.6 !important;
+}
+
+.np-team-section .np-team-card .np-card-text::before,
+.np-team-section .np-team-card p:not(.np-card-kicker):not(.np-team-role)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.32rem;
+  bottom: 0.34rem;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(236, 183, 110, 0.66),
+    rgba(0, 230, 246, 0.18)
+  );
+}
+
+/* Platzhalter hochwertiger */
+.np-team-section .np-team-image-placeholder span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.4rem;
+  min-height: 3.4rem;
+  border-radius: 999px;
+  color: var(--np-cyan);
+  background: rgba(0, 230, 246, 0.10);
+  border: 1px solid rgba(0, 230, 246, 0.30);
+  box-shadow:
+    0 0 20px rgba(0, 230, 246, 0.10),
+    inset 0 0 18px rgba(0, 230, 246, 0.035);
+  font-family: var(--np-font-label);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .np-team-section .np-team-card {
+    transition:
+      transform 160ms ease,
+      border-color 160ms ease,
+      box-shadow 160ms ease,
+      background 160ms ease;
+  }
+
+  .np-team-section .np-team-card:hover {
+    transform: translateY(-0.14rem);
+    border-color: rgba(0, 230, 246, 0.54) !important;
+    box-shadow:
+      0 20px 38px rgba(0, 0, 0, 0.30),
+      0 0 24px rgba(0, 230, 246, 0.08),
+      inset 0 0 30px rgba(0, 230, 246, 0.035) !important;
+  }
 }
 
