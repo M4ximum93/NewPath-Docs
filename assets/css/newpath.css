@@ -3908,4 +3908,36 @@ img {
     animation-iteration-count: 1 !important;
   }
 }
+/* =========================================================
+   Performance-Test: Blur/Backdrop beim Scrollen deaktivieren
+   Nur zum Testen – wenn Scrollen dadurch besser wird,
+   bauen wir den Look danach günstiger nach.
+   ========================================================= */
 
+@media (min-width: 66.5rem) {
+  .np-panel,
+  .np-page-section,
+  .np-content-box,
+  .echo-page-box,
+  .echo-page-box-team,
+  .echo-page-box-philosophy,
+  .echo-page-box-faq,
+  .echo-page-box-rules,
+  .echo-page-box-streamer,
+  .echo-page-box-help,
+  .np-status-bar,
+  .np-status-bar-v2,
+  .np-status-bar-showcase,
+  .np-history-panel,
+  .np-rule-block,
+  .np-info-card,
+  .np-route-card,
+  .np-help-details,
+  .np-faq-details,
+  .np-accordion,
+  .np-site-footer,
+  .main-header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
