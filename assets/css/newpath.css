@@ -1,5 +1,5 @@
 /* NewPath – Echoes of the Wild
-   Konsolidierte CSS-Version v20
+   Konsolidierte CSS-Version v21
    Aufbau:
    1. Variablen & Grundlayout
    2. Just-the-Docs Reset
@@ -23,6 +23,7 @@
    18. Easter Egg / Entenseite
    19. ECHO-Charakter-Glow
    20. Finale Nachschärfung / Overrides
+   21. Mobile Konsolidierung
 */
 
 :root {
@@ -4862,12 +4863,27 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 /* =========================================================
-   21. Mobile Fixes
-   Optimiert Smartphone/Tablet-Ansicht, ohne Desktop anzufassen.
+   21. Mobile Konsolidierung
+   Ziel:
+   - Desktop-Regeln unverändert lassen
+   - Mobile Header/Footer stabil und fixiert
+   - Mobile Navigation als sauberes Panel
+   - Startseite mobil kontrolliert stapeln
+   - Unterseiten-ECHO mobil lesbar darstellen
    ========================================================= */
 
 @media (max-width: 66.499rem) {
+  :root {
+    --np-mobile-header-height: 4.25rem;
+    --np-mobile-footer-height: 4.35rem;
+    --np-footer-height: var(--np-mobile-footer-height);
+    --np-page-left: 0.85rem;
+    --np-page-right: 0.85rem;
+    --np-content-width: calc(100vw - 1.7rem);
+  }
+
   html,
   body {
     width: 100%;
@@ -4876,58 +4892,255 @@ img {
   }
 
   body {
-    padding-top: 0 !important;
-    padding-bottom: var(--np-footer-height) !important;
+    padding-top: var(--np-mobile-header-height) !important;
+    padding-bottom: var(--np-mobile-footer-height) !important;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(236, 183, 110, 0.10), transparent 18rem),
+      radial-gradient(circle at 100% 18%, rgba(0, 230, 246, 0.08), transparent 16rem),
+      linear-gradient(180deg, #001221 0%, #000915 44%, #02070b 100%) !important;
     background-attachment: scroll !important;
+    background-size: auto !important;
     background-position: center top !important;
   }
 
-  /* Mobile Just-the-Docs-Navigation entschlacken:
-     Custom-Desktop-Header-Elemente nicht im Mobile-Menü anzeigen */
-  .main-header .np-topbar-brand,
-  .main-header .np-top-nav,
-  .main-header .aux-nav {
+  /* -----------------------------
+     Mobile Header
+     ----------------------------- */
+
+  .main-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    z-index: 99990 !important;
+    width: 100vw !important;
+    height: var(--np-mobile-header-height) !important;
+    min-height: var(--np-mobile-header-height) !important;
+    max-height: var(--np-mobile-header-height) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: grid !important;
+    grid-template-columns: 3.2rem minmax(0, 1fr) 3.2rem !important;
+    align-items: center !important;
+    justify-items: center !important;
+    background:
+      linear-gradient(180deg, rgba(0, 9, 15, 0.99), rgba(0, 18, 33, 0.97)) !important;
+    border-bottom: 1px solid rgba(0, 230, 246, 0.18) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.36) !important;
+    overflow: visible !important;
+  }
+
+  .main-header::before,
+  .main-header::after {
     display: none !important;
   }
 
-  .main-header .search {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0.65rem 0 0 !important;
+  .main-header .site-title {
+    grid-column: 2 !important;
+    position: static !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--np-gold-soft) !important;
+    font-family: var(--np-font-heading);
+    font-size: 0.88rem !important;
+    font-weight: 950 !important;
+    line-height: 1.08 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
-  .main-header .search-input-wrap,
-  .main-header .search-input {
-    width: 100% !important;
-    max-width: none !important;
+  .main-header .site-title::after {
+    content: "Echoes of the Wild";
+    display: block !important;
+    margin-top: 0.16rem !important;
+    color: var(--np-cyan) !important;
+    font-family: var(--np-font-label);
+    font-size: 0.50rem !important;
+    font-weight: 950 !important;
+    letter-spacing: 0.095em !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
   }
 
-  /* Grundcontainer mobil enger und sauber mittig */
+  .main-header .site-button {
+    grid-column: 3 !important;
+    position: static !important;
+    transform: none !important;
+    width: 2.85rem !important;
+    height: 2.85rem !important;
+    min-width: 2.85rem !important;
+    max-width: 2.85rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: var(--np-cyan) !important;
+    background: rgba(0, 230, 246, 0.055) !important;
+    border: 1px solid rgba(0, 230, 246, 0.18) !important;
+    border-radius: 0 !important;
+    box-shadow: inset 0 0 16px rgba(0, 230, 246, 0.035) !important;
+  }
+
+  .main-header .search,
+  .main-header .aux-nav,
+  .main-header .np-topbar-brand,
+  .main-header .np-top-nav {
+    display: none !important;
+  }
+
+  /* -----------------------------
+     Mobile Navigation
+     ----------------------------- */
+
+  .site-nav {
+    position: fixed !important;
+    top: var(--np-mobile-header-height) !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 99989 !important;
+    width: 100vw !important;
+    max-height: calc(100vh - var(--np-mobile-header-height) - var(--np-mobile-footer-height)) !important;
+    overflow-y: auto !important;
+    padding: 0.85rem 0.95rem 1rem !important;
+    background:
+      radial-gradient(circle at 100% 0%, rgba(0, 230, 246, 0.08), transparent 14rem),
+      linear-gradient(180deg, rgba(0, 9, 15, 0.99), rgba(0, 18, 33, 0.97)) !important;
+    border-bottom: 1px solid rgba(0, 230, 246, 0.18) !important;
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.36) !important;
+  }
+
+  .site-nav .np-topbar-brand,
+  .site-nav .np-top-nav,
+  .site-nav .aux-nav,
+  .site-nav .np-site-footer-brand {
+    display: none !important;
+  }
+
+  .site-nav .nav-list {
+    display: grid !important;
+    gap: 0.36rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .site-nav .nav-list-item {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .site-nav .nav-list-link {
+    min-height: 2.35rem !important;
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0.58rem 0.72rem !important;
+    border-radius: 0.58rem !important;
+    color: rgba(247, 236, 220, 0.90) !important;
+    background: rgba(5, 20, 27, 0.44) !important;
+    border: 1px solid rgba(72, 122, 146, 0.18) !important;
+    font-family: var(--np-font-label);
+    font-size: 0.78rem !important;
+    font-weight: 900 !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0.01em !important;
+    text-decoration: none !important;
+  }
+
+  .site-nav .nav-list-link:hover,
+  .site-nav .nav-list-link.active {
+    color: var(--np-gold-soft) !important;
+    background: rgba(236, 183, 110, 0.10) !important;
+    border-color: rgba(236, 183, 110, 0.30) !important;
+    box-shadow:
+      inset 3px 0 0 rgba(0, 230, 246, 0.70),
+      0 0 16px rgba(236, 183, 110, 0.06) !important;
+  }
+
+  .site-nav .search {
+    display: block !important;
+    width: 100% !important;
+    margin: 0.85rem 0 0 !important;
+    padding-top: 0.8rem !important;
+    border-top: 1px solid rgba(0, 230, 246, 0.16) !important;
+  }
+
+  .site-nav .search-input-wrap {
+    width: 100% !important;
+    max-width: none !important;
+    height: 2.65rem !important;
+    min-height: 2.65rem !important;
+    margin: 0 !important;
+    border-radius: 0.62rem !important;
+    background: rgba(0, 9, 15, 0.70) !important;
+    border: 1px solid rgba(0, 230, 246, 0.28) !important;
+    box-shadow: inset 0 0 18px rgba(0, 230, 246, 0.025) !important;
+  }
+
+  .site-nav .search-input {
+    height: 2.55rem !important;
+    min-height: 2.55rem !important;
+    padding: 0 0.9rem !important;
+    color: var(--np-text) !important;
+    font-size: 0.72rem !important;
+  }
+
+  .site-nav .search-input:focus,
+  .site-nav .search-input:focus-visible,
+  .site-nav .search-input-wrap:focus-within {
+    outline: none !important;
+    box-shadow:
+      0 0 0 1px rgba(0, 230, 246, 0.42),
+      0 0 18px rgba(0, 230, 246, 0.10) !important;
+  }
+
+  /* -----------------------------
+     Mobile Layout allgemein
+     ----------------------------- */
+
   .main-content {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
-    padding-left: 0.85rem !important;
-    padding-right: 0.85rem !important;
+    padding: 0.85rem 0.85rem 1.1rem !important;
+    color: var(--np-text);
+    background: transparent !important;
+    box-shadow: none !important;
   }
 
   body.np-page-sub .main-content {
     width: calc(100% - 1rem) !important;
     max-width: calc(100% - 1rem) !important;
-    margin: 0.75rem auto calc(var(--np-footer-height) + 0.9rem) !important;
+    margin: 0.75rem auto 1.1rem !important;
     padding: 0.75rem !important;
     border-radius: 0.72rem !important;
   }
 
-  /* Startseite mobil komplett neu stapeln */
   .np-home,
   .np-home-v2 {
     width: 100% !important;
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    padding-bottom: 1.1rem !important;
     overflow-x: hidden !important;
   }
+
+  /* -----------------------------
+     Mobile Startseite
+     ----------------------------- */
 
   .np-home-v2 .np-hero,
   .np-hero {
@@ -4939,7 +5152,7 @@ img {
     gap: 0.9rem !important;
     align-items: center !important;
     justify-items: center !important;
-    padding: 1.15rem 0 0.85rem !important;
+    padding: 1.25rem 0 0.85rem !important;
     text-align: center !important;
   }
 
@@ -4957,7 +5170,8 @@ img {
 
   .np-home-v2 .np-hero h1,
   .np-hero h1 {
-    font-size: clamp(2.4rem, 13vw, 3.8rem) !important;
+    margin-bottom: 0.65rem !important;
+    font-size: clamp(2.35rem, 13vw, 3.8rem) !important;
     line-height: 0.94 !important;
     text-align: center !important;
   }
@@ -4970,6 +5184,9 @@ img {
     text-align: left !important;
     font-size: 0.84rem !important;
     line-height: 1.48 !important;
+    box-shadow:
+      inset 0 0 0 1px rgba(72, 122, 146, 0.28),
+      0 12px 28px rgba(0, 0, 0, 0.22) !important;
   }
 
   .np-home-v2 .np-hero-logo,
@@ -4977,10 +5194,10 @@ img {
     grid-column: auto !important;
     width: min(68vw, 17rem) !important;
     height: min(68vw, 17rem) !important;
+    margin: 0.35rem auto !important;
     justify-self: center !important;
   }
 
-  /* Statusleiste mobil */
   .np-status-bar,
   .np-status-bar-v2,
   .np-home-v2 .np-status-bar-showcase {
@@ -5005,6 +5222,54 @@ img {
     border-bottom: 0 !important;
   }
 
+  .np-status-icon {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .np-status-icon::before {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .np-status-icon-star::before,
+  .np-status-icon-survival::before,
+  .np-status-icon-game::before,
+  .np-status-bar .np-status-item:nth-child(4) .np-status-icon::before,
+  .np-status-bar-v2 .np-status-item:nth-child(4) .np-status-icon::before,
+  .np-status-bar-showcase .np-status-item:nth-child(4) .np-status-icon::before {
+    content: "★" !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    background: transparent !important;
+    color: var(--np-cyan) !important;
+    font-size: 0.92rem !important;
+    font-weight: 950 !important;
+    line-height: 1 !important;
+  }
+
+  .np-status-icon-screen::before,
+  .np-status-icon-platform::before,
+  .np-status-icon-pc::before,
+  .np-status-bar .np-status-item:nth-child(5) .np-status-icon::before,
+  .np-status-bar-v2 .np-status-item:nth-child(5) .np-status-icon::before,
+  .np-status-bar-showcase .np-status-item:nth-child(5) .np-status-icon::before {
+    content: "▣" !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    background: transparent !important;
+    color: var(--np-cyan) !important;
+    font-size: 1rem !important;
+    font-weight: 950 !important;
+    line-height: 1 !important;
+  }
+
   .np-page-meta {
     width: 100% !important;
     max-width: 100% !important;
@@ -5017,7 +5282,7 @@ img {
     font-size: 0.62rem !important;
   }
 
-  /* Startseiten-ECHO/Pfadfinder mobil */
+  /* ECHO-Pfadfinder / Schnellzugriffe mobil */
   .np-pathfinder,
   .np-home-v2 .np-pathfinder {
     width: 100% !important;
@@ -5065,13 +5330,63 @@ img {
   }
 
   .np-pathfinder-routes {
+    display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 0.75rem !important;
+    gap: 0.55rem !important;
+    width: 100% !important;
   }
 
   .np-route-card {
     min-height: auto !important;
-    padding: 0.85rem !important;
+    display: grid !important;
+    grid-template-columns: 2.45rem minmax(0, 1fr) auto !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 0.72rem !important;
+    row-gap: 0.16rem !important;
+    align-items: center !important;
+    justify-items: start !important;
+    padding: 0.72rem 0.78rem !important;
+    text-align: left !important;
+    border-radius: 0.58rem !important;
+  }
+
+  .np-route-card .np-card-icon {
+    grid-row: 1 / span 2 !important;
+    grid-column: 1 !important;
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+    margin: 0 !important;
+    font-size: 0.86rem !important;
+  }
+
+  .np-route-title {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin: 0 !important;
+    font-size: 0.86rem !important;
+    line-height: 1.1 !important;
+    text-align: left !important;
+  }
+
+  .np-route-text {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    display: block !important;
+    margin: 0 !important;
+    color: rgba(245, 234, 220, 0.72) !important;
+    font-size: 0.68rem !important;
+    line-height: 1.25 !important;
+    text-align: left !important;
+  }
+
+  .np-route-link {
+    grid-column: 3 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: center !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    font-size: 0.68rem !important;
+    text-align: right !important;
   }
 
   .np-history-panel,
@@ -5091,7 +5406,10 @@ img {
     grid-template-columns: 1fr !important;
   }
 
-  /* ECHO-Boxen auf Unterseiten mobil sauber stapeln */
+  /* -----------------------------
+     Mobile Unterseiten / ECHO
+     ----------------------------- */
+
   .echo-page-box,
   .echo-page-box-team,
   .echo-page-box-philosophy,
@@ -5175,7 +5493,6 @@ img {
     text-align: center !important;
   }
 
-  /* Inhaltssektionen mobil */
   .np-page-section,
   .np-content-box,
   .np-rule-block,
@@ -5200,760 +5517,10 @@ img {
     gap: 0.8rem !important;
   }
 
-  /* Footer mobil etwas aufgeräumter */
-  #np-global-window-footer,
-  .np-site-footer#np-global-window-footer {
-    height: var(--np-footer-height) !important;
-  }
+  /* -----------------------------
+     Mobile Footer
+     ----------------------------- */
 
-  #np-global-window-footer .np-site-footer-inner {
-    padding: 0.45rem 0.8rem !important;
-    gap: 0.28rem !important;
-  }
-
-  .np-site-footer-brand strong,
-  .np-site-footer-brand span {
-    font-size: 0.56rem !important;
-  }
-
-  .np-site-footer-links {
-    gap: 0.42rem !important;
-  }
-
-  .np-site-footer-links a,
-  .np-site-footer-links span {
-    font-size: 0.56rem !important;
-  }
-}
-
-/* Sehr schmale Geräte */
-@media (max-width: 390px) {
-  .main-content {
-    padding-left: 0.65rem !important;
-    padding-right: 0.65rem !important;
-  }
-
-  body.np-page-sub .main-content {
-    width: calc(100% - 0.7rem) !important;
-    max-width: calc(100% - 0.7rem) !important;
-    padding: 0.65rem !important;
-  }
-
-  .np-home-v2 .np-hero h1,
-  .np-hero h1 {
-    font-size: clamp(2.15rem, 12vw, 3.2rem) !important;
-  }
-
-  .np-hero-highlight {
-    font-size: 0.8rem !important;
-  }
-}
-/* =========================================================
-   22. Mobile Fix 2: Startseite & mobile Navigation
-   Ergänzt den ersten Mobile-Fix.
-   Desktop bleibt unverändert.
-   ========================================================= */
-
-@media (max-width: 66.499rem) {
-  /* Mobile Header / Burgerbereich sichtbarer und ruhiger */
-  .main-header {
-    min-height: 3.7rem !important;
-    background:
-      linear-gradient(180deg, rgba(0, 9, 15, 0.98), rgba(0, 18, 33, 0.94)) !important;
-    border-bottom: 1px solid rgba(0, 230, 246, 0.16) !important;
-  }
-
-  .site-title,
-  .site-title:hover {
-    color: var(--np-gold-soft) !important;
-    font-family: var(--np-font-heading);
-    font-size: 0.92rem !important;
-    font-weight: 950 !important;
-    letter-spacing: 0.01em;
-    text-decoration: none !important;
-  }
-
-  .site-title::after {
-    content: "Echoes of the Wild";
-    display: block;
-    margin-top: 0.08rem;
-    color: var(--np-cyan);
-    font-size: 0.56rem;
-    font-weight: 950;
-    letter-spacing: 0.10em;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  .site-button,
-  .site-button:hover {
-    color: var(--np-cyan) !important;
-  }
-
-  .site-button .icon {
-    color: var(--np-cyan) !important;
-  }
-
-  /* Aufgeklapptes Mobile-Menü optisch beruhigen */
-  .site-nav {
-    padding: 0.6rem 0.75rem 0.85rem !important;
-    background:
-      linear-gradient(180deg, rgba(0, 9, 15, 0.96), rgba(0, 18, 33, 0.92)) !important;
-    border-bottom: 1px solid rgba(0, 230, 246, 0.14) !important;
-  }
-
-  .site-nav .nav-list,
-  .site-nav .nav-list-item {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .site-nav .nav-list-link {
-    margin: 0.16rem 0 !important;
-    padding: 0.42rem 0.55rem !important;
-    border-radius: 0.45rem !important;
-    color: rgba(247, 236, 220, 0.86) !important;
-    font-family: var(--np-font-label);
-    font-size: 0.74rem !important;
-    font-weight: 850 !important;
-    line-height: 1.15 !important;
-    letter-spacing: 0.01em;
-    text-decoration: none !important;
-    background: transparent !important;
-  }
-
-  .site-nav .nav-list-link:hover,
-  .site-nav .nav-list-link.active {
-    color: var(--np-gold-soft) !important;
-    background: rgba(236, 183, 110, 0.08) !important;
-    box-shadow: inset 2px 0 0 rgba(0, 230, 246, 0.55);
-  }
-
-  /* Doppelte/zusammenklebende Custom-Topnav im Mobile-Menü vollständig vermeiden */
-  .site-nav .np-topbar-brand,
-  .site-nav .np-top-nav,
-  .site-nav .aux-nav,
-  .site-nav .np-site-footer-brand {
-    display: none !important;
-  }
-
-  /* Suche im Mobile-Menü sauber */
-  .site-nav .search,
-  .site-nav .search-input-wrap {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0.55rem 0 !important;
-  }
-
-  .site-nav .search-input-wrap {
-    border-radius: 0.55rem !important;
-    border: 1px solid rgba(0, 230, 246, 0.28) !important;
-    background: rgba(0, 9, 15, 0.52) !important;
-  }
-
-  .site-nav .aux-nav a,
-  .site-nav .aux-nav-list {
-    width: 100% !important;
-  }
-
-  /* Startseite: Headerbereich etwas kompakter und korrekt sortiert */
-  .np-home-v2 .np-hero,
-  .np-hero {
-    padding-top: 1rem !important;
-    padding-bottom: 0.7rem !important;
-  }
-
-  .np-home-v2 .np-hero h1,
-  .np-hero h1 {
-    margin-bottom: 0.65rem !important;
-  }
-
-  .np-hero-highlight {
-    box-shadow:
-      inset 0 0 0 1px rgba(72, 122, 146, 0.28),
-      0 12px 28px rgba(0, 0, 0, 0.22) !important;
-  }
-
-  .np-home-v2 .np-hero-logo,
-  .np-hero-logo {
-    margin-top: 0.35rem !important;
-    margin-bottom: 0.35rem !important;
-  }
-
-  /* Statuskarten: Icons auf Mobile erzwingen */
-  .np-status-icon {
-    position: relative !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  .np-status-icon::before {
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  .np-status-icon-block::before {
-    content: "" !important;
-    width: 0.92rem !important;
-    height: 0.92rem !important;
-    display: block !important;
-    background: currentColor !important;
-    clip-path: polygon(50% 4%, 94% 27%, 94% 73%, 50% 96%, 6% 73%, 6% 27%) !important;
-  }
-
-  .np-status-icon-forge::before {
-    content: "⚒" !important;
-    width: auto !important;
-    height: auto !important;
-    display: block !important;
-    background: transparent !important;
-    color: var(--np-cyan) !important;
-    font-size: 0.92rem !important;
-    line-height: 1 !important;
-  }
-
-  .np-status-icon-pack::before {
-    content: "" !important;
-    width: 0.98rem !important;
-    height: 0.86rem !important;
-    display: block !important;
-    background: currentColor !important;
-    clip-path: polygon(10% 18%, 50% 0, 90% 18%, 90% 82%, 50% 100%, 10% 82%) !important;
-  }
-
-  .np-status-icon-check::before {
-    content: "✓" !important;
-    width: auto !important;
-    height: auto !important;
-    display: block !important;
-    background: transparent !important;
-    color: var(--np-cyan) !important;
-    font-size: 1rem !important;
-    font-weight: 950 !important;
-    line-height: 1 !important;
-  }
-
-  .np-status-icon-star::before {
-    content: "★" !important;
-    width: auto !important;
-    height: auto !important;
-    display: block !important;
-    background: transparent !important;
-    color: var(--np-cyan) !important;
-    font-size: 0.92rem !important;
-    font-weight: 950 !important;
-    line-height: 1 !important;
-  }
-
-  .np-status-icon-screen::before {
-    content: "▣" !important;
-    width: auto !important;
-    height: auto !important;
-    display: block !important;
-    background: transparent !important;
-    color: var(--np-cyan) !important;
-    font-size: 1rem !important;
-    font-weight: 950 !important;
-    line-height: 1 !important;
-  }
-
-  /* Startseiten-Schnellzugriffe / ECHO-Pfadfinder mobil als saubere Liste */
-  .np-pathfinder-routes {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 0.55rem !important;
-    width: 100% !important;
-  }
-
-  .np-route-card {
-    min-height: auto !important;
-    display: grid !important;
-    grid-template-columns: 2.45rem minmax(0, 1fr) auto !important;
-    grid-template-rows: auto auto !important;
-    column-gap: 0.72rem !important;
-    row-gap: 0.16rem !important;
-    align-items: center !important;
-    justify-items: start !important;
-    padding: 0.72rem 0.78rem !important;
-    text-align: left !important;
-    border-radius: 0.58rem !important;
-  }
-
-  .np-route-card .np-card-icon {
-    grid-row: 1 / span 2 !important;
-    grid-column: 1 !important;
-    width: 2.2rem !important;
-    height: 2.2rem !important;
-    margin: 0 !important;
-    font-size: 0.86rem !important;
-  }
-
-  .np-route-title {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-    margin: 0 !important;
-    font-size: 0.86rem !important;
-    line-height: 1.1 !important;
-    text-align: left !important;
-  }
-
-  .np-route-text {
-    grid-column: 2 !important;
-    grid-row: 2 !important;
-    display: block !important;
-    margin: 0 !important;
-    color: rgba(245, 234, 220, 0.72) !important;
-    font-size: 0.68rem !important;
-    line-height: 1.25 !important;
-    text-align: left !important;
-  }
-
-  .np-route-link {
-    grid-column: 3 !important;
-    grid-row: 1 / span 2 !important;
-    align-self: center !important;
-    margin: 0 !important;
-    white-space: nowrap !important;
-    font-size: 0.68rem !important;
-    text-align: right !important;
-  }
-
-  /* Falls der Platz sehr knapp wird: Linktext kürzer/kleiner wirken lassen */
-  @media (max-width: 390px) {
-    .np-route-card {
-      grid-template-columns: 2.2rem minmax(0, 1fr) !important;
-    }
-
-    .np-route-link {
-      grid-column: 2 !important;
-      grid-row: 3 !important;
-      margin-top: 0.15rem !important;
-      justify-self: start !important;
-      text-align: left !important;
-    }
-  }
-
-  /* Entstehungsgeschichte mobil sauber stapeln */
-  .np-history-panel {
-    padding: 1rem !important;
-  }
-
-  .np-history-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 0.7rem !important;
-  }
-
-  .np-history-panel .np-info-card {
-    padding: 0.85rem !important;
-  }
-
-  /* Verhindert, dass der fixe Footer Inhalt zu stark verdeckt */
-  .np-home-v2 {
-    padding-bottom: 1.1rem !important;
-  }
-}
-/* =========================================================
-   23. Mobile Fix 3: Header, Menü und Status-Icons
-   Ergänzt Mobile Fix 1 + 2.
-   ========================================================= */
-
-@media (max-width: 66.499rem) {
-  /* Mobile Header oben sauberer, ruhiger, nicht mehr so gequetscht */
-  .main-header {
-    min-height: 4.1rem !important;
-    height: 4.1rem !important;
-    padding: 0 0.85rem !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    background:
-      linear-gradient(180deg, rgba(0, 9, 15, 0.98), rgba(0, 18, 33, 0.96)) !important;
-    border-bottom: 1px solid rgba(0, 230, 246, 0.18) !important;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28) !important;
-  }
-
-  .site-title {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: center !important;
-    min-width: 0 !important;
-    max-width: calc(100% - 3.5rem) !important;
-    padding: 0 !important;
-    color: var(--np-gold-soft) !important;
-    font-family: var(--np-font-heading);
-    font-size: 0.95rem !important;
-    font-weight: 950 !important;
-    line-height: 1.05 !important;
-    letter-spacing: 0.01em !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-  }
-
-  .site-title::after {
-    content: "Echoes of the Wild";
-    display: block;
-    margin-top: 0.16rem;
-    color: var(--np-cyan);
-    font-size: 0.56rem;
-    font-weight: 950;
-    letter-spacing: 0.11em;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  .site-button {
-    width: 3rem !important;
-    height: 3rem !important;
-    min-width: 3rem !important;
-    margin: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border-left: 1px solid rgba(0, 230, 246, 0.16) !important;
-    background: rgba(0, 9, 15, 0.28) !important;
-    color: var(--np-cyan) !important;
-  }
-
-  .site-button:hover {
-    background: rgba(0, 230, 246, 0.08) !important;
-  }
-
-  /* Mobile Menü: weniger Abstand, mehr wie ein Panel */
-  .site-nav {
-    padding: 0.7rem 0.85rem 0.9rem !important;
-    background:
-      radial-gradient(circle at 100% 0%, rgba(0, 230, 246, 0.08), transparent 14rem),
-      linear-gradient(180deg, rgba(0, 9, 15, 0.98), rgba(0, 18, 33, 0.96)) !important;
-    border-bottom: 1px solid rgba(0, 230, 246, 0.18) !important;
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.30) !important;
-  }
-
-  .site-nav .nav-list {
-    display: grid !important;
-    gap: 0.34rem !important;
-  }
-
-  .site-nav .nav-list-link {
-    min-height: 2.35rem !important;
-    display: flex !important;
-    align-items: center !important;
-    padding: 0.58rem 0.72rem !important;
-    border-radius: 0.58rem !important;
-    color: rgba(247, 236, 220, 0.88) !important;
-    font-size: 0.78rem !important;
-    font-weight: 900 !important;
-    letter-spacing: 0.01em !important;
-    background: rgba(5, 20, 27, 0.44) !important;
-    border: 1px solid rgba(72, 122, 146, 0.18) !important;
-  }
-
-  .site-nav .nav-list-link.active {
-    color: var(--np-gold-soft) !important;
-    background: rgba(236, 183, 110, 0.10) !important;
-    border-color: rgba(236, 183, 110, 0.30) !important;
-    box-shadow:
-      inset 3px 0 0 rgba(0, 230, 246, 0.70),
-      0 0 16px rgba(236, 183, 110, 0.06) !important;
-  }
-
-  .site-nav .nav-list-link:hover {
-    color: var(--np-gold-soft) !important;
-    border-color: rgba(0, 230, 246, 0.32) !important;
-    background: rgba(0, 230, 246, 0.07) !important;
-  }
-
-  .site-nav .search {
-    margin-top: 0.8rem !important;
-    padding-top: 0.75rem !important;
-    border-top: 1px solid rgba(0, 230, 246, 0.14) !important;
-  }
-
-  .site-nav .search-input-wrap {
-    height: 2.65rem !important;
-    min-height: 2.65rem !important;
-    border-radius: 0.62rem !important;
-    background: rgba(0, 9, 15, 0.62) !important;
-    border: 1px solid rgba(0, 230, 246, 0.26) !important;
-  }
-
-  .site-nav .search-input {
-    height: 2.55rem !important;
-    min-height: 2.55rem !important;
-    font-size: 0.72rem !important;
-  }
-
-  /* Status-Icons: fehlende Symbole für Spielmodus und Plattform */
-  .np-status-icon-star::before,
-  .np-status-icon-survival::before,
-  .np-status-icon-game::before {
-    content: "★" !important;
-    width: auto !important;
-    height: auto !important;
-    display: block !important;
-    background: transparent !important;
-    color: var(--np-cyan) !important;
-    font-size: 0.92rem !important;
-    font-weight: 950 !important;
-    line-height: 1 !important;
-  }
-
-  .np-status-icon-screen::before,
-  .np-status-icon-platform::before,
-  .np-status-icon-pc::before {
-    content: "▣" !important;
-    width: auto !important;
-    height: auto !important;
-    display: block !important;
-    background: transparent !important;
-    color: var(--np-cyan) !important;
-    font-size: 1rem !important;
-    font-weight: 950 !important;
-    line-height: 1 !important;
-  }
-
-  /* Falls die Elemente keine Spezialklasse haben, nach Position auffüllen */
-  .np-status-bar .np-status-item:nth-child(4) .np-status-icon::before,
-  .np-status-bar-v2 .np-status-item:nth-child(4) .np-status-icon::before,
-  .np-status-bar-showcase .np-status-item:nth-child(4) .np-status-icon::before {
-    content: "★" !important;
-    width: auto !important;
-    height: auto !important;
-    display: block !important;
-    background: transparent !important;
-    color: var(--np-cyan) !important;
-    font-size: 0.92rem !important;
-    font-weight: 950 !important;
-    line-height: 1 !important;
-  }
-
-  .np-status-bar .np-status-item:nth-child(5) .np-status-icon::before,
-  .np-status-bar-v2 .np-status-item:nth-child(5) .np-status-icon::before,
-  .np-status-bar-showcase .np-status-item:nth-child(5) .np-status-icon::before {
-    content: "▣" !important;
-    width: auto !important;
-    height: auto !important;
-    display: block !important;
-    background: transparent !important;
-    color: var(--np-cyan) !important;
-    font-size: 1rem !important;
-    font-weight: 950 !important;
-    line-height: 1 !important;
-  }
-}/* =========================================================
-   24. Mobile Fix 4: Suche und ruhiger Mobile-Hintergrund
-   ========================================================= */
-
-@media (max-width: 66.499rem) {
-  /* Mobil kein großes Hintergrundbild mehr:
-     ruhiger, schneller und optisch kontrollierter */
-  body {
-    background:
-      radial-gradient(circle at 50% 0%, rgba(236, 183, 110, 0.10), transparent 18rem),
-      radial-gradient(circle at 100% 18%, rgba(0, 230, 246, 0.08), transparent 16rem),
-      linear-gradient(180deg, #001221 0%, #000915 42%, #02070b 100%) !important;
-    background-attachment: scroll !important;
-    background-size: auto !important;
-    background-position: center top !important;
-  }
-
-  /* Suchleiste im geschlossenen Mobile-Header ausblenden */
-  .main-header > .search,
-  .main-header .search:not(.site-nav .search) {
-    display: none !important;
-  }
-
-  /* Suche nur im aufgeklappten Menü anzeigen */
-  .site-nav .search {
-    display: block !important;
-    width: 100% !important;
-    margin: 0.85rem 0 0 !important;
-    padding-top: 0.8rem !important;
-    border-top: 1px solid rgba(0, 230, 246, 0.16) !important;
-  }
-
-  .site-nav .search-input-wrap {
-    width: 100% !important;
-    max-width: none !important;
-    height: 2.65rem !important;
-    min-height: 2.65rem !important;
-    margin: 0 !important;
-    border-radius: 0.62rem !important;
-    background: rgba(0, 9, 15, 0.70) !important;
-    border: 1px solid rgba(0, 230, 246, 0.28) !important;
-    box-shadow: inset 0 0 18px rgba(0, 230, 246, 0.025) !important;
-  }
-
-  .site-nav .search-input {
-    height: 2.55rem !important;
-    min-height: 2.55rem !important;
-    padding: 0 0.9rem !important;
-    color: var(--np-text) !important;
-    font-size: 0.72rem !important;
-  }
-
-  .site-nav .search-input:focus,
-  .site-nav .search-input:focus-visible,
-  .site-nav .search-input-wrap:focus-within {
-    outline: none !important;
-    box-shadow:
-      0 0 0 1px rgba(0, 230, 246, 0.42),
-      0 0 18px rgba(0, 230, 246, 0.10) !important;
-  }
-
-  /* Header selbst etwas klarer vom Content trennen */
-  .main-header {
-    background:
-      linear-gradient(180deg, rgba(0, 9, 15, 0.99), rgba(0, 18, 33, 0.96)) !important;
-    box-shadow:
-      0 10px 24px rgba(0, 0, 0, 0.34),
-      inset 0 -1px 0 rgba(0, 230, 246, 0.16) !important;
-  }
-
-  /* Startseite bekommt mobil etwas Luft nach dem Header */
-  .np-home-v2 .np-hero,
-  .np-hero {
-    padding-top: 1.35rem !important;
-  }
-}/* =========================================================
-   25. Mobile Fix 5: Header-Brand lesbarer machen
-   ========================================================= */
-
-@media (max-width: 66.499rem) {
-  .site-title {
-    font-size: 0.86rem !important;
-    line-height: 1.18 !important;
-    letter-spacing: 0.01em !important;
-    max-width: calc(100% - 4.2rem) !important;
-  }
-
-  .site-title::after {
-    margin-top: 0.2rem !important;
-    font-size: 0.50rem !important;
-    line-height: 1.15 !important;
-    letter-spacing: 0.095em !important;
-  }
-
-  .main-header {
-    padding-left: 1rem !important;
-    padding-right: 0.55rem !important;
-  }
-
-  .site-button {
-    width: 2.85rem !important;
-    height: 2.85rem !important;
-    min-width: 2.85rem !important;
-  }
-}
-/* =========================================================
-   26. Mobile Fix 6 korrigiert:
-   Header/Footer mobil fixieren und zentrieren
-   ========================================================= */
-
-@media (max-width: 66.499rem) {
-  :root {
-    --np-mobile-header-height: 4.15rem;
-    --np-mobile-footer-height: 4.35rem;
-    --np-footer-height: var(--np-mobile-footer-height);
-  }
-
-  body {
-    padding-top: var(--np-mobile-header-height) !important;
-    padding-bottom: var(--np-mobile-footer-height) !important;
-  }
-
-  /* Header wirklich fixiert */
-  .main-header {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 99990 !important;
-    width: 100vw !important;
-    height: var(--np-mobile-header-height) !important;
-    min-height: var(--np-mobile-header-height) !important;
-    margin: 0 !important;
-    padding: 0 4rem 0 1rem !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background:
-      linear-gradient(180deg, rgba(0, 9, 15, 0.99), rgba(0, 18, 33, 0.97)) !important;
-    border-bottom: 1px solid rgba(0, 230, 246, 0.18) !important;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.36) !important;
-  }
-
-  /* Header-Text sichtbar und mittig */
-  .main-header .site-title {
-    position: static !important;
-    transform: none !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;
-    max-width: calc(100vw - 7rem) !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    color: var(--np-gold-soft) !important;
-    font-family: var(--np-font-heading);
-    font-size: 0.88rem !important;
-    font-weight: 950 !important;
-    line-height: 1.12 !important;
-    text-align: center !important;
-    white-space: nowrap !important;
-    text-decoration: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  .main-header .site-title::after {
-    content: "Echoes of the Wild";
-    display: block !important;
-    margin-top: 0.16rem !important;
-    color: var(--np-cyan) !important;
-    font-size: 0.50rem !important;
-    font-weight: 950 !important;
-    letter-spacing: 0.095em !important;
-    line-height: 1.1 !important;
-    text-align: center !important;
-    text-transform: uppercase !important;
-  }
-
-  /* Nur der Burger im Header, nicht globale .site-button */
-  .main-header .site-button {
-    position: absolute !important;
-    right: 0.75rem !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 2.85rem !important;
-    height: 2.85rem !important;
-    min-width: 2.85rem !important;
-    margin: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: var(--np-cyan) !important;
-    background: rgba(0, 230, 246, 0.055) !important;
-    border-left: 1px solid rgba(0, 230, 246, 0.16) !important;
-  }
-
-  /* Menü unter den fixierten Header */
-  .site-nav {
-    position: fixed !important;
-    top: var(--np-mobile-header-height) !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 99989 !important;
-    max-height: calc(100vh - var(--np-mobile-header-height) - var(--np-mobile-footer-height)) !important;
-    overflow-y: auto !important;
-  }
-
-  /* Standard Just-the-Docs-Footertext entfernen */
   .main-content .site-footer,
   .main-content > footer,
   .main-content p:has(a[href*="just-the-docs"]),
@@ -5961,7 +5528,6 @@ img {
     display: none !important;
   }
 
-  /* NewPath-Footer wieder sichtbar und fixiert */
   #np-global-window-footer,
   .np-site-footer#np-global-window-footer {
     display: block !important;
@@ -6021,7 +5587,6 @@ img {
     text-align: center !important;
   }
 
-  /* Footer mobil reduzieren: nur Ente, Discord und Copyright sichtbar */
   .np-site-footer-links {
     width: 100% !important;
     display: flex !important;
@@ -6050,3 +5615,34 @@ img {
     opacity: 0.78 !important;
   }
 }
+
+@media (max-width: 390px) {
+  .main-content {
+    padding-left: 0.65rem !important;
+    padding-right: 0.65rem !important;
+  }
+
+  body.np-page-sub .main-content {
+    width: calc(100% - 0.7rem) !important;
+    max-width: calc(100% - 0.7rem) !important;
+    padding: 0.65rem !important;
+  }
+
+  .np-home-v2 .np-hero h1,
+  .np-hero h1 {
+    font-size: clamp(2.15rem, 12vw, 3.2rem) !important;
+  }
+
+  .np-route-card {
+    grid-template-columns: 2.2rem minmax(0, 1fr) !important;
+  }
+
+  .np-route-link {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+    margin-top: 0.15rem !important;
+    justify-self: start !important;
+    text-align: left !important;
+  }
+}
+
