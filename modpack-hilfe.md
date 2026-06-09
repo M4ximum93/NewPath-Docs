@@ -6,7 +6,7 @@ permalink: /modpack-hilfe.html
 ---
 
 <!-- AUTO_UPDATED_START -->
-<p class="np-last-updated">Zuletzt aktualisiert: 09.06.2026 17:58 Uhr</p>
+<p class="np-last-updated">Zuletzt aktualisiert: 09.06.2026 17:25 Uhr</p>
 <!-- AUTO_UPDATED_END -->
 
 <section class="echo-page-box echo-page-box-help">
@@ -466,7 +466,7 @@ permalink: /modpack-hilfe.html
 
         <!-- INHALT / ANLEITUNG -->
         <div class="np-help-step-group">
-          <h4>FTB-Teams-Menü öffnen:</h4>
+          <p><strong>FTB-Teams-Menü öffnen:</strong></p>
           <ol class="np-help-checklist">
             <li>Öffne dein Inventar.</li>
             <li>Klicke oben links auf das FTB-Teams-Symbol bzw. den Team-Button in der FTB-Sidebar.</li>
@@ -475,7 +475,7 @@ permalink: /modpack-hilfe.html
         </div>
 
         <div class="np-help-step-group">
-          <h4>Eigenes Team erstellen:</h4>
+          <p><strong>Eigenes Team erstellen:</strong></p>
           <ol class="np-help-checklist">
             <li>Öffne das FTB-Teams-Menü.</li>
             <li>Klicke auf Team erstellen oder eine ähnlich benannte Schaltfläche.</li>
@@ -486,7 +486,7 @@ permalink: /modpack-hilfe.html
         </div>
 
         <div class="np-help-step-group">
-          <h4>Spieler einladen:</h4>
+          <p><strong>Spieler einladen:</strong></p>
           <ol class="np-help-checklist">
             <li>Öffne dein FTB-Teams-Menü.</li>
             <li>Wähle dein Team aus.</li>
@@ -498,7 +498,7 @@ permalink: /modpack-hilfe.html
         </div>
 
         <div class="np-help-step-group">
-          <h4>Einem Team beitreten:</h4>
+          <p><strong>Einem Team beitreten:</strong></p>
           <ol class="np-help-checklist">
             <li>Öffne dein Inventar.</li>
             <li>Klicke oben links auf das FTB-Teams-Symbol.</li>
@@ -510,7 +510,7 @@ permalink: /modpack-hilfe.html
         </div>
 
         <div class="np-help-step-group">
-          <h4>Nach dem Erstellen oder Beitreten:</h4>
+          <p><strong>Nach dem Erstellen oder Beitreten:</strong></p>
           <ol class="np-help-checklist">
             <li>Öffne anschließend die FTB-Chunks-Karte.</li>
             <li>Prüfe, ob eure Claims korrekt angezeigt werden.</li>
@@ -777,7 +777,7 @@ permalink: /modpack-hilfe.html
 
         <!-- INHALT / ANLEITUNG -->
         <div class="np-help-step-group">
-          <h4>So erstellst du ein gutes Support-Ticket:</h4>
+          <p><strong>So erstellst du ein gutes Support-Ticket:</strong></p>
           <ol class="np-help-checklist">
             <li>Öffne im Discord den Support-Bereich.</li>
             <li>Erstelle ein neues Support-Ticket.</li>
@@ -790,7 +790,7 @@ permalink: /modpack-hilfe.html
         </div>
 
         <div class="np-help-step-group">
-          <h4>Nutze am besten diese Vorlage:</h4>
+          <p><strong>Nutze am besten diese Vorlage:</strong></p>
           <ul class="np-help-checklist">
             <li>Minecraft-Name:</li>
             <li>Modpack-Version:</li>
