@@ -12,7 +12,7 @@ search_exclude: true
 <section class="echo-page-box echo-page-box-duck">
   <div class="echo-page-image">
     <img
-      src="{{ site.baseurl }}/assets/images/ente.png"
+      src="{{ site.baseurl }}/assets/images/echo/ente.png"
       alt="ECHO hat die geheime NewPath-Ente gefunden"
       width="512"
       height="512"

@@ -88,7 +88,7 @@ permalink: /
   <div class="np-pathfinder-echo">
     <div class="np-pathfinder-image">
       <img
-        src="{{ site.baseurl }}/assets/images/echo/echo-guide.png"
+        src="{{ site.baseurl }}/assets/images/echo/start.png"
         alt="ECHO – Der Wegbegleiter"
         width="512"
         height="512"

@@ -11,7 +11,7 @@ permalink: /philosophie.html
 <section class="echo-page-box echo-page-box-philosophy">
   <div class="echo-page-image">
     <img
-      src="{{ site.baseurl }}/assets/images/echo/echo-rules.png"
+      src="{{ site.baseurl }}/assets/images/echo/philo.png"
       alt="ECHO erklärt die Philosophie von NewPath"
       width="512"
       height="512"

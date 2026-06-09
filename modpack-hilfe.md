@@ -12,7 +12,7 @@ permalink: /modpack-hilfe.html
 <section class="echo-page-box echo-page-box-help">
   <div class="echo-page-image">
     <img
-      src="{{ site.baseurl }}/assets/images/echo/echo-faq.png"
+      src="{{ site.baseurl }}/assets/images/echo/mphelp.png"
       alt="ECHO hilft bei Modpack-Fragen"
       width="512"
       height="512"

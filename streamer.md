@@ -11,7 +11,7 @@ permalink: /streamer.html
 <section class="echo-page-box echo-page-box-streamer">
   <div class="echo-page-image">
     <img
-      src="{{ site.baseurl }}/assets/images/echo/echo-server.png"
+      src="{{ site.baseurl }}/assets/images/echo/streamer.png"
       alt="ECHO begleitet die NewPath-Streamer"
       width="512"
       height="512"
