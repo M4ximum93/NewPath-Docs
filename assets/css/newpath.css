@@ -4798,4 +4798,36 @@ img {
     width: 100% !important;
   }
 }
+/* =========================================================
+   ECHO: Charakter-Glow auf allen Seiten
+   - Glow liegt nur auf dem transparenten ECHO-Bild
+   - keine Box, kein Rahmen, kein Hintergrund betroffen
+   ========================================================= */
 
+.echo-page-image img,
+.np-pathfinder-image img,
+.np-echo-image-wrap img {
+  filter:
+    drop-shadow(0 0 10px rgba(0, 230, 246, 0.28))
+    drop-shadow(0 0 22px rgba(0, 230, 246, 0.16))
+    drop-shadow(0 14px 20px rgba(0, 0, 0, 0.34)) !important;
+}
+
+/* Enten-ECHO etwas wärmer, weil dort Gold/Ente besser passt */
+.echo-page-box-duck .echo-page-image img {
+  filter:
+    drop-shadow(0 0 10px rgba(0, 230, 246, 0.24))
+    drop-shadow(0 0 20px rgba(236, 183, 110, 0.18))
+    drop-shadow(0 14px 20px rgba(0, 0, 0, 0.34)) !important;
+}
+
+/* Mobile etwas dezenter */
+@media (max-width: 66.499rem) {
+  .echo-page-image img,
+  .np-pathfinder-image img,
+  .np-echo-image-wrap img {
+    filter:
+      drop-shadow(0 0 8px rgba(0, 230, 246, 0.20))
+      drop-shadow(0 10px 16px rgba(0, 0, 0, 0.30)) !important;
+  }
+}
