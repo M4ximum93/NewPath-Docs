@@ -5248,4 +5248,312 @@ img {
     font-size: 0.8rem !important;
   }
 }
+/* =========================================================
+   22. Mobile Fix 2: Startseite & mobile Navigation
+   Ergänzt den ersten Mobile-Fix.
+   Desktop bleibt unverändert.
+   ========================================================= */
+
+@media (max-width: 66.499rem) {
+  /* Mobile Header / Burgerbereich sichtbarer und ruhiger */
+  .main-header {
+    min-height: 3.7rem !important;
+    background:
+      linear-gradient(180deg, rgba(0, 9, 15, 0.98), rgba(0, 18, 33, 0.94)) !important;
+    border-bottom: 1px solid rgba(0, 230, 246, 0.16) !important;
+  }
+
+  .site-title,
+  .site-title:hover {
+    color: var(--np-gold-soft) !important;
+    font-family: var(--np-font-heading);
+    font-size: 0.92rem !important;
+    font-weight: 950 !important;
+    letter-spacing: 0.01em;
+    text-decoration: none !important;
+  }
+
+  .site-title::after {
+    content: "Echoes of the Wild";
+    display: block;
+    margin-top: 0.08rem;
+    color: var(--np-cyan);
+    font-size: 0.56rem;
+    font-weight: 950;
+    letter-spacing: 0.10em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .site-button,
+  .site-button:hover {
+    color: var(--np-cyan) !important;
+  }
+
+  .site-button .icon {
+    color: var(--np-cyan) !important;
+  }
+
+  /* Aufgeklapptes Mobile-Menü optisch beruhigen */
+  .site-nav {
+    padding: 0.6rem 0.75rem 0.85rem !important;
+    background:
+      linear-gradient(180deg, rgba(0, 9, 15, 0.96), rgba(0, 18, 33, 0.92)) !important;
+    border-bottom: 1px solid rgba(0, 230, 246, 0.14) !important;
+  }
+
+  .site-nav .nav-list,
+  .site-nav .nav-list-item {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .site-nav .nav-list-link {
+    margin: 0.16rem 0 !important;
+    padding: 0.42rem 0.55rem !important;
+    border-radius: 0.45rem !important;
+    color: rgba(247, 236, 220, 0.86) !important;
+    font-family: var(--np-font-label);
+    font-size: 0.74rem !important;
+    font-weight: 850 !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0.01em;
+    text-decoration: none !important;
+    background: transparent !important;
+  }
+
+  .site-nav .nav-list-link:hover,
+  .site-nav .nav-list-link.active {
+    color: var(--np-gold-soft) !important;
+    background: rgba(236, 183, 110, 0.08) !important;
+    box-shadow: inset 2px 0 0 rgba(0, 230, 246, 0.55);
+  }
+
+  /* Doppelte/zusammenklebende Custom-Topnav im Mobile-Menü vollständig vermeiden */
+  .site-nav .np-topbar-brand,
+  .site-nav .np-top-nav,
+  .site-nav .aux-nav,
+  .site-nav .np-site-footer-brand {
+    display: none !important;
+  }
+
+  /* Suche im Mobile-Menü sauber */
+  .site-nav .search,
+  .site-nav .search-input-wrap {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0.55rem 0 !important;
+  }
+
+  .site-nav .search-input-wrap {
+    border-radius: 0.55rem !important;
+    border: 1px solid rgba(0, 230, 246, 0.28) !important;
+    background: rgba(0, 9, 15, 0.52) !important;
+  }
+
+  .site-nav .aux-nav a,
+  .site-nav .aux-nav-list {
+    width: 100% !important;
+  }
+
+  /* Startseite: Headerbereich etwas kompakter und korrekt sortiert */
+  .np-home-v2 .np-hero,
+  .np-hero {
+    padding-top: 1rem !important;
+    padding-bottom: 0.7rem !important;
+  }
+
+  .np-home-v2 .np-hero h1,
+  .np-hero h1 {
+    margin-bottom: 0.65rem !important;
+  }
+
+  .np-hero-highlight {
+    box-shadow:
+      inset 0 0 0 1px rgba(72, 122, 146, 0.28),
+      0 12px 28px rgba(0, 0, 0, 0.22) !important;
+  }
+
+  .np-home-v2 .np-hero-logo,
+  .np-hero-logo {
+    margin-top: 0.35rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  /* Statuskarten: Icons auf Mobile erzwingen */
+  .np-status-icon {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .np-status-icon::before {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .np-status-icon-block::before {
+    content: "" !important;
+    width: 0.92rem !important;
+    height: 0.92rem !important;
+    display: block !important;
+    background: currentColor !important;
+    clip-path: polygon(50% 4%, 94% 27%, 94% 73%, 50% 96%, 6% 73%, 6% 27%) !important;
+  }
+
+  .np-status-icon-forge::before {
+    content: "⚒" !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    background: transparent !important;
+    color: var(--np-cyan) !important;
+    font-size: 0.92rem !important;
+    line-height: 1 !important;
+  }
+
+  .np-status-icon-pack::before {
+    content: "" !important;
+    width: 0.98rem !important;
+    height: 0.86rem !important;
+    display: block !important;
+    background: currentColor !important;
+    clip-path: polygon(10% 18%, 50% 0, 90% 18%, 90% 82%, 50% 100%, 10% 82%) !important;
+  }
+
+  .np-status-icon-check::before {
+    content: "✓" !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    background: transparent !important;
+    color: var(--np-cyan) !important;
+    font-size: 1rem !important;
+    font-weight: 950 !important;
+    line-height: 1 !important;
+  }
+
+  .np-status-icon-star::before {
+    content: "★" !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    background: transparent !important;
+    color: var(--np-cyan) !important;
+    font-size: 0.92rem !important;
+    font-weight: 950 !important;
+    line-height: 1 !important;
+  }
+
+  .np-status-icon-screen::before {
+    content: "▣" !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    background: transparent !important;
+    color: var(--np-cyan) !important;
+    font-size: 1rem !important;
+    font-weight: 950 !important;
+    line-height: 1 !important;
+  }
+
+  /* Startseiten-Schnellzugriffe / ECHO-Pfadfinder mobil als saubere Liste */
+  .np-pathfinder-routes {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.55rem !important;
+    width: 100% !important;
+  }
+
+  .np-route-card {
+    min-height: auto !important;
+    display: grid !important;
+    grid-template-columns: 2.45rem minmax(0, 1fr) auto !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 0.72rem !important;
+    row-gap: 0.16rem !important;
+    align-items: center !important;
+    justify-items: start !important;
+    padding: 0.72rem 0.78rem !important;
+    text-align: left !important;
+    border-radius: 0.58rem !important;
+  }
+
+  .np-route-card .np-card-icon {
+    grid-row: 1 / span 2 !important;
+    grid-column: 1 !important;
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+    margin: 0 !important;
+    font-size: 0.86rem !important;
+  }
+
+  .np-route-title {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin: 0 !important;
+    font-size: 0.86rem !important;
+    line-height: 1.1 !important;
+    text-align: left !important;
+  }
+
+  .np-route-text {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    display: block !important;
+    margin: 0 !important;
+    color: rgba(245, 234, 220, 0.72) !important;
+    font-size: 0.68rem !important;
+    line-height: 1.25 !important;
+    text-align: left !important;
+  }
+
+  .np-route-link {
+    grid-column: 3 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: center !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    font-size: 0.68rem !important;
+    text-align: right !important;
+  }
+
+  /* Falls der Platz sehr knapp wird: Linktext kürzer/kleiner wirken lassen */
+  @media (max-width: 390px) {
+    .np-route-card {
+      grid-template-columns: 2.2rem minmax(0, 1fr) !important;
+    }
+
+    .np-route-link {
+      grid-column: 2 !important;
+      grid-row: 3 !important;
+      margin-top: 0.15rem !important;
+      justify-self: start !important;
+      text-align: left !important;
+    }
+  }
+
+  /* Entstehungsgeschichte mobil sauber stapeln */
+  .np-history-panel {
+    padding: 1rem !important;
+  }
+
+  .np-history-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.7rem !important;
+  }
+
+  .np-history-panel .np-info-card {
+    padding: 0.85rem !important;
+  }
+
+  /* Verhindert, dass der fixe Footer Inhalt zu stark verdeckt */
+  .np-home-v2 {
+    padding-bottom: 1.1rem !important;
+  }
+}
 
