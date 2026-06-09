@@ -4862,4 +4862,390 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* =========================================================
+   21. Mobile Fixes
+   Optimiert Smartphone/Tablet-Ansicht, ohne Desktop anzufassen.
+   ========================================================= */
+
+@media (max-width: 66.499rem) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+    padding-bottom: var(--np-footer-height) !important;
+    background-attachment: scroll !important;
+    background-position: center top !important;
+  }
+
+  /* Mobile Just-the-Docs-Navigation entschlacken:
+     Custom-Desktop-Header-Elemente nicht im Mobile-Menü anzeigen */
+  .main-header .np-topbar-brand,
+  .main-header .np-top-nav,
+  .main-header .aux-nav {
+    display: none !important;
+  }
+
+  .main-header .search {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0.65rem 0 0 !important;
+  }
+
+  .main-header .search-input-wrap,
+  .main-header .search-input {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Grundcontainer mobil enger und sauber mittig */
+  .main-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+  }
+
+  body.np-page-sub .main-content {
+    width: calc(100% - 1rem) !important;
+    max-width: calc(100% - 1rem) !important;
+    margin: 0.75rem auto calc(var(--np-footer-height) + 0.9rem) !important;
+    padding: 0.75rem !important;
+    border-radius: 0.72rem !important;
+  }
+
+  /* Startseite mobil komplett neu stapeln */
+  .np-home,
+  .np-home-v2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .np-home-v2 .np-hero,
+  .np-hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.9rem !important;
+    align-items: center !important;
+    justify-items: center !important;
+    padding: 1.15rem 0 0.85rem !important;
+    text-align: center !important;
+  }
+
+  .np-hero-content {
+    grid-column: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .np-kicker,
+  .np-section-kicker {
+    text-align: center !important;
+  }
+
+  .np-home-v2 .np-hero h1,
+  .np-hero h1 {
+    font-size: clamp(2.4rem, 13vw, 3.8rem) !important;
+    line-height: 0.94 !important;
+    text-align: center !important;
+  }
+
+  .np-hero-highlight {
+    width: min(100%, 25rem) !important;
+    max-width: 25rem !important;
+    margin: 0 auto !important;
+    padding: 0.78rem 0.9rem !important;
+    text-align: left !important;
+    font-size: 0.84rem !important;
+    line-height: 1.48 !important;
+  }
+
+  .np-home-v2 .np-hero-logo,
+  .np-hero-logo {
+    grid-column: auto !important;
+    width: min(68vw, 17rem) !important;
+    height: min(68vw, 17rem) !important;
+    justify-self: center !important;
+  }
+
+  /* Statusleiste mobil */
+  .np-status-bar,
+  .np-status-bar-v2,
+  .np-home-v2 .np-status-bar-showcase {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    margin: 0.75rem 0 1rem !important;
+    border-radius: 0.72rem !important;
+  }
+
+  .np-status-item,
+  .np-status-bar-v2 .np-status-item,
+  .np-home-v2 .np-status-bar-showcase .np-status-item {
+    min-height: 3.25rem !important;
+    padding: 0.62rem 0.85rem !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(72, 122, 146, 0.22) !important;
+  }
+
+  .np-status-item:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .np-page-meta {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    margin: 0.3rem 0 0.65rem !important;
+  }
+
+  .np-last-updated {
+    text-align: center !important;
+    font-size: 0.62rem !important;
+  }
+
+  /* Startseiten-ECHO/Pfadfinder mobil */
+  .np-pathfinder,
+  .np-home-v2 .np-pathfinder {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    margin: 0 0 1rem !important;
+    padding: 1rem !important;
+  }
+
+  .np-pathfinder-echo,
+  .np-home-v2 .np-pathfinder-echo {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    gap: 0.8rem !important;
+    text-align: center !important;
+    justify-items: center !important;
+  }
+
+  .np-pathfinder-echo::before,
+  .np-home-v2 .np-pathfinder-echo::before {
+    display: none !important;
+  }
+
+  .np-pathfinder-image,
+  .np-home-v2 .np-pathfinder-image {
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+  }
+
+  .np-pathfinder-image img,
+  .np-home-v2 .np-pathfinder-image img {
+    width: min(44vw, 8.5rem) !important;
+    height: min(44vw, 8.5rem) !important;
+  }
+
+  .np-pathfinder-copy,
+  .np-home-v2 .np-pathfinder-copy {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .np-pathfinder-routes {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  .np-route-card {
+    min-height: auto !important;
+    padding: 0.85rem !important;
+  }
+
+  .np-history-panel,
+  .np-home-v2 .np-history-panel,
+  .np-about-panel-v2,
+  .np-server-brief-v2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: 1fr !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .np-history-grid,
+  .np-server-brief-grid,
+  .np-card-grid-guides {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ECHO-Boxen auf Unterseiten mobil sauber stapeln */
+  .echo-page-box,
+  .echo-page-box-team,
+  .echo-page-box-philosophy,
+  .echo-page-box-faq,
+  .echo-page-box-rules,
+  .echo-page-box-streamer,
+  .echo-page-box-help,
+  .echo-page-box-duck {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+    justify-items: center !important;
+    align-items: center !important;
+    padding: 1rem !important;
+    margin-bottom: 0.9rem !important;
+    border-left: 0 !important;
+    border-top: 3px solid rgba(0, 230, 246, 0.58) !important;
+    text-align: center !important;
+  }
+
+  .echo-page-box .echo-page-image,
+  .echo-page-box-team .echo-page-image,
+  .echo-page-box-philosophy .echo-page-image,
+  .echo-page-box-faq .echo-page-image,
+  .echo-page-box-rules .echo-page-image,
+  .echo-page-box-streamer .echo-page-image,
+  .echo-page-box-help .echo-page-image,
+  .echo-page-box-duck .echo-page-image {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .echo-page-box .echo-page-image img,
+  .echo-page-box-team .echo-page-image img,
+  .echo-page-box-philosophy .echo-page-image img,
+  .echo-page-box-faq .echo-page-image img,
+  .echo-page-box-rules .echo-page-image img,
+  .echo-page-box-streamer .echo-page-image img,
+  .echo-page-box-help .echo-page-image img,
+  .echo-page-box-duck .echo-page-image img {
+    width: min(42vw, 8.75rem) !important;
+    height: min(42vw, 8.75rem) !important;
+  }
+
+  .echo-page-box .echo-page-content,
+  .echo-page-box-team .echo-page-content,
+  .echo-page-box-philosophy .echo-page-content,
+  .echo-page-box-faq .echo-page-content,
+  .echo-page-box-rules .echo-page-content,
+  .echo-page-box-streamer .echo-page-content,
+  .echo-page-box-help .echo-page-content,
+  .echo-page-box-duck .echo-page-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .echo-page-box h2,
+  .echo-page-box-team h2,
+  .echo-page-box-philosophy h2,
+  .echo-page-box-faq h2,
+  .echo-page-box-rules h2,
+  .echo-page-box-streamer h2,
+  .echo-page-box-help h2,
+  .echo-page-box-duck h2 {
+    font-size: clamp(1.45rem, 7vw, 2rem) !important;
+    line-height: 1.12 !important;
+    text-align: center !important;
+  }
+
+  .echo-page-box p,
+  .echo-page-box-team p,
+  .echo-page-box-philosophy p,
+  .echo-page-box-faq p,
+  .echo-page-box-rules p,
+  .echo-page-box-streamer p,
+  .echo-page-box-help p,
+  .echo-page-box-duck p {
+    text-align: center !important;
+  }
+
+  /* Inhaltssektionen mobil */
+  .np-page-section,
+  .np-content-box,
+  .np-rule-block,
+  .np-info-card,
+  .np-history-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .np-section-header .np-title {
+    font-size: clamp(1.7rem, 9vw, 2.45rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .np-card-grid,
+  .np-help-grid,
+  .np-community-grid,
+  .np-team-grid,
+  .np-streamer-grid,
+  .np-faq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem !important;
+  }
+
+  /* Footer mobil etwas aufgeräumter */
+  #np-global-window-footer,
+  .np-site-footer#np-global-window-footer {
+    height: var(--np-footer-height) !important;
+  }
+
+  #np-global-window-footer .np-site-footer-inner {
+    padding: 0.45rem 0.8rem !important;
+    gap: 0.28rem !important;
+  }
+
+  .np-site-footer-brand strong,
+  .np-site-footer-brand span {
+    font-size: 0.56rem !important;
+  }
+
+  .np-site-footer-links {
+    gap: 0.42rem !important;
+  }
+
+  .np-site-footer-links a,
+  .np-site-footer-links span {
+    font-size: 0.56rem !important;
+  }
+}
+
+/* Sehr schmale Geräte */
+@media (max-width: 390px) {
+  .main-content {
+    padding-left: 0.65rem !important;
+    padding-right: 0.65rem !important;
+  }
+
+  body.np-page-sub .main-content {
+    width: calc(100% - 0.7rem) !important;
+    max-width: calc(100% - 0.7rem) !important;
+    padding: 0.65rem !important;
+  }
+
+  .np-home-v2 .np-hero h1,
+  .np-hero h1 {
+    font-size: clamp(2.15rem, 12vw, 3.2rem) !important;
+  }
+
+  .np-hero-highlight {
+    font-size: 0.8rem !important;
+  }
+}
 
