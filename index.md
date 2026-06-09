@@ -114,7 +114,7 @@ permalink: /
       <span class="np-route-link">Zum FAQ →</span>
     </a>
 
-    <a class="np-route-card" href="{{ site.baseurl }}/modpack-hilfe.html#mitspielen">
+    <a class="np-route-card" href="{{ site.baseurl }}/modpack-hilfe.html#installation-setup">
       <span class="np-card-icon np-card-icon-green">◆</span>
       <span class="np-route-title">Mitspielen</span>
       <span class="np-route-text">Installation, Zugang und Start.</span>

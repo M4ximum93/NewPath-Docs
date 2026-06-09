@@ -41,7 +41,7 @@ permalink: /modpack-hilfe.html
     </p>
   </div>
 
-  <details id="installation" class="np-accordion np-help-details np-help-module" open>
+  <details id="installation" class="np-accordion np-help-details np-help-module">
     <summary>
       <span class="np-help-module-icon" aria-hidden="true"></span>
       <span class="np-help-module-title">NewPath über CurseForge installieren</span>
@@ -396,10 +396,3 @@ permalink: /modpack-hilfe.html
   </details>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('details.np-help-details[open]').forEach(function (details) {
-      details.removeAttribute('open');
-    });
-  });
-</script>

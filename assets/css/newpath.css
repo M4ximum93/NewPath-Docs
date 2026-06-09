@@ -1,5 +1,5 @@
 /* NewPath – Echoes of the Wild
-   Konsolidierte CSS-Version v25
+   Konsolidierte CSS-Version v26
    Aufbau:
    1. Variablen & Grundlayout
    2. Just-the-Docs Reset
@@ -3920,113 +3920,6 @@ img {
     animation-iteration-count: 1 !important;
   }
 }
-/* =========================================================
-   UI: Einheitlicher Hover-/Fokus-Effekt für klickbare Elemente
-   - macht Buttons, Kartenlinks, Nav-Links und Akkordeons klar erkennbar
-   - betrifft nur Elemente mit Funktion/Klickverhalten
-   ========================================================= */
-
-@media (hover: hover) and (pointer: fine) {
-  .np-top-nav a,
-  .main-header .aux-nav a,
-  .np-site-footer-links a,
-  .np-route-card,
-  .np-card-link,
-  .np-route-link,
-  .np-help-tile,
-  .np-community-card,
-  .np-streamer-card a,
-  .np-asset-card a,
-  .main-content a,
-  .np-faq-details summary,
-  .np-help-details summary,
-  .np-accordion summary,
-  .np-back-to-top,
-  button {
-    transition:
-      transform 160ms ease,
-      border-color 160ms ease,
-      background 160ms ease,
-      color 160ms ease,
-      box-shadow 160ms ease,
-      opacity 160ms ease;
-  }
-
-  .np-route-card:hover,
-  .np-help-tile:hover,
-  .np-community-card:hover {
-    transform: translateY(-0.18rem);
-    border-color: rgba(0, 230, 246, 0.62) !important;
-    box-shadow:
-      0 18px 34px rgba(0, 0, 0, 0.34),
-      0 0 22px rgba(0, 230, 246, 0.10),
-      inset 0 0 26px rgba(0, 230, 246, 0.035) !important;
-  }
-
-  .np-card-link:hover,
-  .np-route-link:hover,
-  .np-streamer-card a:hover,
-  .np-asset-card a:hover,
-  .main-content a:hover {
-    color: var(--np-gold-soft) !important;
-    text-shadow: 0 0 12px rgba(236, 183, 110, 0.18);
-  }
-
-  .np-faq-details summary:hover,
-  .np-help-details summary:hover,
-  .np-accordion summary:hover {
-    color: var(--np-gold-soft) !important;
-    background:
-      linear-gradient(90deg, rgba(0, 230, 246, 0.075), rgba(236, 183, 110, 0.045), transparent) !important;
-    box-shadow: inset 3px 0 0 rgba(0, 230, 246, 0.50);
-  }
-
-  .np-top-nav a:hover,
-  .main-header .aux-nav a:hover,
-  .np-site-footer-links a:hover,
-  .np-back-to-top:hover,
-  button:hover {
-    transform: translateY(-0.08rem);
-  }
-
-  .np-route-card:active,
-  .np-help-tile:active,
-  .np-community-card:active,
-  .np-top-nav a:active,
-  .main-header .aux-nav a:active,
-  .np-back-to-top:active,
-  button:active {
-    transform: translateY(0);
-  }
-}
-
-/* Tastatur-Navigation: sichtbarer, aber passender Fokus */
-.np-top-nav a:focus-visible,
-.main-header .aux-nav a:focus-visible,
-.np-site-footer-links a:focus-visible,
-.np-route-card:focus-visible,
-.np-card-link:focus-visible,
-.np-route-link:focus-visible,
-.np-help-tile:focus-visible,
-.np-community-card:focus-visible,
-.main-content a:focus-visible,
-.np-faq-details summary:focus-visible,
-.np-help-details summary:focus-visible,
-.np-accordion summary:focus-visible,
-.np-back-to-top:focus-visible,
-button:focus-visible {
-  outline: none !important;
-  box-shadow:
-    0 0 0 2px rgba(0, 230, 246, 0.42),
-    0 0 22px rgba(0, 230, 246, 0.14) !important;
-}
-
-/* Nicht-funktionale Karten bleiben ruhig */
-.np-info-card:not(a):hover,
-.np-rule-block:hover,
-.np-team-card:hover {
-  transform: none;
-}
 
 /* 15. Interaktionen & globale UI-Details
    Einheitliche Hover-/Fokuszustände, Akkordeons, Section-Header,
@@ -5511,137 +5404,142 @@ img {
   }
 }
 
-
 /* =========================================================
    23. Modpack-Hilfe Module
-   Kategorien + Akkordeons mit zwei Spalten:
-   links Text, rechts Bild-/Screenshotbereich.
+   Kategorie-Blöcke + FAQ-ähnliche Akkordeons.
+   Geschlossen: kompakt wie FAQ.
+   Geöffnet: zweispaltig, links Text / rechts Bildbereich.
    ========================================================= */
 
 .np-help-module-section {
   display: grid;
-  gap: clamp(1.2rem, 1.6vw, 1.75rem);
+  gap: 0.72rem;
+  padding-top: clamp(1.15rem, 1.65vw, 1.65rem) !important;
+  padding-bottom: clamp(1.15rem, 1.65vw, 1.65rem) !important;
 }
 
-.np-help-category-header {
-  margin-bottom: 0.15rem;
+.np-help-module-section .np-section-header {
+  margin-bottom: 0.25rem !important;
 }
 
-.np-help-module {
-  overflow: hidden;
-  border: 1px solid rgba(0, 230, 246, 0.38) !important;
-  border-radius: var(--np-radius) !important;
+.np-help-module-section .np-section-header::after {
+  margin-top: 0.95rem !important;
+}
+
+.np-help-category-header .np-lead {
+  max-width: 72rem;
+}
+
+.np-help-module-section .np-help-module {
+  margin: 0.36rem 0 !important;
+  overflow: hidden !important;
+  border-radius: 0.58rem !important;
+  border: 1px solid rgba(72, 122, 146, 0.40) !important;
   background:
-    radial-gradient(circle at 0% 0%, rgba(0, 230, 246, 0.075), transparent 20rem),
-    linear-gradient(180deg, rgba(8, 31, 39, 0.88), rgba(4, 16, 22, 0.94)) !important;
+    linear-gradient(180deg, rgba(10, 36, 47, 0.72), rgba(5, 20, 27, 0.82)) !important;
   box-shadow:
-    0 18px 36px rgba(0, 0, 0, 0.28),
-    inset 0 0 30px rgba(0, 230, 246, 0.025) !important;
+    0 10px 24px rgba(0, 0, 0, 0.16),
+    inset 0 0 22px rgba(0, 230, 246, 0.018) !important;
 }
 
-.np-help-module + .np-help-module {
-  margin-top: 0.7rem;
-}
-
-.np-help-module summary {
-  position: relative;
-  min-height: 4.65rem;
-  display: grid;
-  grid-template-columns: 3.35rem minmax(0, 1fr);
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.35rem;
-  cursor: pointer;
-  list-style: none;
-  border-left: 3px solid rgba(0, 230, 246, 0.72);
+.np-help-module-section .np-help-module summary {
+  min-height: 3.35rem !important;
+  display: grid !important;
+  grid-template-columns: 1.35rem minmax(0, 1fr) !important;
+  gap: 0.62rem !important;
+  align-items: center !important;
+  padding: 0.78rem 1rem !important;
+  color: var(--np-gold-soft) !important;
   background:
-    linear-gradient(90deg, rgba(0, 230, 246, 0.12), rgba(17, 46, 64, 0.52), rgba(5, 18, 25, 0.60));
+    linear-gradient(90deg, rgba(17, 46, 64, 0.58), rgba(5, 20, 27, 0.72)) !important;
+  border: 0 !important;
+  cursor: pointer !important;
+  list-style: none !important;
 }
 
-.np-help-module summary::-webkit-details-marker {
-  display: none;
-}
-
-.np-help-module summary::before {
-  content: none !important;
-}
-
-.np-help-module summary::after {
-  content: "+";
-  position: absolute;
-  right: 1.15rem;
-  top: 50%;
-  width: 1.7rem;
-  height: 1.7rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  color: var(--np-cyan);
-  background: rgba(0, 230, 246, 0.08);
-  border: 1px solid rgba(0, 230, 246, 0.30);
-  font-family: var(--np-font-label);
-  font-size: 1rem;
-  font-weight: 950;
-  line-height: 1;
-  transform: translateY(-50%);
-}
-
-.np-help-module[open] summary::after {
-  content: "−";
-  color: var(--np-gold-soft);
-  border-color: rgba(236, 183, 110, 0.42);
-  background: rgba(236, 183, 110, 0.10);
-}
-
-.np-help-module-icon {
-  width: 2.55rem;
-  height: 2.55rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  color: transparent;
-  font-size: 0;
-  background:
-    radial-gradient(circle at 36% 28%, rgba(255, 255, 255, 0.36), transparent 0.55rem),
-    linear-gradient(135deg, rgba(0, 230, 246, 0.95), rgba(6, 69, 119, 0.90));
-  border: 1px solid rgba(0, 230, 246, 0.46);
-  box-shadow:
-    0 0 22px rgba(0, 230, 246, 0.18),
-    inset 0 -0.45rem 0.8rem rgba(0, 0, 0, 0.22);
-}
-
-.np-help-module-icon::before {
-  content: "";
-  width: 0.82rem;
-  height: 0.82rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 0 14px rgba(0, 230, 246, 0.40);
-}
-
-.np-help-module-title {
-  min-width: 0;
-  padding-right: 3rem;
-  color: var(--np-gold-soft);
-  font-family: var(--np-font-heading);
-  font-size: clamp(1.05rem, 1.25vw, 1.36rem);
-  font-weight: 950;
-  line-height: 1.16;
-  text-shadow: 0 0 14px rgba(236, 183, 110, 0.12);
-}
-
-.np-help-module-meta {
+.np-help-module-section .np-help-module summary::-webkit-details-marker {
   display: none !important;
 }
 
-.np-help-module-content {
+.np-help-module-section .np-help-module summary::before,
+.np-help-module-section .np-help-module summary::after,
+.np-help-module-section .np-help-module-meta {
+  content: none !important;
+  display: none !important;
+}
+
+.np-help-module-section .np-help-module-icon {
+  width: 1.08rem !important;
+  height: 1.08rem !important;
+  min-width: 1.08rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 999px !important;
+  color: #001221 !important;
+  background: var(--np-cyan) !important;
+  border: 0 !important;
+  box-shadow:
+    0 0 12px rgba(0, 230, 246, 0.22),
+    inset 0 -0.12rem 0.25rem rgba(0, 0, 0, 0.18) !important;
+}
+
+.np-help-module-section .np-help-module-icon::before {
+  content: "+" !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #001221 !important;
+  box-shadow: none !important;
+  font-family: var(--np-font-label);
+  font-size: 0.78rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+}
+
+.np-help-module-section .np-help-module[open] .np-help-module-icon::before {
+  content: "−" !important;
+  transform: translateY(-0.02rem);
+}
+
+.np-help-module-section .np-help-module-title {
+  min-width: 0 !important;
+  padding-right: 0 !important;
+  color: var(--np-gold-soft) !important;
+  font-family: var(--np-font-heading);
+  font-size: clamp(0.95rem, 1vw, 1.08rem) !important;
+  font-weight: 950 !important;
+  line-height: 1.18 !important;
+  text-shadow: none !important;
+}
+
+.np-help-module-section .np-help-module[open] {
+  border-color: rgba(0, 230, 246, 0.48) !important;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.20),
+    inset 0 0 24px rgba(0, 230, 246, 0.025) !important;
+}
+
+.np-help-module-section .np-help-module[open] summary {
+  background:
+    linear-gradient(90deg, rgba(0, 230, 246, 0.11), rgba(17, 46, 64, 0.58), rgba(5, 20, 27, 0.72)) !important;
+  border-bottom: 1px solid rgba(72, 122, 146, 0.24) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .np-help-module-section .np-help-module summary:hover {
+    background:
+      linear-gradient(90deg, rgba(0, 230, 246, 0.13), rgba(17, 46, 64, 0.60), rgba(5, 20, 27, 0.74)) !important;
+  }
+}
+
+.np-help-module-section .np-help-module-content {
   display: grid;
-  grid-template-columns: minmax(0, 0.54fr) minmax(320px, 0.46fr);
-  gap: clamp(1rem, 1.7vw, 1.6rem);
-  padding: clamp(1rem, 1.5vw, 1.35rem);
-  border-top: 1px solid rgba(72, 122, 146, 0.24);
+  grid-template-columns: minmax(0, 0.54fr) minmax(300px, 0.46fr) !important;
+  gap: clamp(0.9rem, 1.45vw, 1.35rem) !important;
+  padding: clamp(0.95rem, 1.35vw, 1.2rem) !important;
+  border-top: 0 !important;
 }
 
 .np-help-module-text,
@@ -5649,35 +5547,35 @@ img {
   min-width: 0;
 }
 
-.np-help-module-text {
+.np-help-module-section .np-help-module-text {
   display: grid;
   align-content: start;
-  gap: 0.9rem;
+  gap: 0.78rem !important;
 }
 
-.np-help-module-text p {
+.np-help-module-section .np-help-module-text p {
   margin: 0;
   color: rgba(247, 236, 220, 0.90);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 0.96rem !important;
+  line-height: 1.62 !important;
 }
 
-.np-help-module-text strong {
+.np-help-module-section .np-help-module-text strong {
   color: var(--np-gold-soft);
 }
 
-.np-help-module .np-help-checklist {
+.np-help-module-section .np-help-checklist {
   margin: 0;
   padding-left: 1.25rem;
 }
 
-.np-help-module .np-help-checklist li {
-  margin: 0.38rem 0;
+.np-help-module-section .np-help-checklist li {
+  margin: 0.28rem 0 !important;
   color: rgba(247, 236, 220, 0.88);
-  line-height: 1.55;
+  line-height: 1.5 !important;
 }
 
-.np-help-module .np-help-checklist li::marker {
+.np-help-module-section .np-help-checklist li::marker {
   color: rgba(247, 236, 220, 0.52);
 }
 
@@ -5686,8 +5584,8 @@ img {
   grid-template-columns: 2.25rem minmax(0, 1fr);
   gap: 0.75rem;
   align-items: center;
-  margin-top: 0.2rem;
-  padding: 0.82rem 0.9rem;
+  margin-top: 0.1rem !important;
+  padding: 0.74rem 0.82rem !important;
   border-radius: 0.58rem;
   background:
     linear-gradient(90deg, rgba(236, 183, 110, 0.105), rgba(5, 20, 27, 0.76));
@@ -5742,7 +5640,7 @@ img {
 }
 
 .np-help-image-placeholder {
-  min-height: 15.2rem;
+  min-height: 13.2rem !important;
   display: grid;
   place-items: center;
   align-content: center;
@@ -5794,202 +5692,6 @@ img {
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.30);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .np-help-module summary:hover {
-    background:
-      linear-gradient(90deg, rgba(0, 230, 246, 0.16), rgba(17, 46, 64, 0.58), rgba(5, 18, 25, 0.62));
-  }
-}
-
-@media (max-width: 66.499rem) {
-  .np-help-module summary {
-    min-height: 4.1rem;
-    grid-template-columns: 2.8rem minmax(0, 1fr);
-    gap: 0.75rem;
-    padding: 0.85rem 0.95rem;
-  }
-
-  .np-help-module summary::after {
-    right: 0.8rem;
-  }
-
-  .np-help-module-icon {
-    width: 2.15rem;
-    height: 2.15rem;
-  }
-
-  .np-help-module-title {
-    padding-right: 2.25rem;
-    font-size: 1rem;
-  }
-
-  .np-help-module-content {
-    grid-template-columns: 1fr;
-    padding: 0.95rem;
-  }
-
-  .np-help-module-media {
-    order: 2;
-  }
-
-  .np-help-image-placeholder {
-    min-height: 12rem;
-  }
-}
-
-/* =========================================================
-   24. Modpack-Hilfe: FAQ-ähnliche Akkordeon-Optik
-   Gleicht die Hilfe-Akkordeons optisch stärker an die FAQ an.
-   Die zweispaltige Modulstruktur im geöffneten Zustand bleibt erhalten.
-   ========================================================= */
-
-.np-help-module-section {
-  padding-top: clamp(1.15rem, 1.65vw, 1.65rem) !important;
-  padding-bottom: clamp(1.15rem, 1.65vw, 1.65rem) !important;
-}
-
-.np-help-module-section .np-section-header {
-  margin-bottom: 1.05rem !important;
-}
-
-.np-help-module-section .np-section-header::after {
-  margin-top: 0.95rem !important;
-}
-
-/* Akkordeons enger setzen, ähnlich FAQ */
-.np-help-module-section .np-help-module {
-  margin: 0.72rem 0 !important;
-  border-radius: 0.58rem !important;
-  border: 1px solid rgba(72, 122, 146, 0.40) !important;
-  background:
-    linear-gradient(180deg, rgba(10, 36, 47, 0.72), rgba(5, 20, 27, 0.82)) !important;
-  box-shadow:
-    0 10px 24px rgba(0, 0, 0, 0.16),
-    inset 0 0 22px rgba(0, 230, 246, 0.018) !important;
-  overflow: hidden !important;
-}
-
-/* Kopfbereich wie FAQ: kompakter, ruhiger, ohne große Badge-Wirkung */
-.np-help-module-section .np-help-module summary {
-  min-height: 3.35rem !important;
-  display: grid !important;
-  grid-template-columns: 1.35rem minmax(0, 1fr) !important;
-  gap: 0.62rem !important;
-  align-items: center !important;
-  padding: 0.78rem 1rem !important;
-  border-left: 0 !important;
-  background:
-    linear-gradient(90deg, rgba(17, 46, 64, 0.58), rgba(5, 20, 27, 0.72)) !important;
-  border-bottom: 0 !important;
-  cursor: pointer !important;
-}
-
-/* kein zusätzlicher rechter Badge/Meta-Bereich */
-.np-help-module-section .np-help-module summary::after,
-.np-help-module-section .np-help-module-meta {
-  display: none !important;
-}
-
-/* Kleiner FAQ-ähnlicher Plus-Kreis statt großer Kugel */
-.np-help-module-section .np-help-module-icon {
-  width: 1.08rem !important;
-  height: 1.08rem !important;
-  min-width: 1.08rem !important;
-  border-radius: 999px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: #001221 !important;
-  background: var(--np-cyan) !important;
-  border: 0 !important;
-  box-shadow:
-    0 0 12px rgba(0, 230, 246, 0.22),
-    inset 0 -0.12rem 0.25rem rgba(0, 0, 0, 0.18) !important;
-}
-
-.np-help-module-section .np-help-module-icon::before {
-  content: "+" !important;
-  width: auto !important;
-  height: auto !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  color: #001221 !important;
-  box-shadow: none !important;
-  font-family: var(--np-font-label);
-  font-size: 0.78rem !important;
-  font-weight: 950 !important;
-  line-height: 1 !important;
-}
-
-.np-help-module-section .np-help-module[open] .np-help-module-icon::before {
-  content: "−" !important;
-  transform: translateY(-0.02rem);
-}
-
-/* Titel wie FAQ: kleiner, klarer, gold */
-.np-help-module-section .np-help-module-title {
-  min-width: 0 !important;
-  padding-right: 0 !important;
-  color: var(--np-gold-soft) !important;
-  font-family: var(--np-font-heading);
-  font-size: clamp(0.95rem, 1vw, 1.08rem) !important;
-  font-weight: 950 !important;
-  line-height: 1.18 !important;
-  text-shadow: none !important;
-}
-
-/* Geöffnet: dezente Hervorhebung, aber gleiche Grundoptik */
-.np-help-module-section .np-help-module[open] {
-  border-color: rgba(0, 230, 246, 0.48) !important;
-  box-shadow:
-    0 14px 28px rgba(0, 0, 0, 0.20),
-    inset 0 0 24px rgba(0, 230, 246, 0.025) !important;
-}
-
-.np-help-module-section .np-help-module[open] summary {
-  background:
-    linear-gradient(90deg, rgba(0, 230, 246, 0.11), rgba(17, 46, 64, 0.58), rgba(5, 20, 27, 0.72)) !important;
-  border-bottom: 1px solid rgba(72, 122, 146, 0.24) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .np-help-module-section .np-help-module summary:hover {
-    background:
-      linear-gradient(90deg, rgba(0, 230, 246, 0.13), rgba(17, 46, 64, 0.60), rgba(5, 20, 27, 0.74)) !important;
-  }
-}
-
-/* Inhalt bleibt zweispaltig, aber etwas kompakter */
-.np-help-module-section .np-help-module-content {
-  grid-template-columns: minmax(0, 0.54fr) minmax(300px, 0.46fr) !important;
-  gap: clamp(0.9rem, 1.45vw, 1.35rem) !important;
-  padding: clamp(0.95rem, 1.35vw, 1.2rem) !important;
-}
-
-.np-help-module-section .np-help-module-text {
-  gap: 0.78rem !important;
-}
-
-.np-help-module-section .np-help-module-text p {
-  font-size: 0.96rem !important;
-  line-height: 1.62 !important;
-}
-
-.np-help-module-section .np-help-module .np-help-checklist li {
-  margin: 0.28rem 0 !important;
-  line-height: 1.5 !important;
-}
-
-.np-help-module-section .np-help-callout {
-  margin-top: 0.1rem !important;
-  padding: 0.74rem 0.82rem !important;
-}
-
-/* Bildplatzhalter etwas ruhiger, damit der geöffnete Bereich nicht zu wuchtig wirkt */
-.np-help-module-section .np-help-image-placeholder {
-  min-height: 13.2rem !important;
-}
-
 @media (max-width: 66.499rem) {
   .np-help-module-section .np-help-module {
     margin: 0.58rem 0 !important;
@@ -6011,7 +5713,11 @@ img {
     padding: 0.85rem !important;
   }
 
-  .np-help-module-section .np-help-image-placeholder {
+  .np-help-module-section .np-help-module-media {
+    order: 2;
+  }
+
+  .np-help-image-placeholder {
     min-height: 11rem !important;
   }
 }
