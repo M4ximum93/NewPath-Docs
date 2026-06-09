@@ -5848,4 +5848,66 @@ img {
     height: 2.85rem !important;
     min-width: 2.85rem !important;
   }
+}/* =========================================================
+   26. Mobile Fix 6: Sticky Header, Footer-Lesbarkeit, JTD-Footer ausblenden
+   ========================================================= */
+
+@media (max-width: 66.499rem) {
+  /* Mobile Header oben fixieren */
+  .main-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 99990 !important;
+  }
+
+  /* Content darf nicht unter dem Sticky Header kleben */
+  .main-content {
+    padding-top: 0.75rem !important;
+  }
+
+  /* Header-Text etwas nach rechts schieben */
+  .site-title {
+    padding-left: 0.35rem !important;
+  }
+
+  /* Burger etwas sauberer rechts halten */
+  .site-button {
+    margin-right: 0.25rem !important;
+  }
+
+  /* Just-the-Docs Standard-Footer ausblenden */
+  .site-footer:not(.np-site-footer),
+  .main-content .site-footer,
+  .main-content > footer,
+  .main-content p:has(a[href*="just-the-docs"]),
+  .main-content a[href*="just-the-docs"] {
+    display: none !important;
+  }
+
+  /* Footer lesbarer machen */
+  #np-global-window-footer .np-site-footer-inner {
+    padding-left: 1.15rem !important;
+    padding-right: 1.15rem !important;
+    align-items: flex-start !important;
+  }
+
+  .np-site-footer-brand {
+    padding-left: 0.15rem !important;
+  }
+
+  .np-site-footer-links {
+    padding-left: 0.15rem !important;
+    justify-content: flex-start !important;
+  }
+
+  .np-site-footer-links a,
+  .np-site-footer-links span {
+    font-size: 0.58rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .np-duck-easteregg {
+    margin-left: 0 !important;
+    margin-right: 0.2rem !important;
+  }
 }
