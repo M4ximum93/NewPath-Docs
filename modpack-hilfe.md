@@ -556,14 +556,6 @@ permalink: /modpack-hilfe.html
         </ol>
 
       </div>
-
-      <aside class="np-help-module-media">
-        <!-- BILDBEREICH -->
-        <div class="np-help-image-placeholder">
-          <span>Bildplatzhalter</span>
-          <p>Screenshot: CurseForge-Profilordner, latest.log oder Crash-Reports.</p>
-        </div>
-      </aside>
     </div>
   </details>
   <details id="serverbeitritt-funktioniert-nicht" class="np-accordion np-help-details np-help-module">
@@ -589,14 +581,6 @@ permalink: /modpack-hilfe.html
         </ol>
 
       </div>
-
-      <aside class="np-help-module-media">
-        <!-- BILDBEREICH -->
-        <div class="np-help-image-placeholder">
-          <span>Bildplatzhalter</span>
-          <p>Screenshot: Minecraft-Fehlermeldung beim Serverbeitritt.</p>
-        </div>
-      </aside>
     </div>
   </details>
   <details id="modliste-stimmt-nicht" class="np-accordion np-help-details np-help-module">
@@ -627,14 +611,6 @@ permalink: /modpack-hilfe.html
         </ol>
 
       </div>
-
-      <aside class="np-help-module-media">
-        <!-- BILDBEREICH -->
-        <div class="np-help-image-placeholder">
-          <span>Bildplatzhalter</span>
-          <p>Screenshot: Verbindung-abgelehnt-Fehler oder CurseForge-Profilversion.</p>
-        </div>
-      </aside>
     </div>
   </details>
   <details id="fps-ruckler" class="np-accordion np-help-details np-help-module">
@@ -660,14 +636,6 @@ permalink: /modpack-hilfe.html
         </ol>
 
       </div>
-
-      <aside class="np-help-module-media">
-        <!-- BILDBEREICH -->
-        <div class="np-help-image-placeholder">
-          <span>Bildplatzhalter</span>
-          <p>Screenshot: Minecraft-Grafikeinstellungen / Render Distance.</p>
-        </div>
-      </aside>
     </div>
   </details>
   <details id="texturen-fehlen" class="np-accordion np-help-details np-help-module">
@@ -692,14 +660,6 @@ permalink: /modpack-hilfe.html
         </ol>
 
       </div>
-
-      <aside class="np-help-module-media">
-        <!-- BILDBEREICH -->
-        <div class="np-help-image-placeholder">
-          <span>Bildplatzhalter</span>
-          <p>Screenshot: Ressourcenpakete-Menü oder fehlerhafte Textur.</p>
-        </div>
-      </aside>
     </div>
   </details>
   <details id="logs-crash-reports" class="np-accordion np-help-details np-help-module">
@@ -733,10 +693,14 @@ permalink: /modpack-hilfe.html
 
       <aside class="np-help-module-media">
         <!-- BILDBEREICH -->
-        <div class="np-help-image-placeholder">
-          <span>Bildplatzhalter</span>
-          <p>Screenshot: logs- und crash-reports-Ordner im NewPath-Profil.</p>
-        </div>
+        <figure class="np-help-image">
+          <img
+            src="{{ site.baseurl }}/assets/images/logs.png"
+            alt="Logs- und Crash-Reports-Ordner im NewPath-Profil"
+            loading="lazy"
+            decoding="async">
+          <figcaption>Logs- und Crash-Reports-Ordner im NewPath-Profil.</figcaption>
+        </figure>
       </aside>
     </div>
   </details>
