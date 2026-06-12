@@ -785,14 +785,6 @@ permalink: /modpack-hilfe.html
         </ol>
 
       </div>
-
-      <aside class="np-help-module-media">
-        <!-- BILDBEREICH -->
-        <div class="np-help-image-placeholder">
-          <span>Bildplatzhalter</span>
-          <p>Screenshot: Ladebildschirm oder Task-Manager-Auslastung.</p>
-        </div>
-      </aside>
     </div>
   </details>
 </section>
