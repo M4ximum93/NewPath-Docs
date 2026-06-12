@@ -25,8 +25,19 @@ permalink: /
       Richtung, Atmosphäre und gemeinschaftlichem Fortschritt.
     </div>
 
+    <div class="np-hero-actions np-hero-actions-server">
+      <button
+        class="np-hero-button np-hero-button-primary np-hero-copy-ip"
+        type="button"
+        data-server-ip="DEINE-SERVER-IP-HIER"
+        onclick="navigator.clipboard.writeText(this.dataset.serverIp); this.querySelector('span').textContent='IP kopiert'; setTimeout(() => this.querySelector('span').textContent='Server-IP kopieren', 1800);">
+        <span>Server-IP kopieren</span>
+      </button>
+    </div>
+
+
 <!-- AUTO_UPDATED_START -->
-<p class="np-last-updated">Zuletzt aktualisiert: 12.06.2026 13:44 Uhr</p>
+<p class="np-last-updated">Zuletzt aktualisiert: 09.06.2026 16:29 Uhr</p>
 <!-- AUTO_UPDATED_END -->
   </div>
 
@@ -79,26 +90,6 @@ permalink: /
       <small>Plattform</small>
       <strong>PC / Java</strong>
     </span>
-  </div>
-</section>
-
-<div class="np-home-section-separator" aria-hidden="true"></div>
-
-<section class="np-server-ip-strip" aria-label="NewPath Server-IP">
-  <div class="np-server-ip-strip-copy">
-    <p class="np-section-kicker">Serverzugang</p>
-    <strong>Server-IP kopieren</strong>
-    <span>Für den Beitritt ist eine erfolgreiche Whitelist über Discord erforderlich.</span>
-  </div>
-
-  <div class="np-server-ip-strip-action">
-    <code id="np-server-ip">DEINE-SERVER-IP-HIER</code>
-    <button
-      class="np-server-copy-button"
-      type="button"
-      onclick="navigator.clipboard.writeText(document.getElementById('np-server-ip').textContent.trim()); this.textContent='Kopiert!'; setTimeout(() => this.textContent='IP kopieren', 1800);">
-      IP kopieren
-    </button>
   </div>
 </section>
 
