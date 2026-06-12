@@ -29,21 +29,13 @@ permalink: /
       <button
         class="np-server-copy-hero-button"
         type="button"
-        data-server-ip="newpath.minecraft.best"
+        data-server-ip="DEINE-SERVER-IP-HIER"
         onclick="navigator.clipboard.writeText(this.dataset.serverIp); this.querySelector('.np-server-copy-hero-label').textContent='IP kopiert'; setTimeout(() => this.querySelector('.np-server-copy-hero-label').textContent='Server-IP kopieren', 1800);">
         <span class="np-server-copy-hero-icon" aria-hidden="true"></span>
         <span class="np-server-copy-hero-label">Server-IP kopieren</span>
       </button>
     </div>
-
-<!-- AUTO_UPDATED_START -->
-<<<<<<< HEAD
-<p class="np-last-updated">Zuletzt aktualisiert: 09.06.2026 16:29 Uhr</p>
-=======
-<p class="np-last-updated">Zuletzt aktualisiert: 12.06.2026 13:55 Uhr</p>
->>>>>>> e0535bc36f9586e7a289ace25717fc4191e5cdb8
-<!-- AUTO_UPDATED_END -->
-  </div>
+</div>
 
   <div class="np-hero-logo" aria-label="NewPath – Echoes of the Wild Logo">
     <img
