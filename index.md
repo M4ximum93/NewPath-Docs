@@ -23,17 +23,18 @@ permalink: /
       <br>
       Kein klassisches „Everything-Pack“, sondern eine lebendige Welt mit klarer
       Richtung, Atmosphäre und gemeinschaftlichem Fortschritt.
-</div>
+    </div>
 
     <div class="np-hero-actions np-hero-actions-server">
       <button
         class="np-server-copy-hero-button"
         type="button"
-        data-server-ip="DEINE-SERVER-IP-HIER"
+        data-server-ip="newpath.minecraft.best"
         onclick="navigator.clipboard.writeText(this.dataset.serverIp); this.querySelector('.np-server-copy-hero-label').textContent='IP kopiert'; setTimeout(() => this.querySelector('.np-server-copy-hero-label').textContent='Server-IP kopieren', 1800);">
         <span class="np-server-copy-hero-icon" aria-hidden="true"></span>
         <span class="np-server-copy-hero-label">Server-IP kopieren</span>
       </button>
+      <p class="np-server-copy-hint">Whitelist über Discord erforderlich.</p>
     </div>
 
   </div>
@@ -103,7 +104,7 @@ permalink: /
         loading="lazy"
         decoding="async">
     </div>
-<div class="np-pathfinder-copy">
+    <div class="np-pathfinder-copy">
       <p class="np-section-kicker">ECHO – Der Wegbegleiter</p>
       <h2>Wähle deinen Pfad.</h2>
       <p>
