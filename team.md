@@ -32,7 +32,6 @@ permalink: /team.html
 
 <section class="np-page-section np-team-section">
   <div class="np-section-header">
-    <p class="np-eyebrow">NewPath Team</p>
     <h1 class="np-title">Das Team hinter NewPath</h1>
   </div>
 

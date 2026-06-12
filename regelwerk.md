@@ -33,7 +33,6 @@ permalink: /regelwerk.html
 
 <section class="np-page-section np-rules-section">
   <div class="np-section-header">
-    <p class="np-eyebrow">Regelwerk</p>
     <h1 class="np-title">NewPath · Echoes of the Wild</h1>
     <p class="np-lead">
       Die folgenden Regeln bilden den gemeinsamen Rahmen für ein faires, atmosphärisches

@@ -31,7 +31,6 @@ permalink: /philosophie.html
 
 <section class="np-page-section np-story-section">
   <div class="np-section-header">
-    <p class="np-eyebrow">Philosophie</p>
     <h1 class="np-title">NewPath · Echoes of the Wild</h1>
     <p class="np-lead">
       NewPath steht für eine stimmige Minecraft-Erfahrung, in der Entdeckung,

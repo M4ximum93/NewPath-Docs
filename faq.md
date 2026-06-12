@@ -31,7 +31,6 @@ permalink: /faq.html
 
 <section class="np-page-section np-faq-section">
   <div class="np-section-header">
-    <p class="np-eyebrow">FAQ</p>
     <h1 class="np-title">Alle wichtigen Fragen gesammelt</h1>
   </div>
 

@@ -32,7 +32,6 @@ search_exclude: true
 
 <section class="np-page-section np-duck-section">
   <div class="np-section-header">
-    <p class="np-eyebrow">Geheimer Fund</p>
     <h1 class="np-title">Die NewPath-Ente</h1>
     <p class="np-lead">
       ECHO hat ungewöhnliche Aktivität im System festgestellt.

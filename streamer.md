@@ -32,7 +32,6 @@ permalink: /streamer.html
 
 <section class="np-page-section np-streamer-section" id="streamer-infos">
   <div class="np-section-header">
-    <p class="np-eyebrow">Streamer-Informationen</p>
     <h1 class="np-title">Informationen für NewPath-Streamer</h1>
     <p class="np-lead">
       Hier findest du alle wichtigen Hinweise zur Registrierung als Streamer, zu Medienrichtlinien
@@ -209,7 +208,6 @@ https://discord.gg/R4HwKRbZ5e</code></pre>
 
 <section class="np-page-section np-streamer-assets-section" id="streamer-assets">
   <div class="np-section-header">
-    <p class="np-eyebrow">Streamer-Assets</p>
     <h1 class="np-title">Bilder und Assets für Streams</h1>
     <p class="np-lead">
       Hier werden offizielle NewPath-Grafiken für Streams, Twitch-Panels, Overlays,

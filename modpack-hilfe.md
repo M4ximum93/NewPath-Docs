@@ -32,7 +32,6 @@ permalink: /modpack-hilfe.html
 
 <section class="np-page-section np-help-section np-help-module-section" id="installation-setup">
   <div class="np-section-header np-help-category-header">
-    <p class="np-eyebrow">Kategorie 01</p>
     <h1 class="np-title">Installation und Setup</h1>
     <p class="np-lead">
       Alles rund um Installation, richtige Version, Speicherzuweisung und grundlegende Einrichtung.
@@ -327,7 +326,6 @@ permalink: /modpack-hilfe.html
 
 <section class="np-page-section np-help-section np-help-module-section" id="erste-schritte-server">
   <div class="np-section-header np-help-category-header">
-    <p class="np-eyebrow">Kategorie 02</p>
     <h1 class="np-title">Erste Schritte auf dem Server</h1>
     <p class="np-lead">
       Die wichtigsten Schritte nach dem ersten Join: Orientierung, Bauplatzsuche, Claims mit FTB Chunks
@@ -533,7 +531,6 @@ permalink: /modpack-hilfe.html
 
 <section class="np-page-section np-help-section np-help-module-section" id="mod-anleitungen">
   <div class="np-section-header np-help-category-header">
-    <p class="np-eyebrow">Kategorie 03</p>
     <h1 class="np-title">Mod Anleitungen</h1>
     <p class="np-lead">
       Hier entstehen später kurze Hilfen zu einzelnen Mods, wichtigen Menüs, Tastenkürzeln und wiederkehrenden
@@ -544,7 +541,6 @@ permalink: /modpack-hilfe.html
 
 <section class="np-page-section np-help-section np-help-module-section" id="probleme-support">
   <div class="np-section-header np-help-category-header">
-    <p class="np-eyebrow">Kategorie 04</p>
     <h1 class="np-title">Probleme und Support</h1>
     <p class="np-lead">
       Hilfe bei Startproblemen, Abstürzen, Verbindungsproblemen, Performance, fehlenden Texturen,
