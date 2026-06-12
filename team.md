@@ -69,7 +69,7 @@ permalink: /team.html
           loading="lazy"
           decoding="async">
       </div>
-      <p class="np-card-kicker np-team-role">Gründer - Projektleitung - Promotion</p>
+      <p class="np-card-kicker np-team-role">Gründerin - Projektleitung - Promotion</p>
       <h2 class="np-card-title">SarahdasFaultier</h2>
       <p class="np-card-text">
         Hat wohl einen Gottkomplex.
