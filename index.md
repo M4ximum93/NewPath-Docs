@@ -23,24 +23,9 @@ permalink: /
       <br>
       Kein klassisches „Everything-Pack“, sondern eine lebendige Welt mit klarer
       Richtung, Atmosphäre und gemeinschaftlichem Fortschritt.
-      <div class="np-hero-cta-row">
-        <button
-          class="np-copy-ip-button"
-          type="button"
-          data-server-ip="DEINE-SERVER-IP-HIER"
-          onclick="navigator.clipboard.writeText(this.dataset.serverIp); this.querySelector('.np-copy-ip-button-label').textContent='IP kopiert'; setTimeout(() => this.querySelector('.np-copy-ip-button-label').textContent='Server-IP kopieren', 1800);">
-          <span class="np-copy-ip-button-icon" aria-hidden="true"></span>
-          <span class="np-copy-ip-button-label">Server-IP kopieren</span>
-        </button>
-      </div>
-
-    </div>
+</div>
 <!-- AUTO_UPDATED_START -->
-<<<<<<< HEAD
 <p class="np-last-updated">Zuletzt aktualisiert: 09.06.2026 16:29 Uhr</p>
-=======
-<p class="np-last-updated">Zuletzt aktualisiert: 12.06.2026 13:55 Uhr</p>
->>>>>>> e0535bc36f9586e7a289ace25717fc4191e5cdb8
 <!-- AUTO_UPDATED_END -->
   </div>
 
@@ -109,6 +94,18 @@ permalink: /
         loading="lazy"
         decoding="async">
     </div>
+
+    <div class="np-hero-actions np-hero-actions-server">
+      <button
+        class="np-copy-ip-button"
+        type="button"
+        data-server-ip="DEINE-SERVER-IP-HIER"
+        onclick="navigator.clipboard.writeText(this.dataset.serverIp); this.querySelector('.np-copy-ip-button-label').textContent='IP kopiert'; setTimeout(() => this.querySelector('.np-copy-ip-button-label').textContent='Server-IP kopieren', 1800);">
+        <span class="np-copy-ip-button-icon" aria-hidden="true"></span>
+        <span class="np-copy-ip-button-label">Server-IP kopieren</span>
+      </button>
+    </div>
+
 
     <div class="np-pathfinder-copy">
       <p class="np-section-kicker">ECHO – Der Wegbegleiter</p>

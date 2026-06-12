@@ -5961,43 +5961,26 @@ img {
   }
 }
 
+/* 25. Startseite: Server-IP als Hero-CTA */
 
-
-
-
-
-
-/* 25. Startseite: Server-IP Button in Hero-Box */
-
-/*
-  Wichtig:
-  Diese Regeln sind bewusst sehr spezifisch, weil Just-the-Docs/Browser-Button-Styles
-  sonst den Button teilweise wieder wie einen Standard-Button darstellen können.
-*/
-
-.np-home-v2 .np-hero-highlight .np-hero-cta-row,
-.np-hero-highlight .np-hero-cta-row {
+.np-home-v2 .np-hero-content .np-hero-actions-server {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
   gap: 0.75rem !important;
-  margin: 0.85rem 0 0 !important;
-  padding: 0.78rem 0 0 !important;
-  border-top: 1px solid rgba(72, 122, 146, 0.30) !important;
+  margin: 0.78rem 0 0 !important;
+  padding: 0 !important;
 }
 
-.np-home-v2 .np-hero-highlight button.np-copy-ip-button,
-.np-hero-highlight button.np-copy-ip-button,
-.main-content .np-hero-highlight button.np-copy-ip-button,
+.np-home-v2 .np-hero-content button.np-copy-ip-button,
+.main-content .np-hero-content button.np-copy-ip-button,
 button.np-copy-ip-button {
   appearance: none !important;
   -webkit-appearance: none !important;
 
-  min-width: 0 !important;
   width: auto !important;
-  max-width: 100% !important;
-  min-height: 2.55rem !important;
-
+  min-width: 0 !important;
+  min-height: 2.58rem !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -6006,8 +5989,8 @@ button.np-copy-ip-button {
   margin: 0 !important;
   padding: 0 1.12rem !important;
 
-  border: 1px solid rgba(0, 230, 246, 0.58) !important;
   border-radius: 0.52rem !important;
+  border: 1px solid rgba(0, 230, 246, 0.58) !important;
   outline: 0 !important;
 
   color: rgba(245, 234, 220, 0.98) !important;
@@ -6040,40 +6023,35 @@ button.np-copy-ip-button {
     box-shadow 160ms ease !important;
 }
 
-.np-home-v2 .np-hero-highlight button.np-copy-ip-button::before,
-.np-hero-highlight button.np-copy-ip-button::before,
-.main-content .np-hero-highlight button.np-copy-ip-button::before,
+.np-home-v2 .np-hero-content button.np-copy-ip-button::before,
+.main-content .np-hero-content button.np-copy-ip-button::before,
 button.np-copy-ip-button::before {
   display: none !important;
   content: none !important;
 }
 
-.np-home-v2 .np-hero-highlight .np-copy-ip-button-icon,
-.np-hero-highlight .np-copy-ip-button-icon,
-.main-content .np-hero-highlight .np-copy-ip-button-icon {
+.np-home-v2 .np-hero-content .np-copy-ip-button-icon,
+.main-content .np-hero-content .np-copy-ip-button-icon {
   width: 1.08rem !important;
   height: 1.08rem !important;
   min-width: 1.08rem !important;
   display: inline-block !important;
   flex: 0 0 1.08rem !important;
-
   background: var(--np-cyan) !important;
   clip-path: polygon(50% 0%, 92% 24%, 92% 76%, 50% 100%, 8% 76%, 8% 24%) !important;
   box-shadow: 0 0 13px rgba(0, 230, 246, 0.34) !important;
 }
 
-.np-home-v2 .np-hero-highlight .np-copy-ip-button-label,
-.np-hero-highlight .np-copy-ip-button-label,
-.main-content .np-hero-highlight .np-copy-ip-button-label {
+.np-home-v2 .np-hero-content .np-copy-ip-button-label,
+.main-content .np-hero-content .np-copy-ip-button-label {
   display: inline-block !important;
   color: inherit !important;
   font: inherit !important;
   line-height: 1 !important;
 }
 
-.np-home-v2 .np-hero-highlight button.np-copy-ip-button:hover,
-.np-hero-highlight button.np-copy-ip-button:hover,
-.main-content .np-hero-highlight button.np-copy-ip-button:hover,
+.np-home-v2 .np-hero-content button.np-copy-ip-button:hover,
+.main-content .np-hero-content button.np-copy-ip-button:hover,
 button.np-copy-ip-button:hover {
   transform: translateY(-2px) !important;
   border-color: rgba(236, 183, 110, 0.68) !important;
@@ -6086,30 +6064,27 @@ button.np-copy-ip-button:hover {
     0 0 24px rgba(0, 230, 246, 0.13) !important;
 }
 
-.np-home-v2 .np-hero-highlight button.np-copy-ip-button:hover .np-copy-ip-button-icon,
-.np-hero-highlight button.np-copy-ip-button:hover .np-copy-ip-button-icon,
-.main-content .np-hero-highlight button.np-copy-ip-button:hover .np-copy-ip-button-icon {
+.np-home-v2 .np-hero-content button.np-copy-ip-button:hover .np-copy-ip-button-icon,
+.main-content .np-hero-content button.np-copy-ip-button:hover .np-copy-ip-button-icon {
   background: var(--np-gold-soft) !important;
 }
 
 .np-home-v2 .np-hero-content > .np-last-updated {
   display: block !important;
   width: 100% !important;
-  margin: 0.55rem 0 0 !important;
+  margin: 0.52rem 0 0 !important;
   text-align: right !important;
   float: none !important;
   clear: both !important;
 }
 
 @media (max-width: 66.499rem) {
-  .np-home-v2 .np-hero-highlight .np-hero-cta-row,
-  .np-hero-highlight .np-hero-cta-row {
+  .np-home-v2 .np-hero-content .np-hero-actions-server {
     margin-top: 0.85rem !important;
   }
 
-  .np-home-v2 .np-hero-highlight button.np-copy-ip-button,
-  .np-hero-highlight button.np-copy-ip-button,
-  .main-content .np-hero-highlight button.np-copy-ip-button,
+  .np-home-v2 .np-hero-content button.np-copy-ip-button,
+  .main-content .np-hero-content button.np-copy-ip-button,
   button.np-copy-ip-button {
     width: 100% !important;
     min-height: 2.75rem !important;
@@ -6120,7 +6095,8 @@ button.np-copy-ip-button:hover {
   }
 }
 
-/* 26. Footer: zentraler Gamertransfer-Link */
+
+/* 26. Footer: schlichter Gamertransfer-Link */
 
 #np-global-window-footer .np-site-footer-inner {
   display: grid !important;
@@ -6130,60 +6106,44 @@ button.np-copy-ip-button:hover {
 }
 
 .np-footer-gamertransfer {
-  justify-self: center;
-  min-height: 2.15rem;
-  display: inline-grid;
-  align-content: center;
-  gap: 0.05rem;
-  padding: 0.28rem 0.95rem;
-  border-radius: 999px;
-  color: var(--np-text) !important;
+  justify-self: center !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--np-cyan) !important;
+  font-family: var(--np-font-label) !important;
+  font-size: 0.62rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
   text-decoration: none !important;
-  border: 1px solid rgba(236, 183, 110, 0.42);
-  background:
-    radial-gradient(circle at 18% 20%, rgba(236, 183, 110, 0.18), transparent 5rem),
-    linear-gradient(135deg, rgba(236, 183, 110, 0.10), rgba(0, 18, 33, 0.78));
-  box-shadow:
-    inset 0 0 18px rgba(236, 183, 110, 0.035),
-    0 0 18px rgba(0, 230, 246, 0.04);
-  white-space: nowrap;
-  transition:
-    transform 160ms ease,
-    border-color 160ms ease,
-    background 160ms ease,
-    box-shadow 160ms ease;
+  text-transform: none !important;
+  white-space: nowrap !important;
 }
 
 .np-footer-gamertransfer span {
-  color: var(--np-cyan);
-  font-family: var(--np-font-label);
-  font-size: 0.52rem;
-  font-weight: 950;
-  letter-spacing: 0.10em;
-  line-height: 1;
-  text-transform: uppercase;
+  display: none !important;
 }
 
 .np-footer-gamertransfer strong {
-  color: var(--np-gold-soft);
-  font-size: 0.68rem;
-  font-weight: 950;
-  line-height: 1.05;
+  color: var(--np-cyan) !important;
+  font: inherit !important;
+  line-height: inherit !important;
 }
 
-.np-footer-gamertransfer:hover {
-  transform: translateY(-1px);
-  border-color: rgba(0, 230, 246, 0.58);
-  background:
-    radial-gradient(circle at 18% 20%, rgba(0, 230, 246, 0.16), transparent 5rem),
-    linear-gradient(135deg, rgba(0, 230, 246, 0.10), rgba(0, 18, 33, 0.82));
-  box-shadow:
-    0 0 18px rgba(0, 230, 246, 0.10),
-    0 8px 18px rgba(0, 0, 0, 0.22);
-}
-
+.np-footer-gamertransfer:hover,
 .np-footer-gamertransfer:hover strong {
-  color: #fff;
+  color: var(--np-gold-soft) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 @media (max-width: 66.499rem) {
@@ -6196,17 +6156,8 @@ button.np-copy-ip-button:hover {
   }
 
   .np-footer-gamertransfer {
-    justify-self: auto;
-    min-height: 1.85rem;
-    padding: 0.22rem 0.7rem;
-  }
-
-  .np-footer-gamertransfer span {
-    font-size: 0.48rem;
-  }
-
-  .np-footer-gamertransfer strong {
-    font-size: 0.62rem;
+    justify-self: auto !important;
+    font-size: 0.62rem !important;
   }
 }
 
