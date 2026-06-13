@@ -8130,3 +8130,115 @@ body.np-lightbox-open {
   }
 }
 
+/* 30. Startseite: Typografie-Balance nach 1440p-Test */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 {
+    padding-bottom: 1.8rem !important;
+  }
+
+  .np-home-v2 .np-pathfinder {
+    min-height: 12.2rem !important;
+    align-items: center !important;
+  }
+
+  .np-home-v2 .np-pathfinder-copy h2 {
+    font-size: clamp(1.82rem, 1.72vw, 2.18rem) !important;
+    line-height: 1.08 !important;
+    max-width: 22rem !important;
+  }
+
+  .np-home-v2 .np-pathfinder-copy p:last-child {
+    font-size: 0.98rem !important;
+    line-height: 1.55 !important;
+    max-width: 36rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-card {
+    min-height: 10.1rem !important;
+    padding: 0.9rem 0.62rem 0.72rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-card .np-card-icon {
+    width: 2.72rem !important;
+    height: 2.72rem !important;
+    font-size: 1.1rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-title {
+    font-size: 0.92rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-text {
+    font-size: 0.7rem !important;
+    line-height: 1.34 !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-link {
+    font-size: 0.63rem !important;
+  }
+
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    min-height: 17.2rem !important;
+    margin-bottom: 2.2rem !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro h2 {
+    font-size: clamp(1.86rem, 1.95vw, 2.55rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro p:last-child {
+    font-size: 0.92rem !important;
+    line-height: 1.56 !important;
+  }
+
+  .np-history-tab-year {
+    font-size: 0.74rem !important;
+  }
+
+  .np-history-tab-title {
+    font-size: 0.84rem !important;
+  }
+
+  .np-history-tab-panel h3 {
+    font-size: 1.32rem !important;
+  }
+
+  .np-history-tab-panel p:last-child {
+    font-size: 0.96rem !important;
+  }
+
+  #np-global-window-footer .np-site-footer-brand strong {
+    font-size: 0.84rem !important;
+  }
+
+  #np-global-window-footer .np-site-footer-brand span {
+    font-size: 0.72rem !important;
+  }
+
+  #np-global-window-footer .np-site-footer-links a,
+  #np-global-window-footer .np-site-footer-links span {
+    font-size: 0.78rem !important;
+  }
+
+  #np-global-window-footer .np-site-footer-links a[href*="gamertransfer"],
+  #np-global-window-footer a[href*="gamertransfer"],
+  #np-global-window-footer .np-footer-gamertransfer {
+    font-size: 0.88rem !important;
+    font-weight: 950 !important;
+  }
+}
+
+@media (min-width: 90rem) {
+  .np-home-v2 .np-pathfinder {
+    grid-template-columns: minmax(430px, 0.43fr) minmax(760px, 0.57fr) !important;
+  }
+
+  .np-home-v2 .np-pathfinder-image img {
+    width: clamp(8.9rem, 9.6vw, 11rem) !important;
+    height: clamp(8.9rem, 9.6vw, 11rem) !important;
+  }
+}
+
