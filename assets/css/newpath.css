@@ -6707,3 +6707,341 @@ body.np-lightbox-open {
     line-height: 1.55 !important;
   }
 }
+
+/* 27. Startseite: kompakter Zeitstrahl als horizontale Auswahl */
+
+.np-history-tab-radio {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (min-width: 66.5rem) {
+  .np-history-panel-compact {
+    overflow: hidden !important;
+  }
+
+  .np-history-tabs {
+    position: relative !important;
+    min-height: 15.4rem !important;
+    display: grid !important;
+    grid-template-rows: auto 1fr !important;
+    gap: 0.78rem !important;
+    align-content: start !important;
+    padding: 0.66rem 0.3rem 0 !important;
+  }
+
+  .np-history-tab-track {
+    position: absolute !important;
+    top: 3.04rem !important;
+    left: 4.05rem !important;
+    right: 4.05rem !important;
+    height: 2px !important;
+    border-radius: 999px !important;
+    background: linear-gradient(90deg, rgba(0, 230, 246, 0.12), rgba(0, 230, 246, 0.78), rgba(236, 183, 110, 0.82)) !important;
+    box-shadow: 0 0 18px rgba(0, 230, 246, 0.16) !important;
+  }
+
+  .np-history-tab-nav {
+    position: relative !important;
+    z-index: 1 !important;
+    display: grid !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    gap: 0.48rem !important;
+    align-items: start !important;
+  }
+
+  .np-history-tab-label {
+    min-width: 0 !important;
+    min-height: 6rem !important;
+    display: grid !important;
+    grid-template-rows: auto auto 1fr !important;
+    justify-items: center !important;
+    gap: 0.35rem !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    text-align: center !important;
+  }
+
+  .np-history-tab-year {
+    min-height: 1.45rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.25rem 0.48rem !important;
+    border-radius: 999px !important;
+    color: var(--np-cyan) !important;
+    background: rgba(0, 9, 15, 0.76) !important;
+    border: 1px solid rgba(0, 230, 246, 0.38) !important;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22) !important;
+    font-family: var(--np-font-label) !important;
+    font-size: clamp(0.54rem, 0.58vw, 0.66rem) !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease !important;
+  }
+
+  .np-history-tab-node {
+    width: 1.05rem !important;
+    height: 1.05rem !important;
+    display: block !important;
+    border-radius: 999px !important;
+    background: var(--np-cyan) !important;
+    border: 3px solid rgba(0, 9, 15, 0.94) !important;
+    box-shadow:
+      0 0 0 1px rgba(0, 230, 246, 0.64),
+      0 0 18px rgba(0, 230, 246, 0.46) !important;
+    transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease !important;
+  }
+
+  .np-history-tab-title {
+    min-height: 2.35rem !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    color: var(--np-gold-soft) !important;
+    font-size: clamp(0.65rem, 0.70vw, 0.82rem) !important;
+    font-weight: 900 !important;
+    line-height: 1.16 !important;
+    text-wrap: balance !important;
+    transition: color 0.18s ease, opacity 0.18s ease !important;
+  }
+
+  .np-history-tab-label:hover .np-history-tab-year,
+  .np-history-tab-label:hover .np-history-tab-node {
+    transform: translateY(-0.08rem) !important;
+  }
+
+  .np-history-tab-label-future .np-history-tab-year {
+    color: var(--np-gold-soft) !important;
+    border-color: rgba(236, 183, 110, 0.58) !important;
+    background: rgba(43, 31, 12, 0.78) !important;
+  }
+
+  .np-history-tab-label-future .np-history-tab-node {
+    background: var(--np-gold-soft) !important;
+    box-shadow:
+      0 0 0 1px rgba(236, 183, 110, 0.72),
+      0 0 22px rgba(236, 183, 110, 0.52) !important;
+  }
+
+  .np-history-tab-content {
+    position: relative !important;
+    min-height: 6.65rem !important;
+    border-radius: 0.64rem !important;
+    border: 1px solid rgba(72, 122, 146, 0.36) !important;
+    background:
+      radial-gradient(circle at 0% 0%, rgba(0, 230, 246, 0.075), transparent 18rem),
+      linear-gradient(180deg, rgba(8, 27, 35, 0.84), rgba(4, 16, 22, 0.90)) !important;
+    box-shadow: inset 0 0 26px rgba(0, 230, 246, 0.018) !important;
+    overflow: hidden !important;
+  }
+
+  .np-history-tab-panel {
+    display: none !important;
+    height: 100% !important;
+    padding: 0.78rem 0.95rem !important;
+  }
+
+  .np-history-tab-panel .np-card-kicker {
+    margin: 0 0 0.18rem !important;
+    color: var(--np-cyan) !important;
+    font-size: 0.58rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.075em !important;
+    text-transform: uppercase !important;
+  }
+
+  .np-history-tab-panel h3 {
+    margin: 0 0 0.32rem !important;
+    color: var(--np-gold-soft) !important;
+    font-size: clamp(0.98rem, 1.05vw, 1.22rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .np-history-tab-panel p:last-child {
+    max-width: 55rem !important;
+    margin: 0 !important;
+    color: rgba(245, 234, 220, 0.88) !important;
+    font-size: clamp(0.72rem, 0.76vw, 0.88rem) !important;
+    line-height: 1.46 !important;
+  }
+
+  #np-history-2017:checked ~ .np-history-tab-nav label[for="np-history-2017"] .np-history-tab-year,
+  #np-history-2022:checked ~ .np-history-tab-nav label[for="np-history-2022"] .np-history-tab-year,
+  #np-history-2024:checked ~ .np-history-tab-nav label[for="np-history-2024"] .np-history-tab-year,
+  #np-history-25112024:checked ~ .np-history-tab-nav label[for="np-history-25112024"] .np-history-tab-year,
+  #np-history-22122024:checked ~ .np-history-tab-nav label[for="np-history-22122024"] .np-history-tab-year,
+  #np-history-05122025:checked ~ .np-history-tab-nav label[for="np-history-05122025"] .np-history-tab-year,
+  #np-history-q42026:checked ~ .np-history-tab-nav label[for="np-history-q42026"] .np-history-tab-year {
+    color: var(--np-gold-soft) !important;
+    border-color: rgba(236, 183, 110, 0.62) !important;
+    background: rgba(236, 183, 110, 0.12) !important;
+  }
+
+  #np-history-2017:checked ~ .np-history-tab-nav label[for="np-history-2017"] .np-history-tab-node,
+  #np-history-2022:checked ~ .np-history-tab-nav label[for="np-history-2022"] .np-history-tab-node,
+  #np-history-2024:checked ~ .np-history-tab-nav label[for="np-history-2024"] .np-history-tab-node,
+  #np-history-25112024:checked ~ .np-history-tab-nav label[for="np-history-25112024"] .np-history-tab-node,
+  #np-history-22122024:checked ~ .np-history-tab-nav label[for="np-history-22122024"] .np-history-tab-node,
+  #np-history-05122025:checked ~ .np-history-tab-nav label[for="np-history-05122025"] .np-history-tab-node,
+  #np-history-q42026:checked ~ .np-history-tab-nav label[for="np-history-q42026"] .np-history-tab-node {
+    background: var(--np-gold-soft) !important;
+    transform: scale(1.12) !important;
+    box-shadow:
+      0 0 0 1px rgba(236, 183, 110, 0.72),
+      0 0 24px rgba(236, 183, 110, 0.52) !important;
+  }
+
+  #np-history-2017:checked ~ .np-history-tab-nav label[for="np-history-2017"] .np-history-tab-title,
+  #np-history-2022:checked ~ .np-history-tab-nav label[for="np-history-2022"] .np-history-tab-title,
+  #np-history-2024:checked ~ .np-history-tab-nav label[for="np-history-2024"] .np-history-tab-title,
+  #np-history-25112024:checked ~ .np-history-tab-nav label[for="np-history-25112024"] .np-history-tab-title,
+  #np-history-22122024:checked ~ .np-history-tab-nav label[for="np-history-22122024"] .np-history-tab-title,
+  #np-history-05122025:checked ~ .np-history-tab-nav label[for="np-history-05122025"] .np-history-tab-title,
+  #np-history-q42026:checked ~ .np-history-tab-nav label[for="np-history-q42026"] .np-history-tab-title {
+    color: #fff !important;
+  }
+
+  #np-history-2017:checked ~ .np-history-tab-content .np-history-tab-panel-2017,
+  #np-history-2022:checked ~ .np-history-tab-content .np-history-tab-panel-2022,
+  #np-history-2024:checked ~ .np-history-tab-content .np-history-tab-panel-2024,
+  #np-history-25112024:checked ~ .np-history-tab-content .np-history-tab-panel-25112024,
+  #np-history-22122024:checked ~ .np-history-tab-content .np-history-tab-panel-22122024,
+  #np-history-05122025:checked ~ .np-history-tab-content .np-history-tab-panel-05122025,
+  #np-history-q42026:checked ~ .np-history-tab-content .np-history-tab-panel-q42026 {
+    display: block !important;
+  }
+
+  #np-history-q42026:checked ~ .np-history-tab-content {
+    border-color: rgba(236, 183, 110, 0.44) !important;
+    background:
+      radial-gradient(circle at 0% 0%, rgba(236, 183, 110, 0.12), transparent 18rem),
+      linear-gradient(180deg, rgba(18, 27, 28, 0.86), rgba(4, 16, 22, 0.92)) !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1280px) {
+  .np-history-tab-nav {
+    gap: 0.34rem !important;
+  }
+
+  .np-history-tab-title {
+    font-size: clamp(0.58rem, 0.66vw, 0.74rem) !important;
+  }
+
+  .np-history-tab-year {
+    padding-left: 0.38rem !important;
+    padding-right: 0.38rem !important;
+  }
+}
+
+@media (max-width: 66.499rem) {
+  .np-history-tabs {
+    display: grid !important;
+    gap: 0.8rem !important;
+  }
+
+  .np-history-tab-track {
+    display: none !important;
+  }
+
+  .np-history-tab-nav {
+    display: grid !important;
+    gap: 0.48rem !important;
+  }
+
+  .np-history-tab-label {
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
+    gap: 0.65rem !important;
+    align-items: center !important;
+    padding: 0.75rem 0.85rem !important;
+    border: 1px solid rgba(72, 122, 146, 0.34) !important;
+    border-radius: 0.62rem !important;
+    background: linear-gradient(180deg, rgba(17, 46, 64, 0.66), rgba(5, 18, 25, 0.82)) !important;
+    cursor: pointer !important;
+  }
+
+  .np-history-tab-node {
+    display: none !important;
+  }
+
+  .np-history-tab-year {
+    padding: 0.24rem 0.5rem !important;
+    border-radius: 999px !important;
+    color: var(--np-cyan) !important;
+    background: rgba(0, 9, 15, 0.62) !important;
+    border: 1px solid rgba(0, 230, 246, 0.32) !important;
+    font-size: 0.68rem !important;
+    font-weight: 900 !important;
+    white-space: nowrap !important;
+  }
+
+  .np-history-tab-title {
+    color: var(--np-gold-soft) !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+  }
+
+  .np-history-tab-content {
+    border: 1px solid rgba(72, 122, 146, 0.34) !important;
+    border-radius: 0.62rem !important;
+    background: linear-gradient(180deg, rgba(17, 46, 64, 0.66), rgba(5, 18, 25, 0.82)) !important;
+    overflow: hidden !important;
+  }
+
+  .np-history-tab-panel {
+    display: none !important;
+    padding: 0.9rem !important;
+  }
+
+  .np-history-tab-panel .np-card-kicker {
+    margin: 0 0 0.25rem !important;
+    color: var(--np-cyan) !important;
+    font-size: 0.68rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+  }
+
+  .np-history-tab-panel h3 {
+    margin: 0 0 0.35rem !important;
+    color: var(--np-gold-soft) !important;
+  }
+
+  .np-history-tab-panel p:last-child {
+    margin: 0 !important;
+    color: rgba(245, 234, 220, 0.86) !important;
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+  }
+
+  #np-history-2017:checked ~ .np-history-tab-nav label[for="np-history-2017"],
+  #np-history-2022:checked ~ .np-history-tab-nav label[for="np-history-2022"],
+  #np-history-2024:checked ~ .np-history-tab-nav label[for="np-history-2024"],
+  #np-history-25112024:checked ~ .np-history-tab-nav label[for="np-history-25112024"],
+  #np-history-22122024:checked ~ .np-history-tab-nav label[for="np-history-22122024"],
+  #np-history-05122025:checked ~ .np-history-tab-nav label[for="np-history-05122025"],
+  #np-history-q42026:checked ~ .np-history-tab-nav label[for="np-history-q42026"] {
+    border-color: rgba(236, 183, 110, 0.48) !important;
+    background: linear-gradient(180deg, rgba(43, 31, 12, 0.62), rgba(5, 18, 25, 0.86)) !important;
+  }
+
+  #np-history-2017:checked ~ .np-history-tab-content .np-history-tab-panel-2017,
+  #np-history-2022:checked ~ .np-history-tab-content .np-history-tab-panel-2022,
+  #np-history-2024:checked ~ .np-history-tab-content .np-history-tab-panel-2024,
+  #np-history-25112024:checked ~ .np-history-tab-content .np-history-tab-panel-25112024,
+  #np-history-22122024:checked ~ .np-history-tab-content .np-history-tab-panel-22122024,
+  #np-history-05122025:checked ~ .np-history-tab-content .np-history-tab-panel-05122025,
+  #np-history-q42026:checked ~ .np-history-tab-content .np-history-tab-panel-q42026 {
+    display: block !important;
+  }
+}
