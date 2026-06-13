@@ -8753,3 +8753,205 @@ body.np-lightbox-open {
   }
 }
 
+/* 34. Startseite: ECHO sauber, Statusleiste begrenzt, Header-Schimmer weicher */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 {
+    --np-content-width: min(1500px, calc(100vw - 3.25rem)) !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Header wie Vorlage: weicher Glow statt harter Unterstreichung */
+  .main-header {
+    overflow: hidden !important;
+    background:
+      radial-gradient(ellipse at 50% 100%, rgba(0, 230, 246, 0.15), transparent 34%),
+      linear-gradient(180deg, rgba(0, 11, 18, 0.98), rgba(0, 16, 26, 0.95)) !important;
+    border-bottom: 1px solid rgba(0, 230, 246, 0.14) !important;
+    box-shadow:
+      0 14px 32px rgba(0, 0, 0, 0.30),
+      inset 0 -1px 0 rgba(0, 230, 246, 0.08) !important;
+  }
+
+  .main-header::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    left: 20% !important;
+    right: 20% !important;
+    bottom: 0 !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, rgba(0, 230, 246, 0.55), transparent) !important;
+    box-shadow: 0 0 20px rgba(0, 230, 246, 0.34) !important;
+    pointer-events: none !important;
+  }
+
+  .np-top-nav {
+    gap: clamp(0.52rem, 1vw, 1.35rem) !important;
+  }
+
+  .np-top-nav a {
+    position: relative !important;
+    min-height: var(--np-header-height) !important;
+    padding: 0 0.14rem !important;
+    border-radius: 0 !important;
+    color: rgba(247, 236, 220, 0.86) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    font-size: 0.84rem !important;
+    font-weight: 850 !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  .np-top-nav a::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 0.18rem !important;
+    width: 0 !important;
+    height: 2px !important;
+    border-radius: 999px !important;
+    background: var(--np-cyan) !important;
+    box-shadow:
+      0 0 12px rgba(0, 230, 246, 0.75),
+      0 0 28px rgba(0, 230, 246, 0.28) !important;
+    transform: translateX(-50%) !important;
+    transition: width 0.22s ease, opacity 0.22s ease !important;
+    opacity: 0 !important;
+  }
+
+  .np-top-nav a.active,
+  .np-top-nav a:hover {
+    color: var(--np-cyan) !important;
+    background: transparent !important;
+  }
+
+  .np-top-nav a.active::before,
+  .np-top-nav a:hover::before {
+    width: 100% !important;
+    opacity: 1 !important;
+  }
+
+  .np-top-nav a.active::after,
+  .np-top-nav a:hover::after {
+    display: none !important;
+  }
+
+  .main-header .aux-nav a {
+    color: var(--np-cyan) !important;
+    background: rgba(0, 230, 246, 0.055) !important;
+    border-color: rgba(0, 230, 246, 0.48) !important;
+    border-radius: 0.48rem !important;
+  }
+
+  .np-home-v2 .np-hero,
+  .np-home-v2 .np-pathfinder,
+  .np-home-v2 .np-pathfinder-dashboard,
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    width: var(--np-content-width) !important;
+    max-width: var(--np-content-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Statusleiste wieder wie Showcase: nicht über volle Breite */
+  .np-home-v2 .np-status-bar-v2,
+  .np-home-v2 .np-status-bar-showcase {
+    width: min(1280px, calc(100vw - 8rem)) !important;
+    max-width: min(1280px, calc(100vw - 8rem)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    border-radius: 0.56rem !important;
+    background:
+      linear-gradient(90deg, rgba(5, 18, 24, 0.58), rgba(17, 46, 64, 0.36), rgba(5, 18, 24, 0.58)) !important;
+    box-shadow:
+      0 14px 30px rgba(0, 0, 0, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+  }
+
+  .np-pathfinder-dashboard,
+  .np-home-v2 .np-pathfinder-dashboard {
+    display: grid !important;
+    grid-template-columns: minmax(430px, 0.38fr) minmax(780px, 0.62fr) !important;
+    gap: clamp(1.1rem, 1.6vw, 1.75rem) !important;
+    align-items: center !important;
+    min-height: 13.2rem !important;
+    margin-bottom: 1.1rem !important;
+    padding: clamp(1.1rem, 1.55vw, 1.55rem) !important;
+    overflow: hidden !important;
+  }
+
+  .np-pathfinder-dashboard .np-pathfinder-echo {
+    min-width: 0 !important;
+  }
+
+  .np-pathfinder-dashboard .np-pathfinder-routes.np-echo-route-list {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 0.72rem !important;
+    min-width: 0 !important;
+  }
+
+  .np-pathfinder-dashboard .np-echo-route-head {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    margin: 0 0 0.12rem !important;
+    padding: 0 0.12rem !important;
+  }
+
+  .np-pathfinder-dashboard .np-route-card {
+    min-width: 0 !important;
+    min-height: 9.25rem !important;
+    padding: 0.82rem 0.58rem 0.68rem !important;
+  }
+
+  .np-pathfinder-dashboard .np-route-title {
+    font-size: 0.93rem !important;
+  }
+
+  .np-pathfinder-dashboard .np-route-text {
+    font-size: 0.74rem !important;
+    line-height: 1.28 !important;
+  }
+
+  .np-pathfinder-dashboard .np-route-link {
+    font-size: 0.66rem !important;
+  }
+
+  .np-home-dashboard,
+  .np-dashboard-side {
+    display: none !important;
+  }
+
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    grid-template-columns: minmax(300px, 0.24fr) minmax(0, 0.76fr) !important;
+    margin-bottom: 3.4rem !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1350px) {
+  .np-home-v2 .np-status-bar-v2,
+  .np-home-v2 .np-status-bar-showcase {
+    width: min(1180px, calc(100vw - 4rem)) !important;
+    max-width: min(1180px, calc(100vw - 4rem)) !important;
+  }
+
+  .np-pathfinder-dashboard,
+  .np-home-v2 .np-pathfinder-dashboard {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 66.499rem) {
+  .np-pathfinder-dashboard {
+    display: grid !important;
+    gap: 1rem !important;
+  }
+}
+
