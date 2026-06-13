@@ -7942,3 +7942,191 @@ body.np-lightbox-open {
   }
 }
 
+/* 29. Startseite: Lesbarkeit auf 1440p/100% deutlich erhöhen */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 .np-status-bar-v2 .np-status-item {
+    min-height: 3.65rem !important;
+    padding: 0.58rem 0.95rem !important;
+  }
+
+  .np-home-v2 .np-status-bar-v2 .np-status-icon {
+    width: 2.05rem !important;
+    height: 2.05rem !important;
+    flex-basis: 2.05rem !important;
+  }
+
+  .np-home-v2 .np-status-bar-v2 .np-status-item small {
+    font-size: 0.84rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .np-home-v2 .np-status-bar-v2 .np-status-item strong {
+    font-size: 0.92rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .np-home-v2 .np-pathfinder {
+    min-height: 13.2rem !important;
+    padding: clamp(1.15rem, 1.6vw, 1.65rem) !important;
+  }
+
+  .np-home-v2 .np-pathfinder-copy .np-section-kicker {
+    font-size: 0.82rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .np-home-v2 .np-pathfinder-copy h2 {
+    font-size: clamp(2.12rem, 2.05vw, 2.6rem) !important;
+  }
+
+  .np-home-v2 .np-pathfinder-copy p:last-child {
+    font-size: 1.04rem !important;
+    line-height: 1.58 !important;
+  }
+
+  .np-home-v2 .np-pathfinder-routes.np-echo-route-list {
+    gap: 0.78rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-echo-route-head {
+    margin-bottom: 0.18rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-echo-route-head span {
+    font-size: 0.78rem !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-echo-route-head strong {
+    font-size: 0.86rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-card {
+    min-height: 10.7rem !important;
+    padding: 1rem 0.68rem 0.78rem !important;
+    gap: 0.32rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-card .np-card-icon {
+    width: 2.9rem !important;
+    height: 2.9rem !important;
+    margin-bottom: 0.28rem !important;
+    font-size: 1.18rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-title {
+    font-size: 0.98rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-text {
+    max-width: 9.4rem !important;
+    font-size: 0.74rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-link {
+    min-height: 1.55rem !important;
+    padding: 0.32rem 0.58rem !important;
+    font-size: 0.66rem !important;
+  }
+
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    min-height: 18.8rem !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro h2 {
+    font-size: clamp(2.15rem, 2.35vw, 3rem) !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro p:last-child {
+    font-size: 0.98rem !important;
+    line-height: 1.58 !important;
+  }
+
+  .np-history-tab-year {
+    padding: 0.22rem 0.46rem !important;
+    font-size: 0.78rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .np-history-tab-title {
+    max-width: 8.2rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.08 !important;
+  }
+
+  .np-history-tab-node {
+    width: 1.08rem !important;
+    height: 1.08rem !important;
+  }
+
+  .np-history-tab-panel .np-card-kicker {
+    font-size: 0.82rem !important;
+  }
+
+  .np-history-tab-panel h3 {
+    font-size: 1.42rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .np-history-tab-panel p:last-child {
+    font-size: 1.02rem !important;
+    line-height: 1.58 !important;
+  }
+
+  #np-global-window-footer .np-site-footer-inner {
+    padding-left: clamp(1.2rem, 2.6vw, 3rem) !important;
+    padding-right: clamp(1.2rem, 2.6vw, 3rem) !important;
+  }
+
+  #np-global-window-footer .np-site-footer-brand strong {
+    font-size: 0.9rem !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  #np-global-window-footer .np-site-footer-brand span {
+    font-size: 0.78rem !important;
+  }
+
+  #np-global-window-footer .np-site-footer-links a,
+  #np-global-window-footer .np-site-footer-links span {
+    font-size: 0.82rem !important;
+  }
+
+  #np-global-window-footer .np-site-footer-links a[href*="gamertransfer"],
+  #np-global-window-footer a[href*="gamertransfer"],
+  #np-global-window-footer .np-footer-gamertransfer {
+    font-size: 0.92rem !important;
+    font-weight: 950 !important;
+  }
+
+  .np-back-to-top {
+    font-size: 0.84rem !important;
+    font-weight: 900 !important;
+  }
+}
+
+@media (min-width: 90rem) {
+  .np-home-v2 .np-pathfinder {
+    grid-template-columns: minmax(420px, 0.42fr) minmax(780px, 0.58fr) !important;
+  }
+
+  .np-home-v2 .np-pathfinder-image img {
+    width: clamp(9.4rem, 10.4vw, 11.8rem) !important;
+    height: clamp(9.4rem, 10.4vw, 11.8rem) !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1320px) {
+  .np-home-v2 .np-pathfinder {
+    grid-template-columns: 1fr !important;
+  }
+
+  .np-home-v2 .np-pathfinder-routes.np-echo-route-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+
