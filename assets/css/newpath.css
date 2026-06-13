@@ -10721,3 +10721,45 @@ body.np-page-home h3 .anchor-link {
   }
 }
 
+/* 49. Startseite: zusätzlichen ECHO-Kreis entfernen */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 .np-pathfinder-image {
+    background: transparent !important;
+    border-radius: 0 !important;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.34)) !important;
+  }
+
+  .np-home-v2 .np-pathfinder-image::before,
+  .np-home-v2 .np-pathfinder-image::after {
+    display: none !important;
+    content: none !important;
+    opacity: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  .np-home-v2 .np-pathfinder-image img {
+    width: 92% !important;
+    height: 92% !important;
+    object-fit: contain !important;
+    filter:
+      drop-shadow(0 10px 16px rgba(0, 0, 0, 0.34))
+      drop-shadow(0 0 12px rgba(0, 230, 246, 0.12)) !important;
+  }
+}
+
+@media (max-width: 66.499rem) {
+  .np-home-v2 .np-pathfinder-image {
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+  .np-home-v2 .np-pathfinder-image::before,
+  .np-home-v2 .np-pathfinder-image::after {
+    display: none !important;
+    content: none !important;
+  }
+}
+
