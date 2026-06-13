@@ -9219,3 +9219,185 @@ body.np-page-sub::after {
   }
 }
 
+/* 38. Startseite: finaler Design-Feinschliff ohne Statusleisten-Erweiterung */
+
+@media (min-width: 66.5rem) {
+  /* Header: etwas luftiger und näher an der Vorlage */
+  .np-top-nav {
+    gap: clamp(0.72rem, 1.18vw, 1.65rem) !important;
+  }
+
+  .np-top-nav a {
+    color: rgba(247, 236, 220, 0.82) !important;
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.012em !important;
+  }
+
+  .np-top-nav a.active,
+  .np-top-nav a:hover {
+    color: var(--np-cyan) !important;
+  }
+
+  .main-header {
+    background:
+      radial-gradient(ellipse at 50% 100%, rgba(0, 230, 246, 0.14), transparent 36%),
+      linear-gradient(180deg, rgba(0, 11, 18, 0.985), rgba(0, 15, 24, 0.96)) !important;
+  }
+
+  .main-header::after {
+    left: 24% !important;
+    right: 24% !important;
+    opacity: 0.85 !important;
+  }
+
+  /* ECHO-Bereich: Karten etwas hochwertiger, größer und weniger gedrückt */
+  .np-pathfinder-dashboard,
+  .np-home-v2 .np-pathfinder-dashboard {
+    min-height: 13.9rem !important;
+    padding: clamp(1.22rem, 1.7vw, 1.75rem) !important;
+    gap: clamp(1.25rem, 1.8vw, 2rem) !important;
+  }
+
+  .np-pathfinder-dashboard .np-pathfinder-copy h2 {
+    font-size: clamp(1.86rem, 1.75vw, 2.24rem) !important;
+    line-height: 1.07 !important;
+  }
+
+  .np-pathfinder-dashboard .np-pathfinder-copy p:last-child {
+    font-size: 0.98rem !important;
+    line-height: 1.56 !important;
+  }
+
+  .np-pathfinder-dashboard .np-pathfinder-routes.np-echo-route-list {
+    gap: 0.86rem !important;
+  }
+
+  .np-pathfinder-dashboard .np-route-card,
+  .np-home-v2 .np-echo-route-list .np-route-card {
+    min-height: 10.05rem !important;
+    padding: 0.98rem 0.72rem 0.78rem !important;
+    border-color: rgba(72, 122, 146, 0.46) !important;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(0, 230, 246, 0.15), transparent 5.8rem),
+      linear-gradient(180deg, rgba(20, 58, 69, 0.76), rgba(6, 23, 30, 0.90)) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.10),
+      inset 0 -1.3rem 2rem rgba(0, 0, 0, 0.15),
+      0 15px 30px rgba(0, 0, 0, 0.22) !important;
+  }
+
+  .np-pathfinder-dashboard .np-route-card:hover,
+  .np-home-v2 .np-echo-route-list .np-route-card:hover {
+    border-color: rgba(0, 230, 246, 0.62) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      inset 0 -1.3rem 2rem rgba(0, 0, 0, 0.12),
+      0 18px 34px rgba(0, 0, 0, 0.26),
+      0 0 20px rgba(0, 230, 246, 0.10) !important;
+  }
+
+  .np-pathfinder-dashboard .np-card-icon,
+  .np-home-v2 .np-echo-route-list .np-route-card .np-card-icon {
+    width: 3rem !important;
+    height: 3rem !important;
+    margin-bottom: 0.32rem !important;
+  }
+
+  .np-pathfinder-dashboard .np-route-title,
+  .np-home-v2 .np-echo-route-list .np-route-title {
+    font-size: 0.98rem !important;
+    line-height: 1.08 !important;
+  }
+
+  .np-pathfinder-dashboard .np-route-text,
+  .np-home-v2 .np-echo-route-list .np-route-text {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+    min-height: 2rem !important;
+  }
+
+  .np-pathfinder-dashboard .np-route-link,
+  .np-home-v2 .np-echo-route-list .np-route-link {
+    font-size: 0.68rem !important;
+    padding: 0.34rem 0.66rem !important;
+  }
+
+  /* Entstehungsgeschichte: etwas ruhiger, weniger dominant */
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    background:
+      radial-gradient(circle at 0% 0%, rgba(0, 230, 246, 0.045), transparent 18rem),
+      linear-gradient(180deg, rgba(7, 24, 31, 0.72), rgba(4, 16, 22, 0.78)) !important;
+    border-color: rgba(72, 122, 146, 0.30) !important;
+    box-shadow:
+      0 16px 36px rgba(0, 0, 0, 0.24),
+      inset 0 0 28px rgba(0, 230, 246, 0.018) !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro {
+    background: rgba(0, 12, 18, 0.30) !important;
+    border-color: rgba(72, 122, 146, 0.28) !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro h2 {
+    font-size: clamp(1.34rem, 1.38vw, 1.82rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro p:last-child {
+    color: rgba(247, 236, 220, 0.78) !important;
+    font-size: 0.86rem !important;
+  }
+
+  .np-history-tab-content {
+    background: rgba(0, 12, 18, 0.32) !important;
+    border-color: rgba(72, 122, 146, 0.30) !important;
+  }
+
+  /* Footer: mehr Website-Abschluss, weniger reine Systemleiste */
+  #np-global-window-footer,
+  .np-site-footer#np-global-window-footer {
+    min-height: 2.35rem !important;
+    border-top: 1px solid rgba(0, 230, 246, 0.18) !important;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(0, 230, 246, 0.08), transparent 42%),
+      linear-gradient(180deg, rgba(0, 13, 20, 0.96), rgba(0, 8, 14, 0.995)) !important;
+    box-shadow:
+      0 -14px 30px rgba(0, 0, 0, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.025) !important;
+  }
+
+  #np-global-window-footer .np-site-footer-inner {
+    min-height: 2.35rem !important;
+    align-items: center !important;
+  }
+
+  #np-global-window-footer .np-site-footer-brand strong {
+    color: var(--np-gold-soft) !important;
+    font-size: 0.88rem !important;
+    letter-spacing: 0.025em !important;
+  }
+
+  #np-global-window-footer .np-site-footer-brand span {
+    color: rgba(247, 236, 220, 0.74) !important;
+    font-size: 0.74rem !important;
+  }
+
+  #np-global-window-footer a[href*="gamertransfer"],
+  #np-global-window-footer .np-footer-gamertransfer {
+    color: var(--np-cyan) !important;
+    font-size: 0.96rem !important;
+    font-weight: 950 !important;
+    text-shadow:
+      0 0 10px rgba(0, 230, 246, 0.26),
+      0 1px 5px rgba(0, 0, 0, 0.65) !important;
+  }
+
+  #np-global-window-footer .np-site-footer-links a,
+  #np-global-window-footer .np-site-footer-links span {
+    color: rgba(247, 236, 220, 0.78) !important;
+    font-size: 0.8rem !important;
+  }
+}
+
