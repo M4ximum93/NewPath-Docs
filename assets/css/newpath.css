@@ -7252,40 +7252,163 @@ body.np-lightbox-open {
 }
 
 
-/* 32. Startseite: Entstehungsgeschichte auf Hauptbreite ausrichten
-   - richtet den unteren Zeitstrahl optisch an Statusleiste und ECHO-Pfadfinder aus
-   - überschreibt ältere kompakte 1320px-Regeln am Dateiende bewusst
-*/
+/* 27. Startseite: ECHO-Kompass / kontextbezogene Auswahl */
+
+.np-card-icon-red {
+  background: linear-gradient(135deg, #6f2020, #e05b4f);
+}
+
 @media (min-width: 66.5rem) {
-  .np-home-v2 .np-history-panel-compact {
-    width: min(1440px, var(--np-content-width)) !important;
-    max-width: min(1440px, var(--np-content-width)) !important;
-    grid-template-columns: minmax(330px, 0.28fr) minmax(0, 0.72fr) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+  .np-home-v2 .np-pathfinder {
+    grid-template-columns: minmax(420px, 0.45fr) minmax(560px, 0.55fr) !important;
   }
 
-  .np-home-v2 .np-history-panel-compact .np-history-intro {
-    min-height: 15.4rem !important;
-  }
-
-  .np-home-v2 .np-history-panel-compact .np-history-intro h2 {
-    max-width: 20rem !important;
-  }
-
-  .np-home-v2 .np-history-tabs,
-  .np-home-v2 .np-history-tab-content {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .np-home-v2 .np-history-tab-panel p:last-child {
-    max-width: 100% !important;
+  .np-home-v2 .np-pathfinder-routes.np-echo-route-list {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.46rem !important;
+    align-content: center !important;
+    align-items: stretch !important;
   }
 }
 
-@media (min-width: 66.5rem) and (max-width: 1180px) {
-  .np-home-v2 .np-history-panel-compact {
-    grid-template-columns: 1fr !important;
+.np-echo-route-head {
+  display: grid;
+  gap: 0.12rem;
+  padding: 0 0.1rem 0.26rem;
+}
+
+.np-echo-route-head span {
+  color: var(--np-cyan);
+  font-family: var(--np-font-label);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.np-echo-route-head strong {
+  color: rgba(247, 236, 220, 0.92);
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.np-home-v2 .np-echo-route-list .np-route-card {
+  position: relative;
+  min-height: auto !important;
+  display: grid !important;
+  grid-template-columns: 2.55rem minmax(0, 1fr) auto !important;
+  grid-template-rows: auto auto !important;
+  column-gap: 0.72rem !important;
+  row-gap: 0.12rem !important;
+  align-items: center !important;
+  justify-items: start !important;
+  padding: 0.64rem 0.74rem !important;
+  overflow: hidden !important;
+  border-radius: 0.58rem !important;
+  text-align: left !important;
+  background:
+    linear-gradient(90deg, rgba(0, 230, 246, 0.075), transparent 16rem),
+    linear-gradient(180deg, rgba(17, 55, 67, 0.64), rgba(6, 24, 31, 0.78)) !important;
+}
+
+.np-home-v2 .np-echo-route-list .np-route-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.52rem;
+  bottom: 0.52rem;
+  width: 2px;
+  border-radius: 999px;
+  background: rgba(0, 230, 246, 0.44);
+  opacity: 0.72;
+}
+
+.np-home-v2 .np-echo-route-list .np-route-card-primary {
+  border-color: rgba(0, 230, 246, 0.52) !important;
+  background:
+    radial-gradient(circle at 0% 50%, rgba(0, 230, 246, 0.16), transparent 10rem),
+    linear-gradient(180deg, rgba(22, 70, 76, 0.74), rgba(7, 28, 34, 0.86)) !important;
+}
+
+.np-home-v2 .np-echo-route-list .np-route-card .np-card-icon {
+  grid-column: 1 !important;
+  grid-row: 1 / span 2 !important;
+  width: 2.22rem !important;
+  height: 2.22rem !important;
+  margin: 0 !important;
+  font-size: 0.82rem !important;
+}
+
+.np-home-v2 .np-echo-route-list .np-route-title {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  margin: 0 !important;
+  color: #fff !important;
+  font-size: 0.86rem !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+}
+
+.np-home-v2 .np-echo-route-list .np-route-text {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  margin: 0 !important;
+  color: rgba(245, 234, 220, 0.76) !important;
+  font-size: 0.68rem !important;
+  line-height: 1.25 !important;
+}
+
+.np-home-v2 .np-echo-route-list .np-route-link {
+  grid-column: 3 !important;
+  grid-row: 1 / span 2 !important;
+  justify-self: end !important;
+  align-self: center !important;
+  margin: 0 !important;
+  padding: 0.26rem 0.48rem !important;
+  border-radius: 999px !important;
+  color: var(--np-cyan) !important;
+  background: rgba(0, 9, 15, 0.28) !important;
+  border: 1px solid rgba(0, 230, 246, 0.20) !important;
+  font-size: 0.62rem !important;
+  font-weight: 900 !important;
+  white-space: nowrap !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .np-home-v2 .np-echo-route-list .np-route-card:hover::before {
+    background: rgba(236, 183, 110, 0.78);
+    opacity: 1;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-card:hover .np-route-link {
+    color: var(--np-gold-soft) !important;
+    border-color: rgba(236, 183, 110, 0.42) !important;
+  }
+}
+
+@media (max-width: 66.499rem) {
+  .np-echo-route-head {
+    padding-top: 0.2rem;
+    text-align: center;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-card {
+    grid-template-columns: 2.45rem minmax(0, 1fr) !important;
+    grid-template-rows: auto auto auto !important;
+    padding: 0.72rem 0.78rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-card .np-card-icon {
+    grid-row: 1 / span 3 !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-link {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+    justify-self: start !important;
+    margin-top: 0.1rem !important;
   }
 }
