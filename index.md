@@ -14,8 +14,15 @@ permalink: /
     </h1>
 
     <div class="np-hero-highlight">
-      <strong>NewPath – Echoes of the Wild</strong> ist Ein atmosphärisches Minecraft-Modpack mit Fokus auf Immersion, Erkundung,
+      <span class="np-hero-highlight-intro">
+        Ein atmosphärisches Minecraft-Modpack mit Fokus auf Immersion, Erkundung,
         Gemeinschaft und entschleunigten Fortschritt.
+      </span>
+      <strong>NewPath – Echoes of the Wild</strong> verbindet Natur, Technik,
+      Abenteuer und Community zu einer stimmigen Minecraft-Erfahrung.
+      <br>
+      Kein klassisches „Everything-Pack“, sondern eine lebendige Welt mit klarer
+      Richtung, Atmosphäre und gemeinschaftlichem Fortschritt.
     </div>
 
     <div class="np-hero-actions np-hero-actions-server">
@@ -148,6 +155,76 @@ permalink: /
       <span class="np-route-text">Atmosphäre und Projektidee.</span>
       <span class="np-route-link">Mehr →</span>
     </a>
+  </div>
+</section>
+
+
+<section class="np-panel np-ecosystem-panel" aria-labelledby="np-ecosystem-title">
+  <div class="np-ecosystem-head">
+    <div>
+      <p class="np-section-kicker">NewPath Ecosystem</p>
+      <h2 id="np-ecosystem-title">Mehr als ein einzelnes Modpack.</h2>
+      <p>
+        NewPath besteht aus mehreren Modpack-Projekten, saisonalen Sonderwelten,
+        der Dokumentation und ECHO als digitalem Wegbegleiter.
+      </p>
+    </div>
+  </div>
+
+  <div class="np-ecosystem-grid" aria-label="NewPath Ecosystem Übersicht">
+    <a class="np-ecosystem-card np-ecosystem-card-featured" href="#" target="_blank" rel="noopener">
+      <img src="{{ site.baseurl }}/assets/images/ecosystem/newpath-eotw.png" alt="NewPath – Echoes of the Wild Logo" loading="lazy" decoding="async">
+      <span class="np-ecosystem-type">Aktuelles Hauptprojekt</span>
+      <strong>NewPath – Echoes of the Wild</strong>
+      <span>Das aktuelle NewPath-Modpack mit neuer Minecraft-Version, neuer Atmosphäre und frischem Konzept.</span>
+      <em>CurseForge-Link eintragen →</em>
+    </a>
+
+    <a class="np-ecosystem-card" href="#" target="_blank" rel="noopener">
+      <img src="{{ site.baseurl }}/assets/images/ecosystem/newpath-beyond-lands.png" alt="NewPath – Beyond Lands Logo" loading="lazy" decoding="async">
+      <span class="np-ecosystem-type">Modpack-Ära</span>
+      <strong>NewPath – Beyond Lands</strong>
+      <span>Die große Weiterentwicklung von NewPath mit Rebranding, neuen Inhalten und stärkerer Projektidentität.</span>
+      <em>CurseForge-Link eintragen →</em>
+    </a>
+
+    <a class="np-ecosystem-card" href="#" target="_blank" rel="noopener">
+      <img src="{{ site.baseurl }}/assets/images/ecosystem/newpath-ein-neuer-weg.png" alt="NewPath – ein neuer Weg Logo" loading="lazy" decoding="async">
+      <span class="np-ecosystem-type">Ursprung</span>
+      <strong>NewPath – ein neuer Weg</strong>
+      <span>Der Start der eigenen NewPath-Modpack-Reihe und der Schritt weg von reinen Vanilla-Projekten.</span>
+      <em>CurseForge-Link eintragen →</em>
+    </a>
+
+    <a class="np-ecosystem-card" href="#" target="_blank" rel="noopener">
+      <img src="{{ site.baseurl }}/assets/images/ecosystem/sunpath-2026.png" alt="SunPath – Sommerprojekt 2026 Logo" loading="lazy" decoding="async">
+      <span class="np-ecosystem-type">Sommerprojekt</span>
+      <strong>SunPath – Sommerprojekt 2026</strong>
+      <span>Ein saisonales NewPath-Projekt mit sommerlicher Sonderwelt und eigenem Event-Charakter.</span>
+      <em>CurseForge-Link eintragen →</em>
+    </a>
+
+    <a class="np-ecosystem-card" href="#" target="_blank" rel="noopener">
+      <img src="{{ site.baseurl }}/assets/images/ecosystem/frostpath-2025.png" alt="FrostPath – Winterprojekt 2025 Logo" loading="lazy" decoding="async">
+      <span class="np-ecosystem-type">Winterprojekt</span>
+      <strong>FrostPath – Winterprojekt 2025</strong>
+      <span>Ein saisonales Winterprojekt innerhalb der NewPath-Projektfamilie.</span>
+      <em>CurseForge-Link eintragen →</em>
+    </a>
+
+    <article class="np-ecosystem-card np-ecosystem-card-static">
+      <img src="{{ site.baseurl }}/assets/images/ecosystem/echo.png" alt="ECHO – Der Wegbegleiter" loading="lazy" decoding="async">
+      <span class="np-ecosystem-type">Discord-Bot</span>
+      <strong>ECHO – Der Wegbegleiter</strong>
+      <span>Serverstatus, Whitelist, Playtime, Toplist und Orientierung im NewPath-Projekt.</span>
+    </article>
+
+    <article class="np-ecosystem-card np-ecosystem-card-static">
+      <img src="{{ site.baseurl }}/assets/images/ecosystem/docs.png" alt="NewPath Docs Symbol" loading="lazy" decoding="async">
+      <span class="np-ecosystem-type">Dokumentation</span>
+      <strong>NewPath Docs</strong>
+      <span>Regelwerk, FAQ, Modpack-Hilfe, Team, Streamer und Projektinformationen an einem Ort.</span>
+    </article>
   </div>
 </section>
 

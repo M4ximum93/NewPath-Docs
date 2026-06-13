@@ -9730,3 +9730,244 @@ body.np-page-sub::after {
   text-transform: uppercase !important;
 }
 
+/* 42. Startseite: NewPath Ecosystem Bereich */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 .np-ecosystem-panel {
+    width: var(--np-content-width) !important;
+    max-width: var(--np-content-width) !important;
+    margin: 0 auto 1.15rem !important;
+    padding: clamp(1.15rem, 1.55vw, 1.65rem) !important;
+    border: 1px solid rgba(72, 122, 146, 0.32) !important;
+    border-radius: 0.8rem !important;
+    background:
+      radial-gradient(circle at 0% 0%, rgba(0, 230, 246, 0.052), transparent 19rem),
+      linear-gradient(180deg, rgba(7, 24, 31, 0.74), rgba(4, 16, 22, 0.80)) !important;
+    box-shadow:
+      0 16px 36px rgba(0, 0, 0, 0.24),
+      inset 0 0 30px rgba(0, 230, 246, 0.018) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+
+  .np-ecosystem-head {
+    display: flex !important;
+    align-items: end !important;
+    justify-content: space-between !important;
+    gap: 1.2rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .np-ecosystem-head h2 {
+    margin: 0 !important;
+    color: var(--np-gold-soft) !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: clamp(1.55rem, 1.65vw, 2.18rem) !important;
+    line-height: 1.06 !important;
+    letter-spacing: -0.035em !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55) !important;
+  }
+
+  .np-ecosystem-head p:not(.np-section-kicker) {
+    max-width: 62rem !important;
+    margin: 0.38rem 0 0 !important;
+    color: rgba(247, 236, 220, 0.78) !important;
+    font-size: 0.94rem !important;
+    line-height: 1.52 !important;
+  }
+
+  .np-ecosystem-grid {
+    display: grid !important;
+    grid-template-columns: minmax(280px, 1.45fr) repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.8rem !important;
+  }
+
+  .np-ecosystem-card {
+    position: relative !important;
+    min-height: 11.8rem !important;
+    display: grid !important;
+    grid-template-rows: auto auto auto 1fr auto !important;
+    align-content: start !important;
+    gap: 0.34rem !important;
+    padding: 0.92rem !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(72, 122, 146, 0.34) !important;
+    border-radius: 0.72rem !important;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(0, 230, 246, 0.08), transparent 6rem),
+      linear-gradient(180deg, rgba(10, 34, 43, 0.72), rgba(4, 16, 22, 0.86)) !important;
+    box-shadow:
+      0 13px 26px rgba(0, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.055) !important;
+    color: rgba(247, 236, 220, 0.82) !important;
+    text-decoration: none !important;
+    transform: translateY(0) !important;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease !important;
+  }
+
+  .np-ecosystem-card::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 35%),
+      radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.045), transparent 4.6rem) !important;
+    opacity: 0.7 !important;
+    pointer-events: none !important;
+  }
+
+  .np-ecosystem-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(0, 230, 246, 0.52) !important;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(0, 230, 246, 0.13), transparent 6.2rem),
+      linear-gradient(180deg, rgba(16, 50, 61, 0.78), rgba(4, 18, 24, 0.90)) !important;
+    box-shadow:
+      0 18px 34px rgba(0, 0, 0, 0.26),
+      0 0 18px rgba(0, 230, 246, 0.07),
+      inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+  }
+
+  .np-ecosystem-card img {
+    position: relative !important;
+    z-index: 1 !important;
+    width: 3.45rem !important;
+    height: 3.45rem !important;
+    object-fit: contain !important;
+    border-radius: 0.34rem !important;
+    filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.34)) !important;
+    transition: transform 0.2s ease, filter 0.2s ease !important;
+  }
+
+  .np-ecosystem-card:hover img {
+    transform: translateY(-2px) scale(1.04) !important;
+    filter:
+      drop-shadow(0 10px 16px rgba(0, 0, 0, 0.38))
+      drop-shadow(0 0 10px rgba(0, 230, 246, 0.14)) !important;
+  }
+
+  .np-ecosystem-type,
+  .np-ecosystem-card strong,
+  .np-ecosystem-card span,
+  .np-ecosystem-card em {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .np-ecosystem-type {
+    color: var(--np-cyan) !important;
+    font-family: var(--np-font-label) !important;
+    font-size: 0.64rem !important;
+    font-weight: 950 !important;
+    letter-spacing: 0.09em !important;
+    text-transform: uppercase !important;
+  }
+
+  .np-ecosystem-card strong {
+    color: var(--np-gold-soft) !important;
+    font-family: var(--np-font-label) !important;
+    font-size: 0.98rem !important;
+    font-weight: 950 !important;
+    line-height: 1.1 !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.54) !important;
+  }
+
+  .np-ecosystem-card span:not(.np-ecosystem-type) {
+    color: rgba(247, 236, 220, 0.76) !important;
+    font-size: 0.78rem !important;
+    line-height: 1.42 !important;
+  }
+
+  .np-ecosystem-card em {
+    align-self: end !important;
+    width: fit-content !important;
+    margin-top: 0.28rem !important;
+    padding: 0.32rem 0.6rem !important;
+    border: 1px solid rgba(0, 230, 246, 0.22) !important;
+    border-radius: 999px !important;
+    color: var(--np-cyan) !important;
+    background: rgba(0, 230, 246, 0.06) !important;
+    font-family: var(--np-font-label) !important;
+    font-size: 0.62rem !important;
+    font-style: normal !important;
+    font-weight: 950 !important;
+    line-height: 1 !important;
+  }
+
+  .np-ecosystem-card-featured {
+    grid-row: span 2 !important;
+    min-height: 24.4rem !important;
+    padding: 1.15rem !important;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(236, 183, 110, 0.10), transparent 7rem),
+      radial-gradient(circle at 20% 20%, rgba(0, 230, 246, 0.10), transparent 10rem),
+      linear-gradient(180deg, rgba(16, 48, 55, 0.78), rgba(4, 16, 22, 0.88)) !important;
+  }
+
+  .np-ecosystem-card-featured img {
+    width: 5.3rem !important;
+    height: 5.3rem !important;
+  }
+
+  .np-ecosystem-card-featured strong {
+    font-size: 1.34rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .np-ecosystem-card-featured span:not(.np-ecosystem-type) {
+    font-size: 0.9rem !important;
+    line-height: 1.48 !important;
+  }
+
+  .np-ecosystem-card-static {
+    cursor: default !important;
+  }
+
+  .np-ecosystem-card-static:hover {
+    transform: translateY(-2px) !important;
+    border-color: rgba(236, 183, 110, 0.36) !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1350px) {
+  .np-ecosystem-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .np-ecosystem-card-featured {
+    grid-row: auto !important;
+    grid-column: 1 / -1 !important;
+    min-height: 15rem !important;
+  }
+}
+
+@media (max-width: 66.499rem) {
+  .np-ecosystem-panel {
+    margin: 1rem 0 !important;
+    padding: 1rem !important;
+  }
+
+  .np-ecosystem-head h2 {
+    font-size: 1.65rem !important;
+  }
+
+  .np-ecosystem-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  .np-ecosystem-card {
+    min-height: auto !important;
+    padding: 0.9rem !important;
+  }
+
+  .np-ecosystem-card img {
+    width: 3.1rem !important;
+    height: 3.1rem !important;
+  }
+}
+
