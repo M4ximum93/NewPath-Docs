@@ -8464,3 +8464,292 @@ body.np-lightbox-open {
   }
 }
 
+/* 33. Startseite Variante B: Dashboard-Struktur, Header/Footer nach Vorlage */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 {
+    --np-content-width: min(1560px, calc(100vw - 3rem)) !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Header näher an die Referenz: ruhiger, heller lesbar, aktive Unterstreichung */
+  .main-header {
+    background:
+      linear-gradient(180deg, rgba(0, 11, 18, 0.98), rgba(0, 16, 26, 0.95)) !important;
+    border-bottom: 1px solid rgba(0, 230, 246, 0.18) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28) !important;
+  }
+
+  .np-top-nav {
+    gap: clamp(0.42rem, 0.85vw, 1.2rem) !important;
+  }
+
+  .np-top-nav a {
+    position: relative !important;
+    min-height: var(--np-header-height) !important;
+    padding: 0 0.18rem !important;
+    border-radius: 0 !important;
+    color: rgba(247, 236, 220, 0.88) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    font-size: 0.84rem !important;
+    font-weight: 850 !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  .np-top-nav a::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 0 !important;
+    width: 0 !important;
+    height: 2px !important;
+    border-radius: 999px !important;
+    background: var(--np-cyan) !important;
+    box-shadow: 0 0 16px rgba(0, 230, 246, 0.55) !important;
+    transform: translateX(-50%) !important;
+    transition: width 0.18s ease !important;
+  }
+
+  .np-top-nav a.active,
+  .np-top-nav a:hover {
+    color: var(--np-cyan) !important;
+    background: transparent !important;
+  }
+
+  .np-top-nav a.active::after,
+  .np-top-nav a:hover::after {
+    width: 100% !important;
+  }
+
+  .main-header .aux-nav a {
+    border-radius: 0.45rem !important;
+    color: var(--np-cyan) !important;
+    background: rgba(0, 230, 246, 0.055) !important;
+    border-color: rgba(0, 230, 246, 0.48) !important;
+  }
+
+  .np-home-v2 .np-hero,
+  .np-home-v2 .np-status-bar-v2,
+  .np-home-v2 .np-home-dashboard,
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    width: var(--np-content-width) !important;
+    max-width: var(--np-content-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .np-hero-actions-server {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.72rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  .np-hero-secondary-button {
+    min-height: 2.15rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 1.05rem !important;
+    border-radius: 0.36rem !important;
+    color: var(--np-gold-soft) !important;
+    background: rgba(236, 183, 110, 0.055) !important;
+    border: 1px solid rgba(236, 183, 110, 0.62) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18) !important;
+    font-size: 0.82rem !important;
+    font-weight: 950 !important;
+    text-decoration: none !important;
+  }
+
+  .np-hero-secondary-button:hover {
+    color: #fff3d0 !important;
+    background: rgba(236, 183, 110, 0.13) !important;
+  }
+
+  .np-server-copy-hint {
+    flex-basis: 100% !important;
+    margin-top: -0.35rem !important;
+  }
+
+  .np-home-dashboard {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.72fr) minmax(330px, 0.28fr) !important;
+    gap: 1rem !important;
+    align-items: stretch !important;
+    margin-bottom: 1.1rem !important;
+  }
+
+  .np-home-dashboard .np-pathfinder {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    grid-template-columns: minmax(390px, 0.38fr) minmax(720px, 0.62fr) !important;
+    min-height: 13.2rem !important;
+  }
+
+  .np-dashboard-side {
+    display: grid !important;
+    grid-template-rows: 1fr 1fr !important;
+    gap: 1rem !important;
+    min-width: 0 !important;
+  }
+
+  .np-dashboard-card {
+    min-height: 0 !important;
+    padding: 1rem 1.05rem !important;
+    border: 1px solid rgba(72, 122, 146, 0.34) !important;
+    border-radius: 0.72rem !important;
+    background:
+      radial-gradient(circle at 0% 0%, rgba(0, 230, 246, 0.07), transparent 10rem),
+      linear-gradient(180deg, rgba(8, 26, 34, 0.78), rgba(4, 16, 22, 0.86)) !important;
+    box-shadow:
+      0 16px 34px rgba(0, 0, 0, 0.22),
+      inset 0 0 28px rgba(0, 230, 246, 0.018) !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  .np-dashboard-card h2 {
+    margin: 0 0 0.65rem !important;
+    color: var(--np-text) !important;
+    font-size: 1.12rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .np-dashboard-card ul,
+  .np-dashboard-card ol {
+    display: grid !important;
+    gap: 0.48rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .np-dashboard-card li {
+    display: grid !important;
+    gap: 0.14rem !important;
+    padding: 0.48rem 0 !important;
+    border-top: 1px solid rgba(72, 122, 146, 0.20) !important;
+    color: rgba(247, 236, 220, 0.82) !important;
+    font-size: 0.82rem !important;
+    line-height: 1.36 !important;
+  }
+
+  .np-dashboard-card li:first-child {
+    border-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .np-dashboard-card li strong {
+    color: var(--np-gold-soft) !important;
+    font-size: 0.83rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .np-dashboard-card li span {
+    color: rgba(247, 236, 220, 0.76) !important;
+  }
+
+  .np-dashboard-card-roadmap li {
+    position: relative !important;
+    padding-left: 1.25rem !important;
+  }
+
+  .np-dashboard-card-roadmap li::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0.68rem !important;
+    width: 0.55rem !important;
+    height: 0.55rem !important;
+    border-radius: 50% !important;
+    background: var(--np-cyan) !important;
+    box-shadow: 0 0 14px rgba(0, 230, 246, 0.42) !important;
+  }
+
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    grid-template-columns: minmax(300px, 0.24fr) minmax(0, 0.76fr) !important;
+    margin-bottom: 3.4rem !important;
+  }
+
+  /* Footer farblich näher an die Vorlage */
+  #np-global-window-footer,
+  .np-site-footer#np-global-window-footer {
+    border-top: 1px solid rgba(0, 230, 246, 0.16) !important;
+    background:
+      linear-gradient(180deg, rgba(0, 13, 20, 0.92), rgba(0, 9, 15, 0.99)) !important;
+    box-shadow: 0 -16px 34px rgba(0, 0, 0, 0.34) !important;
+  }
+
+  #np-global-window-footer .np-site-footer-brand strong {
+    color: var(--np-gold-soft) !important;
+    font-size: 0.86rem !important;
+  }
+
+  #np-global-window-footer .np-site-footer-brand span {
+    color: rgba(247, 236, 220, 0.70) !important;
+    font-size: 0.74rem !important;
+  }
+
+  #np-global-window-footer .np-site-footer-links a,
+  #np-global-window-footer .np-site-footer-links span {
+    color: rgba(247, 236, 220, 0.78) !important;
+    font-size: 0.8rem !important;
+  }
+
+  #np-global-window-footer .np-site-footer-links a:hover {
+    color: var(--np-cyan) !important;
+  }
+
+  #np-global-window-footer a[href*="gamertransfer"],
+  #np-global-window-footer .np-footer-gamertransfer {
+    color: var(--np-cyan) !important;
+    font-size: 0.94rem !important;
+    font-weight: 950 !important;
+    text-shadow: 0 0 12px rgba(0, 230, 246, 0.22) !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1450px) {
+  .np-home-v2 .np-home-dashboard {
+    grid-template-columns: 1fr !important;
+  }
+
+  .np-dashboard-side {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: auto !important;
+  }
+}
+
+@media (max-width: 66.499rem) {
+  .np-home-dashboard {
+    display: grid !important;
+    gap: 1rem !important;
+  }
+
+  .np-dashboard-side {
+    display: grid !important;
+    gap: 1rem !important;
+  }
+
+  .np-dashboard-card {
+    padding: 1rem !important;
+  }
+
+  .np-hero-secondary-button {
+    min-height: 2.35rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 1rem !important;
+    border-radius: 0.42rem !important;
+    color: var(--np-gold-soft) !important;
+    background: rgba(236, 183, 110, 0.08) !important;
+    border: 1px solid rgba(236, 183, 110, 0.52) !important;
+    font-weight: 900 !important;
+    text-decoration: none !important;
+  }
+}
+

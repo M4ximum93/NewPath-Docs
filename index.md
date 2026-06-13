@@ -34,6 +34,7 @@ permalink: /
         <span class="np-server-copy-hero-icon" aria-hidden="true"></span>
         <span class="np-server-copy-hero-label">Server-IP kopieren</span>
       </button>
+      <a class="np-hero-secondary-button" href="{{ site.baseurl }}/regelwerk.html">Regelwerk lesen</a>
       <p class="np-server-copy-hint">Whitelist über Discord erforderlich.</p>
     </div>
 
@@ -93,68 +94,92 @@ permalink: /
 
 <div class="np-home-section-separator" aria-hidden="true"></div>
 
-<section class="np-panel np-pathfinder" aria-label="ECHO – Wegbegleiter und Einstieg">
-  <div class="np-pathfinder-echo">
-    <div class="np-pathfinder-image">
-      <img
-        src="{{ site.baseurl }}/assets/images/echo/start.png"
-        alt="ECHO – Der Wegbegleiter"
-        width="512"
-        height="512"
-        loading="lazy"
-        decoding="async">
+<section class="np-home-dashboard" aria-label="NewPath Einstieg und aktuelle Orientierung">
+  <div class="np-panel np-pathfinder np-dashboard-echo" aria-label="ECHO – Wegbegleiter und Einstieg">
+    <div class="np-pathfinder-echo">
+      <div class="np-pathfinder-image">
+        <img
+          src="{{ site.baseurl }}/assets/images/echo/start.png"
+          alt="ECHO – Der Wegbegleiter"
+          width="512"
+          height="512"
+          loading="lazy"
+          decoding="async">
+      </div>
+      <div class="np-pathfinder-copy">
+        <p class="np-section-kicker">ECHO – Der Wegbegleiter</p>
+        <h2>Wähle deinen Pfad.</h2>
+        <p>
+          ECHO hilft dir beim nächsten Schritt: mitspielen, Regeln verstehen,
+          Fragen klären, Probleme lösen oder die Idee hinter NewPath kennenlernen.
+        </p>
+      </div>
     </div>
-    <div class="np-pathfinder-copy">
-      <p class="np-section-kicker">ECHO – Der Wegbegleiter</p>
-      <h2>Wähle deinen Pfad.</h2>
-      <p>
-        ECHO hilft dir beim nächsten Schritt: mitspielen, Regeln verstehen,
-        Fragen klären, Probleme lösen oder die Idee hinter NewPath kennenlernen.
-      </p>
+
+    <div class="np-pathfinder-routes np-echo-route-list" aria-label="ECHO-Auswahl">
+      <div class="np-echo-route-head">
+        <span>ECHO-Kompass</span>
+        <strong>Wobei brauchst du Hilfe?</strong>
+      </div>
+
+      <a class="np-route-card np-route-card-primary" href="{{ site.baseurl }}/modpack-hilfe.html#installation-setup">
+        <span class="np-card-icon np-card-icon-green">▶</span>
+        <span class="np-route-title">Mitspielen starten</span>
+        <span class="np-route-text">Installation und Zugang.</span>
+        <span class="np-route-link">Starten →</span>
+      </a>
+
+      <a class="np-route-card" href="{{ site.baseurl }}/regelwerk.html">
+        <span class="np-card-icon np-card-icon-gold">§</span>
+        <span class="np-route-title">Regeln ansehen</span>
+        <span class="np-route-text">Was bei uns gilt.</span>
+        <span class="np-route-link">Regelwerk →</span>
+      </a>
+
+      <a class="np-route-card" href="{{ site.baseurl }}/faq.html">
+        <span class="np-card-icon np-card-icon-blue">?</span>
+        <span class="np-route-title">Häufige Fragen</span>
+        <span class="np-route-text">Version, Server und Ablauf.</span>
+        <span class="np-route-link">FAQ öffnen →</span>
+      </a>
+
+      <a class="np-route-card" href="{{ site.baseurl }}/modpack-hilfe.html#probleme-support">
+        <span class="np-card-icon np-card-icon-red">!</span>
+        <span class="np-route-title">Problem lösen</span>
+        <span class="np-route-text">Crash, RAM, Logs und Support.</span>
+        <span class="np-route-link">Hilfe öffnen →</span>
+      </a>
+
+      <a class="np-route-card" href="{{ site.baseurl }}/philosophie.html">
+        <span class="np-card-icon np-card-icon-purple">✦</span>
+        <span class="np-route-title">NewPath verstehen</span>
+        <span class="np-route-text">Atmosphäre und Projektidee.</span>
+        <span class="np-route-link">Mehr →</span>
+      </a>
     </div>
   </div>
 
-  <div class="np-pathfinder-routes np-echo-route-list" aria-label="ECHO-Auswahl">
-    <div class="np-echo-route-head">
-      <span>ECHO-Kompass</span>
-      <strong>Wobei brauchst du Hilfe?</strong>
-    </div>
+  <aside class="np-dashboard-side" aria-label="Aktuelle Hinweise">
+    <article class="np-dashboard-card np-dashboard-card-news">
+      <p class="np-section-kicker">Aktuell</p>
+      <h2>Neuigkeiten</h2>
+      <ul>
+        <li><strong>Dokumentation</strong><span>Website, Regelwerk und Hilfeseiten werden laufend vorbereitet.</span></li>
+        <li><strong>ECHO</strong><span>Der Wegbegleiter führt künftig stärker durch alle wichtigen Bereiche.</span></li>
+        <li><strong>Modpack-Hilfe</strong><span>Guides zu Installation, RAM, Voice Chat und Support wachsen weiter.</span></li>
+      </ul>
+    </article>
 
-    <a class="np-route-card np-route-card-primary" href="{{ site.baseurl }}/modpack-hilfe.html#installation-setup">
-      <span class="np-card-icon np-card-icon-green">▶</span>
-      <span class="np-route-title">Mitspielen starten</span>
-      <span class="np-route-text">Installation und Zugang.</span>
-      <span class="np-route-link">Starten →</span>
-    </a>
-
-    <a class="np-route-card" href="{{ site.baseurl }}/regelwerk.html">
-      <span class="np-card-icon np-card-icon-gold">§</span>
-      <span class="np-route-title">Regeln ansehen</span>
-      <span class="np-route-text">Was bei uns gilt.</span>
-      <span class="np-route-link">Regelwerk →</span>
-    </a>
-
-    <a class="np-route-card" href="{{ site.baseurl }}/faq.html">
-      <span class="np-card-icon np-card-icon-blue">?</span>
-      <span class="np-route-title">Häufige Fragen</span>
-      <span class="np-route-text">Version, Server und Ablauf.</span>
-      <span class="np-route-link">FAQ öffnen →</span>
-    </a>
-
-    <a class="np-route-card" href="{{ site.baseurl }}/modpack-hilfe.html#probleme-support">
-      <span class="np-card-icon np-card-icon-red">!</span>
-      <span class="np-route-title">Problem lösen</span>
-      <span class="np-route-text">Crash, RAM, Logs und Support.</span>
-      <span class="np-route-link">Hilfe öffnen →</span>
-    </a>
-
-    <a class="np-route-card" href="{{ site.baseurl }}/philosophie.html">
-      <span class="np-card-icon np-card-icon-purple">✦</span>
-      <span class="np-route-title">NewPath verstehen</span>
-      <span class="np-route-text">Atmosphäre und Projektidee.</span>
-      <span class="np-route-link">Mehr →</span>
-    </a>
-  </div>
+    <article class="np-dashboard-card np-dashboard-card-roadmap">
+      <p class="np-section-kicker">Roadmap</p>
+      <h2>Nächste Schritte</h2>
+      <ol>
+        <li><span>Design & Dokumentation finalisieren</span></li>
+        <li><span>Modpack-Hilfe und FAQ erweitern</span></li>
+        <li><span>Release-Kommunikation vorbereiten</span></li>
+      </ol>
+    </article>
+  </aside>
 </section>
 
 <div class="np-home-section-separator" aria-hidden="true"></div>
