@@ -81,6 +81,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       target.classList.add("np-rule-change-highlight", "np-rule-change-" + change.type);
+
+      if (!target.querySelector(":scope > .np-rule-change-badge")) {
+        const badge = document.createElement("span");
+        badge.className = "np-rule-change-badge np-rule-change-badge-" + change.type;
+        badge.textContent = change.type === "added" ? "Hinzugefügt" : "Geändert";
+        target.appendChild(badge);
+      }
     });
   }
 
