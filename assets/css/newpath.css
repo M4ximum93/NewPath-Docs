@@ -7814,3 +7814,131 @@ body.np-lightbox-open {
   }
 }
 
+/* 28. Startseite: Schriftgrößen für 1440p/100%-Ansicht nachschärfen */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 .np-hero h1 {
+    font-size: clamp(3.15rem, 4.15vw, 5.05rem) !important;
+    line-height: 0.9 !important;
+  }
+
+  .np-home-v2 .np-hero-highlight {
+    font-size: clamp(0.96rem, 0.74vw, 1.05rem) !important;
+    line-height: 1.58 !important;
+  }
+
+  .np-server-copy-hero-button {
+    font-size: 0.78rem !important;
+  }
+
+  .np-server-copy-hint {
+    font-size: 0.72rem !important;
+  }
+
+  .np-status-bar-v2 .np-status-item small {
+    font-size: 0.72rem !important;
+  }
+
+  .np-status-bar-v2 .np-status-item strong {
+    font-size: 0.82rem !important;
+  }
+
+  .np-pathfinder-copy .np-section-kicker,
+  .np-echo-route-list .np-echo-route-head span,
+  .np-history-intro .np-section-kicker {
+    font-size: 0.74rem !important;
+  }
+
+  .np-pathfinder-copy h2 {
+    font-size: clamp(1.95rem, 1.9vw, 2.35rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .np-pathfinder-copy p:last-child {
+    font-size: clamp(0.94rem, 0.82vw, 1.05rem) !important;
+    line-height: 1.56 !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-echo-route-head strong {
+    font-size: 0.78rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-title {
+    font-size: 0.86rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-text {
+    font-size: 0.66rem !important;
+    line-height: 1.34 !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-link {
+    font-size: 0.58rem !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro h2 {
+    font-size: clamp(2rem, 2.1vw, 2.75rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro p:last-child {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .np-history-tab-year {
+    font-size: 0.66rem !important;
+  }
+
+  .np-history-tab-title {
+    font-size: 0.76rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .np-history-tab-panel .np-card-kicker {
+    font-size: 0.72rem !important;
+  }
+
+  .np-history-tab-panel h3 {
+    font-size: 1.22rem !important;
+    line-height: 1.16 !important;
+  }
+
+  .np-history-tab-panel p:last-child {
+    font-size: 0.92rem !important;
+    line-height: 1.56 !important;
+  }
+
+  #np-global-window-footer .np-site-footer-brand strong {
+    font-size: 0.78rem !important;
+  }
+
+  #np-global-window-footer .np-site-footer-brand span {
+    font-size: 0.68rem !important;
+  }
+
+  #np-global-window-footer .np-site-footer-links a,
+  #np-global-window-footer .np-site-footer-links span {
+    font-size: 0.72rem !important;
+  }
+
+  .np-back-to-top {
+    font-size: 0.72rem !important;
+  }
+}
+
+@media (min-width: 90rem) {
+  .np-home-v2 .np-pathfinder {
+    min-height: 11.5rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-card {
+    min-height: 9.6rem !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact {
+    min-height: 17.5rem !important;
+  }
+}
+
