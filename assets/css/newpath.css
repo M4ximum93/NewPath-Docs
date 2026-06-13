@@ -8242,3 +8242,116 @@ body.np-lightbox-open {
   }
 }
 
+/* 31. Startseite: Hauptbereich breiter und Entstehungsgeschichte ruhiger */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 {
+    --np-content-width: min(1500px, calc(100vw - 3.5rem)) !important;
+  }
+
+  .np-home-v2 .np-hero,
+  .np-home-v2 .np-status-bar-v2,
+  .np-home-v2 .np-pathfinder,
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    width: var(--np-content-width) !important;
+    max-width: var(--np-content-width) !important;
+  }
+
+  .np-home-v2 .np-status-bar-v2 {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+
+  .np-home-v2 .np-pathfinder {
+    grid-template-columns: minmax(455px, 0.39fr) minmax(860px, 0.61fr) !important;
+    gap: clamp(1.1rem, 1.55vw, 1.7rem) !important;
+  }
+
+  .np-home-v2 .np-pathfinder-copy h2 {
+    max-width: 28rem !important;
+  }
+
+  .np-home-v2 .np-pathfinder-copy p:last-child {
+    max-width: 42rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-card {
+    min-height: 9.8rem !important;
+  }
+
+  .np-home-v2 .np-echo-route-list .np-route-text {
+    max-width: 10rem !important;
+  }
+
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    grid-template-columns: minmax(300px, 0.25fr) minmax(0, 0.75fr) !important;
+    gap: clamp(1rem, 1.5vw, 1.6rem) !important;
+    min-height: 16.4rem !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro {
+    padding: clamp(1rem, 1.25vw, 1.35rem) !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro h2 {
+    font-size: clamp(1.58rem, 1.65vw, 2.18rem) !important;
+    line-height: 1.09 !important;
+    letter-spacing: -0.035em !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro p:last-child {
+    font-size: 0.9rem !important;
+    line-height: 1.53 !important;
+  }
+
+  .np-history-tab-nav {
+    gap: clamp(0.45rem, 0.8vw, 0.9rem) !important;
+  }
+
+  .np-history-tab-title {
+    max-width: 9.2rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  .np-history-tab-content {
+    min-height: 8.9rem !important;
+  }
+
+  .np-history-tab-panel h3 {
+    font-size: 1.26rem !important;
+  }
+
+  .np-history-tab-panel p:last-child {
+    max-width: 62rem !important;
+    font-size: 0.94rem !important;
+  }
+}
+
+@media (min-width: 100rem) {
+  .np-home-v2 {
+    --np-content-width: min(1560px, calc(100vw - 3rem)) !important;
+  }
+
+  .np-home-v2 .np-pathfinder {
+    grid-template-columns: minmax(470px, 0.38fr) minmax(910px, 0.62fr) !important;
+  }
+
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    grid-template-columns: minmax(320px, 0.24fr) minmax(0, 0.76fr) !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1320px) {
+  .np-home-v2 {
+    --np-content-width: calc(100vw - 2.5rem) !important;
+  }
+
+  .np-home-v2 .np-pathfinder,
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    grid-template-columns: 1fr !important;
+  }
+}
+
