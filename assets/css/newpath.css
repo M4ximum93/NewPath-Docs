@@ -9698,3 +9698,35 @@ body.np-page-sub::after {
   }
 }
 
+/* 41. Header: NewPath-Branding links auf Georgia setzen */
+
+.site-title,
+.site-title .site-title-text,
+.site-title .site-title-name,
+.np-header-brand,
+.np-header-brand-name,
+.np-brand-name,
+.main-header .site-title,
+.main-header .site-title-text,
+.main-header .np-header-brand-name,
+.main-header .np-brand-name {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  text-transform: none !important;
+}
+
+.site-title small,
+.site-title .site-title-subtitle,
+.np-header-brand-subtitle,
+.np-brand-subtitle,
+.main-header .site-title small,
+.main-header .site-title-subtitle,
+.main-header .np-header-brand-subtitle,
+.main-header .np-brand-subtitle {
+  font-family: var(--np-font-label) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
