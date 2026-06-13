@@ -152,7 +152,7 @@ permalink: /
     <p class="np-section-kicker">Entstehungsgeschichte</p>
     <h2>Der Weg zu NewPath wie es heute ist.</h2>
     <p>
-      NewPath ist nicht aus einem einzelnen Neustart entstanden, sondern aus vielen Jahren gemeinsamer Minecraft-Erfahrung. Aus öffentlichen Projekten, Vanilla-Welten, Freundschaften, Veränderungen im Team und mehreren Neuanfängen entwickelte sich Schritt für Schritt der Wunsch nach etwas Eigenem: einem Projekt mit klarer Identität, eigener Modpack-Richtung, Atmosphäre und einer Community, die mehr sein soll als nur eine Serverliste.
+      NewPath entstand nicht über Nacht, sondern aus Jahren gemeinsamer Minecraft-Projekte, Veränderungen im Team und dem Wunsch, mehr zu schaffen als nur den nächsten Server. Aus Vanilla-Welten wurden eigene Ideen, aus Rebrandings eine klare Richtung – und aus einem neuen Weg schließlich NewPath.
     </p>
   </div>
 
