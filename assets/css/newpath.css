@@ -10054,3 +10054,103 @@ body.np-page-sub::after {
   }
 }
 
+/* 44. Ecosystem: Karten kompakter und Hauptkarte weniger leer */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 .np-ecosystem-panel {
+    padding: clamp(1.05rem, 1.42vw, 1.48rem) !important;
+  }
+
+  .np-ecosystem-head {
+    margin-bottom: 1rem !important;
+  }
+
+  .np-ecosystem-grid {
+    gap: 0.82rem !important;
+  }
+
+  .np-ecosystem-card {
+    min-height: 10.55rem !important;
+    padding: 0.82rem 0.86rem !important;
+    gap: 0.25rem !important;
+    grid-template-rows: auto auto auto minmax(0, 1fr) auto !important;
+  }
+
+  .np-ecosystem-card img {
+    width: 3rem !important;
+    height: 3rem !important;
+    margin-bottom: 0.08rem !important;
+  }
+
+  .np-ecosystem-type {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.085em !important;
+  }
+
+  .np-ecosystem-card strong {
+    font-size: 0.94rem !important;
+    line-height: 1.08 !important;
+  }
+
+  .np-ecosystem-card span:not(.np-ecosystem-type) {
+    font-size: 0.75rem !important;
+    line-height: 1.34 !important;
+  }
+
+  .np-ecosystem-card em {
+    margin-top: 0.16rem !important;
+    padding: 0.27rem 0.54rem !important;
+    font-size: 0.58rem !important;
+  }
+
+  .np-ecosystem-card-featured {
+    min-height: 21.6rem !important;
+    padding: 0.98rem !important;
+    align-content: start !important;
+  }
+
+  .np-ecosystem-card-featured img {
+    width: 4.35rem !important;
+    height: 4.35rem !important;
+    margin-bottom: 0.12rem !important;
+  }
+
+  .np-ecosystem-card-featured strong {
+    max-width: 22rem !important;
+    font-size: 1.18rem !important;
+    line-height: 1.06 !important;
+  }
+
+  .np-ecosystem-card-featured span:not(.np-ecosystem-type) {
+    max-width: 24rem !important;
+    font-size: 0.82rem !important;
+    line-height: 1.38 !important;
+  }
+
+  .np-ecosystem-card-featured em {
+    align-self: start !important;
+    margin-top: 0.65rem !important;
+  }
+
+  .np-ecosystem-card-static {
+    min-height: 10.55rem !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1350px) {
+  .np-ecosystem-card-featured {
+    min-height: 12.6rem !important;
+  }
+}
+
+@media (max-width: 66.499rem) {
+  .np-ecosystem-card {
+    padding: 0.82rem !important;
+  }
+
+  .np-ecosystem-card img {
+    width: 2.9rem !important;
+    height: 2.9rem !important;
+  }
+}
+
