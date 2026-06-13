@@ -1,7 +1,19 @@
 {
-  "generated_at": null,
+  "generated_at": "2026-06-13T15:43:30+00:00",
   "source_file": "regelwerk.md",
   "added": [],
-  "edited": [],
-  "removed": []
+  "edited": [
+    {
+      "type": "edited",
+      "text": "1.1. TEST TEST Wir bauen eine immersive Welt, in der Erkunden, Bauen und Atmosphäre im Vordergrund stehen.",
+      "line": 12
+    }
+  ],
+  "removed": [
+    {
+      "type": "removed",
+      "text": "1.1. Wir bauen eine immersive Welt, in der Erkunden, Bauen und Atmosphäre im Vordergrund stehen.",
+      "line": 12
+    }
+  ]
 }
