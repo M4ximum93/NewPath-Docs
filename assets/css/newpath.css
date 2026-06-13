@@ -10622,3 +10622,237 @@ body.np-page-home h3 .anchor-link {
 .np-hero h1 {
   font-family: var(--np-font-hero) !important;
 }
+
+/* 51. ECHO-Hover entfernen, Bild-Schimmer ergänzen, Hero-Buttons angleichen, Header-Brand fixen */
+
+/* 51.1 ECHO-Boxen: kein Hover auf der gesamten Box */
+.echo-page-box,
+.echo-page-box-team,
+.echo-page-box-philosophy,
+.echo-page-box-faq,
+.echo-page-box-rules,
+.echo-page-box-streamer,
+.echo-page-box-help,
+.echo-page-box-duck,
+.np-home-v2 .np-pathfinder-dashboard {
+  transition: none !important;
+}
+
+.echo-page-box:hover,
+.echo-page-box-team:hover,
+.echo-page-box-philosophy:hover,
+.echo-page-box-faq:hover,
+.echo-page-box-rules:hover,
+.echo-page-box-streamer:hover,
+.echo-page-box-help:hover,
+.echo-page-box-duck:hover,
+.np-home-v2 .np-pathfinder-dashboard:hover {
+  border-color: var(--np-ui-border) !important;
+  border-left-color: rgba(0, 230, 246, 0.62) !important;
+  box-shadow: var(--np-ui-panel-shadow) !important;
+  background:
+    radial-gradient(circle at 5% 45%, rgba(0, 230, 246, 0.10), transparent 14rem),
+    linear-gradient(180deg, rgba(3, 18, 25, 0.84), rgba(1, 12, 18, 0.91)) !important;
+  transform: none !important;
+}
+
+/* 51.2 ECHO-Bilder: dezenter Schimmer/Glow nur am Bild */
+.echo-page-image,
+.np-home-v2 .np-pathfinder-image {
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+.echo-page-image::after,
+.np-home-v2 .np-pathfinder-image::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 54% !important;
+  width: 82% !important;
+  height: 76% !important;
+  border-radius: 999px !important;
+  transform: translate(-50%, -50%) !important;
+  background:
+    radial-gradient(circle, rgba(0, 230, 246, 0.18), rgba(0, 230, 246, 0.07) 36%, transparent 68%) !important;
+  filter: blur(10px) !important;
+  opacity: 0.72 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  animation: npEchoImageGlow 4.8s ease-in-out infinite !important;
+}
+
+.echo-page-image img,
+.np-home-v2 .np-pathfinder-image img {
+  position: relative !important;
+  z-index: 1 !important;
+  transition: filter 0.18s ease !important;
+  transform: none !important;
+  filter:
+    drop-shadow(0 10px 16px rgba(0, 0, 0, 0.36))
+    drop-shadow(0 0 13px rgba(0, 230, 246, 0.16)) !important;
+}
+
+.echo-page-box:hover .echo-page-image img,
+.echo-page-box-team:hover .echo-page-image img,
+.echo-page-box-philosophy:hover .echo-page-image img,
+.echo-page-box-faq:hover .echo-page-image img,
+.echo-page-box-rules:hover .echo-page-image img,
+.echo-page-box-streamer:hover .echo-page-image img,
+.echo-page-box-help:hover .echo-page-image img,
+.echo-page-box-duck:hover .echo-page-image img,
+.np-home-v2 .np-pathfinder-dashboard:hover .np-pathfinder-image img {
+  transform: none !important;
+  filter:
+    drop-shadow(0 10px 16px rgba(0, 0, 0, 0.36))
+    drop-shadow(0 0 15px rgba(0, 230, 246, 0.18)) !important;
+}
+
+@keyframes npEchoImageGlow {
+  0%, 100% {
+    opacity: 0.54;
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+  50% {
+    opacity: 0.86;
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+}
+
+/* 51.3 Startseite: IP- und Regelwerk-Button gleich groß + gleicher Hover */
+.np-home-v2 .np-hero-actions,
+.np-home-v2 .np-server-actions,
+.np-hero-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  flex-wrap: wrap !important;
+}
+
+.np-home-v2 .np-hero-actions .np-server-copy,
+.np-home-v2 .np-hero-actions .np-hero-button,
+.np-home-v2 .np-hero-actions a,
+.np-home-v2 .np-hero-actions button,
+.np-home-v2 .np-server-actions .np-server-copy,
+.np-home-v2 .np-server-actions .np-hero-button,
+.np-home-v2 .np-server-actions a,
+.np-home-v2 .np-server-actions button {
+  min-width: 9.35rem !important;
+  min-height: 2.25rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+  padding: 0.52rem 0.95rem !important;
+  border-radius: 0.48rem !important;
+  font-family: var(--np-font-label) !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.015em !important;
+  text-decoration: none !important;
+  color: rgba(247, 236, 220, 0.92) !important;
+  background:
+    linear-gradient(180deg, rgba(0, 230, 246, 0.18), rgba(0, 130, 150, 0.12)) !important;
+  border: 1px solid rgba(0, 230, 246, 0.42) !important;
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  transform: translateY(0) !important;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease,
+    color 0.18s ease !important;
+  cursor: pointer !important;
+}
+
+.np-home-v2 .np-hero-actions .np-server-copy:hover,
+.np-home-v2 .np-hero-actions .np-hero-button:hover,
+.np-home-v2 .np-hero-actions a:hover,
+.np-home-v2 .np-hero-actions button:hover,
+.np-home-v2 .np-server-actions .np-server-copy:hover,
+.np-home-v2 .np-server-actions .np-hero-button:hover,
+.np-home-v2 .np-server-actions a:hover,
+.np-home-v2 .np-server-actions button:hover {
+  transform: translateY(-1px) !important;
+  color: #ffffff !important;
+  border-color: rgba(0, 230, 246, 0.66) !important;
+  background:
+    linear-gradient(180deg, rgba(0, 230, 246, 0.24), rgba(0, 130, 150, 0.16)) !important;
+  box-shadow:
+    0 13px 24px rgba(0, 0, 0, 0.28),
+    0 0 18px rgba(0, 230, 246, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+}
+
+/* Sekundärer Button bleibt farblich dezenter/goldiger, aber gleiche Größe und Hover */
+.np-home-v2 .np-hero-actions .np-hero-button-secondary,
+.np-home-v2 .np-server-actions .np-hero-button-secondary,
+.np-home-v2 .np-hero-actions a[href*="regelwerk"],
+.np-home-v2 .np-server-actions a[href*="regelwerk"] {
+  color: rgba(247, 236, 220, 0.90) !important;
+  background:
+    linear-gradient(180deg, rgba(236, 183, 110, 0.14), rgba(64, 42, 20, 0.12)) !important;
+  border-color: rgba(236, 183, 110, 0.48) !important;
+}
+
+.np-home-v2 .np-hero-actions .np-hero-button-secondary:hover,
+.np-home-v2 .np-server-actions .np-hero-button-secondary:hover,
+.np-home-v2 .np-hero-actions a[href*="regelwerk"]:hover,
+.np-home-v2 .np-server-actions a[href*="regelwerk"]:hover {
+  color: #ffffff !important;
+  border-color: rgba(236, 183, 110, 0.72) !important;
+  background:
+    linear-gradient(180deg, rgba(236, 183, 110, 0.20), rgba(64, 42, 20, 0.16)) !important;
+  box-shadow:
+    0 13px 24px rgba(0, 0, 0, 0.28),
+    0 0 18px rgba(236, 183, 110, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+}
+
+/* 51.4 Header links: NewPath-Schriftzug wirklich auf Georgia erzwingen */
+.site-header .site-title,
+.site-header .site-title *,
+.main-header .site-title,
+.main-header .site-title *,
+.site-title,
+.site-title *,
+.np-site-title,
+.np-site-title *,
+.np-brand,
+.np-brand *,
+.np-header-brand,
+.np-header-brand *,
+.np-logo-text,
+.np-logo-text *,
+.np-brand-name,
+.np-header-brand-name,
+a.site-title,
+a.site-title *,
+header .site-title,
+header .site-title *,
+header .np-brand-name,
+header .np-header-brand-name {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  text-transform: none !important;
+}
+
+/* Untertitel im Header bewusst wieder Label-Schrift */
+.site-title small,
+.site-title .site-title-subtitle,
+.site-title .np-brand-subtitle,
+.np-brand-subtitle,
+.np-header-brand-subtitle,
+.np-logo-subtitle,
+header .np-brand-subtitle,
+header .np-header-brand-subtitle {
+  font-family: var(--np-font-label) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
