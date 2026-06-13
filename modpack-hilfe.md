@@ -348,14 +348,6 @@ permalink: /modpack-hilfe.html
         </ol>
 
       </div>
-
-      <aside class="np-help-module-media">
-        <!-- BILDBEREICH -->
-        <div class="np-help-image-placeholder">
-          <span>Bildplatzhalter</span>
-          <p>Screenshot: Spawn-Bereich oder erste Orientierung nach dem Join.</p>
-        </div>
-      </aside>
     </div>
   </details>
   <details id="bauplatz-finden" class="np-accordion np-help-details np-help-module">
@@ -385,14 +377,6 @@ permalink: /modpack-hilfe.html
         </ol>
 
       </div>
-
-      <aside class="np-help-module-media">
-        <!-- BILDBEREICH -->
-        <div class="np-help-image-placeholder">
-          <span>Bildplatzhalter</span>
-          <p>Screenshot: Beispiel für geeigneten Bauplatz oder Weltkarte.</p>
-        </div>
-      </aside>
     </div>
   </details>
   <details id="claims-ftb-chunks" class="np-accordion np-help-details np-help-module">
