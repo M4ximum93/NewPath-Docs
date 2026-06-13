@@ -42,14 +42,14 @@ permalink: /regelwerk.html
       <h2>1. Vorwort</h2>
     </header>
     <ol class="np-rule-list">
-      <li><strong>1.1.</strong> Wir bauen eine immersive Welt, in der Erkunden, Bauen und Atmosphäre im Vordergrund stehen.</li>
+      <li><strong>1.1.</strong> Wir bauen eine immersive Welt, in der Erkunden, Bauen, Atmosphäre und gemeinsames Erleben im Vordergrund stehen.</li>
+      <li class="np-rule-subitem"><strong>1.1.1.</strong> TEST: Diese neue Regel dient nur zur Prüfung der automatischen Änderungsmarkierung.</li>
       <li><strong>1.2.</strong> Handelt bitte im Sinne unserer Philosophie – diese findet ihr auf unserem Discord.</li>
       <li><strong>1.3.</strong> Respektvoller Umgang miteinander ist Voraussetzung – kein toxisches Verhalten, keine Diskriminierung.</li>
       <li><strong>1.4.</strong> Änderungen am Regelwerk sind jederzeit möglich, werden aber transparent im Discord angekündigt.</li>
       <li><strong>1.5.</strong> Das Modpack „NewPath – Echoes of the Wild“ ist ein eigenständiges, von unserem Team zusammengestelltes Projekt und wird ausschließlich über CurseForge bereitgestellt.</li>
       <li><strong>1.6.</strong> Das Hinzufügen eigener Mods ist grundsätzlich nicht gestattet, ausgenommen sind Shader und Ressourcenpakete, welche keinen spielerischen Vorteil bieten.</li>
       <li><strong>1.7.</strong> Dieses Regelwerk wird automatisch mit Vergabe der Whitelist und Whitelist-Rolle im Discord akzeptiert.</li>
-      <li><strong>1.8.</strong> Die im Modpack verwendeten individuellen Inhalte, darunter Konfigurationen, Designs, Assets und Skripte, sind geschützt. Eine Weiterverbreitung, Änderung oder Wiederveröffentlichung ist untersagt.</li>
     </ol>
   </article>
 
