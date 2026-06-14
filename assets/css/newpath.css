@@ -11066,3 +11066,47 @@ header .np-header-brand-subtitle {
   }
 }
 
+/* 55. Startseite: Entstehungsgeschichte-Intro breiter setzen */
+
+@media (min-width: 66.5rem) {
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    grid-template-columns: minmax(0, 24rem) minmax(0, 1fr) !important;
+    column-gap: clamp(1.55rem, 2.1vw, 2.35rem) !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro,
+  .np-home-v2 .np-history-intro {
+    max-width: 24rem !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro h2,
+  .np-home-v2 .np-history-intro h2 {
+    font-size: clamp(1.42rem, 1.52vw, 1.82rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro p,
+  .np-home-v2 .np-history-intro p {
+    font-size: clamp(0.80rem, 0.84vw, 0.92rem) !important;
+    line-height: 1.52 !important;
+  }
+}
+
+@media (min-width: 66.5rem) and (max-width: 1280px) {
+  .np-home-v2 .np-history-panel,
+  .np-home-v2 .np-history-panel-compact {
+    grid-template-columns: minmax(0, 21.5rem) minmax(0, 1fr) !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro,
+  .np-home-v2 .np-history-intro {
+    max-width: 21.5rem !important;
+  }
+
+  .np-home-v2 .np-history-panel-compact .np-history-intro h2,
+  .np-home-v2 .np-history-intro h2 {
+    font-size: clamp(1.32rem, 1.42vw, 1.62rem) !important;
+  }
+}
+
