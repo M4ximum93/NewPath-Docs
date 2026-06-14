@@ -225,7 +225,7 @@ permalink: /
 
 <section class="np-panel np-history-panel np-history-panel-compact" aria-label="Entstehungsgeschichte von NewPath">
   <div class="np-history-intro">
-    <h2>NewPath · Entstehungsgeschichte</h2>
+    <h2>Entstehungsgeschichte</h2>
     <p>
       NewPath entstand nicht über Nacht, sondern aus Jahren gemeinsamer Minecraft-Projekte, Veränderungen im Team und dem Wunsch, mehr zu schaffen als nur den nächsten Server. Aus Vanilla-Welten wurden eigene Ideen, aus Rebrandings eine klare Richtung – und aus einem neuen Weg schließlich NewPath.
     </p>

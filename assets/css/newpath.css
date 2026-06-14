@@ -11816,3 +11816,163 @@ header .np-header-brand-subtitle {
   }
 }
 
+/* 60. Mobile Header Hard-Fix: Branding wirklich links fixieren */
+
+@media (max-width: 66.499rem) {
+  #np-mobile-header {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: var(--np-mobile-header-height, 4.65rem) !important;
+    min-height: var(--np-mobile-header-height, 4.65rem) !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-bottom: 1px solid rgba(0, 230, 246, 0.14) !important;
+    background:
+      linear-gradient(180deg, rgba(0, 9, 15, 0.985), rgba(0, 18, 33, 0.945)) !important;
+    box-shadow: 0 0.85rem 2rem rgba(0, 0, 0, 0.30) !important;
+    overflow: hidden !important;
+  }
+
+  #np-mobile-header .np-mobile-brand {
+    position: absolute !important;
+    left: 0.72rem !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+    width: auto !important;
+    max-width: calc(100vw - 5.4rem) !important;
+    height: 3rem !important;
+    min-height: 3rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.52rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: left !important;
+    text-decoration: none !important;
+    z-index: 2 !important;
+  }
+
+  #np-mobile-header .np-mobile-brand-logo {
+    width: 2.55rem !important;
+    height: 2.55rem !important;
+    min-width: 2.55rem !important;
+    flex: 0 0 2.55rem !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+  }
+
+  #np-mobile-header .np-mobile-brand-text {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 8.4rem) !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 0.1rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    line-height: 1 !important;
+    overflow: visible !important;
+  }
+
+  #np-mobile-header .np-mobile-brand-text > span {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    color: var(--np-gold-soft) !important;
+    font-size: 1.18rem !important;
+    font-weight: 700 !important;
+    line-height: 0.96 !important;
+    letter-spacing: -0.04em !important;
+    text-transform: none !important;
+    white-space: nowrap !important;
+  }
+
+  #np-mobile-header .np-mobile-brand-text small {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: var(--np-font-label) !important;
+    color: var(--np-cyan) !important;
+    font-size: 0.50rem !important;
+    font-weight: 950 !important;
+    line-height: 1 !important;
+    letter-spacing: 0.09em !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+  }
+
+  #np-mobile-header .np-mobile-menu-button {
+    position: absolute !important;
+    right: 0.72rem !important;
+    top: 50% !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+    width: 2.72rem !important;
+    height: 2.72rem !important;
+    min-width: 2.72rem !important;
+    min-height: 2.72rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 3 !important;
+  }
+
+  #np-mobile-header .np-mobile-menu-button:hover {
+    transform: translateY(-50%) !important;
+  }
+
+  .np-mobile-menu {
+    top: var(--np-mobile-header-height, 4.65rem) !important;
+  }
+}
+
+@media (max-width: 24rem) {
+  #np-mobile-header .np-mobile-brand {
+    left: 0.58rem !important;
+    gap: 0.42rem !important;
+    max-width: calc(100vw - 4.9rem) !important;
+  }
+
+  #np-mobile-header .np-mobile-brand-logo {
+    width: 2.22rem !important;
+    height: 2.22rem !important;
+    min-width: 2.22rem !important;
+    flex-basis: 2.22rem !important;
+  }
+
+  #np-mobile-header .np-mobile-brand-text > span {
+    font-size: 1.04rem !important;
+  }
+
+  #np-mobile-header .np-mobile-brand-text small {
+    font-size: 0.44rem !important;
+    letter-spacing: 0.07em !important;
+  }
+
+  #np-mobile-header .np-mobile-menu-button {
+    right: 0.58rem !important;
+    width: 2.48rem !important;
+    height: 2.48rem !important;
+    min-width: 2.48rem !important;
+    min-height: 2.48rem !important;
+  }
+}
+
