@@ -12266,3 +12266,49 @@ header .np-header-brand-subtitle {
   }
 }
 
+/* 63. Mobile Hero-Buttons mittig ausrichten */
+
+@media (max-width: 66.499rem) {
+  .np-home-v2 .np-hero-actions,
+  .np-home-v2 .np-server-actions,
+  .np-hero-actions,
+  .np-server-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.62rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .np-home-v2 .np-hero-actions .np-server-copy,
+  .np-home-v2 .np-hero-actions .np-hero-button,
+  .np-home-v2 .np-hero-actions .np-hero-button-secondary,
+  .np-home-v2 .np-hero-actions a,
+  .np-home-v2 .np-hero-actions button,
+  .np-home-v2 .np-server-actions .np-server-copy,
+  .np-home-v2 .np-server-actions .np-hero-button,
+  .np-home-v2 .np-server-actions .np-hero-button-secondary,
+  .np-home-v2 .np-server-actions a,
+  .np-home-v2 .np-server-actions button {
+    width: min(100%, 13.9rem) !important;
+    min-width: 0 !important;
+    max-width: 13.9rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-self: center !important;
+    justify-self: center !important;
+  }
+
+  .np-home-v2 .np-whitelist-note,
+  .np-whitelist-note {
+    width: min(100%, 13.9rem) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+}
+
